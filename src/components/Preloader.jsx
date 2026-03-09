@@ -59,7 +59,7 @@ export default function Preloader() {
                   The EvenOdd fill rule punches the keyhole out of the rectangle.
                 */}
                 <path
-                    fill="#020617" // Very dark slate (almost black)
+                    fill="#EDEDED" // Light Gray/Off-White base bg
                     fillRule="evenodd"
                     clipRule="evenodd"
                     d="

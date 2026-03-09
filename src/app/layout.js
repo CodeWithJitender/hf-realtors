@@ -1,4 +1,4 @@
-import { Poppins } from "next/font/google";
+import { Poppins, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Preloader from "@/components/Preloader";
 
@@ -6,6 +6,12 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["300", "400", "600"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata = {
@@ -16,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-sans antialiased bg-[#1A1A1A] text-[#F9F8F6]`}>
+      <body className={`${poppins.variable} ${playfair.variable} font-sans antialiased bg-[#163548] text-[#EDEDED]`}>
         <Preloader />
         {children}
       </body>

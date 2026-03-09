@@ -1,35 +1,50 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1A1A1A;
-  --foreground: #F9F8F6;
+  --background: #163548;
+  --foreground: #EDEDED;
+  --primary: #CCA14D;
+  --secondary: #224d68;
+  /* Slightly lighter navy for secondary surfaces */
+  --accent: #FFED7E;
   --muted: var(--color-stone-400);
-  --accent: #c5a059;
-  /* Signature Gold */
-  --accent-light: #d4b473;
 }
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
 
   /* Core Brand Tokens */
-  --color-theme-background: #1A1A1A;
-  --color-theme-text: #F9F8F6;
+  --color-theme-background: #163548;
+  --color-theme-text: #EDEDED;
   --color-theme-muted: var(--muted);
-  --color-theme-accent: var(--accent);
-  --color-theme-accent-light: var(--accent-light);
-  --color-theme-nav-bg: #1A1A1A;
-  --color-theme-nav-text: #F9F8F6;
-  --color-theme-footer-bg: #121212;
-  --color-theme-footer-accent: #c5a059;
+  --color-theme-accent: var(--primary);
+  --color-theme-accent-light: var(--accent);
+  --color-theme-nav-bg: #163548;
+  --color-theme-nav-text: #EDEDED;
+  --color-theme-footer-bg: #0d212d;
+  /* Even darker Navy */
+  --color-theme-footer-accent: #CCA14D;
 
   /* Typography Tokens */
   --font-sans: var(--font-poppins), sans-serif;
+  --font-serif: var(--font-futura), "Trebuchet MS", Arial, sans-serif;
 
   /* Shape / Radius Tokens */
-  --radius-theme-card: 2.5rem;
+  --radius-theme-card: 4rem;
+  /* Updated to 4rem for Fame Estate architectural feel */
   --radius-theme-pill: 9999px;
+}
+
+@utility gold-gradient {
+  background: linear-gradient(to right, #CCA14D, #FFED7E);
+}
+
+@utility font-futura {
+  font-family: var(--font-futura), "Trebuchet MS", Arial, sans-serif;
 }
 
 body {

@@ -1,8 +1,9 @@
 import Hero from "@/components/Hero";
-import WhyHFRealtors from "@/components/WhyHFRealtors";
-import HowWeWork from "@/components/HowWeWork";
+import AboutUsSticky from "@/components/AboutUsSticky";
+import SplitReveal from "@/components/SplitReveal";
 import SequentialRevealCategories from "@/components/SequentialRevealCategories";
 import UniqueAdvantage from "@/components/UniqueAdvantage";
+import VerticalRailSection from "@/components/VerticalRailSection";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -12,10 +13,11 @@ export default function Home() {
       <Header />
 
       <Hero />
-      <WhyHFRealtors />
-      <HowWeWork />
+      <SplitReveal />
+      <AboutUsSticky />
       <SequentialRevealCategories />
       <UniqueAdvantage />
+      <VerticalRailSection />
 
       <Footer />
     </main>

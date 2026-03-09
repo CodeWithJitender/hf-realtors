@@ -30,7 +30,7 @@ export default function SequentialRevealCategories() {
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
     return (
-        <section className="relative w-full min-h-screen bg-[#1A1A1A] py-32 md:py-48 flex items-center justify-center overflow-hidden">
+        <section className="relative w-full min-h-screen bg-[#163548] py-32 md:py-48 flex items-center justify-center overflow-hidden">
 
             {/* Blurred Background Image Transition */}
             <AnimatePresence>
@@ -62,15 +62,15 @@ export default function SequentialRevealCategories() {
                 {/* Eyebrow Label */}
                 <RevealText delay={0.1} className="mb-16">
                     <div className="flex items-center gap-3">
-                        <div className="h-[1px] w-8 md:w-12 bg-white/30"></div>
-                        <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white/50">
+                        <div className="h-[1px] w-8 md:w-12 bg-[#FFED7E]/30"></div>
+                        <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase text-[#FFED7E]/50">
                             Core Capabilities
                         </span>
                     </div>
                 </RevealText>
 
                 {/* Vertical Category List */}
-                <div className="flex flex-col w-full border-t border-white/10">
+                <div className="flex flex-col w-full border-t border-[#EDEDED]/10">
                     {SERVICES.map((service, index) => {
                         const isHovered = hoveredIndex === index;
                         const isAnyHovered = hoveredIndex !== null;
@@ -83,7 +83,7 @@ export default function SequentialRevealCategories() {
                         return (
                             <div
                                 key={service.id}
-                                className="group relative border-b border-white/10 py-12 cursor-pointer flex flex-col transition-colors duration-500 hover:border-white/30"
+                                className="group relative border-b border-[#EDEDED]/10 py-12 cursor-pointer flex flex-col transition-all duration-500 hover:border-transparent"
                                 onMouseEnter={() => setHoveredIndex(index)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 // Touch support for mobile tap
@@ -94,7 +94,7 @@ export default function SequentialRevealCategories() {
                                     <motion.span
                                         animate={{ opacity: titleOpacity }}
                                         transition={{ duration: 0.4 }}
-                                        className="text-xl md:text-3xl font-light text-white font-sans hidden md:block mt-2"
+                                        className="text-xl md:text-3xl font-light text-[#EDEDED] font-sans hidden md:block mt-2"
                                     >
                                         {service.id}
                                     </motion.span>
@@ -110,11 +110,15 @@ export default function SequentialRevealCategories() {
                                     <motion.h3
                                         animate={{ opacity: titleOpacity }}
                                         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                                        className="text-4xl sm:text-5xl md:text-6xl lg:text-[7rem] font-extrabold tracking-tighter text-[#F9F8F6] uppercase leading-[0.85]"
+                                        className={`text-4xl sm:text-5xl md:text-6xl lg:text-[7rem] font-serif font-medium tracking-tight uppercase leading-[0.85] transition-colors duration-500 drop-shadow-md ${isHovered ? 'text-[#FFED7E]' : 'text-[#EDEDED]'}`}
                                     >
                                         {service.title}
                                     </motion.h3>
                                 </div>
+
+
+                                {/* Gold Gradient Underline on Hover */}
+                                <div className={`absolute bottom-0 left-0 h-[2px] w-full transition-all duration-500 ${isHovered ? 'opacity-100 gold-gradient' : 'opacity-0 bg-transparent'}`} />
 
                                 {/* 
                                     The Vertical Sequential Reveal Container:
@@ -169,7 +173,7 @@ export default function SequentialRevealCategories() {
                                             }}
                                             className="w-full max-w-2xl mb-4"
                                         >
-                                            <p className="text-xl md:text-3xl text-white/90 font-light leading-relaxed">
+                                            <p className="text-xl md:text-3xl text-[#EDEDED]/90 font-light leading-relaxed">
                                                 {service.desc}
                                             </p>
                                         </motion.div>

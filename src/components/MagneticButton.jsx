@@ -7,7 +7,8 @@ export default function MagneticButton({
     children,
     className = "",
     onClick,
-    href = null
+    href = null,
+    variant = "solid"
 }) {
     const buttonRef = useRef(null);
 
@@ -67,8 +68,40 @@ export default function MagneticButton({
         y.set(0);
     };
 
+    const getVariantStyles = () => {
+        switch (variant) {
+            case "solid":
+                return {
+                    baseClasses: "gold-gradient",
+                    fillColor: "#163548",
+                    textColor: isHovered ? "#EDEDED" : "#163548",
+                };
+            case "outline":
+                return {
+                    baseClasses: "border border-[#CCA14D] bg-transparent hover:bg-[#CCA14D]/5",
+                    fillColor: "linear-gradient(to right, #CCA14D, #FFED7E)",
+                    textColor: isHovered ? "#163548" : "#EDEDED",
+                };
+            case "white-solid":
+                return {
+                    baseClasses: "bg-[#EDEDED]",
+                    fillColor: "#163548",
+                    textColor: isHovered ? "#EDEDED" : "#163548",
+                };
+            case "white-outline":
+                return {
+                    baseClasses: "border border-[#EDEDED]/50 bg-transparent hover:border-[#EDEDED]",
+                    fillColor: "#EDEDED",
+                    textColor: isHovered ? "#163548" : "#EDEDED",
+                };
+            default:
+                return { baseClasses: "", fillColor: "", textColor: "" };
+        }
+    };
+    const styles = getVariantStyles();
+
     // The base structural classes ensuring global consistency
-    const baseClasses = `relative overflow-hidden rounded-[3rem] border border-white/20 bg-[#1A1A1A] px-8 py-4 flex items-center justify-center cursor-pointer ${className}`;
+    const baseClasses = `relative overflow-hidden rounded-[4rem] px-10 py-4 flex items-center justify-center cursor-pointer transition-colors duration-300 ${styles.baseClasses} ${className}`;
 
     // Content rendering wrapper
     const Wrapper = href ? motion.a : motion.button;
@@ -84,10 +117,6 @@ export default function MagneticButton({
             className={baseClasses}
             {...wrapperProps}
         >
-            {/* 
-        The Liquid Fill Expansion 
-        A pure white circle that scales up from the cursor entry point 
-      */}
             <motion.div
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{
@@ -98,16 +127,15 @@ export default function MagneticButton({
                 style={{
                     left: fillCoords.x,
                     top: fillCoords.y,
+                    background: styles.fillColor
                 }}
-                className="absolute w-4 h-4 bg-[#F9F8F6] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
+                className="absolute w-4 h-4 rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
             />
 
-            {/* 
-        The Text Label
-        Using mix-blend-difference so it automatically inverts to charcoal
-        when the white background expands behind it.
-      */}
-            <span className="relative z-10 font-sans font-semibold text-sm md:text-base tracking-wide text-[#F9F8F6] mix-blend-difference pointer-events-none whitespace-nowrap">
+            <span
+                className="relative z-10 font-sans font-semibold text-[13px] md:text-sm tracking-widest pointer-events-none whitespace-nowrap transition-colors duration-300 uppercase"
+                style={{ color: styles.textColor }}
+            >
                 {children}
             </span>
         </Wrapper>

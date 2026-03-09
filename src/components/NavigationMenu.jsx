@@ -28,7 +28,7 @@ export default function NavigationMenu({ isOpen, setIsOpen }) {
                         animate={{ x: 0 }}
                         exit={{ x: "-100%" }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} // Signature ease
-                        className="relative w-full md:w-1/2 lg:w-[45%] h-full bg-[#1A1A1A] text-[#F9F8F6] flex flex-col justify-between overflow-hidden shadow-2xl"
+                        className="relative w-full md:w-1/2 lg:w-[45%] h-full bg-[#EDEDED] text-[#163548] flex flex-col justify-between overflow-hidden shadow-2xl"
                     >
                         {/* Top Header Row of the Menu */}
                         <div className="grid grid-cols-1 items-center px-6 md:px-12 py-6 w-full">
@@ -60,7 +60,7 @@ export default function NavigationMenu({ isOpen, setIsOpen }) {
                                             <a
                                                 href={link.href}
                                                 onClick={() => setIsOpen(false)}
-                                                className="text-5xl md:text-7xl lg:text-[7rem] font-medium tracking-tighter leading-none hover:text-white transition-colors block"
+                                                className="text-5xl md:text-7xl lg:text-[7rem] font-medium tracking-tighter leading-none hover:text-[#CCA14D] transition-colors block"
                                             >
                                                 {link.name}
                                             </a>

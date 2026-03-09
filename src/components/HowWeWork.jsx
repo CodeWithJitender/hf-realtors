@@ -28,38 +28,38 @@ const journeySteps = [
 
 export default function HowWeWork() {
     return (
-        <section id="how-it-works" className="relative bg-[#1A1A1A] text-[#F9F8F6] py-16 md:py-32 min-h-screen font-sans border-t border-white/5">
+        <section id="how-it-works" className="relative bg-[#163548] text-[#EDEDED] py-16 md:py-32 min-h-screen font-sans border-t border-[#EDEDED]/5">
             <div className="max-w-[1920px] mx-auto w-full lg:flex lg:flex-row relative">
 
                 {/* Mobile/Tablet Header (Only visible < lg) */}
-                <div className="lg:hidden w-full px-8 py-12 md:py-20 text-center relative z-20 bg-[#1A1A1A]">
+                <div className="lg:hidden w-full px-8 py-12 md:py-20 text-center relative z-20 bg-[#163548]">
                     <RevealText delay={0.1} className="mb-4 text-[var(--accent)] font-bold tracking-widest uppercase text-xs">
                         <h2>The Journey</h2>
                     </RevealText>
                     <RevealText delay={0.2}>
-                        <h3 className="text-4xl sm:text-5xl font-bold tracking-tighter leading-tight text-[#F9F8F6]">
+                        <h3 className="text-4xl sm:text-5xl font-serif font-medium tracking-tight leading-tight text-[#EDEDED] drop-shadow-md">
                             Progressive <br /> Reveal.
                         </h3>
                     </RevealText>
                 </div>
 
                 {/* Left Column: Sticky Context (Desktop Only) */}
-                <div className="hidden lg:flex lg:w-[45%] sticky top-0 h-screen flex-col items-center justify-center relative overflow-hidden border-r border-white/5 bg-[#1A1A1A]/50">
+                <div className="hidden lg:flex lg:w-[45%] sticky top-0 h-screen flex-col items-center justify-center relative overflow-hidden border-r border-[#EDEDED]/5 bg-[#163548]/50">
 
                     {/* Sticky Context Headers */}
                     <div className="absolute top-1/3 left-16 z-20 transform -translate-y-1/2">
                         <RevealText delay={0.1} className="mb-4">
-                            <h2 className="text-[var(--accent)] font-bold tracking-widest uppercase text-sm inline-block border border-[var(--accent)]/30 rounded-full py-2 px-6 bg-[var(--accent)]/10">
+                            <h2 className="text-[#FFED7E] font-medium font-sans tracking-widest uppercase text-sm inline-block border border-[#FFED7E]/30 rounded-full py-2 px-6 bg-[#FFED7E]/10">
                                 The Journey
                             </h2>
                         </RevealText>
                         <RevealText delay={0.2} className="mt-6">
-                            <h3 className="text-6xl xl:text-7xl font-bold tracking-tighter text-[#F9F8F6] leading-[1.05]">
+                            <h3 className="text-6xl xl:text-7xl font-serif font-medium tracking-tight text-[#EDEDED] leading-[1] drop-shadow-md">
                                 Progressive <br /> Reveal.
                             </h3>
                         </RevealText>
                         <RevealText delay={0.3} className="mt-8">
-                            <p className="text-[#F9F8F6]/80 text-lg sm:text-xl font-sans leading-relaxed max-w-lg">
+                            <p className="text-[#EDEDED] text-lg sm:text-xl font-sans leading-relaxed max-w-lg">
                                 Our 5-step methodology ensures absolute precision from conceptualization to execution, delivering unmatched wealth-tech service tailored to your distinct operational reality.
                             </p>
                         </RevealText>
@@ -69,14 +69,14 @@ export default function HowWeWork() {
                     <div className="absolute w-96 h-96 bg-[var(--accent)] rounded-full blur-[150px] opacity-10 animate-pulse pointer-events-none" />
 
                     {/* Bottom fade for the sticky column */}
-                    <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#1A1A1A] to-transparent z-10" />
+                    <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#163548] to-transparent z-10" />
                 </div>
 
                 {/* Right Column: Scrolling Timeline */}
-                <div className="w-full lg:w-[55%] relative px-6 md:px-16 lg:px-24 py-16 lg:pt-[50vh] lg:pb-[50vh] bg-[#1A1A1A]">
+                <div className="w-full lg:w-[55%] relative px-6 md:px-16 lg:px-24 py-16 lg:pt-[50vh] lg:pb-[50vh] bg-[#163548]">
 
                     {/* Continuous subtle background grid */}
-                    <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,black,rgba(0,0,0,0))] opacity-[0.03] pointer-events-none" />
+                    <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,black,rgba(0,0,0,0))] opacity-[0.05] pointer-events-none" />
 
                     <div className="relative z-10 max-w-2xl mx-auto lg:ml-0">
                         {journeySteps.map((step, i) => (
@@ -86,17 +86,17 @@ export default function HowWeWork() {
                                 <div className="w-8 md:w-12 flex-shrink-0 flex flex-col items-center relative pt-2">
                                     {/* Dashed Tracking Line (Connecting to next step) */}
                                     {i !== journeySteps.length - 1 && (
-                                        <div className="absolute top-8 bottom-[-100%] lg:bottom-[-200px] w-px border-l-2 border-dashed border-slate-300" />
+                                        <div className="absolute top-8 bottom-[-100%] lg:bottom-[-200px] w-px border-l-2 border-dashed border-[#EDEDED]/20" />
                                     )}
 
                                     {/* Active Step Indicator Dot */}
-                                    <div className="relative w-4 h-4 rounded-full bg-white border-2 border-slate-300 flex items-center justify-center z-10">
+                                    <div className="relative w-4 h-4 rounded-full bg-[#163548] border-2 border-[#EDEDED]/40 flex items-center justify-center z-10">
                                         <motion.div
                                             initial={{ scale: 0, opacity: 0 }}
                                             whileInView={{ scale: 1, opacity: 1 }}
                                             viewport={{ once: false, amount: 0.8 }}
                                             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                            className="absolute inset-0 rounded-full bg-[var(--accent)] shadow-[0_0_15px_var(--accent)] w-full h-full"
+                                            className="absolute inset-0 rounded-full bg-[#FFED7E] shadow-[0_0_15px_#FFED7E] w-full h-full"
                                         />
                                     </div>
                                 </div>
@@ -109,12 +109,12 @@ export default function HowWeWork() {
                                         </p>
                                     </RevealText>
                                     <RevealText delay={0.2} className="mb-6">
-                                        <h4 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tighter text-[#F9F8F6] leading-[1.1]">
+                                        <h4 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tighter text-[#CCA14D] leading-[1.1]">
                                             {step.title}
                                         </h4>
                                     </RevealText>
                                     <RevealText delay={0.3}>
-                                        <p className="text-[#F9F8F6]/80 font-sans text-base sm:text-lg lg:text-xl leading-relaxed">
+                                        <p className="text-[#EDEDED] font-sans text-base sm:text-lg lg:text-xl leading-relaxed">
                                             {step.desc}
                                         </p>
                                     </RevealText>

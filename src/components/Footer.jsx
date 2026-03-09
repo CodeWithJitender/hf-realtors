@@ -9,11 +9,11 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="w-full bg-[#121212] text-white pt-24 pb-8 px-6 md:px-12 flex flex-col items-center justify-center relative z-20 overflow-hidden">
+        <footer className="w-full bg-[#0d212d] text-[#EDEDED] pt-24 pb-8 px-6 md:px-12 flex flex-col items-center justify-center relative z-20 overflow-hidden">
 
             {/* Top Section: Massive Hook */}
             <div className="text-center mb-16 relative">
-                <RevealText delay={0.1} as="h2" className="text-6xl md:text-8xl lg:text-9xl font-black uppercase text-[#F9F8F6] mb-2 leading-[0.9] tracking-tight">
+                <RevealText delay={0.1} as="h2" className="text-6xl md:text-8xl lg:text-9xl font-serif font-medium uppercase text-[#EDEDED] mb-2 leading-[1] tracking-tight drop-shadow-md">
                     <span className="block">LET'S WORK</span>
                     <span className="block">TOGETHER</span>
                 </RevealText>
@@ -22,14 +22,14 @@ export default function Footer() {
             {/* Middle Section: Contact Info */}
             <div className="flex flex-col items-center mb-16">
                 <RevealText delay={0.2} className="mb-4">
-                    <p className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[#F9F8F6]/60 uppercase">
+                    <p className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[#FFED7E] uppercase">
                         CONNECT WITH ME
                     </p>
                 </RevealText>
                 <RevealText delay={0.3}>
                     <MagneticButton
                         href="mailto:HELLO@HFREALTORS.COM"
-                        className="text-2xl md:text-4xl lg:text-5xl border-transparent hover:border-white/20 transition-all px-12 py-8 bg-transparent"
+                        className="text-2xl md:text-4xl lg:text-5xl border-transparent hover:border-[#FFED7E]/20 transition-all px-12 py-8 bg-transparent text-[#CCA14D] hover:text-[#163548]"
                     >
                         HELLO@HFREALTORS.COM
                     </MagneticButton>
@@ -45,7 +45,7 @@ export default function Footer() {
             </div>
 
             {/* Bottom Meta Row */}
-            <div className="w-full max-w-7xl border-t border-white/10 pt-8 mt-auto flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] md:text-xs text-stone-500 font-medium tracking-wide">
+            <div className="w-full max-w-7xl border-t border-[#EDEDED]/10 pt-8 mt-auto flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] md:text-xs text-[#EDEDED]/60 font-medium tracking-wide">
 
                 <div className="text-center md:text-left">
                     &copy; {currentYear} HF Realtors
@@ -56,13 +56,13 @@ export default function Footer() {
                 </div>
 
                 <nav className="flex items-center gap-4 text-center md:text-right">
-                    <Link href="/" className="hover:text-stone-300 transition-colors">Home</Link>
+                    <Link href="/" className="hover:text-[#CCA14D] transition-colors">Home</Link>
                     <span className="opacity-30">-</span>
-                    <Link href="/about" className="hover:text-stone-300 transition-colors">About</Link>
+                    <Link href="/about" className="hover:text-[#CCA14D] transition-colors">About</Link>
                     <span className="opacity-30">-</span>
-                    <Link href="/work" className="hover:text-stone-300 transition-colors">Work</Link>
+                    <Link href="/work" className="hover:text-[#CCA14D] transition-colors">Work</Link>
                     <span className="opacity-30">-</span>
-                    <Link href="/contact" className="hover:text-stone-300 transition-colors">Contact</Link>
+                    <Link href="/contact" className="hover:text-[#CCA14D] transition-colors">Contact</Link>
                 </nav>
 
             </div>
@@ -78,7 +78,7 @@ function SocialIcon({ icon, text, href, label }) {
             aria-label={label}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#F9F8F6] hover:bg-[#F9F8F6] hover:text-[#1A1A1A] hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-lg"
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#EDEDED]/5 border border-[#EDEDED]/10 flex items-center justify-center text-[#EDEDED] hover:bg-[#FFED7E] hover:text-[#163548] hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-lg"
         >
             {icon ? (
                 icon
