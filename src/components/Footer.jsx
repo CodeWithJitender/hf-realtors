@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Mail, Linkedin, MessagesSquare } from "lucide-react";
 import RevealText from "@/components/RevealText";
-import MagneticButton from "@/components/MagneticButton";
+import Button from "@/components/Button";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -23,16 +23,17 @@ export default function Footer() {
             <div className="flex flex-col items-center mb-16">
                 <RevealText delay={0.2} className="mb-4">
                     <p className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[#FFED7E] uppercase">
-                        CONNECT WITH ME
+                        CONNECT WITH US
                     </p>
                 </RevealText>
                 <RevealText delay={0.3}>
-                    <MagneticButton
+                    <Button
                         href="mailto:HELLO@HFREALTORS.COM"
+                        variant="outlined"
                         className="text-2xl md:text-4xl lg:text-5xl border-transparent hover:border-[#FFED7E]/20 transition-all px-12 py-8 bg-transparent text-[#CCA14D] hover:text-[#163548]"
                     >
                         HELLO@HFREALTORS.COM
-                    </MagneticButton>
+                    </Button>
                 </RevealText>
             </div>
 

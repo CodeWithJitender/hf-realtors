@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { useScroll, useTransform, motion, useSpring } from "framer-motion";
-import MagneticButton from "@/components/MagneticButton";
+import Button from "@/components/Button";
 
 const Content = () => (
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 w-full h-full pointer-events-none">
@@ -11,8 +11,8 @@ const Content = () => (
             Value Through <br /> Architecture
         </h2>
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-12 pointer-events-auto">
-            <MagneticButton variant="solid">Explore Properties</MagneticButton>
-            <MagneticButton variant="solid">Wealth Plan</MagneticButton>
+            <Button variant="solid">Explore Properties</Button>
+            <Button variant="solid">Wealth Plan</Button>
         </div>
     </div>
 );

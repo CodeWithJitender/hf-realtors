@@ -58,18 +58,21 @@ const tabs = [
 
 export default function AboutUsSticky() {
     const containerRef = useRef(null);
+    const rightColRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const [direction, setDirection] = useState(0);
 
+    // Track scroll within the right column for the glowing dot
     const { scrollYProgress } = useScroll({
-        target: containerRef,
+        target: rightColRef,
         offset: ["start start", "end end"]
     });
+    const dotTop = useTransform(scrollYProgress, [0, 1], ["5%", "95%"]);
 
     const handleTabClick = (index) => {
-        if (containerRef.current) {
-            const containerHeight = containerRef.current.offsetHeight;
-            const scrollTarget = containerRef.current.offsetTop + (containerHeight * (index * 0.25));
+        if (rightColRef.current) {
+            const tabHeight = rightColRef.current.offsetHeight / tabs.length;
+            const scrollTarget = rightColRef.current.offsetTop + (tabHeight * index);
             window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
         }
     };
@@ -82,11 +85,12 @@ export default function AboutUsSticky() {
     };
 
     return (
-        <section ref={containerRef} className="relative w-full h-auto md:h-[400vh] bg-[#163548]">
-            <div className="relative md:absolute md:inset-0 flex flex-col md:flex-row w-full md:h-full text-[#EDEDED]">
+        // Standard sticky sidebar pattern: no fixed height on section, flex row
+        <section ref={containerRef} className="relative w-full bg-[#163548] text-[#EDEDED]">
+            <div className="flex flex-col md:flex-row w-full">
 
-                {/* LEFT SIDE: Fixed Content, Tabs, and Dynamic Image */}
-                <div className="w-full md:w-1/2 h-auto md:h-screen md:sticky md:top-0 flex flex-col justify-center p-6 md:p-12 lg:p-24 lg:pr-12 pt-24 md:pt-0 z-10">
+                {/* ─── LEFT: Sticky panel ─── */}
+                <div className="w-full md:w-1/2 md:sticky md:top-0 md:h-screen flex flex-col justify-center p-6 md:p-12 lg:p-24 lg:pr-12 pt-24 md:pt-0 z-10">
 
                     <span className="font-sans font-medium text-[#FFED7E] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-6 block">ABOUT US</span>
 
@@ -117,7 +121,7 @@ export default function AboutUsSticky() {
                         })}
                     </div>
 
-                    {/* Image Reveal (Sliding curtain mask effect) - Hidden on mobile if desired, or just smaller */}
+                    {/* Image (slides on tab change) */}
                     <div className="relative w-full aspect-[2/1] md:aspect-[16/9] lg:aspect-[21/9] rounded-3xl md:rounded-[4rem] overflow-hidden shadow-2xl bg-[#163548] mb-8 md:mb-0">
                         <AnimatePresence initial={false} custom={direction} mode="popLayout">
                             <motion.div
@@ -147,17 +151,14 @@ export default function AboutUsSticky() {
                     </div>
                 </div>
 
-                {/* RIGHT SIDE: Dynamic Information Scrolling */}
-                <div className="w-full md:w-1/2 flex flex-col z-20 mt-12 md:mt-0 relative">
+                {/* ─── RIGHT: Scrolling tab content ─── */}
+                <div ref={rightColRef} className="w-full md:w-1/2 flex flex-col z-20 mt-12 md:mt-0 relative">
 
-                    {/* The Vertical Rail and Glowing Dot */}
+                    {/* Vertical Rail + Glowing Dot */}
                     <div className="absolute left-4 lg:left-12 top-0 bottom-0 w-[1px] bg-[#CCA14D]/30 z-30 hidden md:block">
                         <motion.div
                             className="absolute w-3 h-3 rounded-full bg-[#CCA14D] shadow-[0_0_15px_#CCA14D]"
-                            style={{
-                                left: "-5px",
-                                top: useTransform(scrollYProgress, [0, 1], ["5%", "95%"])
-                            }}
+                            style={{ left: "-5px", top: dotTop }}
                         />
                     </div>
 

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import RevealText from "@/components/RevealText";
-import MagneticButton from "@/components/MagneticButton";
+import Button from "@/components/Button";
 
 export default function Hero() {
     const sectionRef = useRef(null);
@@ -73,23 +73,18 @@ export default function Hero() {
                         </RevealText>
 
                         <RevealText delay={0.8}>
-                            <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4">
+                            <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4 relative z-50">
 
-                                {/* Primary Button - Solid White */}
-                                <MagneticButton variant="white-solid" className="group gap-3">
-                                    Begin Journey
+                                {/* Primary Button - Solid */}
+                                <Button variant="solid" className="group gap-3">
+                                    Book Consultation
                                     <ArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
-                                </MagneticButton>
+                                </Button>
 
-                                {/* Secondary Button - Outline White */}
-                                <MagneticButton variant="white-outline">
-                                    Properties
-                                </MagneticButton>
-
-                                {/* Tertiary Button - Outline White */}
-                                <MagneticButton variant="white-outline">
-                                    Glocal Design
-                                </MagneticButton>
+                                {/* Secondary Button - Outlined */}
+                                <Button variant="outlined">
+                                    Discover Partner Design
+                                </Button>
 
                             </div>
                         </RevealText>

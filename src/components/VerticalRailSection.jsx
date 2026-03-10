@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
-import MagneticButton from "@/components/MagneticButton";
+import Button from "@/components/Button";
 
 const milestones = [
     {
@@ -82,9 +82,9 @@ export default function VerticalRailSection() {
                                                 {milestone.text}
                                             </p>
                                             <div className={`flex w-full ${isLeft ? 'lg:justify-end' : 'justify-start'}`}>
-                                                <MagneticButton variant="solid">
+                                                <Button variant="solid">
                                                     Explore
-                                                </MagneticButton>
+                                                </Button>
                                             </div>
                                         </div>
                                     </motion.div>

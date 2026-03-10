@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
-import MagneticButton from "@/components/MagneticButton";
+import Button from "@/components/Button";
 
 const services = [
     {
@@ -160,9 +160,9 @@ export default function VerticalApproachSplit() {
                                     <p className="font-sans text-[#EDEDED]/90 text-base sm:text-justify lg:text-lg max-w-md leading-relaxed mb-8">
                                         {service.desc}
                                     </p>
-                                    <MagneticButton variant="outline">
+                                    <Button variant="outlined">
                                         Learn More
-                                    </MagneticButton>
+                                    </Button>
                                 </div>
 
                             </motion.div>
