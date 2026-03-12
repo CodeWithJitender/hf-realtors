@@ -1,11 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "How It Works", href: "#how-it-works" },
-    { name: "Properties", href: "#properties" },
-    { name: "FAQs", href: "#faqs" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Services", href: "/services" },
+    { name: "Properties", href: "/#properties" },
+    { name: "Contact Us", href: "/contact-us" },
 ];
 
 export default function NavigationMenu({ isOpen, setIsOpen }) {

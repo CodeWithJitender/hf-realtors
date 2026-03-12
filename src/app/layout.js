@@ -2,6 +2,8 @@ import { Poppins, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Preloader from "@/components/Preloader";
 import { PreloaderProvider } from "@/context/PreloaderContext";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -26,7 +28,9 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.variable} ${playfair.variable} font-sans antialiased bg-[#163548] text-[#EDEDED]`}>
         <PreloaderProvider>
           <Preloader />
+          <Header />
           {children}
+          <Footer />
         </PreloaderProvider>
       </body>
     </html>

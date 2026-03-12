@@ -39,8 +39,8 @@ export default function VerticalRailSection() {
     const glowTop = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
     return (
-        <section ref={containerRef} className="relative w-full bg-[#163548] py-32 sm:py-48 overflow-hidden text-[#EDEDED]">
-            <div className="container mx-auto px-6 lg:px-12 xl:px-24 relative">
+        <section ref={containerRef} className="relative w-full bg-[#163548] py-fluid-section text-[#EDEDED]">
+            <div className="container mx-auto px-fluid-container relative">
 
                 {/* Central fixed vertical line */}
                 <div className="absolute left-[24px] lg:left-1/2 top-0 bottom-0 w-[1px] bg-white/10 lg:-translate-x-1/2 z-0">

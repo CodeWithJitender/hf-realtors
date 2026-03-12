@@ -1,27 +1,52 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import NavigationMenu from "./NavigationMenu";
 
+// Pages that start with a light background — header must use dark text at top
+const LIGHT_BG_PAGES = ["/contact-us"];
+
 export default function Header() {
+    const pathname = usePathname();
+    const isLightPage = LIGHT_BG_PAGES.includes(pathname);
+
     const [scrolled, setScrolled] = useState(false);
+    const [hidden, setHidden] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    const { scrollY } = useScroll();
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        const previous = scrollY.getPrevious();
+        
+        // Background coloring trigger
+        setScrolled(latest > 50);
+
+        // Hide/Show logic based on scroll direction
+        if (latest > previous && latest > 150) {
+            setHidden(true); // Scrolling down - hide
+        } else {
+            setHidden(false); // Scrolling up - reveal
+        }
+    });
 
     return (
-        <header
-            className={`fixed top-0 w-full z-50 transition-all duration-500 border-b ${scrolled
-                ? "bg-[#EDEDED] text-[#163548] border-[#163548]/10 py-4 shadow-sm"
-                : "bg-transparent text-[#EDEDED] border-transparent py-6"
+        <motion.header
+            variants={{
+                visible: { y: 0 },
+                hidden: { y: "-100%" }
+            }}
+            animate={hidden ? "hidden" : "visible"}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className={`fixed top-0 w-full z-50 transition-colors duration-500 border-b ${
+                scrolled
+                    ? "bg-[#EDEDED] text-[#163548] border-[#163548]/10 py-4 shadow-sm"
+                    : isLightPage
+                        ? "bg-transparent text-[#CCA14D] border-transparent py-6"
+                        : "bg-transparent text-[#EDEDED] border-transparent py-6"
                 }`}
         >
             <div className="grid grid-cols-3 items-center px-6 md:px-12 w-full">
@@ -33,9 +58,9 @@ export default function Header() {
                         className="flex items-center gap-3 group hover:opacity-70 transition-opacity"
                     >
                         <div className="flex flex-col gap-[3px]">
-                            <span className={`w-5 h-[2px] transition-colors ${scrolled ? 'bg-[#163548]' : 'bg-[#EDEDED]'}`}></span>
-                            <span className={`w-5 h-[2px] transition-colors ${scrolled ? 'bg-[#163548]' : 'bg-[#EDEDED]'}`}></span>
-                            <span className={`w-3 h-[2px] transition-colors ${scrolled ? 'bg-[#163548]' : 'bg-[#EDEDED]'}`}></span>
+                            <span className={`w-5 h-[2px] transition-colors ${scrolled ? 'bg-[#163548]' : isLightPage ? 'bg-[#CCA14D]' : 'bg-[#EDEDED]'}`}></span>
+                            <span className={`w-5 h-[2px] transition-colors ${scrolled ? 'bg-[#163548]' : isLightPage ? 'bg-[#CCA14D]' : 'bg-[#EDEDED]'}`}></span>
+                            <span className={`w-3 h-[2px] transition-colors ${scrolled ? 'bg-[#163548]' : isLightPage ? 'bg-[#CCA14D]' : 'bg-[#EDEDED]'}`}></span>
                         </div>
                         <span className="hidden md:block text-xs font-semibold tracking-widest uppercase mt-0.5">
                             Menu
@@ -55,7 +80,9 @@ export default function Header() {
                                 src={scrolled ? "/images/logo-black.png" : "/images/logo.png"}
                                 alt="HF Realtors Logo"
                                 fill
-                                className={`object-contain transition-all duration-500 ${!scrolled ? "brightness-0 invert" : ""}`}
+                                className={`object-contain transition-all duration-500 ${
+                                    scrolled ? "" : isLightPage ? "" : "brightness-0 invert"
+                                }`}
                                 priority
                             />
                         </motion.div>
@@ -65,7 +92,7 @@ export default function Header() {
                 {/* Right: Contact Us */}
                 <div className="flex justify-end hidden sm:flex">
                     <a
-                        href="#contact"
+                        href="/contact-us"
                         className="text-xs font-semibold tracking-widest uppercase hover:opacity-70 transition-opacity mt-0.5"
                     >
                         Contact Us
@@ -75,6 +102,6 @@ export default function Header() {
             </div>
 
             <NavigationMenu isOpen={menuOpen} setIsOpen={setMenuOpen} />
-        </header>
+        </motion.header>
     );
 }

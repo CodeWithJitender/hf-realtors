@@ -9,7 +9,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="w-full bg-[#0d212d] text-[#EDEDED] pt-24 pb-8 px-6 md:px-12 flex flex-col items-center justify-center relative z-20 overflow-hidden">
+        <footer className="w-full bg-[#0d212d] text-[#EDEDED] py-fluid-section px-fluid-container flex flex-col items-center justify-center relative z-20">
 
             {/* Top Section: Massive Hook */}
             <div className="text-center mb-16 relative">
@@ -59,11 +59,11 @@ export default function Footer() {
                 <nav className="flex items-center gap-4 text-center md:text-right">
                     <Link href="/" className="hover:text-[#CCA14D] transition-colors">Home</Link>
                     <span className="opacity-30">-</span>
-                    <Link href="/about" className="hover:text-[#CCA14D] transition-colors">About</Link>
+                    <Link href="/about-us" className="hover:text-[#CCA14D] transition-colors">About</Link>
                     <span className="opacity-30">-</span>
-                    <Link href="/work" className="hover:text-[#CCA14D] transition-colors">Work</Link>
+                    <Link href="/services" className="hover:text-[#CCA14D] transition-colors">Services</Link>
                     <span className="opacity-30">-</span>
-                    <Link href="/contact" className="hover:text-[#CCA14D] transition-colors">Contact</Link>
+                    <Link href="/contact-us" className="hover:text-[#CCA14D] transition-colors">Contact</Link>
                 </nav>
 
             </div>

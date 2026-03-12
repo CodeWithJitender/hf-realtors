@@ -97,7 +97,7 @@ function ServiceCard({ service }) {
 export default function WhatWeOffer() {
 
     return (
-        <section id="services" className="relative bg-[#1A1A1A] text-[#F9F8F6] font-sans z-10 py-32 min-h-screen">
+        <section id="services" className="relative bg-[#1A1A1A] text-[#F9F8F6] font-sans z-10 py-fluid-section min-h-screen">
 
             {/* PART 2: THE IMMERSIVE CARDS */}
             <div className="relative w-full z-20 flex flex-col items-center">

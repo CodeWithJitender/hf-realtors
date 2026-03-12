@@ -86,6 +86,15 @@ export default function Button({
                 textColor: isHovered ? "#163548" : "#FFED7E", // Light gold -> Deep Navy
             };
         }
+        if (variant === "white-outlined") {
+            return {
+                bgClass: "bg-transparent",
+                borderClass: "bg-white", // Solid White Border
+                paddingClass: "p-[1px]", // Creates 1px border like perfectly drawn outline
+                fillColor: "#ffffff", // Pure white goo
+                textColor: isHovered ? "#000000" : "#ffffff", // White -> Black text
+            };
+        }
         
         // Default: solid
         return {
@@ -130,7 +139,7 @@ export default function Button({
             {/* Static Gold Gradient Border with Inner Background */}
             <div 
                 className={`absolute inset-0 rounded-[4rem] z-[-1] pointer-events-none ${styles.borderClass} ${styles.paddingClass}`}
-                style={variant === "outlined" ? {
+                style={(variant === "outlined" || variant === "white-outlined") ? {
                     mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
                     WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
                     maskComposite: "exclude",
@@ -168,7 +177,7 @@ export default function Button({
 
             {/* Actual Content */}
             <span
-                className="relative z-10 px-10 py-4 w-full h-full flex items-center justify-center font-sans font-medium text-[13px] md:text-sm tracking-widest pointer-events-none whitespace-nowrap transition-colors duration-500 uppercase"
+                className="relative z-10 w-full h-full flex items-center justify-center font-sans font-medium text-[13px] md:text-sm tracking-widest pointer-events-none whitespace-nowrap transition-colors duration-500 uppercase px-[clamp(1.5rem,3vw,2.5rem)] py-[clamp(0.75rem,1.5vh,1.25rem)]"
                 style={{ color: styles.textColor, fontFamily: 'var(--font-poppins), sans-serif', fontWeight: 500 }}
             >
                 {children}

@@ -37,20 +37,23 @@ export default function WhyHFRealtors() {
     const bodyWords = bodyText.split(" ");
 
     return (
-        <section ref={containerRef} className="py-32 w-full min-h-screen flex items-center justify-center relative overflow-hidden bg-[#163548] px-4 md:px-12 lg:px-24">
+        <section ref={containerRef} className="py-fluid-section w-full min-h-screen flex items-center justify-center relative bg-[#163548] px-fluid-container">
 
-            {/* Frame Background: Full-Bleed Architectural Interior */}
-            <motion.div
-                style={{ y: backgroundY }}
-                className="absolute inset-0 w-full h-[120%] z-0"
-            >
-                <Image
-                    src="/images/interior.png" // Premium interior render
-                    alt="High-end exclusive interior design"
-                    fill
-                    className="object-cover opacity-60"
-                />
-            </motion.div>
+            {/* Isolated clipping layer for the background to accommodate the -top offset */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                {/* Frame Background: Full-Bleed Architectural Interior */}
+                <motion.div
+                    style={{ y: backgroundY }}
+                    className="absolute inset-0 -top-[10%] w-full h-[120%]"
+                >
+                    <Image
+                        src="/images/interior.png" // Premium interior render
+                        alt="High-end exclusive interior design"
+                        fill
+                        className="object-cover opacity-60"
+                    />
+                </motion.div>
+            </div>
 
             {/* Dark Overlay to Sink the Background gently */}
             <div className="absolute inset-0 bg-[#163548]/80 z-0 mix-blend-overlay pointer-events-none" />
@@ -61,7 +64,7 @@ export default function WhyHFRealtors() {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ type: "spring", stiffness: 80, damping: 20 }}
-                className="relative w-full max-w-[1400px] bg-[#224d68]/40 backdrop-blur-md px-6 py-20 md:p-24 lg:p-32 flex flex-col items-center text-center shadow-2xl z-10 border border-[#FFED7E]/5 rounded-[3rem]"
+                className="relative w-full max-w-[1400px] bg-[#224d68]/40 backdrop-blur-md px-fluid-container py-fluid-section flex flex-col items-center text-center shadow-2xl z-10 border border-[#FFED7E]/5 rounded-[3rem]"
             >
 
                 {/* 1. Monospace / Wide-Tracked Eyebrow */}

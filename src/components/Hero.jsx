@@ -18,13 +18,15 @@ export default function Hero() {
     const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
     return (
-        <section ref={sectionRef} className="sticky top-0 w-full h-screen overflow-hidden bg-[#163548] font-sans -z-10">
+        <section ref={sectionRef} className="relative top-0 w-full min-h-screen bg-[#163548] font-sans -z-10">
 
-            {/* Full-Bleed Parallax Background Image */}
-            <motion.div
-                style={{ y: backgroundY }}
-                className="absolute inset-0 -top-[10%] h-[120%] w-full z-0"
-            >
+            {/* Background Parallax Wrapper with isolated clipping */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                {/* Full-Bleed Parallax Background Image */}
+                <motion.div
+                    style={{ y: backgroundY }}
+                    className="absolute inset-0 -top-[10%] h-[120%] w-full"
+                >
                 <Image
                     src="/images/hero.png"
                     alt="Premium architectural home exterior"
@@ -32,7 +34,8 @@ export default function Hero() {
                     className="object-cover"
                     priority
                 />
-            </motion.div>
+                </motion.div>
+            </div>
 
             {/* Subtle dark overlay for contrast */}
             <div className="absolute inset-0 bg-black/40 z-0 mix-blend-multiply"></div>
@@ -41,7 +44,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-0"></div>
 
             {/* Bottom-Anchored Cinematic Content */}
-            <div className="absolute bottom-0 left-0 right-0 w-full px-6 sm:px-12 lg:px-24 pb-12 lg:pb-20 z-10 max-w-[2000px] mx-auto">
+            <div className="absolute bottom-0 left-0 right-0 w-full px-fluid-container pb-fluid-section z-10 mx-auto">
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end">
 
@@ -57,7 +60,7 @@ export default function Hero() {
                         </RevealText>
 
                         <RevealText delay={0.4}>
-                            <h1 className="text-[3.5rem] sm:text-7xl md:text-[6rem] lg:text-[7rem] xl:text-[8.5rem] tracking-tight text-[#EDEDED] leading-[1] lg:leading-[0.9] pb-4 drop-shadow-xl">
+                            <h1 className="text-fluid-h1 tracking-tight text-[#EDEDED] leading-[1] lg:leading-[0.9] pb-4 drop-shadow-xl">
                                 <span className="block font-sans font-bold">Smart Decisions.</span>
                                 <span className="block font-serif font-medium italic -mt-2">Wealth Creation.</span>
                             </h1>
@@ -67,7 +70,7 @@ export default function Hero() {
                     {/* Right Column: Context & Actions */}
                     <div className="lg:col-span-4 xl:col-span-5 flex flex-col justify-end lg:pb-6">
                         <RevealText delay={0.6} className="mb-10">
-                            <p className="text-sm md:text-base text-[#EDEDED] font-normal leading-relaxed max-w-md xl:max-w-lg">
+                            <p className="text-fluid-body text-[#EDEDED] font-normal leading-relaxed max-w-md xl:max-w-lg">
                                 An immersive approach to acquiring high yield assets and meticulously engineered aesthetic value in the modern urban landscape.
                             </p>
                         </RevealText>

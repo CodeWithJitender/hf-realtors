@@ -45,7 +45,7 @@ export default function KeyholeGateway() {
                         <Image src="/images/management_dashboard.png" alt="Why HF Realtors Reality" fill className="object-cover opacity-90" priority />
                         <div className="absolute inset-0 bg-[#163548]/90 mix-blend-multiply" />
 
-                        <div className="relative z-10 flex flex-col items-center justify-center h-full max-w-4xl mx-auto px-6 text-center">
+                        <div className="relative z-10 flex flex-col items-center justify-center h-full max-w-4xl mx-auto px-fluid-container text-center">
                             <h2 className="text-[2.5rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] font-sans font-bold uppercase tracking-tight text-[#CCA14D] leading-[1] mb-6 drop-shadow-lg">
                                 Why HF Realtors
                             </h2>

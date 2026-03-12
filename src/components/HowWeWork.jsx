@@ -28,7 +28,7 @@ const journeySteps = [
 
 export default function HowWeWork() {
     return (
-        <section id="how-it-works" className="relative bg-[#163548] text-[#EDEDED] py-16 md:py-32 min-h-screen font-sans border-t border-[#EDEDED]/5">
+        <section id="how-it-works" className="relative bg-[#163548] text-[#EDEDED] py-fluid-section min-h-screen font-sans border-t border-[#EDEDED]/5">
             <div className="max-w-[1920px] mx-auto w-full lg:flex lg:flex-row relative">
 
                 {/* Mobile/Tablet Header (Only visible < lg) */}
@@ -73,7 +73,7 @@ export default function HowWeWork() {
                 </div>
 
                 {/* Right Column: Scrolling Timeline */}
-                <div className="w-full lg:w-[55%] relative px-6 md:px-16 lg:px-24 py-16 lg:pt-[50vh] lg:pb-[50vh] bg-[#163548]">
+                <div className="w-full lg:w-[55%] relative px-fluid-container py-16 lg:pt-[50vh] lg:pb-[50vh] bg-[#163548]">
 
                     {/* Continuous subtle background grid */}
                     <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,black,rgba(0,0,0,0))] opacity-[0.05] pointer-events-none" />

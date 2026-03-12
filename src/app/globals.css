@@ -33,10 +33,26 @@
   --font-sans: var(--font-poppins), sans-serif;
   --font-serif: var(--font-futura), "Trebuchet MS", Arial, sans-serif;
 
+  /* Fluid Typography Scale */
+  --text-fluid-h1: clamp(2.5rem, 8vw, 5.5rem);
+  --text-fluid-h2: clamp(2rem, 5vw, 3.5rem);
+  --text-fluid-h3: clamp(1.25rem, 3vw, 2rem);
+  --text-fluid-body: clamp(1rem, 1.5vw, 1.25rem);
+
   /* Shape / Radius Tokens */
   --radius-theme-card: 4rem;
   /* Updated to 4rem for Fame Estate architectural feel */
   --radius-theme-pill: 9999px;
+}
+
+@utility py-fluid-section {
+  padding-top: clamp(4rem, 10vh, 8rem);
+  padding-bottom: clamp(4rem, 10vh, 8rem);
+}
+
+@utility px-fluid-container {
+  padding-left: clamp(1.5rem, 6vw, 5rem);
+  padding-right: clamp(1.5rem, 6vw, 5rem);
 }
 
 @utility gold-gradient {

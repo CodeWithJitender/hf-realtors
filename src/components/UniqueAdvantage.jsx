@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import RevealText from "@/components/RevealText";
 
 export default function UniqueAdvantage() {
     // The massive text broken down for staggered clip reveals
@@ -26,21 +25,26 @@ export default function UniqueAdvantage() {
     };
 
     return (
-        <section className="relative w-full min-h-screen py-32 md:py-48 px-6 flex flex-col items-center justify-center overflow-hidden bg-[#163548]">
+        <section className="relative w-full min-h-screen py-fluid-section px-fluid-container flex flex-col items-center justify-center bg-[#163548]">
 
             {/* The Zentry-style Eyebrow Label */}
             <div className="text-center mb-16 md:mb-24">
-                <RevealText delay={0.1}>
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }}
+                >
                     <p className="text-[10px] md:text-xs font-semibold tracking-[0.3em] text-[#FFED7E]/70 uppercase">
                         Who We Are
                     </p>
-                </RevealText>
+                </motion.div>
             </div>
 
             {/* Massive Clip-Reveal Typography Block */}
             <div className="flex flex-col items-center justify-center w-full">
                 {textLines.map((line, index) => (
-                    <div key={index} className="flex items-center gap-4 md:gap-8 overflow-hidden pt-2 pb-1">
+                    <div key={index} className="flex items-center gap-4 md:gap-8 pt-2 pb-1">
 
                         {/* Decorative Icon Before Specific Lines */}
                         {line.hasIcon && (
@@ -50,13 +54,34 @@ export default function UniqueAdvantage() {
                             </motion.div>
                         )}
 
-                        <RevealText delay={0.1 * index} as="h2" className="text-[14vw] md:text-[11vw] leading-[0.8] font-serif font-medium tracking-tight text-[#EDEDED] text-center flex-shrink-0 drop-shadow-md">
-                            {line.text}
-                        </RevealText>
+                        <h2 className="text-[14vw] md:text-[11vw] leading-[0.8] font-serif font-medium tracking-tight text-[#EDEDED] text-center flex-shrink-0 drop-shadow-md flex flex-wrap justify-center overflow-hidden">
+                            {line.text.split(" ").map((word, wordIndex) => (
+                                <motion.span
+                                    key={wordIndex}
+                                    className="inline-block mr-[2vw]" // spacing between words
+                                    initial={{ opacity: 0, y: "100%" }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: 0.1 * index + wordIndex * 0.1, // stagger by line then by word
+                                        ease: [0.16, 1, 0.3, 1]
+                                    }}
+                                >
+                                    {word}
+                                </motion.span>
+                            ))}
+                        </h2>
 
                         {/* Decorative Icon After Specific Lines (Alternate) */}
                         {!line.hasIcon && index % 2 !== 0 && (
-                            <motion.div variants={iconVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex items-center justify-center">
+                            <motion.div 
+                                variants={iconVariants} 
+                                initial="hidden" 
+                                whileInView="visible" 
+                                viewport={{ once: true, margin: "-50px" }} 
+                                className="flex items-center justify-center"
+                            >
                                 <div className="w-3 h-3 md:w-6 md:h-6 lg:w-10 lg:h-10 bg-[#CCA14D]/80 rounded-full" />
                             </motion.div>
                         )}
@@ -67,11 +92,16 @@ export default function UniqueAdvantage() {
 
             {/* Brief descriptive text below the massive block */}
             <div className="mt-20 max-w-lg text-center mx-auto">
-                <RevealText delay={0.4}>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 1, delay: 0.4, ease: [0.2, 0.65, 0.3, 0.9] }}
+                >
                     <p className="text-[#EDEDED] font-sans text-sm md:text-base leading-relaxed">
                         Partner with the only real estate firm providing complimentary premium architectural redesign. We transform spaces before you even hold the keys.
                     </p>
-                </RevealText>
+                </motion.div>
             </div>
 
         </section>
