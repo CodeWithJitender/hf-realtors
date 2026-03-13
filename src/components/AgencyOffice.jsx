@@ -156,7 +156,7 @@ export default function AgencyOffice() {
                >
                   <h2 
                     className="font-sans font-extrabold text-fluid-h1 tracking-tighter text-white leading-[1.05] uppercase mb-6"
-                    style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
+                    style={{ fontFamily: 'var(--font-futura), Futura, sans-serif' }}
                   >
                     {loc.title.split('\n').map((line, i) => (
                       <span key={i} className="block">{line}</span>

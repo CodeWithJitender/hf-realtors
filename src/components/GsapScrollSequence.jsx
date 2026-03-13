@@ -76,7 +76,7 @@ export default function GsapScrollSequence() {
 
   return (
     // -mt-[100vh] combined with relative z-50 forces this container to physically overlay the previous 100vh section (the Hero section).
-    <div ref={triggerRef} className="w-full relative -mt-[100vh] z-50">
+    <div ref={triggerRef} className="w-full relative -mt-[100vh] z-50 pointer-events-none">
       <section ref={containerRef} className="relative w-full h-screen bg-transparent overflow-hidden flex items-center justify-center pointer-events-none">
       
       {/* Gallery Images Container (Overlaying the Hero section transparently until scaled) */}

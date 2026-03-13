@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import SquareImageExpand from "@/components/SquareImageExpand";
 import SplitReveal from "@/components/SplitReveal";
 import SequentialRevealCategories from "@/components/SequentialRevealCategories";
 import UniqueAdvantage from "@/components/UniqueAdvantage";
@@ -11,14 +10,12 @@ export default function Home() {
   return (
     <main className="min-h-screen relative selection:bg-slate-900 selection:text-white">
       <Hero />
-      <SquareImageExpand />
       <SplitReveal />
       <SequentialRevealCategories />
       <UniqueAdvantage />
-      <VerticalRailSection />
+      {/* <VerticalRailSection /> */}
       <AgencyOffice />
-      <FinalTextSection />
+      {/* <FinalTextSection /> */}
     </main>
   );
 }
-

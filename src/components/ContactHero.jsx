@@ -135,7 +135,7 @@ export default function ContactHero() {
                 <polyline points="20 6 9 17 4 12"/>
               </svg>
             </div>
-            <h3 className="font-semibold text-xl mb-2 text-[#EDEDED]" style={{ fontFamily: "var(--font-futura), sans-serif" }}>
+            <h3 className="font-semibold text-xl mb-2 text-[#EDEDED]" style={{ fontFamily: "var(--font-futura), Futura, sans-serif" }}>
               Message Received
             </h3>
             <p className="text-[#EDEDED]/40 text-sm">We'll be in touch with you shortly.</p>

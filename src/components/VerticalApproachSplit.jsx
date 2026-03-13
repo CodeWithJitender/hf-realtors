@@ -56,7 +56,7 @@ export default function VerticalApproachSplit() {
                         About Us
                     </span>
 
-                    <h2 className="text-[2.5rem] sm:text-[3rem] lg:text-[4rem] tracking-tight leading-[1.05] text-[#EDEDED] mb-6" style={{ fontFamily: 'Futura, sans-serif' }}>
+                    <h2 className="text-[2.5rem] sm:text-[3rem] lg:text-[4rem] tracking-tight leading-[1.05] text-[#EDEDED] mb-6" style={{ fontFamily: 'sans-serif' }}>
                         Transform A Space for Work, <br className="hidden lg:block" /> Into A Space for Life
                     </h2>
 
@@ -83,7 +83,7 @@ export default function VerticalApproachSplit() {
                                     </div>
                                     <span
                                         className={`font-sans text-base lg:text-lg transition-colors duration-500 cursor-pointer ${isActive ? 'text-[#CCA14D]' : 'text-[#EDEDED]/50 hover:text-[#EDEDED]/80'}`}
-                                        style={{ fontFamily: 'Futura, sans-serif' }}
+                                        style={{ fontFamily: 'sans-serif' }}
                                         onClick={() => setActiveIndex(i)}
                                     >
                                         {service.navLabel}
@@ -153,7 +153,7 @@ export default function VerticalApproachSplit() {
                                 <div className="pl-6 border-l-2 border-[#CCA14D]/30 py-2">
                                     <h3
                                         className="text-2xl sm:text-3xl lg:text-4xl text-[#CCA14D] mb-4 tracking-tight"
-                                        style={{ fontFamily: 'Futura, sans-serif' }}
+                                        style={{ fontFamily: 'sans-serif' }}
                                     >
                                         {service.title}
                                     </h3>

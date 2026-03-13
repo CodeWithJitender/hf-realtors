@@ -69,7 +69,7 @@ export default function ScrollNarrative() {
 
   /* shared body paragraph style */
   const body = {
-    fontFamily: "var(--font-poppins), sans-serif",
+    fontFamily: "var(--font-futura), Futura, sans-serif",
     fontSize: "clamp(0.95rem, 1.55vw, 1.18rem)",
     fontWeight: 400,
     color: "rgba(237,237,237,0.88)",
@@ -150,7 +150,7 @@ export default function ScrollNarrative() {
 
           {/* Eyebrow label */}
           <p style={{
-            fontFamily: "var(--font-poppins), sans-serif",
+            fontFamily: "var(--font-futura), Futura, sans-serif",
             fontSize: "clamp(0.55rem, 0.8vw, 0.68rem)",
             letterSpacing: "0.45em",
             textTransform: "uppercase",
@@ -165,7 +165,7 @@ export default function ScrollNarrative() {
           {/* ── Stage 1: Main Heading ── */}
           <div ref={headingRef} style={{ willChange: "transform, opacity", textAlign: "center" }}>
             <h2 style={{
-              fontFamily: "var(--font-poppins), sans-serif",
+              fontFamily: "var(--font-futura), Futura, sans-serif",
               fontSize: "clamp(2.4rem, 5.8vw, 5.2rem)",
               fontWeight: 700,
               color: "#EDEDED",

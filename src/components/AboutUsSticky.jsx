@@ -94,8 +94,8 @@ export default function AboutUsSticky() {
 
                     <span className="font-sans font-medium text-[#FFED7E] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-6 block">ABOUT US</span>
 
-                    <h2 className="text-[1.85rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] tracking-tight leading-[1.1] md:leading-[1.05] text-[#EDEDED] mb-6 md:mb-10" style={{ fontFamily: 'Futura, sans-serif' }}>
-                        Transform A Space for Work, <br className="hidden xl:block" /> Into A Space for Life
+                    <h2 className="text-[1.85rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] tracking-tight leading-[1.1] md:leading-[1.05] text-[#EDEDED] mb-6 md:mb-10" style={{ fontFamily: 'sans-serif' }}>
+                        Transform A Space for Work, Into A Space for Life
                     </h2>
 
                     {/* Tab Navigation */}
@@ -207,7 +207,7 @@ export default function AboutUsSticky() {
 
                                 {tab.type === "team" && (
                                     <div className="flex flex-col items-center justify-center w-full h-full relative">
-                                        <h3 className="text-[7rem] xl:text-[12rem] tracking-tighter text-[#CCA14D] z-0 leading-none whitespace-nowrap opacity-20 absolute top-[-5rem] xl:top-[-8rem]" style={{ fontFamily: 'Futura, sans-serif' }}>{tab.title}</h3>
+                                        <h3 className="text-[7rem] xl:text-[12rem] tracking-tighter text-[#CCA14D] z-0 leading-none whitespace-nowrap opacity-20 absolute top-[-5rem] xl:top-[-8rem]" style={{ fontFamily: 'sans-serif' }}>{tab.title}</h3>
                                         <div className="relative w-full aspect-[4/3] xl:aspect-video z-10 mt-12 rounded-[2rem] overflow-hidden shadow-2xl border border-[#CCA14D]/20">
                                             <Image src={tab.teamImage} alt="Our Team" fill className="object-cover" />
                                             <div className="absolute inset-0 bg-gradient-to-t from-[#163548] via-transparent to-transparent opacity-60" />
@@ -231,7 +231,7 @@ export default function AboutUsSticky() {
                                                 </div>
                                             ))}
                                         </div>
-                                        <h3 className="text-[6rem] xl:text-[10rem] tracking-tighter text-[#CCA14D] leading-[0.8] text-center lg:text-left" style={{ fontFamily: 'Futura, sans-serif' }}>{tab.title}</h3>
+                                        <h3 className="text-[6rem] xl:text-[10rem] tracking-tighter text-[#CCA14D] leading-[0.8] text-center lg:text-left" style={{ fontFamily: 'sans-serif' }}>{tab.title}</h3>
                                     </div>
                                 )}
                             </motion.div>

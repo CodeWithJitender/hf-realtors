@@ -75,7 +75,7 @@ export default function VerticalRailSection() {
                                             <span className="font-sans font-bold text-[#CCA14D] uppercase tracking-widest text-sm mb-4 block">
                                                 {milestone.title}
                                             </span>
-                                            <h2 className={`font-sans font-bold text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] text-[#CCA14D] leading-[1.1] tracking-tight mb-6 ${isLeft ? 'lg:text-right' : 'text-left'}`} style={{ fontFamily: 'Futura, sans-serif' }}>
+                                            <h2 className={`font-sans font-bold text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] text-[#CCA14D] leading-[1.1] tracking-tight mb-6 ${isLeft ? 'lg:text-right' : 'text-left'}`} style={{ fontFamily: 'sans-serif' }}>
                                                 {milestone.heading}
                                             </h2>
                                             <p className={`font-sans font-regular text-lg text-[#EDEDED] mb-10 w-full ${isLeft ? 'lg:text-right' : 'text-left'}`}>

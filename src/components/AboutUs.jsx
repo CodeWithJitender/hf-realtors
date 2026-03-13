@@ -84,7 +84,7 @@ export default function AboutUs() {
                     {/* Right Column (Scrolling Massive Animated Statistics) */}
                     <div className="flex flex-col justify-start order-1 lg:order-2 pl-0 lg:pl-[10%] pt-8 lg:pt-[20vh] pb-8 lg:pb-[25vh] z-10">
                         <div className="mb-12">
-                            <h4 className="font-sans font-bold text-[#CCA14D] uppercase tracking-widest text-sm mb-6 lg:mb-16">Who We Are</h4>
+                            <h4 className="font-sans font-bold text-[#CCA14D] uppercase tracking-widest text-sm mb-6 lg:mb-16 ">Who We Are</h4>
                         </div>
 
                         <motion.div

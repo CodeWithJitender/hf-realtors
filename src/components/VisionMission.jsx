@@ -260,7 +260,7 @@ export default function VisionMission() {
       {/* ── HEADING ── */}
       <div ref={headingRef} className="text-center mb-[clamp(3.5rem,6vw,6rem)] relative z-10">
         <p style={{
-          fontFamily: "var(--font-poppins), sans-serif",
+          fontFamily: "var(--font-futura), Futura, sans-serif",
           fontSize: "clamp(0.65rem, 1vw, 0.78rem)",
           letterSpacing: "0.38em",
           textTransform: "uppercase",
@@ -271,7 +271,7 @@ export default function VisionMission() {
           HF Realtors
         </p>
         <h2 style={{
-          fontFamily: "var(--font-poppins), sans-serif",
+          fontFamily: "var(--font-futura), Futura, sans-serif",
           fontSize: "clamp(2.5rem, 6.5vw, 5.5rem)",
           fontWeight: 700,
           color: "#EDEDED",
@@ -324,7 +324,7 @@ export default function VisionMission() {
           }} />
 
           <p style={{
-            fontFamily: "var(--font-poppins), sans-serif",
+            fontFamily: "var(--font-futura), Futura, sans-serif",
             fontSize: "clamp(0.7rem, 1vw, 0.8rem)",
             letterSpacing: "0.3em",
             textTransform: "uppercase",
@@ -350,7 +350,7 @@ export default function VisionMission() {
           <div style={{ height: "1px", background: "rgba(204,161,77,0.15)", marginBottom: "clamp(1.5rem,3vw,2rem)" }} />
 
           <h3 style={{
-            fontFamily: "var(--font-poppins), sans-serif",
+            fontFamily: "var(--font-futura), Futura, sans-serif",
             fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
             fontWeight: 600,
             color: "#EDEDED",
@@ -359,7 +359,7 @@ export default function VisionMission() {
             Strategic Foresight
           </h3>
           <p style={{
-            fontFamily: "var(--font-poppins), sans-serif",
+            fontFamily: "var(--font-futura), Futura, sans-serif",
             fontSize: "clamp(0.9rem, 1.2vw, 1.05rem)",
             color: "rgba(237,237,237,0.65)",
             lineHeight: 1.78,
@@ -391,7 +391,7 @@ export default function VisionMission() {
           }} />
 
           <p style={{
-            fontFamily: "var(--font-poppins), sans-serif",
+            fontFamily: "var(--font-futura), Futura, sans-serif",
             fontSize: "clamp(0.7rem, 1vw, 0.8rem)",
             letterSpacing: "0.3em",
             textTransform: "uppercase",
@@ -417,7 +417,7 @@ export default function VisionMission() {
           <div style={{ height: "1px", background: "rgba(204,161,77,0.15)", marginBottom: "clamp(1.5rem,3vw,2rem)" }} />
 
           <h3 style={{
-            fontFamily: "var(--font-poppins), sans-serif",
+            fontFamily: "var(--font-futura), Futura, sans-serif",
             fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
             fontWeight: 600,
             color: "#EDEDED",
@@ -426,7 +426,7 @@ export default function VisionMission() {
             Guided Growth
           </h3>
           <p style={{
-            fontFamily: "var(--font-poppins), sans-serif",
+            fontFamily: "var(--font-futura), Futura, sans-serif",
             fontSize: "clamp(0.9rem, 1.2vw, 1.05rem)",
             color: "rgba(237,237,237,0.65)",
             lineHeight: 1.78,
