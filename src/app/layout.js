@@ -4,6 +4,7 @@ import Preloader from "@/components/Preloader";
 import { PreloaderProvider } from "@/context/PreloaderContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -27,10 +28,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${poppins.variable} ${playfair.variable} font-sans antialiased bg-[#163548] text-[#EDEDED]`}>
         <PreloaderProvider>
-          <Preloader />
-          <Header />
-          {children}
-          <Footer />
+          <SmoothScrollProvider>
+            <Preloader />
+            <Header />
+            {children}
+            <Footer />
+          </SmoothScrollProvider>
         </PreloaderProvider>
       </body>
     </html>

@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 export default function UniqueAdvantage() {
     // The massive text broken down for staggered clip reveals
     const textLines = [
-        { text: "REDEFINING", hasIcon: false },
-        { text: "REAL ESTATE", hasIcon: true },
-        { text: "THROUGH", hasIcon: false },
-        { text: "PURE DESIGN", hasIcon: true },
+        { text: "LET’S FIND", hasIcon: false },
+        { text: "THE RIGHT ", hasIcon: true },
+        { text: "PROPERTY ", hasIcon: false },
+        { text: "FOR YOU!", hasIcon: true },
     ];
 
     const iconVariants = {

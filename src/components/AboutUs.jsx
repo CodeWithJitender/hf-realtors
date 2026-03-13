@@ -110,7 +110,7 @@ export default function AboutUs() {
                                     08
                                 </span>
                                 <span className="font-sans text-xl text-[#CCA14D] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
-                                    Global Offices In Asia Pacific
+                                    Sq. ft. transacted
                                 </span>
                             </motion.div>
 
@@ -120,7 +120,7 @@ export default function AboutUs() {
                                     3M
                                 </span>
                                 <span className="font-sans text-xl text-[#CCA14D] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
-                                    SQM Project Completed
+                                    Closed Deals
                                 </span>
                             </motion.div>
                         </motion.div>

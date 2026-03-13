@@ -16,11 +16,11 @@ function framePath(index) {
 }
 
 export default function Hero() {
-    const wrapperRef  = useRef(null); // outer scroll container (400vh)
-    const canvasRef   = useRef(null);
-    const imagesRef   = useRef([]);   // preloaded Image objects
-    const frameRef    = useRef(0);    // current drawn frame index
-    const rafRef      = useRef(null); // requestAnimationFrame handle
+    const wrapperRef = useRef(null); // outer scroll container (400vh)
+    const canvasRef  = useRef(null);
+    const imagesRef  = useRef([]);   // preloaded Image objects
+    const frameRef   = useRef(0);    // current drawn frame index
+    const rafRef     = useRef(null); // requestAnimationFrame handle
 
     // Framer Motion scroll progress across the full 400vh wrapper
     const { scrollYProgress } = useScroll({
@@ -37,7 +37,7 @@ export default function Hero() {
 
         const ctx = canvas.getContext("2d");
 
-        // Always use CSS pixel dimensions for drawing (not physical canvas.width)
+        // Use CSS pixel dimensions for drawing (matches the scaled context)
         const W = canvas.offsetWidth;
         const H = canvas.offsetHeight;
 
@@ -66,10 +66,13 @@ export default function Hero() {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
-        // Set canvas internal pixels to CSS dimensions (no DPR scaling)
+        // Set canvas resolution to device pixel ratio for sharpness
         const resize = () => {
-            canvas.width  = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width  = canvas.offsetWidth  * dpr;
+            canvas.height = canvas.offsetHeight * dpr;
+            const ctx = canvas.getContext("2d");
+            ctx.scale(dpr, dpr);
             drawFrame(frameRef.current);
         };
 
@@ -92,7 +95,7 @@ export default function Hero() {
             window.removeEventListener("resize", resize);
             if (rafRef.current) cancelAnimationFrame(rafRef.current);
         };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     // ── Scroll → frame index ───────────────────────────────────────
@@ -115,7 +118,7 @@ export default function Hero() {
         <div ref={wrapperRef} style={{ height: "400vh" }} className="relative">
 
             {/* ── Sticky viewport — true 100vw × 100vh ── */}
-            <div className="sticky top-0 w-screen h-screen bg-[#0a1a28] font-sans overflow-hidden">
+            <div className="sticky top-0 w-screen h-screen bg-[#0a1a28] font-sans overflow-hidden" style={{ willChange: "transform" }}>
 
                 {/* Canvas — full-bleed, cover-fit frame display */}
                 <canvas
@@ -136,19 +139,10 @@ export default function Hero() {
 
                         {/* Left: Heading */}
                         <div className="lg:col-span-8 xl:col-span-7 flex flex-col justify-end">
-                            <RevealText delay={0.2} className="mb-6">
-                                <div className="flex items-center gap-4">
-                                    <div className="h-[1px] w-16 bg-[#EDEDED]/50" />
-                                    <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase text-[#EDEDED]">
-                                        Wealth-Tech Real Estate
-                                    </span>
-                                </div>
-                            </RevealText>
-
                             <RevealText delay={0.4}>
                                 <h1 className="text-fluid-h1 tracking-tight text-[#EDEDED] leading-[1] lg:leading-[0.9] pb-4 drop-shadow-xl">
-                                    <span className="block font-sans font-bold">Smart Decisions.</span>
-                                    <span className="block font-serif font-medium italic -mt-2">Wealth Creation.</span>
+                                    <span className="block font-sans font-bold">Real Estate.</span>
+                                    <span className="block font-serif font-medium italic -mt-2">Managed end-to-end.</span>
                                 </h1>
                             </RevealText>
                         </div>
@@ -157,7 +151,7 @@ export default function Hero() {
                         <div className="lg:col-span-4 xl:col-span-5 flex flex-col justify-end lg:pb-6">
                             <RevealText delay={0.6} className="mb-10">
                                 <p className="text-fluid-body text-[#EDEDED] font-normal leading-relaxed max-w-md xl:max-w-lg">
-                                    An immersive approach to acquiring high yield assets and meticulously engineered aesthetic value in the modern urban landscape.
+                                    From transactions to long-term portfolio and wealth management, we manage real estate with precision.
                                 </p>
                             </RevealText>
 

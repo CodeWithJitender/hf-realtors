@@ -50,10 +50,18 @@ export default function AboutUsHero() {
                 >
                     Building Trust in Every Transaction
                 </motion.h1>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isPreloaderDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    transition={{ duration: 1, delay: isPreloaderDone ? 1.7 : 0, ease: [0.2, 0.65, 0.3, 0.9] }}
+                    className="mt-6 max-w-2xl text-white/80 font-sans font-light text-sm sm:text-base md:text-lg leading-relaxed tracking-wide"
+                >
+                    HF Realtors was founded with a simple belief: real estate decisions deserve clarity, expertise, and a trusted partner who prioritizes long-term value over short-term transactions.
+                </motion.p>
             </div>
 
             {/* Bottom Elements */}
-            <div className="absolute bottom-8 left-0 w-full px-8 md:px-12 lg:px-16 flex justify-between items-end z-10">
+            <div className="absolute bottom-8 left-0 w-full px-8 md:px-12 lg:px-16 flex justify-between items-end z-10 hidden">
                 {/* Scroll Down */}
                 <motion.div
                     initial={{ opacity: 0 }}

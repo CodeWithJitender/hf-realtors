@@ -16,12 +16,12 @@ const CARDS = [
     body: "We focus on informed decision-making and long-term value, not just closing transactions. Every recommendation is backed by research tailored to your goals.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <circle cx="20" cy="20" r="19" stroke="url(#g1)" strokeWidth="1.4"/>
-        <path d="M12 26 L20 13 L28 26" stroke="#CCA14D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        <line x1="16" y1="26" x2="24" y2="26" stroke="#CCA14D" strokeWidth="1.4" strokeLinecap="round"/>
+        <circle cx="20" cy="20" r="19" stroke="url(#g1)" strokeWidth="1.4" />
+        <path d="M12 26 L20 13 L28 26" stroke="#CCA14D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <line x1="16" y1="26" x2="24" y2="26" stroke="#CCA14D" strokeWidth="1.4" strokeLinecap="round" />
         <defs>
           <linearGradient id="g1" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#CCA14D"/><stop offset="1" stopColor="#7A5C1E"/>
+            <stop stopColor="#CCA14D" /><stop offset="1" stopColor="#7A5C1E" />
           </linearGradient>
         </defs>
       </svg>
@@ -33,9 +33,9 @@ const CARDS = [
     body: "Through our network and deep market insights, we uncover opportunities well beyond standard listings — giving you an edge before the market moves.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <circle cx="20" cy="20" r="19" stroke="#CCA14D" strokeWidth="1.4" opacity="0.6"/>
-        <circle cx="17" cy="18" r="6" stroke="#CCA14D" strokeWidth="1.6" strokeLinecap="round"/>
-        <line x1="22" y1="23" x2="30" y2="31" stroke="#CCA14D" strokeWidth="2" strokeLinecap="round"/>
+        <circle cx="20" cy="20" r="19" stroke="#CCA14D" strokeWidth="1.4" opacity="0.6" />
+        <circle cx="17" cy="18" r="6" stroke="#CCA14D" strokeWidth="1.6" strokeLinecap="round" />
+        <line x1="22" y1="23" x2="30" y2="31" stroke="#CCA14D" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -45,11 +45,11 @@ const CARDS = [
     body: "We evaluate properties not only for their current value but for their potential — aesthetically and financially — ensuring each acquisition compounds over time.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <circle cx="20" cy="20" r="19" stroke="#CCA14D" strokeWidth="1.4" opacity="0.6"/>
-        <rect x="10" y="13" width="20" height="14" rx="2" stroke="#CCA14D" strokeWidth="1.5"/>
-        <line x1="15" y1="13" x2="15" y2="27" stroke="#CCA14D" strokeWidth="1" opacity="0.55"/>
-        <line x1="20" y1="13" x2="20" y2="27" stroke="#CCA14D" strokeWidth="1" opacity="0.55"/>
-        <line x1="10" y1="20" x2="30" y2="20" stroke="#CCA14D" strokeWidth="1" opacity="0.55"/>
+        <circle cx="20" cy="20" r="19" stroke="#CCA14D" strokeWidth="1.4" opacity="0.6" />
+        <rect x="10" y="13" width="20" height="14" rx="2" stroke="#CCA14D" strokeWidth="1.5" />
+        <line x1="15" y1="13" x2="15" y2="27" stroke="#CCA14D" strokeWidth="1" opacity="0.55" />
+        <line x1="20" y1="13" x2="20" y2="27" stroke="#CCA14D" strokeWidth="1" opacity="0.55" />
+        <line x1="10" y1="20" x2="30" y2="20" stroke="#CCA14D" strokeWidth="1" opacity="0.55" />
       </svg>
     ),
   },
@@ -59,9 +59,9 @@ const CARDS = [
     body: "Every mandate is handled with structured processes, complete confidentiality, and a client-first mindset. Your trust is our most valued asset.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <circle cx="20" cy="20" r="19" stroke="#CCA14D" strokeWidth="1.4" opacity="0.6"/>
-        <path d="M20 10 L27 14 L27 22 C27 27 20 31 20 31 C20 31 13 27 13 22 L13 14 Z" stroke="#CCA14D" strokeWidth="1.5" strokeLinejoin="round"/>
-        <path d="M16 21 L18.5 23.5 L24 17" stroke="#CCA14D" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="20" cy="20" r="19" stroke="#CCA14D" strokeWidth="1.4" opacity="0.6" />
+        <path d="M20 10 L27 14 L27 22 C27 27 20 31 20 31 C20 31 13 27 13 22 L13 14 Z" stroke="#CCA14D" strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M16 21 L18.5 23.5 L24 17" stroke="#CCA14D" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
@@ -153,9 +153,9 @@ function DiffCard({ card, cardRef }) {
 
 /* ─── Main export ─── */
 export default function WhatMakesUsDifferent() {
-  const wrapRef    = useRef(null);
+  const wrapRef = useRef(null);
   const sectionRef = useRef(null);
-  const perspRef   = useRef(null);
+  const perspRef = useRef(null);
 
   /* split-word heading refs */
   const word0 = useRef(null); // WHAT
@@ -169,7 +169,7 @@ export default function WhatMakesUsDifferent() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const wrap    = wrapRef.current;
+    const wrap = wrapRef.current;
     const section = sectionRef.current;
     if (!wrap || !section) return;
 
@@ -237,9 +237,9 @@ export default function WhatMakesUsDifferent() {
       /* Stage 3: cards slide in from right, each settling from shake */
       tl.to(trackRef.current, {
         x: () => {
-          const trackW  = trackRef.current.scrollWidth;
-          const viewW   = window.innerWidth;
-          const pad     = Math.max(56, viewW * 0.06);
+          const trackW = trackRef.current.scrollWidth;
+          const viewW = window.innerWidth;
+          const pad = Math.max(56, viewW * 0.06);
           return -(trackW - viewW + pad);
         },
         duration: 12,
@@ -341,7 +341,7 @@ export default function WhatMakesUsDifferent() {
           <svg key={i} aria-hidden width="28" height="28" viewBox="0 0 28 28" fill="none"
             style={{ position: "absolute", zIndex: 2, opacity: 0.5, transform: `rotate(${p.r})`, ...p }}
           >
-            <path d="M2 26 L2 2 L26 2" stroke="#CCA14D" strokeWidth="1.8" strokeLinecap="round"/>
+            <path d="M2 26 L2 2 L26 2" stroke="#CCA14D" strokeWidth="1.8" strokeLinecap="round" />
           </svg>
         ))}
 
@@ -363,7 +363,7 @@ export default function WhatMakesUsDifferent() {
           }}
         >
           {/* Sub-label */}
-          <p ref={subRef} style={{
+          {/* <p ref={subRef} style={{
             fontFamily: "var(--font-futura), Futura, sans-serif",
             fontSize: "clamp(0.55rem, 0.82vw, 0.7rem)",
             letterSpacing: "0.46em",
@@ -378,7 +378,7 @@ export default function WhatMakesUsDifferent() {
             willChange: "transform, opacity",
           }}>
             HF Realtors &nbsp;·&nbsp; Our Edge
-          </p>
+          </p> */}
 
           {/* Word row 1 */}
           <div style={{ display: "flex", gap: "clamp(0.5rem,1.5vw,1.8rem)", lineHeight: 1 }}>

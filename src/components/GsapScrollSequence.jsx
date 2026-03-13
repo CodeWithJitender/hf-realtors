@@ -77,7 +77,7 @@ export default function GsapScrollSequence() {
   return (
     // -mt-[100vh] combined with relative z-50 forces this container to physically overlay the previous 100vh section (the Hero section).
     <div ref={triggerRef} className="w-full relative -mt-[100vh] z-50 pointer-events-none">
-      <section ref={containerRef} className="relative w-full h-screen bg-transparent overflow-hidden flex items-center justify-center pointer-events-none">
+      <section ref={containerRef} className="relative w-full h-screen bg-transparent overflow-hidden flex items-center justify-center pointer-events-none" style={{ willChange: "transform" }}>
       
       {/* Gallery Images Container (Overlaying the Hero section transparently until scaled) */}
       <div className="absolute inset-0 z-20 pointer-events-none">
@@ -106,21 +106,24 @@ export default function GsapScrollSequence() {
         ref={finalContainerRef}
         className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none"
       >
-          {/* Centered Text */}
           <div 
             ref={textRef}
-            className="flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto z-40"
+            className="flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto z-40"
           >
             <h2 
-              className="text-[#EDEDED] text-4xl md:text-6xl lg:text-[6rem] leading-[1.1] font-bold uppercase tracking-tighter mb-6"
+              className="text-[#EDEDED] text-3xl md:text-5xl lg:text-[4rem] leading-[1.1] font-bold uppercase tracking-tighter mb-8"
               style={{ fontFamily: 'var(--font-futura), Futura, sans-serif' }}
             >
-              We Sell Real Estate <br />
-              That Evokes <br />
-              Emotions
+              Building and Managing Real Estate Value
             </h2>
-            <p className="text-[#EDEDED]/90 font-sans text-lg md:text-2xl max-w-3xl leading-relaxed tracking-wide font-light">
-              Our curated portfolio goes beyond transaction. It's about securing legacy, lifestyle, and architectural masterpieces that define the next era of luxury living.
+            <p className="text-[#EDEDED]/75 font-sans text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-light mb-4">
+              HF Realtors is an independent real estate advisory firm focused on helping clients build, manage, and optimize property investments with clarity and confidence.
+            </p>
+            <p className="text-[#EDEDED]/75 font-sans text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-light mb-4">
+              We work closely with individuals and investors to identify opportunities in residential and commercial real estate, ensuring every decision is guided by market insight, transparency, and long-term value creation.
+            </p>
+            <p className="text-[#EDEDED]/75 font-sans text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-light">
+              As the market evolves, we continue to refine our approach, delivering thoughtful advisory and sustainable outcomes for every client we serve.
             </p>
           </div>
       </div>

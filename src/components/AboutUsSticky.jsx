@@ -13,8 +13,8 @@ const tabs = [
         title: "WHO WE ARE",
         stats: [
             { value: "20+", label: "Years Of\nExperience" },
-            { value: "08", label: "Global Offices\nIn Asia Pacific" },
-            { value: "3M", label: "SQM Project\nCompleted" }
+            { value: "08", label: "Sq. ft.\n transacted" },
+            { value: "3M", label: "Closed \nDeals" }
         ]
     },
     {
@@ -24,10 +24,10 @@ const tabs = [
         type: "values",
         title: "OUR VALUES",
         values: [
-            { num: "01", title: "Experience", desc: "More than 20 years of\nexperiences in interior fit-out field" },
-            { num: "02", title: "Expansion", desc: "8 regional offices\naround Asia Pacific" },
-            { num: "03", title: "Reliable", desc: "Accountability and creditability" },
-            { num: "04", title: "Performance", desc: "Solid track record" }
+            { num: "01", title: "Transparency ", desc: "Clear communication and honest guidance at every step." },
+            { num: "02", title: "Integrity", desc: "Doing the right thing, always." },
+            { num: "03", title: "Discretion ", desc: "Handling transactions and investments with complete confidentiality." },
+            { num: "04", title: "Expertise", desc: "Deep market knowledge that drives informed decisions." }
         ]
     },
     {
@@ -38,8 +38,7 @@ const tabs = [
         title: "Our Team",
         teamImage: "/images/hero.png",
         roles: [
-            "INTERIOR DESIGNER | PROJECT MANAGEMENT | CONSTRUCTION TEAM | CAD TEAM",
-            "SITE SUPERVISOR & SAFETY TEAM | MECHANICAL & ELECTRICAL | QUANTITY SURVEYOR"
+            "Portfolio Managers | Brokerage Experts | Wealth Managers | Concierge Manager | Real Estate Experts",
         ]
     },
     {
@@ -49,9 +48,7 @@ const tabs = [
         type: "founders",
         title: "Meet Our\nFounders",
         founders: [
-            { name: "David Zhang", image: "/images/interior.png" },
-            { name: "Molly Liu", image: "/images/hero.png" },
-            { name: "Jason Pang", image: "/images/interior.png" }
+            { name: "Kunal Jaggi", image: "https://cdn.theorg.com/707fe690-ab0c-4006-8499-de47610e4fff_medium.jpg" }
         ]
     }
 ];
@@ -221,17 +218,21 @@ export default function AboutUsSticky() {
                                 )}
 
                                 {tab.type === "founders" && (
-                                    <div className="flex flex-col w-full items-center lg:items-start">
-                                        <div className="flex flex-row justify-center lg:justify-start gap-4 xl:gap-10 mb-16 w-full">
+                                    <div className="flex flex-col sm:flex-row gap-8 w-full items-start">
+                                        {/* Large portrait card */}
+                                        <div className="flex flex-col relative w-full sm:w-[45%] flex-shrink-0 aspect-[3/4] group rounded-2xl overflow-hidden border border-[#CCA14D]/30 shadow-2xl bg-[#1D3E53]">
                                             {tab.founders.map((founder, i) => (
-                                                <div key={i} className="flex flex-col relative w-1/3 max-w-[200px] aspect-[4/5] group rounded-2xl overflow-hidden border border-[#CCA14D]/30 shadow-2xl bg-[#1D3E53]">
+                                                <div key={i} className="relative w-full h-full">
                                                     <Image src={founder.image} alt={founder.name} fill className="object-cover opacity-90 grayscale group-hover:grayscale-0 transition-all duration-500" />
                                                     <div className="absolute inset-0 bg-gradient-to-t from-[#000] via-transparent to-transparent opacity-60" />
-                                                    <span className="absolute bottom-4 left-0 right-0 text-center font-sans font-bold text-sm xl:text-base text-[#EDEDED] px-2">{founder.name}</span>
+                                                    <span className="absolute bottom-4 left-0 right-0 text-center font-sans font-bold text-base text-[#EDEDED] px-2">{founder.name}</span>
                                                 </div>
                                             ))}
                                         </div>
-                                        <h3 className="text-[6rem] xl:text-[10rem] tracking-tighter text-[#CCA14D] leading-[0.8] text-center lg:text-left" style={{ fontFamily: 'sans-serif' }}>{tab.title}</h3>
+                                        {/* Heading fills remaining space */}
+                                        <div className="flex-1 flex items-end pb-4">
+                                            <h3 className="text-[3rem] xl:text-[5rem] tracking-tighter text-[#CCA14D] leading-[0.9]" style={{ fontFamily: 'sans-serif' }}>{tab.title}</h3>
+                                        </div>
                                     </div>
                                 )}
                             </motion.div>

@@ -75,18 +75,18 @@ const tabs = [
         type: "stats", title: "WHO WE ARE",
         stats: [
             { value: "20+", label: "Years Of\nExperience" },
-            { value: "08", label: "Global Offices\nIn Asia Pacific" },
-            { value: "3M", label: "SQM Project\nCompleted" },
+            { value: "08", label: "Sq. ft. \n transacted" },
+            { value: "3M", label: "Closed \nDeals" },
         ],
     },
     {
         id: "our-values", label: "Our Values", image: "/images/hero.png",
         type: "values", title: "OUR VALUES",
         values: [
-            { num: "01", title: "Experience", desc: "More than 20 years of\nexperiences in interior fit-out field" },
-            { num: "02", title: "Expansion", desc: "8 regional offices\naround Asia Pacific" },
-            { num: "03", title: "Reliable", desc: "Accountability and creditability" },
-            { num: "04", title: "Performance", desc: "Solid track record" },
+            { num: "01", title: "Transparency ", desc: "Clear communication and honest guidance at every step." },
+            { num: "02", title: "Integrity", desc: "Doing the right thing, always." },
+            { num: "03", title: "Discretion ", desc: "Handling transactions and investments with complete confidentiality." },
+            { num: "04", title: "Expertise", desc: "Deep market knowledge that drives informed decisions." },
         ],
     },
     {
@@ -94,17 +94,14 @@ const tabs = [
         type: "team", title: "Our Team",
         teamImage: "/images/hero.png",
         roles: [
-            "INTERIOR DESIGNER | PROJECT MANAGEMENT | CONSTRUCTION TEAM | CAD TEAM",
-            "SITE SUPERVISOR & SAFETY TEAM | MECHANICAL & ELECTRICAL | QUANTITY SURVEYOR",
+            "Portfolio Managers | Brokerage Experts | Wealth Managers | Concierge Manager | Real Estate Experts ",
         ],
     },
     {
         id: "founders", label: "Founders", image: "/images/hero.png",
         type: "founders", title: "Meet Our\nFounders",
         founders: [
-            { name: "David Zhang", image: "/images/interior.png" },
-            { name: "Molly Liu", image: "/images/hero.png" },
-            { name: "Jason Pang", image: "/images/interior.png" },
+            { name: "Kunal Jaggi", image: "https://cdn.theorg.com/707fe690-ab0c-4006-8499-de47610e4fff_medium.jpg" },
         ],
     },
 ];
@@ -113,9 +110,11 @@ const tabs = [
 const SplitText = () => (
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-fluid-container w-full h-full pointer-events-none">
         <h2 className="font-sans font-bold uppercase leading-[0.85] tracking-tighter text-[#CCA14D] drop-shadow-2xl text-[8vw] sm:text-[7vw] lg:text-[6.5vw] max-w-[95vw]">
-            We sell real estate that <br />
+            {/* We sell real estate that <br />
             evokes emotions. We give a new <br />
-            sense of self.
+            sense of self. */}
+            Pioneering a New Standard in Real Estate.
+
         </h2>
     </div>
 );
@@ -196,25 +195,26 @@ function TeamContent({ tab, isActive }) {
 function FoundersContent({ tab, isActive }) {
     const anim = isActive ? "visible" : "hidden";
     return (
-        <div className="flex flex-col w-full items-center lg:items-start">
-            <div className="flex flex-row justify-center lg:justify-start gap-4 xl:gap-8 mb-12 w-full">
-                {tab.founders.map((founder, i) => (
-                    <FadeUp key={i} delay={0.05 + i * 0.12} animate={anim}>
-                        <div className="relative w-[26vw] max-w-[180px] aspect-[4/5] group rounded-2xl overflow-hidden border border-[#CCA14D]/25 shadow-xl bg-[#1D3E53]">
-                            <Image src={founder.image} alt={founder.name} fill className="object-cover opacity-90 grayscale group-hover:grayscale-0 transition-all duration-500" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                            <span className="absolute bottom-3 left-0 right-0 text-center font-sans font-semibold text-sm text-white px-2">{founder.name}</span>
-                        </div>
-                    </FadeUp>
-                ))}
+        <div className="flex flex-col justify-center items-center gap-8 w-full">
+            {/* Portrait card — large, fills former 3-card row */}
+            {tab.founders.map((founder, i) => (
+                <FadeUp key={i} delay={0.05 + i * 0.12} animate={anim} className="w-full sm:w-[50%] flex-shrink-0">
+                    <div className="relative w-full aspect-[3/4] group rounded-2xl overflow-hidden border border-[#CCA14D]/25 shadow-xl bg-[#1D3E53]">
+                        <Image src={founder.image} alt={founder.name} fill className="object-cover opacity-90 grayscale group-hover:grayscale-0 transition-all duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        <span className="absolute bottom-4 left-0 right-0 text-center font-sans font-semibold text-base text-white px-2">{founder.name}</span>
+                    </div>
+                </FadeUp>
+            ))}
+            {/* Heading fills remaining horizontal space */}
+            <div className="flex-1 flex items-end pb-4">
+                <RevealWords
+                    text="Meet Our Founder"
+                    className="text-[2.5rem] xl:text-[4rem] tracking-tighter text-[#CCA14D] leading-[0.9] block"
+                    delay={0.15}
+                    animate={anim}
+                />
             </div>
-            {/* Word-by-word reveal driven by isActive */}
-            <RevealWords
-                text="Meet Our Founders"
-                className="text-[3.5rem] xl:text-[6rem] tracking-tighter text-[#CCA14D] leading-[0.85] block"
-                delay={0.15}
-                animate={anim}
-            />
         </div>
     );
 }
@@ -270,7 +270,7 @@ export default function SplitReveal() {
     // Detect when doors have fully opened (progress > 0.12)
     useMotionValueEvent(scrollYProgress, "change", (v) => {
         if (v >= 0.13) setDoorsOpen(true);
-        if (v < 0.10)  setDoorsOpen(false);
+        if (v < 0.10) setDoorsOpen(false);
     });
 
     // Tab panel opacity/Y for fade transitions
@@ -325,7 +325,7 @@ export default function SplitReveal() {
                         {/* Heading — word-by-word AFTER doors open */}
                         <h2 className="text-fluid-h1 tracking-tight leading-[1.1] md:leading-[1.05] text-[#163548] mb-6">
                             <RevealWords
-                                text="Transform A Space for Work, Into A Space for Life"
+                                text="Leading the Future of Real Estate"
                                 animate={doorsOpen ? "visible" : "hidden"}
                                 delay={0.1}
                             />
@@ -337,7 +337,8 @@ export default function SplitReveal() {
                             transition={{ duration: 0.65, delay: 0.55 }}
                             className="hidden md:block text-sm md:text-base text-[#163548]/60 font-poppins font-medium leading-relaxed mb-6 md:mb-10"
                         >
-                            We design living and working environments that go beyond the ordinary — blending meticulous craftsmanship with visionary architecture to create spaces that inspire, endure, and elevate everyday life.
+                            Our framework is driven by research, compliance, discretion, and long-term capital performance, delivering breakthrough outcomes in an evolving market.
+
                         </motion.p>
                         {/* Tab Nav — single-row scrollable on mobile, wrap on desktop */}
                         <motion.div
@@ -409,9 +410,8 @@ export default function SplitReveal() {
                                     <motion.div
                                         key={tab.id}
                                         style={{ opacity: tabOpacities[i], y: tabYs[i] }}
-                                        className={`md:absolute md:inset-0 flex flex-col justify-start md:justify-center w-full ${
-                                            isCurrentActive ? "flex" : "hidden md:flex"
-                                        }`}
+                                        className={`md:absolute md:inset-0 flex flex-col justify-start md:justify-center w-full ${isCurrentActive ? "flex" : "hidden md:flex"
+                                            }`}
                                     >
                                         <TabContent tab={tab} isActive={isCurrentActive} />
                                     </motion.div>

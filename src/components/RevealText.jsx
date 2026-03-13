@@ -28,7 +28,7 @@ export default function RevealText({
     const shouldAnimate = isPreloaderDone && isInView;
 
     return (
-        <div ref={ref} className={`relative overflow-hidden ${className}`}>
+        <div ref={ref} className={`relative overflow-hidden  ${className}`}>
             <motion.div
                 initial={{ y: "100%" }}
                 animate={shouldAnimate ? { y: 0 } : { y: "100%" }}
