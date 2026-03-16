@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { ArrowRight } from "lucide-react";
+
 import { useScroll, useMotionValueEvent } from "framer-motion";
 import RevealText from "@/components/RevealText";
 import Button from "@/components/Button";
@@ -17,10 +17,10 @@ function framePath(index) {
 
 export default function Hero() {
     const wrapperRef = useRef(null); // outer scroll container (400vh)
-    const canvasRef  = useRef(null);
-    const imagesRef  = useRef([]);   // preloaded Image objects
-    const frameRef   = useRef(0);    // current drawn frame index
-    const rafRef     = useRef(null); // requestAnimationFrame handle
+    const canvasRef = useRef(null);
+    const imagesRef = useRef([]);   // preloaded Image objects
+    const frameRef = useRef(0);    // current drawn frame index
+    const rafRef = useRef(null); // requestAnimationFrame handle
 
     // Framer Motion scroll progress across the full 400vh wrapper
     const { scrollYProgress } = useScroll({
@@ -42,7 +42,7 @@ export default function Hero() {
         const H = canvas.offsetHeight;
 
         // Cover-fit: fill canvas maintaining source aspect ratio
-        const imgRatio    = img.naturalWidth / img.naturalHeight;
+        const imgRatio = img.naturalWidth / img.naturalHeight;
         const canvasRatio = W / H;
 
         let sw, sh, sx, sy;
@@ -69,7 +69,7 @@ export default function Hero() {
         // Set canvas resolution to device pixel ratio for sharpness
         const resize = () => {
             const dpr = window.devicePixelRatio || 1;
-            canvas.width  = canvas.offsetWidth  * dpr;
+            canvas.width = canvas.offsetWidth * dpr;
             canvas.height = canvas.offsetHeight * dpr;
             const ctx = canvas.getContext("2d");
             ctx.scale(dpr, dpr);
@@ -140,9 +140,9 @@ export default function Hero() {
                         {/* Left: Heading */}
                         <div className="lg:col-span-8 xl:col-span-7 flex flex-col justify-end">
                             <RevealText delay={0.4}>
-                                <h1 className="text-fluid-h1 tracking-tight text-[#EDEDED] leading-[1] lg:leading-[0.9] pb-4 drop-shadow-xl">
-                                    <span className="block font-sans font-bold">Real Estate.</span>
-                                    <span className="block font-serif font-medium italic -mt-2">Managed end-to-end.</span>
+                                <h1 className="tracking-tight text-[#EDEDED] leading-[1] lg:leading-[0.9] pb-4 drop-shadow-xl">
+                                    <span className="block font-bold" style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)", fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>Real Estate.</span>
+                                    <span className="block font-light -mt-1" style={{ fontSize: "clamp(1.8rem, 4.5vw, 4.5rem)", fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>Managed end-to-end.</span>
                                 </h1>
                             </RevealText>
                         </div>
@@ -157,9 +157,8 @@ export default function Hero() {
 
                             <RevealText delay={0.8}>
                                 <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4 relative z-50">
-                                    <Button variant="solid" className="group gap-3">
-                                        Book Consultation
-                                        <ArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
+                                    <Button variant="gold" href="#">
+                                        Book A Consultation
                                     </Button>
                                     <Button variant="outlined">
                                         Discover Partner Design

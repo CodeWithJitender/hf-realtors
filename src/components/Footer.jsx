@@ -30,7 +30,7 @@ export default function Footer() {
                     <Button
                         href="mailto:HELLO@HFREALTORS.COM"
                         variant="outlined"
-                        className="text-2xl md:text-4xl lg:text-5xl border-transparent hover:border-[#FFED7E]/20 transition-all px-12 py-8 bg-transparent text-[#CCA14D] hover:text-[#163548]"
+                        className="text-2xl md:text-4xl lg:text-5xl border-transparent hover:border-[#FFED7E]/20 transition-all px-8 py-4 bg-transparent text-[#CCA14D] hover:text-[#163548]"
                     >
                         HELLO@HFREALTORS.COM
                     </Button>

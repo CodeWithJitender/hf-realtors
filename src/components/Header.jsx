@@ -49,7 +49,8 @@ export default function Header() {
                         : "bg-transparent text-[#EDEDED] border-transparent py-6"
                 }`}
         >
-            <div className="grid grid-cols-3 items-center px-6 md:px-12 w-full">
+            {/* ── Desktop layout: 3-column grid (menu | logo | contact) ── */}
+            <div className="hidden md:grid grid-cols-3 items-center px-12 w-full">
 
                 {/* Left: Menu Trigger */}
                 <div className="flex justify-start">
@@ -62,7 +63,7 @@ export default function Header() {
                             <span className={`w-5 h-[2px] transition-colors ${scrolled ? 'bg-[#163548]' : isLightPage ? 'bg-[#CCA14D]' : 'bg-[#EDEDED]'}`}></span>
                             <span className={`w-3 h-[2px] transition-colors ${scrolled ? 'bg-[#163548]' : isLightPage ? 'bg-[#CCA14D]' : 'bg-[#EDEDED]'}`}></span>
                         </div>
-                        <span className="hidden md:block text-xs font-semibold tracking-widest uppercase mt-0.5">
+                        <span className="text-xs font-semibold tracking-widest uppercase mt-0.5">
                             Menu
                         </span>
                     </button>
@@ -74,7 +75,7 @@ export default function Header() {
                         <motion.div
                             animate={{ y: [-2, 2, -2] }}
                             transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                            className="relative w-48 h-12 md:w-[300px] md:h-[75px]"
+                            className="relative w-[300px] h-[75px]"
                         >
                             <Image
                                 src={scrolled ? "/images/logo-black.png" : "/images/logo.png"}
@@ -90,7 +91,7 @@ export default function Header() {
                 </div>
 
                 {/* Right: Contact Us */}
-                <div className="flex justify-end hidden sm:flex">
+                <div className="flex justify-end">
                     <a
                         href="/contact-us"
                         className="text-xs font-semibold tracking-widest uppercase hover:opacity-70 transition-opacity mt-0.5"
@@ -98,6 +99,40 @@ export default function Header() {
                         Contact Us
                     </a>
                 </div>
+
+            </div>
+
+            {/* ── Mobile layout: logo left, hamburger right ── */}
+            <div className="flex md:hidden items-center justify-between px-6 w-full">
+
+                {/* Left: Logo */}
+                <a href="/" className="block relative z-10">
+                    <motion.div
+                        animate={{ y: [-2, 2, -2] }}
+                        transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                        className="relative w-40 h-10"
+                    >
+                        <Image
+                            src={scrolled ? "/images/logo-black.png" : "/images/logo.png"}
+                            alt="HF Realtors Logo"
+                            fill
+                            className={`object-contain object-left transition-all duration-500 ${
+                                scrolled ? "" : isLightPage ? "" : "brightness-0 invert"
+                            }`}
+                            priority
+                        />
+                    </motion.div>
+                </a>
+
+                {/* Right: Hamburger */}
+                <button
+                    onClick={() => setMenuOpen(true)}
+                    className="flex flex-col gap-[3px] hover:opacity-70 transition-opacity"
+                >
+                    <span className={`w-5 h-[2px] transition-colors ${scrolled ? 'bg-[#163548]' : isLightPage ? 'bg-[#CCA14D]' : 'bg-[#EDEDED]'}`}></span>
+                    <span className={`w-5 h-[2px] transition-colors ${scrolled ? 'bg-[#163548]' : isLightPage ? 'bg-[#CCA14D]' : 'bg-[#EDEDED]'}`}></span>
+                    <span className={`w-3 h-[2px] transition-colors ${scrolled ? 'bg-[#163548]' : isLightPage ? 'bg-[#CCA14D]' : 'bg-[#EDEDED]'}`}></span>
+                </button>
 
             </div>
 

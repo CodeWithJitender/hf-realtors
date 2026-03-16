@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 
@@ -109,12 +109,11 @@ const tabs = [
 // ─── Split Door Text ───────────────────────────────────────────────
 const SplitText = () => (
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-fluid-container w-full h-full pointer-events-none">
-        <h2 className="font-sans font-bold uppercase leading-[0.85] tracking-tighter text-[#CCA14D] drop-shadow-2xl text-[8vw] sm:text-[7vw] lg:text-[6.5vw] max-w-[95vw]">
-            {/* We sell real estate that <br />
-            evokes emotions. We give a new <br />
-            sense of self. */}
+        <h2
+            className="font-bold uppercase leading-[0.85] tracking-tighter text-[#CCA14D] drop-shadow-2xl text-[8vw] sm:text-[7vw] lg:text-[6.5vw] max-w-[95vw]"
+            style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
+        >
             Pioneering a New Standard in Real Estate.
-
         </h2>
     </div>
 );
@@ -173,7 +172,7 @@ function TeamContent({ tab, isActive }) {
             >
                 {tab.title}
             </motion.h3>
-            <FadeUp delay={0.08} animate={anim} className="relative w-full aspect-[4/3] xl:aspect-video z-10 mt-12 rounded-[2rem] overflow-hidden shadow-2xl border border-[#CCA14D]/20">
+            <FadeUp delay={0.08} animate={anim} className="relative w-full aspect-[4/3] xl:aspect-video z-10 mt-12 overflow-hidden shadow-2xl border border-[#CCA14D]/20">
                 <Image src={tab.teamImage} alt="Our Team" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#163548]/40 via-transparent to-transparent" />
             </FadeUp>
@@ -230,7 +229,8 @@ function TabContent({ tab, isActive }) {
 }
 
 // ─── Main Component ────────────────────────────────────────────────
-export default function SplitReveal() {
+// ─── Desktop Scroll Section (own component so hooks only run when mounted) ──
+function DesktopReveal() {
     const sectionRef = useRef(null);
     const [currentTab, setCurrentTab] = useState(0);
     const [doorsOpen, setDoorsOpen] = useState(false);
@@ -253,7 +253,6 @@ export default function SplitReveal() {
         [0.75, 0.95],
     ];
 
-    // Active index motion value (for TabButton highlights)
     const activeIndex = useTransform(scrollYProgress, (v) => {
         if (v < 0.12) return 0;
         for (let i = TAB_RANGES.length - 1; i >= 0; i--) {
@@ -262,18 +261,15 @@ export default function SplitReveal() {
         return 0;
     });
 
-    // Sync active tab to React state (for right-panel isActive)
     useMotionValueEvent(activeIndex, "change", (v) => {
         setCurrentTab(Math.round(v));
     });
 
-    // Detect when doors have fully opened (progress > 0.12)
     useMotionValueEvent(scrollYProgress, "change", (v) => {
         if (v >= 0.13) setDoorsOpen(true);
         if (v < 0.10) setDoorsOpen(false);
     });
 
-    // Tab panel opacity/Y for fade transitions
     const tabOpacities = TAB_RANGES.map(([start, end], i) => {
         const isFirst = i === 0;
         const isLast = i === TAB_RANGES.length - 1;
@@ -290,7 +286,6 @@ export default function SplitReveal() {
         return useTransform(scrollYProgress, [start - 0.03, start + 0.03, end - 0.03, end], [40, 0, 0, -40]);
     });
 
-    // Left panel image crossfade
     const tabImageOpacities = tabs.map((_, i) => {
         const [start, end] = TAB_RANGES[i];
         const isFirst = i === 0;
@@ -309,10 +304,9 @@ export default function SplitReveal() {
                 {/* ── Layer 0: About Us Content ── */}
                 <div className="absolute inset-0 z-0 flex flex-col md:flex-row w-full h-full text-[#163548] px-fluid-container py-4 md:py-fluid-section">
 
-                    {/* Left Panel — shrink-0 so it doesn't steal right-panel height on mobile */}
+                    {/* Left Panel */}
                     <div className="w-full md:w-1/2 flex-none md:flex flex-col justify-start md:justify-center lg:pr-12 z-10">
 
-                        {/* Eyebrow — only after doors open */}
                         <motion.span
                             initial={{ opacity: 0, y: 16 }}
                             animate={doorsOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
@@ -322,7 +316,6 @@ export default function SplitReveal() {
                             ABOUT US
                         </motion.span>
 
-                        {/* Heading — word-by-word AFTER doors open */}
                         <h2 className="text-fluid-h1 tracking-tight leading-[1.1] md:leading-[1.05] text-[#163548] mb-6">
                             <RevealWords
                                 text="Leading the Future of Real Estate"
@@ -330,17 +323,16 @@ export default function SplitReveal() {
                                 delay={0.1}
                             />
                         </h2>
-                        {/* Subtitle paragraph — desktop only (too tall on mobile) */}
+
                         <motion.p
                             initial={{ opacity: 0, y: 14 }}
                             animate={doorsOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
                             transition={{ duration: 0.65, delay: 0.55 }}
                             className="hidden md:block text-sm md:text-base text-[#163548]/60 font-poppins font-medium leading-relaxed mb-6 md:mb-10"
                         >
-                            Our framework is driven by research, compliance, discretion, and long-term capital performance, delivering breakthrough outcomes in an evolving market.
-
+                            Our framework is driven by research, compliance, discretion, and long-term capital performance, <br className="hidden sm:block" /> delivering breakthrough outcomes in an evolving market.
                         </motion.p>
-                        {/* Tab Nav — single-row scrollable on mobile, wrap on desktop */}
+
                         <motion.div
                             className="flex flex-row overflow-x-auto md:flex-wrap items-center gap-x-4 md:gap-x-6 lg:gap-x-8 gap-y-2 mb-4 md:mb-8 scrollbar-none"
                             style={{ scrollbarWidth: "none" }}
@@ -365,7 +357,6 @@ export default function SplitReveal() {
                             ))}
                         </motion.div>
 
-                        {/* Crossfading Image — desktop only (too tall on mobile) */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={doorsOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -384,9 +375,8 @@ export default function SplitReveal() {
                         </motion.div>
                     </div>
 
-                    {/* Right Panel — flex-1 + overflow-y-auto on mobile so tall content scrolls */}
+                    {/* Right Panel */}
                     <div className="w-full md:w-1/2 flex-1 md:flex-none flex items-start md:items-center justify-center relative lg:pl-20 xl:pl-32 overflow-y-auto md:overflow-visible">
-                        {/* Vertical Rail — grows in after doors open */}
                         <motion.div
                             className="absolute left-4 lg:left-12 top-0 bottom-0 w-[1px] bg-[#CCA14D]/30 z-30 hidden md:block origin-top"
                             initial={{ scaleY: 0, opacity: 0 }}
@@ -402,7 +392,6 @@ export default function SplitReveal() {
                             />
                         </motion.div>
 
-                        {/* Tab Panels — on mobile: block flow (only active shows); on desktop: absolute opacity/y transitions */}
                         <div className="relative w-full md:min-h-[60vh] flex items-start md:items-center py-2 md:py-0">
                             {tabs.map((tab, i) => {
                                 const isCurrentActive = doorsOpen && currentTab === i;
@@ -410,8 +399,7 @@ export default function SplitReveal() {
                                     <motion.div
                                         key={tab.id}
                                         style={{ opacity: tabOpacities[i], y: tabYs[i] }}
-                                        className={`md:absolute md:inset-0 flex flex-col justify-start md:justify-center w-full ${isCurrentActive ? "flex" : "hidden md:flex"
-                                            }`}
+                                        className={`md:absolute md:inset-0 flex flex-col justify-start md:justify-center w-full ${isCurrentActive ? "flex" : "hidden md:flex"}`}
                                     >
                                         <TabContent tab={tab} isActive={isCurrentActive} />
                                     </motion.div>
@@ -427,7 +415,7 @@ export default function SplitReveal() {
                         style={{ x: leftX, clipPath: "polygon(0 0, 50% 0, 50% 100%, 0 100%)" }}
                         className="absolute inset-0 bg-[#163548] will-change-transform"
                     >
-                        <Image src="/images/hero.png" alt="Split Left" fill className="object-cover" priority />
+                        <Image src="/images/splitreveal-bg.jpg" alt="Split Left" fill className="object-cover" priority />
                         <div className="absolute inset-0 bg-[#163548]/80 mix-blend-multiply" />
                         <SplitText />
                     </motion.div>
@@ -435,7 +423,7 @@ export default function SplitReveal() {
                         style={{ x: rightX, clipPath: "polygon(50% 0, 100% 0, 100% 100%, 50% 100%)" }}
                         className="absolute inset-0 bg-[#163548] will-change-transform"
                     >
-                        <Image src="/images/hero.png" alt="Split Right" fill className="object-cover" priority />
+                        <Image src="/images/splitreveal-bg.jpg" alt="Split Right" fill className="object-cover" priority />
                         <div className="absolute inset-0 bg-[#163548]/80 mix-blend-multiply" />
                         <SplitText />
                     </motion.div>
@@ -444,6 +432,99 @@ export default function SplitReveal() {
         </section>
     );
 }
+
+// ─── Main Component ────────────────────────────────────────────────
+export default function SplitReveal() {
+    const [isDesktop, setIsDesktop] = useState(false);
+
+    useEffect(() => {
+        const mq = window.matchMedia("(min-width: 1024px)");
+        setIsDesktop(mq.matches);
+        const handler = (e) => setIsDesktop(e.matches);
+        mq.addEventListener("change", handler);
+        return () => mq.removeEventListener("change", handler);
+    }, []);
+
+    // ── Desktop: full scroll-triggered split-door animation ──
+    if (isDesktop) return <DesktopReveal />;
+
+    // ── Mobile / Tablet: simple stacked layout, no scroll tricks ──
+    return (
+        <div className="bg-white text-[#163548] px-6 sm:px-10 py-16 space-y-20">
+
+            {/* Eyebrow + Main Heading */}
+            <div>
+                <span className="block font-sans font-semibold text-[#CCA14D] uppercase tracking-widest text-[10px] mb-4">
+                    ABOUT US
+                </span>
+                <h2 className="text-[2.4rem] sm:text-[3rem] font-sans font-bold tracking-tight leading-[1.1] text-[#163548] mb-6">
+                    Leading the Future of Real Estate
+                </h2>
+                <p className="text-sm text-[#163548]/60 font-sans leading-relaxed max-w-md">
+                    Our framework is driven by research, compliance, discretion, and long-term capital performance.
+                </p>
+            </div>
+
+            {/* WHO WE ARE */}
+            <div>
+                <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-6">WHO WE ARE</h3>
+                <div className="flex flex-col gap-8">
+                    {tabs[0].stats.map((stat, i) => (
+                        <div key={i} className="flex flex-row items-center gap-6">
+                            <span className="font-sans font-light text-[3.5rem] sm:text-[4.5rem] text-[#CCA14D] tracking-tighter min-w-[110px] leading-none">{stat.value}</span>
+                            <span className="font-sans font-semibold text-sm sm:text-base text-[#163548] uppercase tracking-wide whitespace-pre-line leading-tight">{stat.label}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* OUR VALUES */}
+            <div>
+                <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-6">OUR VALUES</h3>
+                <div className="flex flex-col border border-[#CCA14D]/20 shadow-md">
+                    {tabs[1].values.map((val, i) => (
+                        <div key={i} className="flex flex-row items-center justify-between p-5 border-b border-[#CCA14D]/10 last:border-0">
+                            <div className="flex flex-col">
+                                <span className="font-sans font-bold text-base text-[#CCA14D] mb-1">{val.title}</span>
+                                <span className="font-sans text-xs text-[#163548]/70 leading-relaxed">{val.desc}</span>
+                            </div>
+                            <span className="font-sans font-light text-[2.5rem] text-[#CCA14D] opacity-20 ml-4 leading-none">{val.num}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* OUR TEAM */}
+            <div>
+                <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-6">OUR TEAM</h3>
+                <div className="relative w-full aspect-[4/3] overflow-hidden shadow-xl border border-[#CCA14D]/20 mb-6">
+                    <Image src={tabs[2].teamImage} alt="Our Team" fill className="object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#163548]/40 via-transparent to-transparent" />
+                </div>
+                <div className="flex flex-col items-center text-center gap-2">
+                    {tabs[2].roles.map((line, i) => (
+                        <p key={i} className="font-sans text-[10px] sm:text-xs tracking-[0.15em] text-[#163548] font-semibold uppercase">{line}</p>
+                    ))}
+                </div>
+            </div>
+
+            {/* FOUNDERS */}
+            <div>
+                <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-6">MEET OUR FOUNDER</h3>
+                {tabs[3].founders.map((founder, i) => (
+                    <div key={i} className="relative w-full aspect-[3/4] overflow-hidden border border-[#CCA14D]/25 shadow-xl">
+                        <Image src={founder.image} alt={founder.name} fill className="object-cover grayscale" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        <span className="absolute bottom-4 left-0 right-0 text-center font-sans font-semibold text-base text-white">{founder.name}</span>
+                    </div>
+                ))}
+            </div>
+
+        </div>
+    );
+}
+
+
 
 // ─── Tab Button ────────────────────────────────────────────────────
 function TabButton({ tab, index, activeIndex }) {

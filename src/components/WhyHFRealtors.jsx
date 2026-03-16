@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+
 import Button from "@/components/Button";
 import RevealText from "@/components/RevealText";
 
@@ -115,8 +116,8 @@ export default function WhyHFRealtors() {
                 {/* 4. Minimalist Ghost CTA Row */}
                 <RevealText delay={0.5}>
                     <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mt-4">
-                        <Button variant="solid" className="w-full sm:w-auto">
-                            Book Consultation
+                        <Button variant="gold" className="w-full sm:w-auto">
+                            Book A Consultation
                         </Button>
                         <Button variant="ghost" className="w-full sm:w-auto">
                             Discover Partner Design

@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Button from "@/components/Button";
+import { Phone } from "lucide-react";
 
 export default function UniqueAdvantage() {
     // The massive text broken down for staggered clip reveals
@@ -101,6 +103,20 @@ export default function UniqueAdvantage() {
                     <p className="text-[#EDEDED] font-sans text-sm md:text-base leading-relaxed">
                         Partner with the only real estate firm providing complimentary premium architectural redesign. We transform spaces before you even hold the keys.
                     </p>
+                </motion.div>
+
+                {/* Phone CTA Button */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 1, delay: 0.6, ease: [0.2, 0.65, 0.3, 0.9] }}
+                    className="mt-8"
+                >
+                    <Button href="tel:+911234567890" variant="outlined" className="gap-3">
+                        <Phone size={16} />
+                        +91 12345 67890
+                    </Button>
                 </motion.div>
             </div>
 

@@ -28,14 +28,14 @@ export default function RevealText({
     const shouldAnimate = isPreloaderDone && isInView;
 
     return (
-        <div ref={ref} className={`relative overflow-hidden  ${className}`}>
+        <div ref={ref} className={`relative ${className}`}>
             <motion.div
-                initial={{ y: "100%" }}
-                animate={shouldAnimate ? { y: 0 } : { y: "100%" }}
+                initial={{ opacity: 0, y: 24 }}
+                animate={shouldAnimate ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
                 transition={{
                     duration: duration,
                     delay: delay,
-                    ease: [0.16, 1, 0.3, 1], // The signature high-end cubic-bezier
+                    ease: [0.16, 1, 0.3, 1],
                 }}
             >
                 <Component className="block">

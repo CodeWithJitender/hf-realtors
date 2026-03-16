@@ -2,13 +2,17 @@
 
 import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import { ChevronRight } from "lucide-react";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 
 export default function Button({
     children,
     className = "",
     onClick,
-    href = null,
-    variant = "solid" // "solid" | "outlined"
+    href = "#",
+    variant = "solid"
 }) {
     const buttonRef = useRef(null);
 
@@ -83,7 +87,7 @@ export default function Button({
                 borderClass: "bg-[linear-gradient(to_right,#CCA14D,#FFED7E)]", // Gold Gradient Border
                 paddingClass: "p-[2px]", // Creates 2px border
                 fillColor: "#EDEDED", // White goo
-                textColor: isHovered ? "#163548" : "#FFED7E", // Light gold -> Deep Navy
+                textColor: isHovered ? "#163548" : "#ffffff", // White -> Deep Navy
             };
         }
         if (variant === "white-outlined") {
@@ -96,6 +100,16 @@ export default function Button({
             };
         }
         
+        if (variant === "gold") {
+            return {
+                bgClass: "bg-[linear-gradient(to_right,#9C772E,#FFED7E)]",
+                borderClass: "bg-[linear-gradient(to_right,#9C772E,#FFED7E)]",
+                paddingClass: "p-0",
+                fillColor: "#163548",
+                textColor: isHovered ? "#FFED7E" : "#163548",
+            };
+        }
+
         // Default: solid
         return {
             bgClass: "bg-[#163548]", // Deep Navy
@@ -110,8 +124,8 @@ export default function Button({
 
     const baseClasses = `relative rounded-[4rem] group flex items-center justify-center cursor-pointer transition-colors duration-300 isolate ${className}`;
 
-    const Wrapper = href ? motion.a : motion.button;
-    const wrapperProps = href ? { href } : { onClick };
+    const Wrapper = MotionLink;
+    const wrapperProps = { href, target: "_blank", rel: "noopener noreferrer", onClick };
 
     return (
         <Wrapper
@@ -177,10 +191,11 @@ export default function Button({
 
             {/* Actual Content */}
             <span
-                className="relative z-10 w-full h-full flex items-center justify-center font-sans font-medium text-[13px] md:text-sm tracking-widest pointer-events-none whitespace-nowrap transition-colors duration-500 uppercase px-[clamp(1.5rem,3vw,2.5rem)] py-[clamp(0.75rem,1.5vh,1.25rem)]"
-                style={{ color: styles.textColor, fontFamily: 'var(--font-poppins), sans-serif', fontWeight: 500 }}
+                className="relative z-10 w-full h-full flex items-center justify-center gap-2 font-medium text-[13px] md:text-sm tracking-widest pointer-events-none whitespace-nowrap transition-colors duration-500 uppercase px-8 py-4"
+                style={{ color: styles.textColor, fontFamily: "'Futura', var(--font-poppins), sans-serif", fontWeight: 500 }}
             >
                 {children}
+                <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform flex-shrink-0" />
             </span>
         </Wrapper>
     );
