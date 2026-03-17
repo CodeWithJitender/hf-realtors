@@ -85,7 +85,7 @@ export default function ContactHero() {
           <h1
             className="anim-heading font-bold uppercase leading-[0.88] tracking-tight"
             style={{
-              fontFamily: "var(--font-futura), Futura, sans-serif",
+              fontFamily: "'Futura-Bold', 'Futura', sans-serif",
               fontSize: "clamp(3.5rem, 13vw, 10rem)",
               color: "#163548",
               opacity: 0,
@@ -222,8 +222,8 @@ export default function ContactHero() {
             href={href}
             target={href.startsWith("http") ? "_blank" : undefined}
             rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-            className="anim-contact inline-flex items-center gap-2 hover:opacity-100 transition-colors duration-200 font-normal"
-            style={{ color: "rgba(22,53,72,0.65)", fontSize: "clamp(0.8rem, 1.1vw, 0.95rem)", opacity: 0 }}
+            className="anim-contact inline-flex items-center gap-2 hover:opacity-100 transition-colors duration-200"
+            style={{ color: "rgba(22,53,72,0.65)", fontSize: "clamp(0.8rem, 1.1vw, 0.95rem)", opacity: 0, fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 600 }}
           >
             <span style={{ color: "#CCA14D" }}>{icon}</span>
             {label}

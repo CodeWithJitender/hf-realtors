@@ -15,7 +15,7 @@ function VisionSVG() {
       <defs>
         <linearGradient id="vm-gold-v" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#CCA14D" />
-          <stop offset="100%" stopColor="#EDEDED" />
+          <stop offset="100%" stopColor="#CCA14D" />
         </linearGradient>
       </defs>
 
@@ -26,14 +26,14 @@ function VisionSVG() {
       {/* Inner ring */}
       <circle id="v-ring-inner" cx="90" cy="90" r="34" stroke="#CCA14D" strokeWidth="1.5" opacity="0.9" />
       {/* Crosshairs */}
-      <line x1="90" y1="8"  x2="90" y2="28"  stroke="#CCA14D" strokeWidth="1" opacity="0.5" />
+      <line x1="90" y1="8" x2="90" y2="28" stroke="#CCA14D" strokeWidth="1" opacity="0.5" />
       <line x1="90" y1="152" x2="90" y2="172" stroke="#CCA14D" strokeWidth="1" opacity="0.5" />
-      <line x1="8"  y1="90" x2="28"  y2="90"  stroke="#CCA14D" strokeWidth="1" opacity="0.5" />
-      <line x1="152" y1="90" x2="172" y2="90"  stroke="#CCA14D" strokeWidth="1" opacity="0.5" />
+      <line x1="8" y1="90" x2="28" y2="90" stroke="#CCA14D" strokeWidth="1" opacity="0.5" />
+      <line x1="152" y1="90" x2="172" y2="90" stroke="#CCA14D" strokeWidth="1" opacity="0.5" />
       {/* Orbiting planet dot */}
       <circle id="v-planet" cx="90" cy="16" r="6" fill="#CCA14D" />
       {/* Center dot */}
-      <circle cx="90" cy="90" r="5" fill="#EDEDED" />
+      <circle cx="90" cy="90" r="5" fill="#163548" />
     </svg>
   );
 }
@@ -46,7 +46,7 @@ function MissionSVG() {
         <linearGradient id="vm-gold-m" x1="0%" y1="100%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="#163548" />
           <stop offset="50%" stopColor="#CCA14D" />
-          <stop offset="100%" stopColor="#EDEDED" />
+          <stop offset="100%" stopColor="#CCA14D" />
         </linearGradient>
       </defs>
 
@@ -54,13 +54,13 @@ function MissionSVG() {
       <line x1="18" y1="152" x2="162" y2="152" stroke="#CCA14D" strokeWidth="1" opacity="0.4" />
 
       {/* Bar 1 */}
-      <rect id="m-bar1" x="22"  y="122" width="20" height="30" rx="2" stroke="#CCA14D" strokeWidth="1.5" fill="rgba(204,161,77,0.06)" />
+      <rect id="m-bar1" x="22" y="122" width="20" height="30" rx="2" stroke="#CCA14D" strokeWidth="1.5" fill="rgba(204,161,77,0.06)" />
       {/* Bar 2 */}
-      <rect id="m-bar2" x="52"  y="98"  width="20" height="54" rx="2" stroke="url(#vm-gold-m)" strokeWidth="1.5" fill="rgba(204,161,77,0.08)" />
+      <rect id="m-bar2" x="52" y="98" width="20" height="54" rx="2" stroke="url(#vm-gold-m)" strokeWidth="1.5" fill="rgba(204,161,77,0.08)" />
       {/* Bar 3 */}
-      <rect id="m-bar3" x="82"  y="70"  width="20" height="82" rx="2" stroke="url(#vm-gold-m)" strokeWidth="1.5" fill="rgba(204,161,77,0.1)" />
+      <rect id="m-bar3" x="82" y="70" width="20" height="82" rx="2" stroke="url(#vm-gold-m)" strokeWidth="1.5" fill="rgba(204,161,77,0.1)" />
       {/* Bar 4 — tallest */}
-      <rect id="m-bar4" x="112" y="34"  width="20" height="118" rx="2" stroke="#EDEDED" strokeWidth="2" fill="rgba(204,161,77,0.12)" />
+      <rect id="m-bar4" x="112" y="34" width="20" height="118" rx="2" stroke="#CCA14D" strokeWidth="2" fill="rgba(204,161,77,0.12)" />
 
       {/* Trend line */}
       <polyline id="m-trend" points="32,122 62,98 92,70 122,34" stroke="#CCA14D" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
@@ -69,21 +69,30 @@ function MissionSVG() {
       <polyline points="108,28 122,34 116,48" stroke="#CCA14D" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
 
       {/* Floating dots on trend */}
-      <circle id="m-dot1" cx="32"  cy="122" r="4" fill="#CCA14D" opacity="0.7" />
-      <circle id="m-dot2" cx="62"  cy="98"  r="4" fill="#CCA14D" opacity="0.8" />
-      <circle id="m-dot3" cx="92"  cy="70"  r="4" fill="#CCA14D" opacity="0.9" />
-      <circle id="m-dot4" cx="122" cy="34"  r="5" fill="#EDEDED" />
+      <circle id="m-dot1" cx="32" cy="122" r="4" fill="#CCA14D" opacity="0.7" />
+      <circle id="m-dot2" cx="62" cy="98" r="4" fill="#CCA14D" opacity="0.8" />
+      <circle id="m-dot3" cx="92" cy="70" r="4" fill="#CCA14D" opacity="0.9" />
+      <circle id="m-dot4" cx="122" cy="34" r="5" fill="#163548" />
     </svg>
   );
 }
 
 /* ─── Main Section ─── */
 export default function VisionMission() {
-  const sectionRef  = useRef(null);
-  const headingRef  = useRef(null);
-  const card1Ref    = useRef(null);
-  const card2Ref    = useRef(null);
-  const dividerRef  = useRef(null);
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
+  const card1Ref = useRef(null);
+  const card2Ref = useRef(null);
+  const dividerRef = useRef(null);
+
+  // Card 1 text refs
+  const c1LabelRef = useRef(null);
+  const c1TitleRef = useRef(null);
+  const c1BodyRef = useRef(null);
+  // Card 2 text refs
+  const c2LabelRef = useRef(null);
+  const c2TitleRef = useRef(null);
+  const c2BodyRef = useRef(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -116,6 +125,29 @@ export default function VisionMission() {
           y: 0, opacity: 1, duration: 1.0, ease: "power3.out",
           stagger: 0.2,
           scrollTrigger: { trigger: section, start: "top 65%", toggleActions: "play none none none" },
+        }
+      );
+
+      /* ── 3b. Card text elements: staggered clip-reveal ── */
+      const card1Texts = [c1LabelRef.current, c1TitleRef.current, c1BodyRef.current];
+      const card2Texts = [c2LabelRef.current, c2TitleRef.current, c2BodyRef.current];
+
+      gsap.fromTo(card1Texts,
+        { y: 28, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.75, ease: "power3.out",
+          stagger: 0.14,
+          scrollTrigger: { trigger: section, start: "top 58%", toggleActions: "play none none none" },
+        }
+      );
+
+      gsap.fromTo(card2Texts,
+        { y: 28, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.75, ease: "power3.out",
+          stagger: 0.14,
+          delay: 0.2,
+          scrollTrigger: { trigger: section, start: "top 58%", toggleActions: "play none none none" },
         }
       );
 
@@ -236,7 +268,7 @@ export default function VisionMission() {
       style={{
         width: "100vw",
         marginLeft: "calc((100% - 100vw) / 2)",
-        background: "linear-gradient(160deg, #0D1E2B 0%, #0A0A0A 50%, #0D1E2B 100%)",
+        background: "#ffffff",
         padding: "clamp(5rem,10vh,9rem) clamp(1.5rem,6vw,7rem)",
         position: "relative",
         overflow: "hidden",
@@ -246,20 +278,20 @@ export default function VisionMission() {
       <div style={{
         position: "absolute", top: "-10%", left: "-5%",
         width: "45vw", height: "45vw", maxWidth: 700,
-        background: "radial-gradient(circle, rgba(204,161,77,0.08) 0%, transparent 70%)",
+        background: "radial-gradient(circle, rgba(204,161,77,0.06) 0%, transparent 70%)",
         pointerEvents: "none",
       }} />
       {/* Ambient glow — bottom right */}
       <div style={{
         position: "absolute", bottom: "-10%", right: "-5%",
         width: "40vw", height: "40vw", maxWidth: 600,
-        background: "radial-gradient(circle, rgba(22,53,72,0.5) 0%, transparent 70%)",
+        background: "radial-gradient(circle, rgba(22,53,72,0.06) 0%, transparent 70%)",
         pointerEvents: "none",
       }} />
 
       {/* ── HEADING ── */}
       <div ref={headingRef} className="text-center mb-[clamp(3.5rem,6vw,6rem)] relative z-10">
-        <p style={{
+        {/* <p style={{
           fontFamily: "var(--font-futura), Futura, sans-serif",
           fontSize: "clamp(0.65rem, 1vw, 0.78rem)",
           letterSpacing: "0.38em",
@@ -269,12 +301,12 @@ export default function VisionMission() {
           marginBottom: "1rem",
         }}>
           HF Realtors
-        </p>
+        </p> */}
         <h2 style={{
-          fontFamily: "var(--font-futura), Futura, sans-serif",
+          fontFamily: "'Futura-Bold', 'Futura', sans-serif",
           fontSize: "clamp(2.5rem, 6.5vw, 5.5rem)",
           fontWeight: 700,
-          color: "#EDEDED",
+          color: "#163548",
           lineHeight: 1.05,
           textTransform: "uppercase",
           letterSpacing: "-0.02em",
@@ -307,8 +339,8 @@ export default function VisionMission() {
           ref={card1Ref}
           style={{
             flex: 1,
-            background: "linear-gradient(145deg, rgba(22,53,72,0.6) 0%, rgba(13,30,43,0.8) 100%)",
-            border: "1px solid rgba(204,161,77,0.22)",
+            background: "linear-gradient(145deg, rgba(22,53,72,0.06) 0%, rgba(22,53,72,0.10) 100%)",
+            border: "1px solid rgba(22,53,72,0.18)",
             borderRadius: "24px",
             padding: "clamp(2rem,4vw,3.5rem)",
             backdropFilter: "blur(12px)",
@@ -323,16 +355,16 @@ export default function VisionMission() {
             background: "radial-gradient(circle at top right, rgba(204,161,77,0.15), transparent 70%)",
           }} />
 
-          <p style={{
-            fontFamily: "var(--font-futura), Futura, sans-serif",
+          <p ref={c1LabelRef} style={{
+            fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
             fontSize: "clamp(0.7rem, 1vw, 0.8rem)",
             letterSpacing: "0.3em",
             textTransform: "uppercase",
             color: "#CCA14D",
-            fontWeight: 600,
+            fontWeight: 500,
             marginBottom: "clamp(1.5rem,3vw,2.5rem)",
           }}>
-            01 — Vision
+            Vision
           </p>
 
           {/* SVG container */}
@@ -347,21 +379,21 @@ export default function VisionMission() {
             </div>
           </div>
 
-          <div style={{ height: "1px", background: "rgba(204,161,77,0.15)", marginBottom: "clamp(1.5rem,3vw,2rem)" }} />
+          <div style={{ height: "1px", background: "rgba(22,53,72,0.15)", marginBottom: "clamp(1.5rem,3vw,2rem)" }} />
 
-          <h3 style={{
-            fontFamily: "var(--font-futura), Futura, sans-serif",
+          <h3 ref={c1TitleRef} style={{
+            fontFamily: "'Futura-Bold', 'Futura', sans-serif",
             fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
             fontWeight: 600,
-            color: "#EDEDED",
+            color: "#163548",
             marginBottom: "0.8rem",
           }}>
             Strategic Foresight
           </h3>
-          <p style={{
-            fontFamily: "var(--font-futura), Futura, sans-serif",
+          <p ref={c1BodyRef} style={{
+            fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
             fontSize: "clamp(0.9rem, 1.2vw, 1.05rem)",
-            color: "rgba(237,237,237,0.65)",
+            color: "rgba(22,53,72,0.80)",
             lineHeight: 1.78,
             fontWeight: 400,
           }}>
@@ -374,8 +406,8 @@ export default function VisionMission() {
           ref={card2Ref}
           style={{
             flex: 1,
-            background: "linear-gradient(145deg, rgba(10,10,10,0.9) 0%, rgba(22,53,72,0.4) 100%)",
-            border: "1px solid rgba(204,161,77,0.14)",
+            background: "linear-gradient(145deg, rgba(22,53,72,0.06) 0%, rgba(22,53,72,0.10) 100%)",
+            border: "1px solid rgba(22,53,72,0.18)",
             borderRadius: "24px",
             padding: "clamp(2rem,4vw,3.5rem)",
             backdropFilter: "blur(12px)",
@@ -383,23 +415,18 @@ export default function VisionMission() {
             overflow: "hidden",
           }}
         >
-          {/* Corner accent */}
-          <div style={{
-            position: "absolute", bottom: 0, left: 0,
-            width: 80, height: 80,
-            background: "radial-gradient(circle at bottom left, rgba(22,53,72,0.5), transparent 70%)",
-          }} />
 
-          <p style={{
-            fontFamily: "var(--font-futura), Futura, sans-serif",
+
+          <p ref={c2LabelRef} style={{
+            fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
             fontSize: "clamp(0.7rem, 1vw, 0.8rem)",
             letterSpacing: "0.3em",
             textTransform: "uppercase",
             color: "#CCA14D",
-            fontWeight: 600,
+            fontWeight: 500,
             marginBottom: "clamp(1.5rem,3vw,2.5rem)",
           }}>
-            02 — Mission
+            Mission
           </p>
 
           {/* SVG container */}
@@ -414,21 +441,21 @@ export default function VisionMission() {
             </div>
           </div>
 
-          <div style={{ height: "1px", background: "rgba(204,161,77,0.15)", marginBottom: "clamp(1.5rem,3vw,2rem)" }} />
+          <div style={{ height: "1px", background: "rgba(22,53,72,0.15)", marginBottom: "clamp(1.5rem,3vw,2rem)" }} />
 
-          <h3 style={{
-            fontFamily: "var(--font-futura), Futura, sans-serif",
+          <h3 ref={c2TitleRef} style={{
+            fontFamily: "'Futura-Bold', 'Futura', sans-serif",
             fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
             fontWeight: 600,
-            color: "#EDEDED",
+            color: "#163548",
             marginBottom: "0.8rem",
           }}>
             Guided Growth
           </h3>
-          <p style={{
-            fontFamily: "var(--font-futura), Futura, sans-serif",
+          <p ref={c2BodyRef} style={{
+            fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
             fontSize: "clamp(0.9rem, 1.2vw, 1.05rem)",
-            color: "rgba(237,237,237,0.65)",
+            color: "rgba(22,53,72,0.80)",
             lineHeight: 1.78,
             fontWeight: 400,
           }}>

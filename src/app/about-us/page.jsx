@@ -41,30 +41,6 @@ export default function AboutUsPage() {
       {/* Vision & Mission Cards */}
       <VisionMission />
 
-      {/* 
-        Section 3: The 'Gooey' Call to Action
-        A cinematic conclusion prompting user interaction
-      */}
-      <section className="relative w-full min-h-[50vh] flex flex-col items-center justify-center py-24 px-8 md:px-12 lg:px-24 bg-[#163548] overflow-hidden">
-        {/* Subtle background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-[#CCA14D] opacity-5 blur-[100px] rounded-full pointer-events-none" />
-
-        <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
-          <h2
-            className="text-[2.5rem] sm:text-[4rem] lg:text-[5rem] tracking-tighter leading-[1] text-[#CCA14D] mb-8 uppercase"
-            style={{ fontFamily: 'var(--font-futura), Futura, sans-serif', fontWeight: 'bold' }}
-          >
-            Ready To Transform <br /> Your Space?
-          </h2>
-          <p className="font-sans text-[#EDEDED] text-base lg:text-lg max-w-2xl leading-relaxed mb-12 font-light tracking-wide opacity-90">
-            Connect with our master designers and advisory team to begin shaping your generational legacy.
-          </p>
-
-          <Button href="/contact-us" className="px-12 py-4">
-            Let's Connect
-          </Button>
-        </div>
-      </section>
 
     </main>
   );

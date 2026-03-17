@@ -114,8 +114,8 @@ export default function Hero() {
     });
 
     return (
-        /* ── Outer 400vh wrapper: provides scroll travel ── */
-        <div ref={wrapperRef} style={{ height: "400vh" }} className="relative">
+        /* ── Outer wrapper: 120vh on mobile (no animation), 400vh on desktop ── */
+        <div ref={wrapperRef} className="relative h-[120vh] lg:h-[400vh]">
 
             {/* ── Sticky viewport — true 100vw × 100vh ── */}
             <div className="sticky top-0 w-screen h-screen bg-[#0a1a28] font-sans overflow-hidden" style={{ willChange: "transform" }}>
@@ -156,7 +156,7 @@ export default function Hero() {
                             </RevealText>
 
                             <RevealText delay={0.8}>
-                                <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4 relative z-50">
+                                <div className="flex flex-col sm:flex-row flex-wrap items-center gap-4 relative z-50">
                                     <Button variant="gold" href="#">
                                         Book A Consultation
                                     </Button>

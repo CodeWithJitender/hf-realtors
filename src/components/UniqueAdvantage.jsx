@@ -56,7 +56,7 @@ export default function UniqueAdvantage() {
                             </motion.div>
                         )} */}
 
-                        <h2 className="text-[14vw] md:text-[11vw] leading-[0.8] font-serif font-medium tracking-tight text-[#EDEDED] text-center flex-shrink-0 drop-shadow-md flex flex-wrap justify-center overflow-hidden">
+                        <h2 className="text-[14vw] md:text-[11vw] leading-[0.8] font-medium tracking-tight text-[#EDEDED] text-center flex-shrink-0 drop-shadow-md flex flex-wrap justify-center overflow-hidden" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>
                             {line.text.split(" ").map((word, wordIndex) => (
                                 <motion.span
                                     key={wordIndex}
@@ -100,7 +100,7 @@ export default function UniqueAdvantage() {
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 1, delay: 0.4, ease: [0.2, 0.65, 0.3, 0.9] }}
                 >
-                    <p className="text-[#EDEDED] font-sans text-sm md:text-base leading-relaxed">
+                    <p className="text-[#EDEDED] text-sm md:text-base leading-relaxed" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}>
                         Partner with the only real estate firm providing complimentary premium architectural redesign. We transform spaces before you even hold the keys.
                     </p>
                 </motion.div>
@@ -113,9 +113,9 @@ export default function UniqueAdvantage() {
                     transition={{ duration: 1, delay: 0.6, ease: [0.2, 0.65, 0.3, 0.9] }}
                     className="mt-8"
                 >
-                    <Button href="tel:+911234567890" variant="outlined" className="gap-3">
+                    <Button href="tel:+911234567890" variant="outlined" showArrow={false} className="gap-3">
                         <Phone size={16} />
-                        +91 12345 67890
+                        <span style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}>+91 12345 67890</span>
                     </Button>
                 </motion.div>
             </div>

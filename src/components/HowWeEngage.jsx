@@ -126,17 +126,18 @@ export default function HowWeEngage() {
 
   return (
     <section
+      id="all-services"
       className="w-full bg-[#0d1f2d]"
       style={{ overscrollBehavior: "contain" }}
     >
       {/* Section Header */}
-      <div className="w-full text-center pt-[clamp(4rem,8vw,8rem)] pb-[clamp(2.5rem,5vw,5rem)] px-6">
-        <p className="text-[#CCA14D] text-xs tracking-[0.4em] uppercase font-sans mb-4 font-medium">
+      <div className="w-full text-center pt-[clamp(3rem,6vw,5rem)] pb-[clamp(2rem,4vw,3.5rem)] px-6">
+        {/* <p className="text-[#CCA14D] text-xs tracking-[0.4em] uppercase font-sans mb-4 font-medium">
           Our Services
-        </p>
+        </p> */}
         <h2
           className="text-[clamp(2.5rem,5vw,5rem)] font-bold uppercase tracking-tighter text-[#EDEDED] leading-tight"
-          style={{ fontFamily: "var(--font-futura), Futura, sans-serif" }}
+          style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
         >
           How We Engage
         </h2>
@@ -194,7 +195,7 @@ export default function HowWeEngage() {
                       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#CCA14D] to-transparent opacity-60" />
                     </div>
 
-                    <span className="relative z-10 text-[#CCA14D] text-xs font-semibold tracking-[0.35em] uppercase font-sans">
+                    <span className="relative z-10 text-[#CCA14D] text-xs font-semibold tracking-[0.35em] uppercase" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}>
                       {data.index}
                     </span>
 
@@ -202,26 +203,23 @@ export default function HowWeEngage() {
                       <h3
                         className="font-bold uppercase leading-[0.95] tracking-tighter text-white mb-3"
                         style={{
-                          fontFamily: "var(--font-futura), Futura, sans-serif",
+                          fontFamily: "'Futura-Bold', 'Futura', sans-serif",
                           fontSize: "clamp(1.5rem, 4vw + 0.5rem, 3rem)",
                           textShadow: "0 2px 20px rgba(0,0,0,0.5)",
-                          // No white-space: nowrap — allow natural wrapping
                         }}
                       >
                         {data.title}
                       </h3>
                       <div className="h-px w-10 bg-[#CCA14D] mb-4" />
                       <p
-                        className="text-white/75 font-sans font-light leading-snug"
-                        style={{ fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)" }}
+                        className="text-white/75 font-light leading-snug"
+                        style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500, fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)" }}
                       >
                         {data.subtitle}
                       </p>
                     </div>
 
-                    <span className="relative z-10 text-white/30 text-[10px] font-sans tracking-[0.3em] uppercase">
-                      HF Realtors
-                    </span>
+
                   </div>
 
                   {/* Right column — description */}
@@ -240,10 +238,11 @@ export default function HowWeEngage() {
                     {data.description.split("\n\n").map((para, pi) => (
                       <p
                         key={pi}
-                        className="font-sans font-light leading-relaxed mb-4 last:mb-0 text-[#163548]/75"
+                        className="leading-relaxed mb-4 last:mb-0 text-[#163548]/75"
                         style={{
+                          fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+                          fontWeight: 500,
                           fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)",
-                          // Explicitly no overflow:hidden or white-space:nowrap
                           overflowWrap: "break-word",
                           wordBreak: "break-word",
                         }}

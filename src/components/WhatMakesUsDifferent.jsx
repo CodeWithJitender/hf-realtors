@@ -75,7 +75,7 @@ function DiffCard({ card, cardRef }) {
       style={{
         flex: "0 0 clamp(300px, 33vw, 430px)",
         height: "clamp(380px, 56vh, 500px)",
-        background: "linear-gradient(145deg, #1A1208 0%, #120E06 55%, #0E0A04 100%)",
+        background: "linear-gradient(145deg, #1D3E5A 0%, #163548 55%, #11293A 100%)",
         border: "1px solid rgba(204,161,77,0.38)",
         borderTop: "2px solid rgba(204,161,77,0.65)",
         borderRadius: "18px",
@@ -85,7 +85,7 @@ function DiffCard({ card, cardRef }) {
         justifyContent: "space-between",
         position: "relative",
         overflow: "hidden",
-        boxShadow: "0 12px 60px rgba(0,0,0,0.7), 0 0 0 1px rgba(204,161,77,0.08), inset 0 1px 0 rgba(204,161,77,0.12)",
+        boxShadow: "0 12px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(204,161,77,0.10), inset 0 1px 0 rgba(204,161,77,0.14)",
         willChange: "transform",
       }}
     >
@@ -129,7 +129,7 @@ function DiffCard({ card, cardRef }) {
           fontFamily: "var(--font-futura), Futura, sans-serif",
           fontSize: "clamp(1.45rem, 2.3vw, 1.95rem)",
           fontWeight: 700,
-          color: "#F5E6C8",
+          color: "#EDEDED",
           lineHeight: 1.16,
           letterSpacing: "-0.02em",
           margin: 0,
@@ -143,7 +143,7 @@ function DiffCard({ card, cardRef }) {
         fontFamily: "var(--font-futura), Futura, sans-serif",
         fontSize: "clamp(0.8rem, 1.15vw, 0.92rem)",
         fontWeight: 400,
-        color: "rgba(245,230,200,0.58)",
+        color: "rgba(237,237,237,0.62)",
         lineHeight: 1.8,
         margin: 0,
       }}>{card.body}</p>
@@ -287,7 +287,7 @@ export default function WhatMakesUsDifferent() {
           alignItems: "center",
           justifyContent: "center",
           /* Rich warm-dark gold-tinted background */
-          background: "linear-gradient(160deg, #100C04 0%, #0A0804 40%, #080508 70%, #060408 100%)",
+          background: "#163548",
         }}
       >
         {/* ── Large ambient gold radial glow ── */}
@@ -295,7 +295,7 @@ export default function WhatMakesUsDifferent() {
           position: "absolute", top: "50%", left: "50%",
           transform: "translate(-50%,-50%)",
           width: "90vw", height: "90vh",
-          background: "radial-gradient(ellipse, rgba(204,161,77,0.11) 0%, rgba(140,90,20,0.06) 40%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(204,161,77,0.13) 0%, rgba(204,161,77,0.06) 40%, transparent 70%)",
           pointerEvents: "none",
           zIndex: 0,
         }} />
@@ -331,19 +331,7 @@ export default function WhatMakesUsDifferent() {
           lineHeight: 1,
         }}>DIFFERENT</div>
 
-        {/* ── Gold corner brackets ── */}
-        {[
-          { top: 24, left: 24, r: "0deg" },
-          { top: 24, right: 24, r: "90deg" },
-          { bottom: 24, left: 24, r: "270deg" },
-          { bottom: 24, right: 24, r: "180deg" },
-        ].map((p, i) => (
-          <svg key={i} aria-hidden width="28" height="28" viewBox="0 0 28 28" fill="none"
-            style={{ position: "absolute", zIndex: 2, opacity: 0.5, transform: `rotate(${p.r})`, ...p }}
-          >
-            <path d="M2 26 L2 2 L26 2" stroke="#CCA14D" strokeWidth="1.8" strokeLinecap="round" />
-          </svg>
-        ))}
+
 
         {/* ════════════════════════════════════
             3D WORD-POP HEADING — perspective container
@@ -382,12 +370,12 @@ export default function WhatMakesUsDifferent() {
 
           {/* Word row 1 */}
           <div style={{ display: "flex", gap: "clamp(0.5rem,1.5vw,1.8rem)", lineHeight: 1 }}>
-            <span ref={word0} style={wordStyle("#FFFFFF")}>WHAT</span>
-            <span ref={word1} style={wordStyle("#FFFFFF")}>MAKES</span>
+            <span ref={word0} style={wordStyle("#EDEDED")}>WHAT</span>
+            <span ref={word1} style={wordStyle("#EDEDED")}>MAKES</span>
           </div>
           {/* Word row 2 */}
           <div style={{ display: "flex", gap: "clamp(0.5rem,1.5vw,1.8rem)", lineHeight: 1, marginTop: "0.06em" }}>
-            <span ref={word2} style={wordStyle("#FFFFFF")}>US</span>
+            <span ref={word2} style={wordStyle("#EDEDED")}>US</span>
             <span ref={word3} style={wordStyle("#CCA14D", true)}>DIFFERENT</span>
           </div>
         </div>
@@ -450,6 +438,6 @@ function wordStyle(color, glow = false) {
     display: "inline-block",
     textShadow: glow
       ? "0 0 60px rgba(204,161,77,0.55), 0 0 120px rgba(204,161,77,0.25)"
-      : "0 4px 40px rgba(0,0,0,0.9)",
+      : "0 4px 40px rgba(0,0,0,0.5)",
   };
 }

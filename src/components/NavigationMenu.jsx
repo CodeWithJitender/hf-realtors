@@ -1,10 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const navLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
     { name: "Services", href: "/services" },
-    { name: "Properties", href: "/#properties" },
     { name: "Contact Us", href: "/contact-us" },
 ];
 
@@ -57,13 +57,13 @@ export default function NavigationMenu({ isOpen, setIsOpen }) {
                                                 delay: 0.3 + i * 0.08, // Staggered delay after background drops
                                             }}
                                         >
-                                            <a
+                                            <Link
                                                 href={link.href}
                                                 onClick={() => setIsOpen(false)}
                                                 className="text-5xl md:text-7xl lg:text-[7rem] font-medium tracking-tighter leading-none hover:text-[#CCA14D] transition-colors block"
                                             >
                                                 {link.name}
-                                            </a>
+                                            </Link>
                                         </motion.div>
                                     </div>
                                 ))}
@@ -79,7 +79,7 @@ export default function NavigationMenu({ isOpen, setIsOpen }) {
                             className="flex flex-col md:flex-row justify-between items-start md:items-end px-6 md:px-12 pb-12 w-full gap-8"
                         >
                             <div className="flex flex-col text-sm font-semibold tracking-widest uppercase gap-1">
-                                <p>HF REALTORS</p>
+                                {/* <p>HF REALTORS</p> */}
                                 <a href="mailto:hello@hfrealtors.com" className="hover:opacity-70 transition-opacity">
                                     HELLO@HFREALTORS.COM
                                 </a>

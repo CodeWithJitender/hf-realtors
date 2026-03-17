@@ -46,7 +46,7 @@ export default function GsapScrollSequence() {
 
     // Reset initial states
     gsap.set(imagesRef.current, { scale: 0, opacity: 1 });
-    gsap.set(finalContainerRef.current, { scale: 0, backgroundColor: "#7A1315" });
+    gsap.set(finalContainerRef.current, { scale: 0, backgroundColor: "#163548" });
     gsap.set(textRef.current, { opacity: 0, y: 30 });
 
     // --- PHASE 1: The Gallery (Overlapping Fast Zoom) ---

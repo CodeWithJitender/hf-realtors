@@ -13,16 +13,16 @@ export default function Footer() {
 
             {/* Top Section: Massive Hook */}
             <div className="text-center mb-16 relative">
-                <RevealText delay={0.1} as="h2" className="text-6xl md:text-8xl lg:text-9xl font-serif font-medium uppercase text-[#EDEDED] mb-2 leading-[1] tracking-tight drop-shadow-md">
-                    <span className="block">LET'S WORK</span>
-                    <span className="block">TOGETHER</span>
+                <RevealText delay={0.1} as="h2" className="text-6xl md:text-8xl lg:text-9xl font-medium uppercase text-[#EDEDED] mb-2 leading-[1] tracking-tight drop-shadow-md">
+                    <span className="block" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>LET'S WORK</span>
+                    <span className="block" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>TOGETHER</span>
                 </RevealText>
             </div>
 
             {/* Middle Section: Contact Info */}
             <div className="flex flex-col items-center mb-16">
                 <RevealText delay={0.2} className="mb-4">
-                    <p className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[#FFED7E] uppercase">
+                    <p className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[#FFED7E] uppercase" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}>
                         CONNECT WITH US
                     </p>
                 </RevealText>
@@ -30,9 +30,10 @@ export default function Footer() {
                     <Button
                         href="mailto:HELLO@HFREALTORS.COM"
                         variant="outlined"
-                        className="text-2xl md:text-4xl lg:text-5xl border-transparent hover:border-[#FFED7E]/20 transition-all px-8 py-4 bg-transparent text-[#CCA14D] hover:text-[#163548]"
+                        showArrow={false}
+                        className="border-transparent hover:border-[#FFED7E]/20 transition-all bg-transparent text-[#CCA14D] hover:text-[#163548]"
                     >
-                        HELLO@HFREALTORS.COM
+                        <span style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}>HELLO@HFREALTORS.COM</span>
                     </Button>
                 </RevealText>
             </div>
@@ -48,15 +49,15 @@ export default function Footer() {
             {/* Bottom Meta Row */}
             <div className="w-full max-w-7xl border-t border-[#EDEDED]/10 pt-8 mt-auto flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] md:text-xs text-[#EDEDED]/60 font-medium tracking-wide">
 
-                <div className="text-center md:text-left">
+                <div className="text-center md:text-left" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>
                     &copy; {currentYear} HF Realtors
                 </div>
 
-                <div className="text-center md:flex-1">
+                <div className="text-center md:flex-1" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>
                     Made with love and creative juices
                 </div>
 
-                <nav className="flex items-center gap-4 text-center md:text-right">
+                <nav className="flex items-center gap-4 text-center md:text-right" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>
                     <Link href="/" className="hover:text-[#CCA14D] transition-colors">Home</Link>
                     <span className="opacity-30">-</span>
                     <Link href="/about-us" className="hover:text-[#CCA14D] transition-colors">About</Link>

@@ -126,10 +126,10 @@ function StatsContent({ tab, isActive }) {
             {tab.stats.map((stat, i) => (
                 <FadeUp key={i} delay={0.1 + i * 0.12} animate={anim}>
                     <div className="flex flex-row items-center gap-6 md:gap-8 xl:gap-16 w-full">
-                        <span className="font-sans font-light text-[4rem] md:text-[6rem] xl:text-[9rem] text-[#CCA14D] tracking-tighter min-w-[120px] md:min-w-[180px] xl:min-w-[240px] leading-none">
+                        <span className="font-light text-[4rem] md:text-[6rem] xl:text-[9rem] text-[#CCA14D] tracking-tighter min-w-[120px] md:min-w-[180px] xl:min-w-[240px] leading-none" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>
                             {stat.value}
                         </span>
-                        <span className="font-sans font-medium text-base md:text-xl xl:text-2xl text-[#163548] leading-tight whitespace-pre-line uppercase tracking-wide">
+                        <span className="font-medium text-base md:text-xl xl:text-2xl text-[#163548] leading-tight whitespace-pre-line uppercase tracking-wide" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>
                             {stat.label}
                         </span>
                     </div>
@@ -148,10 +148,10 @@ function ValuesContent({ tab, isActive }) {
                     <FadeUp key={i} delay={0.1 + i * 0.1} animate={anim}>
                         <div className="flex flex-row items-center justify-between p-6 md:p-8 border-b border-[#CCA14D]/10 last:border-0 hover:bg-[#CCA14D]/5 transition-colors">
                             <div className="flex flex-col">
-                                <span className="font-sans font-bold text-lg md:text-2xl text-[#CCA14D] mb-1">{val.title}</span>
-                                <span className="font-sans text-sm md:text-base text-[#163548]/70 whitespace-pre-line leading-relaxed">{val.desc}</span>
+                                <span className="font-bold text-lg md:text-2xl text-[#CCA14D] mb-1" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{val.title}</span>
+                                <span className="text-sm md:text-base text-[#163548]/70 whitespace-pre-line leading-relaxed" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>{val.desc}</span>
                             </div>
-                            <span className="font-sans font-light text-[3rem] md:text-[4.5rem] leading-none text-[#CCA14D] opacity-25 ml-4">{val.num}</span>
+                            <span className="font-light text-[3rem] md:text-[4.5rem] leading-none text-[#CCA14D] opacity-25 ml-4" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{val.num}</span>
                         </div>
                     </FadeUp>
                 ))}
@@ -168,7 +168,7 @@ function TeamContent({ tab, isActive }) {
                 initial={{ opacity: 0 }}
                 animate={isActive ? { opacity: 0.1 } : { opacity: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="hidden md:block text-[5rem] xl:text-[9rem] tracking-tighter text-[#163548] leading-none whitespace-nowrap absolute top-[-4rem] xl:top-[-7rem] z-0"
+                className="hidden md:block text-[5rem] xl:text-[9rem] tracking-tighter text-[#163548] leading-none whitespace-nowrap absolute top-[-4rem] xl:top-[-7rem] z-0" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
             >
                 {tab.title}
             </motion.h3>
@@ -209,7 +209,7 @@ function FoundersContent({ tab, isActive }) {
             <div className="flex-1 flex items-end pb-4">
                 <RevealWords
                     text="Meet Our Founder"
-                    className="text-[2.5rem] xl:text-[4rem] tracking-tighter text-[#CCA14D] leading-[0.9] block"
+                    className="text-[2.5rem] xl:text-[4rem] tracking-tighter text-[#CCA14D] leading-[0.9] block" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
                     delay={0.15}
                     animate={anim}
                 />
@@ -298,7 +298,7 @@ function DesktopReveal() {
     const dotTop = useTransform(scrollYProgress, [0.15, 0.95], ["5%", "95%"]);
 
     return (
-        <section ref={sectionRef} className="relative w-full bg-white" style={{ height: "700vh" }}>
+        <section ref={sectionRef} className="relative w-full bg-white h-[300vh] lg:h-[700vh]">
             <div className="sticky top-0 w-full h-screen overflow-hidden">
 
                 {/* ── Layer 0: About Us Content ── */}
@@ -316,7 +316,7 @@ function DesktopReveal() {
                             ABOUT US
                         </motion.span>
 
-                        <h2 className="text-fluid-h1 tracking-tight leading-[1.1] md:leading-[1.05] text-[#163548] mb-6">
+                        <h2 className="text-fluid-h1 tracking-tight leading-[1.2] text-[#163548] mb-6 pb-1" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>
                             <RevealWords
                                 text="Leading the Future of Real Estate"
                                 animate={doorsOpen ? "visible" : "hidden"}
@@ -433,6 +433,173 @@ function DesktopReveal() {
     );
 }
 
+// ─── Mobile Reveal ────────────────────────────────────────────────
+// Split-door animation first, then 4 stacked scroll-reveal sections
+function MobileReveal() {
+    const doorRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: doorRef,
+        offset: ["start start", "end end"],
+    });
+
+    // Doors slide open over the first 70% of the scroll, then fade
+    const leftX  = useTransform(scrollYProgress, [0, 0.7], ["0%", "-100%"]);
+    const rightX = useTransform(scrollYProgress, [0, 0.7], ["0%",  "100%"]);
+    const doorOpacity = useTransform(scrollYProgress, [0.65, 0.85], [1, 0]);
+
+    // Shared fade-up variant for section entries
+    const sectionVariants = {
+        hidden: { opacity: 0, y: 32 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } },
+    };
+
+    return (
+        <div>
+            {/* ―― 1. Door Animation ―― */}
+            <section ref={doorRef} className="relative h-[130vh]">
+                <div className="sticky top-0 h-screen overflow-hidden">
+                    <motion.div style={{ opacity: doorOpacity }} className="absolute inset-0 z-50 pointer-events-none">
+                        {/* Left door */}
+                        <motion.div
+                            style={{ x: leftX, clipPath: "polygon(0 0, 50% 0, 50% 100%, 0 100%)" }}
+                            className="absolute inset-0 bg-[#163548] will-change-transform"
+                        >
+                            <Image src="/images/splitreveal-bg.jpg" alt="" fill className="object-cover" priority />
+                            <div className="absolute inset-0 bg-[#163548]/80 mix-blend-multiply" />
+                            <SplitText />
+                        </motion.div>
+                        {/* Right door */}
+                        <motion.div
+                            style={{ x: rightX, clipPath: "polygon(50% 0, 100% 0, 100% 100%, 50% 100%)" }}
+                            className="absolute inset-0 bg-[#163548] will-change-transform"
+                        >
+                            <Image src="/images/splitreveal-bg.jpg" alt="" fill className="object-cover" priority />
+                            <div className="absolute inset-0 bg-[#163548]/80 mix-blend-multiply" />
+                            <SplitText />
+                        </motion.div>
+                    </motion.div>
+
+                    {/* About Us content anchored to bottom, no dead whitespace */}
+                    <div className="absolute inset-0 flex flex-col justify-end px-6 pb-16 bg-white">
+                        <span className="block font-sans font-semibold text-[#CCA14D] uppercase tracking-widest text-[10px] mb-4">ABOUT US</span>
+                        <h2 className="text-[2.2rem] font-bold tracking-tight leading-[1.2] text-[#163548] mb-4 pb-1" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>
+                            Leading the Future of Real Estate
+                        </h2>
+                        <p className="text-sm text-[#163548]/60 leading-relaxed" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>
+                            Our framework is driven by research, compliance, discretion, and long-term capital performance.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* ―― 2. Stacked Scroll-Reveal Sections ―― */}
+            <div className="bg-white text-[#163548]">
+
+                {/* WHO WE ARE */}
+                <motion.section
+                    className="px-6 py-14 border-t border-[#CCA14D]/20"
+                    variants={sectionVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-60px" }}
+                >
+                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-8">WHO WE ARE</h3>
+                    <div className="flex flex-col gap-8">
+                        {tabs[0].stats.map((stat, i) => (
+                            <motion.div
+                                key={i}
+                                className="flex flex-row items-center gap-6"
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                            >
+                                <span className="font-light text-[3.5rem] text-[#CCA14D] tracking-tighter min-w-[110px] leading-none" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{stat.value}</span>
+                                <span className="font-semibold text-sm text-[#163548] uppercase tracking-wide whitespace-pre-line leading-tight" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>{stat.label}</span>
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.section>
+
+                {/* OUR VALUES */}
+                <motion.section
+                    className="px-6 py-14 border-t border-[#CCA14D]/20"
+                    variants={sectionVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-60px" }}
+                >
+                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-8">OUR VALUES</h3>
+                    <div className="flex flex-col border border-[#CCA14D]/20 shadow-sm">
+                        {tabs[1].values.map((val, i) => (
+                            <motion.div
+                                key={i}
+                                className="flex flex-row items-center justify-between p-5 border-b border-[#CCA14D]/10 last:border-0"
+                                initial={{ opacity: 0, y: 16 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                            >
+                                <div className="flex flex-col">
+                                    <span className="font-bold text-base text-[#CCA14D] mb-1" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{val.title}</span>
+                                    <span className="text-xs text-[#163548]/70 leading-relaxed" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>{val.desc}</span>
+                                </div>
+                                <span className="font-light text-[2.5rem] text-[#CCA14D] opacity-20 ml-4 leading-none" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{val.num}</span>
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.section>
+
+                {/* OUR TEAM */}
+                <motion.section
+                    className="px-6 py-14 border-t border-[#CCA14D]/20"
+                    variants={sectionVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-60px" }}
+                >
+                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-8">OUR TEAM</h3>
+                    <div className="relative w-full aspect-[4/3] overflow-hidden shadow-xl border border-[#CCA14D]/20 mb-6">
+                        <Image src={tabs[2].teamImage} alt="Our Team" fill className="object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#163548]/40 via-transparent to-transparent" />
+                    </div>
+                    <div className="flex flex-col items-center text-center gap-2">
+                        {tabs[2].roles.map((line, i) => (
+                            <p key={i} className="font-sans text-[10px] tracking-[0.15em] text-[#163548] font-semibold uppercase">{line}</p>
+                        ))}
+                    </div>
+                </motion.section>
+
+                {/* FOUNDERS */}
+                <motion.section
+                    className="px-6 py-14 border-t border-[#CCA14D]/20"
+                    variants={sectionVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-60px" }}
+                >
+                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-8">MEET OUR FOUNDER</h3>
+                    {tabs[3].founders.map((founder, i) => (
+                        <motion.div
+                            key={i}
+                            className="relative w-full aspect-[3/4] overflow-hidden border border-[#CCA14D]/25 shadow-xl"
+                            initial={{ opacity: 0, scale: 0.97 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                        >
+                            <Image src={founder.image} alt={founder.name} fill className="object-cover grayscale" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                            <span className="absolute bottom-4 left-0 right-0 text-center font-sans font-semibold text-base text-white">{founder.name}</span>
+                        </motion.div>
+                    ))}
+                </motion.section>
+
+            </div>
+        </div>
+    );
+}
+
 // ─── Main Component ────────────────────────────────────────────────
 export default function SplitReveal() {
     const [isDesktop, setIsDesktop] = useState(false);
@@ -445,83 +612,8 @@ export default function SplitReveal() {
         return () => mq.removeEventListener("change", handler);
     }, []);
 
-    // ── Desktop: full scroll-triggered split-door animation ──
     if (isDesktop) return <DesktopReveal />;
-
-    // ── Mobile / Tablet: simple stacked layout, no scroll tricks ──
-    return (
-        <div className="bg-white text-[#163548] px-6 sm:px-10 py-16 space-y-20">
-
-            {/* Eyebrow + Main Heading */}
-            <div>
-                <span className="block font-sans font-semibold text-[#CCA14D] uppercase tracking-widest text-[10px] mb-4">
-                    ABOUT US
-                </span>
-                <h2 className="text-[2.4rem] sm:text-[3rem] font-sans font-bold tracking-tight leading-[1.1] text-[#163548] mb-6">
-                    Leading the Future of Real Estate
-                </h2>
-                <p className="text-sm text-[#163548]/60 font-sans leading-relaxed max-w-md">
-                    Our framework is driven by research, compliance, discretion, and long-term capital performance.
-                </p>
-            </div>
-
-            {/* WHO WE ARE */}
-            <div>
-                <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-6">WHO WE ARE</h3>
-                <div className="flex flex-col gap-8">
-                    {tabs[0].stats.map((stat, i) => (
-                        <div key={i} className="flex flex-row items-center gap-6">
-                            <span className="font-sans font-light text-[3.5rem] sm:text-[4.5rem] text-[#CCA14D] tracking-tighter min-w-[110px] leading-none">{stat.value}</span>
-                            <span className="font-sans font-semibold text-sm sm:text-base text-[#163548] uppercase tracking-wide whitespace-pre-line leading-tight">{stat.label}</span>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* OUR VALUES */}
-            <div>
-                <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-6">OUR VALUES</h3>
-                <div className="flex flex-col border border-[#CCA14D]/20 shadow-md">
-                    {tabs[1].values.map((val, i) => (
-                        <div key={i} className="flex flex-row items-center justify-between p-5 border-b border-[#CCA14D]/10 last:border-0">
-                            <div className="flex flex-col">
-                                <span className="font-sans font-bold text-base text-[#CCA14D] mb-1">{val.title}</span>
-                                <span className="font-sans text-xs text-[#163548]/70 leading-relaxed">{val.desc}</span>
-                            </div>
-                            <span className="font-sans font-light text-[2.5rem] text-[#CCA14D] opacity-20 ml-4 leading-none">{val.num}</span>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* OUR TEAM */}
-            <div>
-                <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-6">OUR TEAM</h3>
-                <div className="relative w-full aspect-[4/3] overflow-hidden shadow-xl border border-[#CCA14D]/20 mb-6">
-                    <Image src={tabs[2].teamImage} alt="Our Team" fill className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#163548]/40 via-transparent to-transparent" />
-                </div>
-                <div className="flex flex-col items-center text-center gap-2">
-                    {tabs[2].roles.map((line, i) => (
-                        <p key={i} className="font-sans text-[10px] sm:text-xs tracking-[0.15em] text-[#163548] font-semibold uppercase">{line}</p>
-                    ))}
-                </div>
-            </div>
-
-            {/* FOUNDERS */}
-            <div>
-                <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-6">MEET OUR FOUNDER</h3>
-                {tabs[3].founders.map((founder, i) => (
-                    <div key={i} className="relative w-full aspect-[3/4] overflow-hidden border border-[#CCA14D]/25 shadow-xl">
-                        <Image src={founder.image} alt={founder.name} fill className="object-cover grayscale" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                        <span className="absolute bottom-4 left-0 right-0 text-center font-sans font-semibold text-base text-white">{founder.name}</span>
-                    </div>
-                ))}
-            </div>
-
-        </div>
-    );
+    return <MobileReveal />;
 }
 
 

@@ -12,7 +12,8 @@ export default function Button({
     className = "",
     onClick,
     href = "#",
-    variant = "solid"
+    variant = "solid",
+    showArrow = true
 }) {
     const buttonRef = useRef(null);
 
@@ -44,7 +45,7 @@ export default function Button({
         // Cap to 60px radius
         const distance = Math.sqrt(rawX * rawX + rawY * rawY);
         const radius = 60;
-        
+
         let targetX = rawX;
         let targetY = rawY;
 
@@ -99,7 +100,7 @@ export default function Button({
                 textColor: isHovered ? "#000000" : "#ffffff", // White -> Black text
             };
         }
-        
+
         if (variant === "gold") {
             return {
                 bgClass: "bg-[linear-gradient(to_right,#9C772E,#FFED7E)]",
@@ -122,10 +123,10 @@ export default function Button({
 
     const styles = getVariantStyles();
 
-    const baseClasses = `relative rounded-[4rem] group flex items-center justify-center cursor-pointer transition-colors duration-300 isolate ${className}`;
+    const baseClasses = `relative rounded-[4rem] group inline-flex items-center justify-center cursor-pointer transition-colors duration-300 isolate ${className}`;
 
     const Wrapper = MotionLink;
-    const wrapperProps = { href, target: "_blank", rel: "noopener noreferrer", onClick };
+    const wrapperProps = { href, rel: "noopener noreferrer", onClick };
 
     return (
         <Wrapper
@@ -151,7 +152,7 @@ export default function Button({
             </svg>
 
             {/* Static Gold Gradient Border with Inner Background */}
-            <div 
+            <div
                 className={`absolute inset-0 rounded-[4rem] z-[-1] pointer-events-none ${styles.borderClass} ${styles.paddingClass}`}
                 style={(variant === "outlined" || variant === "white-outlined") ? {
                     mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
@@ -191,11 +192,11 @@ export default function Button({
 
             {/* Actual Content */}
             <span
-                className="relative z-10 w-full h-full flex items-center justify-center gap-2 font-medium text-[13px] md:text-sm tracking-widest pointer-events-none whitespace-nowrap transition-colors duration-500 uppercase px-8 py-4"
+                className="relative z-10 flex items-center justify-center gap-2 font-medium text-[13px] md:text-sm tracking-widest pointer-events-none whitespace-nowrap transition-colors duration-500 uppercase px-8 py-4"
                 style={{ color: styles.textColor, fontFamily: "'Futura', var(--font-poppins), sans-serif", fontWeight: 500 }}
             >
                 {children}
-                <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                {showArrow && <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform flex-shrink-0" />}
             </span>
         </Wrapper>
     );

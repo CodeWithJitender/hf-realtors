@@ -61,6 +61,7 @@ function ServiceCard({ service, index, totalCount, isActive }) {
           animate={{ opacity: titleOpacity }}
           transition={{ duration: 0.35 }}
           className="text-xl md:text-3xl font-light text-[#163548] hidden md:block mt-2 select-none"
+          style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}
         >
           {service.id}
         </motion.span>
@@ -71,7 +72,8 @@ function ServiceCard({ service, index, totalCount, isActive }) {
             color: isActive ? "#CCA14D" : "#163548",
           }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-[7rem] font-serif font-medium tracking-tight uppercase leading-[0.85]"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-[7rem] font-medium tracking-tight uppercase leading-[0.85]"
+          style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
         >
           {service.title}
         </motion.h3>
@@ -127,7 +129,8 @@ function ServiceCard({ service, index, totalCount, isActive }) {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 8, opacity: 0 }}
               transition={{ duration: 0.5, delay: 0.28, ease: "easeOut" }}
-              className="text-lg md:text-2xl text-[#163548]/65 font-light leading-relaxed mb-2"
+              className="text-lg md:text-2xl text-[#163548]/65 leading-relaxed mb-2"
+              style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}
             >
               {service.desc}
             </motion.p>

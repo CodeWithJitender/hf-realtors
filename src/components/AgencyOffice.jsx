@@ -135,8 +135,9 @@ export default function AgencyOffice() {
                 <button
                   key={item.id}
                   onClick={() => handleTabClick(idx)}
-                  className={`font-sans font-bold tracking-widest text-[13px] uppercase transition-colors duration-300 ${activeTab === idx ? "text-white" : "text-gray-500 hover:text-gray-300"
+                  className={`font-bold tracking-widest text-[13px] uppercase transition-colors duration-300 ${activeTab === idx ? "text-white" : "text-gray-500 hover:text-gray-300"
                     }`}
+                  style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}
                 >
                   {item.city}
                 </button>
@@ -155,7 +156,7 @@ export default function AgencyOffice() {
               >
                 <h2
                   className="font-sans font-extrabold text-fluid-h1 tracking-tighter text-white leading-[1.05] uppercase mb-6"
-                  style={{ fontFamily: 'var(--font-futura), Futura, sans-serif' }}
+                  style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
                 >
                   {loc.title.split('\n').map((line, i) => (
                     <span key={i} className="block">{line}</span>
@@ -166,8 +167,8 @@ export default function AgencyOffice() {
                   {loc.description}
                 </p>
 
-                <Button variant="white-outlined" href={loc.mapLink} className="px-8 py-3">
-                  SHOW ON MAP
+                <Button variant="white-outlined" href={loc.mapLink}>
+                  <span style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}>SHOW ON MAP</span>
                 </Button>
               </motion.div>
             </AnimatePresence>
@@ -177,11 +178,14 @@ export default function AgencyOffice() {
 
         {/* Right Column (Native Scroll Track) */}
         {/* On mobile, we keep the track invisible to prevent overlap but MUST keep its height to drive the scroll-linked tabs and pinning */}
-        <div className="lg:col-span-4 lg:col-start-8 flex flex-col gap-0 w-full max-w-[400px] mx-auto lg:mx-0 pt-[40vh] pb-[40vh] z-10 opacity-0 lg:opacity-100 pointer-events-none lg:pointer-events-auto">
+        <div className="lg:col-span-4 lg:col-start-8 flex flex-col gap-0 w-full max-w-[400px] mx-auto lg:mx-0 pt-[5vh] pb-[5vh] lg:pt-[40vh] lg:pb-[40vh] z-10 opacity-0 lg:opacity-100 pointer-events-none lg:pointer-events-auto">
           {locations.map((locationBlock, blockIdx) => (
             <div key={blockIdx} className="flex flex-col">
+              {/* Mobile: single fixed-height spacer per sector (no images) */}
+              <div className="block lg:hidden h-[65vh] shrink-0" />
+              {/* Desktop: original image grid */}
               {locationBlock.images.map((imgSrc, i) => (
-                <div key={`${blockIdx}-${i}`} className="w-full aspect-[4/5] bg-[#111] overflow-hidden relative border border-white/5 shrink-0">
+                <div key={`${blockIdx}-${i}`} className="hidden lg:block w-full lg:aspect-[4/5] bg-[#111] overflow-hidden relative border border-white/5 shrink-0">
                   <img src={imgSrc} alt={`${locationBlock.city} detail ${i}`} className="w-full h-full object-cover transition-opacity hover:opacity-100" />
                 </div>
               ))}

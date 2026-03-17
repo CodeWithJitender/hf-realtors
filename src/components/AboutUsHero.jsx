@@ -35,8 +35,9 @@ export default function AboutUsHero() {
                     className="object-cover"
                     priority
                 />
-                {/* Subtle dark overlay for readability */}
-                <div className="absolute inset-0 bg-black/30 transition-opacity duration-1000" />
+                {/* Darkened overlay for readability */}
+                <div className="absolute inset-0 bg-black/55" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             </motion.div>
 
             {/* Main Center Text */}
