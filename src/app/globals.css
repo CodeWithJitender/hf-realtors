@@ -98,21 +98,22 @@ body {
   background: var(--color-bg-primary);
   color: var(--color-text-primary);
   font-family: var(--font-body);
-  scrollbar-width: thin;
-  scrollbar-color: #B8913A #0A1628;
-  -ms-overflow-style: none;
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;   /* IE / Edge */
 }
 
-/* Scrollbar Chrome/Safari */
+/* Chrome / Safari / Opera — hide scrollbar */
 body::-webkit-scrollbar {
-  width: 6px;
+  display: none;
 }
-body::-webkit-scrollbar-track {
-  background: #0A1628;
+
+/* Also hide on all elements globally */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-body::-webkit-scrollbar-thumb {
-  background: #B8913A;
-  border-radius: 3px;
+*::-webkit-scrollbar {
+  display: none;
 }
 
 /* Global heading font — Cormorant Garamond */
