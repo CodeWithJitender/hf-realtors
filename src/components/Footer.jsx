@@ -9,7 +9,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="w-full bg-[#0d212d] text-[#EDEDED] py-fluid-section px-fluid-container flex flex-col items-center justify-center relative z-20">
+        <footer className="w-full bg-[#0A1628] text-[#EDEDED] py-fluid-section px-fluid-container flex flex-col items-center justify-center relative z-20">
 
             {/* Top Section: Massive Hook */}
             <div className="text-center mb-16 relative">
@@ -22,7 +22,7 @@ export default function Footer() {
             {/* Middle Section: Contact Info */}
             <div className="flex flex-col items-center mb-16">
                 <RevealText delay={0.2} className="mb-4">
-                    <p className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[#FFED7E] uppercase" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}>
+                    <p className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[#E8C96A] uppercase" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 500 }}>
                         CONNECT WITH US
                     </p>
                 </RevealText>
@@ -31,9 +31,9 @@ export default function Footer() {
                         href="mailto:HELLO@HFREALTORS.COM"
                         variant="outlined"
                         showArrow={false}
-                        className="border-transparent hover:border-[#FFED7E]/20 transition-all bg-transparent text-[#CCA14D] hover:text-[#163548]"
+                        className="border-transparent hover:border-[#E8C96A]/20 transition-all bg-transparent text-[#E8C96A] hover:text-[#0A1628]"
                     >
-                        <span style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}>HELLO@HFREALTORS.COM</span>
+                        <span style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 500 }}>HELLO@HFREALTORS.COM</span>
                     </Button>
                 </RevealText>
             </div>
@@ -49,22 +49,19 @@ export default function Footer() {
             {/* Bottom Meta Row */}
             <div className="w-full max-w-7xl border-t border-[#EDEDED]/10 pt-8 mt-auto flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] md:text-xs text-[#EDEDED]/60 font-medium tracking-wide">
 
-                <div className="text-center md:text-left" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>
+                <div className="text-center md:text-left" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}>
                     &copy; {currentYear} HF Realtors
                 </div>
 
-                <div className="text-center md:flex-1" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>
-                    Made with love and creative juices
-                </div>
 
-                <nav className="flex items-center gap-4 text-center md:text-right" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>
-                    <Link href="/" className="hover:text-[#CCA14D] transition-colors">Home</Link>
+                <nav className="flex items-center gap-4 text-center md:text-right" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}>
+                    <Link href="/" className="hover:text-[#E8C96A] transition-colors">Home</Link>
                     <span className="opacity-30">-</span>
-                    <Link href="/about-us" className="hover:text-[#CCA14D] transition-colors">About</Link>
+                    <Link href="/about-us" className="hover:text-[#E8C96A] transition-colors">About</Link>
                     <span className="opacity-30">-</span>
-                    <Link href="/services" className="hover:text-[#CCA14D] transition-colors">Services</Link>
+                    <Link href="/services" className="hover:text-[#E8C96A] transition-colors">Services</Link>
                     <span className="opacity-30">-</span>
-                    <Link href="/contact-us" className="hover:text-[#CCA14D] transition-colors">Contact</Link>
+                    <Link href="/contact-us" className="hover:text-[#E8C96A] transition-colors">Contact</Link>
                 </nav>
 
             </div>
@@ -80,7 +77,7 @@ function SocialIcon({ icon, text, href, label }) {
             aria-label={label}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#EDEDED]/5 border border-[#EDEDED]/10 flex items-center justify-center text-[#EDEDED] hover:bg-[#FFED7E] hover:text-[#163548] hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-lg"
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#EDEDED]/5 border border-[#EDEDED]/10 flex items-center justify-center text-[#EDEDED] hover:bg-[#E8C96A] hover:text-[#0A1628] hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-lg"
         >
             {icon ? (
                 icon

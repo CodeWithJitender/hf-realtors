@@ -18,7 +18,7 @@ export default function AboutUsHero() {
     const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
     return (
-        <section ref={containerRef} className="relative w-full h-screen bg-[#101010] overflow-hidden flex flex-col justify-center items-center">
+        <section ref={containerRef} className="relative w-full h-screen bg-[#0A1628] overflow-hidden flex flex-col justify-center items-center">
             {/* Background Image with Parallax & Boxed Zoom-Out */}
             <motion.div
                 className="absolute inset-0 w-full h-full z-0 origin-center"
@@ -46,8 +46,8 @@ export default function AboutUsHero() {
                     initial={{ opacity: 0, scale: 0.95, y: 30 }}
                     animate={isPreloaderDone ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.95, y: 30 }}
                     transition={{ duration: 1.2, delay: isPreloaderDone ? 1.2 : 0, ease: [0.2, 0.65, 0.3, 0.9] }}
-                    className="text-[12vw] sm:text-[8vw] md:text-[6.5vw] lg:text-[6vw] tracking-tighter leading-[1.05] text-white uppercase m-0 p-0"
-                    style={{ fontFamily: 'var(--font-futura), Futura, sans-serif', fontWeight: 'bold' }}
+                    className="text-[12vw] sm:text-[8vw] md:text-[6.5vw] lg:text-[6vw] tracking-tighter leading-[1.05] text-[#FFFFFF] uppercase m-0 p-0"
+                    style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}
                 >
                     Building Trust in Every Transaction
                 </motion.h1>
@@ -68,7 +68,7 @@ export default function AboutUsHero() {
                     initial={{ opacity: 0 }}
                     animate={isPreloaderDone ? { opacity: 1 } : { opacity: 0 }}
                     transition={{ delay: isPreloaderDone ? 1.8 : 0, duration: 1 }}
-                    className="flex flex-col items-start gap-2 text-white font-sans text-xs md:text-sm font-bold tracking-[0.1em] uppercase"
+                    className="flex flex-col items-start gap-2 text-[#EDEDED] font-sans text-xs md:text-sm font-bold tracking-[0.1em] uppercase"
                 >
                     <div className="flex items-center gap-2 cursor-pointer group hover:opacity-70 transition-opacity">
                         <span>Scroll Down</span>
@@ -87,7 +87,7 @@ export default function AboutUsHero() {
                     initial={{ opacity: 0 }}
                     animate={isPreloaderDone ? { opacity: 1 } : { opacity: 0 }}
                     transition={{ delay: isPreloaderDone ? 1.8 : 0, duration: 1 }}
-                    className="flex items-center gap-3 text-white font-sans text-xs md:text-sm font-bold tracking-[0.1em] uppercase opacity-90"
+                    className="flex items-center gap-3 text-[#EDEDED] font-sans text-xs md:text-sm font-bold tracking-[0.1em] uppercase opacity-90"
                 >
                     {/* Minimalist Circle Indicator */}
                     <span className="w-1.5 h-1.5 rounded-full border-[1.5px] border-white/60" />

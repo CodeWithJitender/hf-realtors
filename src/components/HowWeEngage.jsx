@@ -127,17 +127,17 @@ export default function HowWeEngage() {
   return (
     <section
       id="all-services"
-      className="w-full bg-[#0d1f2d]"
-      style={{ overscrollBehavior: "contain" }}
+      className="w-full"
+      style={{ backgroundColor: "#0A1628", overscrollBehavior: "contain" }}
     >
       {/* Section Header */}
       <div className="w-full text-center pt-[clamp(3rem,6vw,5rem)] pb-[clamp(2rem,4vw,3.5rem)] px-6">
-        {/* <p className="text-[#CCA14D] text-xs tracking-[0.4em] uppercase font-sans mb-4 font-medium">
+        {/* <p className="text-[#E8C96A] text-xs tracking-[0.4em] uppercase font-sans mb-4 font-medium">
           Our Services
         </p> */}
         <h2
-          className="text-[clamp(2.5rem,5vw,5rem)] font-bold uppercase tracking-tighter text-[#EDEDED] leading-tight"
-          style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
+          className="text-[clamp(2.5rem,5vw,5rem)] font-bold uppercase tracking-tighter text-[#E8C96A] leading-tight"
+          style={{ fontFamily: "var(--font-display)" }}
         >
           How We Engage
         </h2>
@@ -166,8 +166,9 @@ export default function HowWeEngage() {
                   minHeight: "min(80vh, 700px)",
                   height: "auto",
                   maxHeight: "90vh",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  boxShadow: "0 -10px 60px rgba(0,0,0,0.3)",
+                  border: "1px solid rgba(232,201,106,0.15)",
+                  borderRadius: "20px",
+                  boxShadow: "0 -10px 60px rgba(0,0,0,0.4)",
                   willChange: "transform, opacity",
                 }}
               >
@@ -191,29 +192,29 @@ export default function HowWeEngage() {
                         className="object-cover object-center"
                         sizes="(max-width: 768px) 100vw, 40vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#0d1f2d]/88 via-[#163548]/78 to-[#0d1f2d]/62" />
-                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#CCA14D] to-transparent opacity-60" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#0d1f2d]/88 via-[#0A1628]/78 to-[#0d1f2d]/62" />
+                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E8C96A] to-transparent opacity-60" />
                     </div>
 
-                    <span className="relative z-10 text-[#CCA14D] text-xs font-semibold tracking-[0.35em] uppercase" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}>
+                    <span className="relative z-10 text-[#E8C96A] text-xs font-semibold tracking-[0.35em] uppercase" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 500 }}>
                       {data.index}
                     </span>
 
                     <div className="relative z-10">
                       <h3
-                        className="font-bold uppercase leading-[0.95] tracking-tighter text-white mb-3"
+                        className="font-bold uppercase leading-[0.95] tracking-tighter text-[#FFFFFF] mb-3"
                         style={{
-                          fontFamily: "'Futura-Bold', 'Futura', sans-serif",
+                          fontFamily: "var(--font-display)",
                           fontSize: "clamp(1.5rem, 4vw + 0.5rem, 3rem)",
                           textShadow: "0 2px 20px rgba(0,0,0,0.5)",
                         }}
                       >
                         {data.title}
                       </h3>
-                      <div className="h-px w-10 bg-[#CCA14D] mb-4" />
+                      <div className="h-px w-10 bg-[#E8C96A] mb-4" />
                       <p
                         className="text-white/75 font-light leading-snug"
-                        style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500, fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)" }}
+                        style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 500, fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)" }}
                       >
                         {data.subtitle}
                       </p>
@@ -224,12 +225,12 @@ export default function HowWeEngage() {
 
                   {/* Right column — description */}
                   <div
-                    className="flex flex-col justify-center bg-white"
-                    style={{ padding: "clamp(1.5rem, 5vh, 4rem)" }}
+                    className="flex flex-col justify-center"
+                    style={{ padding: "clamp(1.5rem, 5vh, 4rem)", backgroundColor: "#0F1E38" }}
                   >
                     {/* Decorative quote mark */}
                     <div
-                      className="text-[#CCA14D]/20 font-playfair leading-none mb-3 select-none"
+                      className="text-[#E8C96A]/20 font-playfair leading-none mb-3 select-none"
                       style={{ fontSize: "clamp(3rem, 5vw, 6rem)", lineHeight: 1 }}
                       aria-hidden="true"
                     >
@@ -238,10 +239,11 @@ export default function HowWeEngage() {
                     {data.description.split("\n\n").map((para, pi) => (
                       <p
                         key={pi}
-                        className="leading-relaxed mb-4 last:mb-0 text-[#163548]/75"
+                        className="leading-relaxed mb-4 last:mb-0"
                         style={{
-                          fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
-                          fontWeight: 500,
+                          color: "#fff",
+                          fontFamily: "var(--font-body)",
+                          fontWeight: 400,
                           fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)",
                           overflowWrap: "break-word",
                           wordBreak: "break-word",

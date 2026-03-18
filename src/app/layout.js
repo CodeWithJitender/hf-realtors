@@ -1,4 +1,4 @@
-import { Poppins, Playfair_Display } from "next/font/google";
+import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Preloader from "@/components/Preloader";
 import { PreloaderProvider } from "@/context/PreloaderContext";
@@ -6,16 +6,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "600"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["300", "400", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata = {
@@ -26,7 +27,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${playfair.variable} font-sans antialiased bg-[#163548] text-[#EDEDED]`}>
+      <body className={`${inter.variable} ${cormorant.variable} antialiased`} style={{ backgroundColor: "#0A1628", color: "#FFFFFF" }}>
         <PreloaderProvider>
           <SmoothScrollProvider>
             <Preloader />

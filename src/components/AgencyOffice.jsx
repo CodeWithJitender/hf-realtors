@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
@@ -92,7 +92,7 @@ export default function AgencyOffice() {
   };
 
   return (
-    <section ref={containerRef} className="relative w-full bg-[#0a0a0a]">
+    <section ref={containerRef} className="relative w-full bg-[#0A1628]">
 
       {/* 
         ========================================
@@ -114,7 +114,7 @@ export default function AgencyOffice() {
             />
           </AnimatePresence>
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-black/90 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-[#0a0a0a] opacity-40 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-[#0A1628] opacity-40 mix-blend-multiply" />
         </div>
       </div>
 
@@ -135,9 +135,9 @@ export default function AgencyOffice() {
                 <button
                   key={item.id}
                   onClick={() => handleTabClick(idx)}
-                  className={`font-bold tracking-widest text-[13px] uppercase transition-colors duration-300 ${activeTab === idx ? "text-white" : "text-gray-500 hover:text-gray-300"
+                  className={`font-bold tracking-widest text-[13px] uppercase transition-colors duration-300 ${activeTab === idx ? "text-[#EDEDED]" : "text-gray-500 hover:text-gray-300"
                     }`}
-                  style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}
+                  style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 500 }}
                 >
                   {item.city}
                 </button>
@@ -154,9 +154,9 @@ export default function AgencyOffice() {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="flex flex-col items-start"
               >
-                <h2
-                  className="font-sans font-extrabold text-fluid-h1 tracking-tighter text-white leading-[1.05] uppercase mb-6"
-                  style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
+                  <h2
+                  className="font-sans font-extrabold text-fluid-h1 tracking-tighter leading-[1.05] uppercase mb-6"
+                  style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif", color: "#EDEDED" }}
                 >
                   {loc.title.split('\n').map((line, i) => (
                     <span key={i} className="block">{line}</span>
@@ -167,8 +167,8 @@ export default function AgencyOffice() {
                   {loc.description}
                 </p>
 
-                <Button variant="white-outlined" href={loc.mapLink}>
-                  <span style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}>SHOW ON MAP</span>
+                <Button variant="gold" href={loc.mapLink}>
+                  <span style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 700 }}>SHOW ON MAP</span>
                 </Button>
               </motion.div>
             </AnimatePresence>

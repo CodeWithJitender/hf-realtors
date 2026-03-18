@@ -6,16 +6,16 @@ import RevealText from "@/components/RevealText";
 export default function FinalTextSection() {
     return (
         <section className="relative w-full bg-white text-black py-24 md:py-32 px-8 md:px-12 lg:px-24 flex flex-col items-center justify-center">
-            
+
             <div className="max-w-4xl w-full flex flex-col gap-8 md:gap-12">
-                
+
                 {/* Heading */}
-                <motion.h2 
+                <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-3xl md:text-5xl tracking-tight text-center font-bold"
+                    className="text-3xl md:text-5xl tracking-tight text-center font-bold text-[#E8C96A]"
                     style={{ fontFamily: 'var(--font-futura), Futura, sans-serif' }}
                 >
                     Building and Managing Real Estate Value
@@ -31,7 +31,7 @@ export default function FinalTextSection() {
                     >
                         HF Realtors is an independent real estate advisory firm focused on helping clients build, manage, and optimize property investments with clarity and confidence.
                     </motion.p>
-                    
+
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ export default function FinalTextSection() {
                     >
                         We work closely with individuals and investors to identify opportunities in residential and commercial real estate, ensuring every decision is guided by market insight, transparency, and long-term value creation.
                     </motion.p>
-                    
+
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -50,9 +50,9 @@ export default function FinalTextSection() {
                         As the market evolves, we continue to refine our approach, delivering thoughtful advisory and sustainable outcomes for every client we serve.
                     </motion.p>
                 </div>
-                
+
                 {/* Thin Bottom Line */}
-                <motion.div 
+                <motion.div
                     initial={{ scaleX: 0, opacity: 0 }}
                     whileInView={{ scaleX: 1, opacity: 1 }}
                     viewport={{ once: true, margin: "-10px" }}
@@ -61,7 +61,7 @@ export default function FinalTextSection() {
                 />
 
             </div>
-            
+
         </section>
     );
 }

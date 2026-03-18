@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import Image from "next/image";
@@ -41,14 +41,14 @@ export default function OurPhilosophy() {
     const leftColOpacity = useTransform(scrollYProgress, [0.8, 1], [1, 0.3]);
 
     return (
-        <section ref={containerRef} className="relative w-full bg-[#163548] font-sans border-t border-[#EDEDED]/10">
+        <section ref={containerRef} className="relative w-full bg-[#0A1628] font-sans border-t border-[#EDEDED]/10">
             {/* 300vh height to accommodate 3 full-screen cards scrolling */}
             <div className="flex flex-col md:flex-row w-full max-w-[1920px] mx-auto min-h-[300vh]">
                 
                 {/* LEFT SIDE: Sticky Title Container */}
-                <div className="w-full md:w-[40%] h-[40vh] md:h-screen md:sticky md:top-0 flex flex-col justify-center p-8 md:p-12 lg:px-24 border-r border-[#EDEDED]/5 bg-[#163548] z-10 md:z-0">
+                <div className="w-full md:w-[40%] h-[40vh] md:h-screen md:sticky md:top-0 flex flex-col justify-center p-8 md:p-12 lg:px-24 border-r border-[#EDEDED]/5 bg-[#0A1628] z-10 md:z-0">
                     <motion.div style={{ opacity: leftColOpacity }} className="flex flex-col">
-                        <span className="font-sans font-medium text-[#CCA14D] uppercase tracking-widest text-[11px] md:text-xs mb-6 lg:mb-8 block">THE FOUNDATION</span>
+                        <span className="font-sans font-medium text-[#E8C96A] uppercase tracking-widest text-[11px] md:text-xs mb-6 lg:mb-8 block">THE FOUNDATION</span>
                         
                         <h2 className="text-fluid-h1 tracking-tighter leading-[0.9] text-[#EDEDED] mb-6 uppercase" style={{ fontFamily: 'var(--font-futura), Futura, sans-serif', fontWeight: 'bold' }}>
                             Our <br className="hidden md:block"/>
@@ -84,16 +84,16 @@ export default function OurPhilosophy() {
                                         priority={index === 0}
                                     />
                                     {/* Vignette Overlay for mood */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#163548] via-[#163548]/40 to-[#163548]/80 mix-blend-multiply" />
-                                    <div className="absolute inset-0 bg-[#163548] opacity-20 group-hover:opacity-0 transition-opacity duration-700" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-[#0A1628]/40 to-[#0A1628]/80 mix-blend-multiply" />
+                                    <div className="absolute inset-0 bg-[#0A1628] opacity-20 group-hover:opacity-0 transition-opacity duration-700" />
                                 </div>
 
                                 {/* Content overlaying the image */}
                                 <div className="relative z-10 p-8 sm:p-12 lg:p-16 flex flex-col justify-end w-full min-h-[60vh] md:min-h-[70vh]">
-                                    <div className="flex flex-col border-l-2 border-[#CCA14D] pl-6 lg:pl-10">
+                                    <div className="flex flex-col border-l-2 border-[#E8C96A] pl-6 lg:pl-10">
                                         <div className="flex items-baseline gap-4 mb-4">
                                             <span 
-                                                className="text-[#CCA14D] text-lg lg:text-3xl tracking-tighter"
+                                                className="text-[#E8C96A] text-lg lg:text-3xl tracking-tighter"
                                                 style={{ fontFamily: 'var(--font-futura), Futura, sans-serif', fontWeight: 'bold' }}
                                             >
                                                 {card.number}

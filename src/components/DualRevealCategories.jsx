@@ -34,7 +34,7 @@ export default function DualRevealCategories() {
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
     return (
-        <section className="relative w-full min-h-screen bg-[#1A1A1A] py-48 flex items-center justify-center overflow-hidden">
+        <section className="relative w-full min-h-screen py-48 flex items-center justify-center overflow-hidden" style={{ backgroundColor: "#0A1628" }}>
 
             {/* Primary Background Image (Fades in on hover) */}
             <AnimatePresence>
@@ -67,7 +67,7 @@ export default function DualRevealCategories() {
                 <RevealText delay={0.1} className="mb-16">
                     <div className="flex items-center gap-3">
                         <div className="h-[1px] w-8 md:w-12 bg-white/30"></div>
-                        <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white/50">
+                        <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em]  text-white/50">
                             Core Capabilities
                         </span>
                     </div>
@@ -102,7 +102,7 @@ export default function DualRevealCategories() {
                                         <motion.span
                                             animate={{ opacity: titleOpacity }}
                                             transition={{ duration: 0.4 }}
-                                            className="text-lg md:text-2xl font-light text-white font-sans hidden md:block"
+                                            className="text-lg md:text-2xl font-light text-[#EDEDED] font-sans hidden md:block"
                                         >
                                             {service.id}
                                         </motion.span>

@@ -11,37 +11,59 @@
 @import "tailwindcss";
 
 :root {
-  --background: #163548;
-  --foreground: #EDEDED;
-  --primary: #CCA14D;
-  --secondary: #224d68;
-  /* Slightly lighter navy for secondary surfaces */
-  --accent: #FFED7E;
-  --muted: var(--color-stone-400);
+  /* Backgrounds */
+  --color-bg-primary: #0A1628;
+  --color-bg-secondary: #0F1E38;
+  --color-bg-surface: #122040;
+  --color-bg-card: #0D1A30;
+
+  /* Gold */
+  --color-gold-primary: #E8C96A;
+  --color-gold-secondary: #B8913A;
+  --color-gold-muted: rgba(232, 201, 106, 0.12);
+
+  /* Text */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #C5D6EE;
+  --color-text-muted: #7A8FAB;
+  --color-text-gold: #E8C96A;
+
+  /* Borders */
+  --color-border-gold: rgba(232, 201, 106, 0.18);
+  --color-border-subtle: rgba(197, 214, 238, 0.08);
+
+  /* Fonts */
+  --font-display: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-body: var(--font-inter), 'Inter', 'DM Sans', sans-serif;
+
+  /* Legacy aliases (kept for backward-compat with existing components) */
+  --background: #0A1628;
+  --foreground: #FFFFFF;
+  --primary: #E8C96A;
+  --secondary: #0F1E38;
+  --accent: #E8C96A;
 }
 
 @theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
+  --color-background: var(--color-bg-primary);
+  --color-foreground: var(--color-text-primary);
+  --color-primary: var(--color-gold-primary);
+  --color-secondary: var(--color-bg-secondary);
+  --color-accent: var(--color-gold-primary);
 
-  /* Core Brand Tokens */
-  --color-theme-background: #163548;
-  --color-theme-text: #EDEDED;
-  --color-theme-muted: var(--muted);
-  --color-theme-accent: var(--primary);
-  --color-theme-accent-light: var(--accent);
-  --color-theme-nav-bg: #163548;
-  --color-theme-nav-text: #EDEDED;
-  --color-theme-footer-bg: #0d212d;
-  /* Even darker Navy */
-  --color-theme-footer-accent: #CCA14D;
+  --color-theme-background: #0A1628;
+  --color-theme-text: #FFFFFF;
+  --color-theme-muted: #7A8FAB;
+  --color-theme-accent: #E8C96A;
+  --color-theme-accent-light: #E8C96A;
+  --color-theme-nav-bg: #0A1628;
+  --color-theme-nav-text: #E8C96A;
+  --color-theme-footer-bg: #0A1628;
+  --color-theme-footer-accent: #E8C96A;
 
-  /* Typography Tokens */
-  --font-sans: var(--font-poppins), sans-serif;
-  --font-serif: var(--font-futura), "Trebuchet MS", Arial, sans-serif;
+  /* Typography */
+  --font-sans: var(--font-inter), 'Inter', sans-serif;
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
 
   /* Fluid Typography Scale */
   --text-fluid-h1: clamp(2.5rem, 8vw, 5.5rem);
@@ -51,7 +73,6 @@
 
   /* Shape / Radius Tokens */
   --radius-theme-card: 4rem;
-  /* Updated to 4rem for Fame Estate architectural feel */
   --radius-theme-pill: 9999px;
 }
 
@@ -66,31 +87,49 @@
 }
 
 @utility gold-gradient {
-  background: linear-gradient(to right, #CCA14D, #FFED7E);
+  background: linear-gradient(to right, #E8C96A, #B8913A);
 }
 
 @utility font-futura {
-  font-family: var(--font-futura), "Trebuchet MS", Arial, sans-serif;
+  font-family: 'Futura-Bold', 'Futura', sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  scrollbar-width: thin;
+  scrollbar-color: #B8913A #0A1628;
+  -ms-overflow-style: none;
 }
 
-/* Hide scrollbar for Chrome, Safari, Opera */
-body::-webkit-scrollbar,
-*::-webkit-scrollbar {
-  display: none;
+/* Scrollbar Chrome/Safari */
+body::-webkit-scrollbar {
+  width: 6px;
+}
+body::-webkit-scrollbar-track {
+  background: #0A1628;
+}
+body::-webkit-scrollbar-thumb {
+  background: #B8913A;
+  border-radius: 3px;
+}
+
+/* Global heading font — Cormorant Garamond */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: #FFFFFF;
+}
+
+/* Global body / paragraph font — Inter */
+p, span, a, li, label, input, textarea, select, button {
+  font-family: var(--font-body);
 }
 
 .text-balance {
   text-wrap: balance;
 }
 
-/* Optional soft noise texture for more editorial feel */
 .bg-noise {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   opacity: 0.015;

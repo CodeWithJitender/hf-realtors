@@ -17,11 +17,11 @@ const CARDS = [
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="19" stroke="url(#g1)" strokeWidth="1.4" />
-        <path d="M12 26 L20 13 L28 26" stroke="#CCA14D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        <line x1="16" y1="26" x2="24" y2="26" stroke="#CCA14D" strokeWidth="1.4" strokeLinecap="round" />
+        <path d="M12 26 L20 13 L28 26" stroke="#E8C96A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <line x1="16" y1="26" x2="24" y2="26" stroke="#E8C96A" strokeWidth="1.4" strokeLinecap="round" />
         <defs>
           <linearGradient id="g1" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#CCA14D" /><stop offset="1" stopColor="#7A5C1E" />
+            <stop stopColor="#E8C96A" /><stop offset="1" stopColor="#7A5C1E" />
           </linearGradient>
         </defs>
       </svg>
@@ -33,9 +33,9 @@ const CARDS = [
     body: "Through our network and deep market insights, we uncover opportunities well beyond standard listings — giving you an edge before the market moves.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <circle cx="20" cy="20" r="19" stroke="#CCA14D" strokeWidth="1.4" opacity="0.6" />
-        <circle cx="17" cy="18" r="6" stroke="#CCA14D" strokeWidth="1.6" strokeLinecap="round" />
-        <line x1="22" y1="23" x2="30" y2="31" stroke="#CCA14D" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="20" cy="20" r="19" stroke="#E8C96A" strokeWidth="1.4" opacity="0.6" />
+        <circle cx="17" cy="18" r="6" stroke="#E8C96A" strokeWidth="1.6" strokeLinecap="round" />
+        <line x1="22" y1="23" x2="30" y2="31" stroke="#E8C96A" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -45,11 +45,11 @@ const CARDS = [
     body: "We evaluate properties not only for their current value but for their potential — aesthetically and financially — ensuring each acquisition compounds over time.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <circle cx="20" cy="20" r="19" stroke="#CCA14D" strokeWidth="1.4" opacity="0.6" />
-        <rect x="10" y="13" width="20" height="14" rx="2" stroke="#CCA14D" strokeWidth="1.5" />
-        <line x1="15" y1="13" x2="15" y2="27" stroke="#CCA14D" strokeWidth="1" opacity="0.55" />
-        <line x1="20" y1="13" x2="20" y2="27" stroke="#CCA14D" strokeWidth="1" opacity="0.55" />
-        <line x1="10" y1="20" x2="30" y2="20" stroke="#CCA14D" strokeWidth="1" opacity="0.55" />
+        <circle cx="20" cy="20" r="19" stroke="#E8C96A" strokeWidth="1.4" opacity="0.6" />
+        <rect x="10" y="13" width="20" height="14" rx="2" stroke="#E8C96A" strokeWidth="1.5" />
+        <line x1="15" y1="13" x2="15" y2="27" stroke="#E8C96A" strokeWidth="1" opacity="0.55" />
+        <line x1="20" y1="13" x2="20" y2="27" stroke="#E8C96A" strokeWidth="1" opacity="0.55" />
+        <line x1="10" y1="20" x2="30" y2="20" stroke="#E8C96A" strokeWidth="1" opacity="0.55" />
       </svg>
     ),
   },
@@ -59,9 +59,9 @@ const CARDS = [
     body: "Every mandate is handled with structured processes, complete confidentiality, and a client-first mindset. Your trust is our most valued asset.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <circle cx="20" cy="20" r="19" stroke="#CCA14D" strokeWidth="1.4" opacity="0.6" />
-        <path d="M20 10 L27 14 L27 22 C27 27 20 31 20 31 C20 31 13 27 13 22 L13 14 Z" stroke="#CCA14D" strokeWidth="1.5" strokeLinejoin="round" />
-        <path d="M16 21 L18.5 23.5 L24 17" stroke="#CCA14D" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="20" cy="20" r="19" stroke="#E8C96A" strokeWidth="1.4" opacity="0.6" />
+        <path d="M20 10 L27 14 L27 22 C27 27 20 31 20 31 C20 31 13 27 13 22 L13 14 Z" stroke="#E8C96A" strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M16 21 L18.5 23.5 L24 17" stroke="#E8C96A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
@@ -75,9 +75,9 @@ function DiffCard({ card, cardRef }) {
       style={{
         flex: "0 0 clamp(300px, 33vw, 430px)",
         height: "clamp(380px, 56vh, 500px)",
-        background: "linear-gradient(145deg, #1D3E5A 0%, #163548 55%, #11293A 100%)",
-        border: "1px solid rgba(204,161,77,0.38)",
-        borderTop: "2px solid rgba(204,161,77,0.65)",
+        background: "#0F1E38",
+        border: "1px solid rgba(232,201,106,0.18)",
+        borderTop: "2px solid rgba(232,201,106,0.5)",
         borderRadius: "18px",
         padding: "clamp(2rem, 3.5vw, 2.8rem)",
         display: "flex",
@@ -85,7 +85,7 @@ function DiffCard({ card, cardRef }) {
         justifyContent: "space-between",
         position: "relative",
         overflow: "hidden",
-        boxShadow: "0 12px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(204,161,77,0.10), inset 0 1px 0 rgba(204,161,77,0.14)",
+        boxShadow: "0 12px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(232,201,106,0.08)",
         willChange: "transform",
       }}
     >
@@ -111,7 +111,7 @@ function DiffCard({ card, cardRef }) {
           fontSize: "clamp(0.62rem, 0.85vw, 0.75rem)",
           fontWeight: 700,
           letterSpacing: "0.35em",
-          color: "#CCA14D",
+          color: "#E8C96A",
           opacity: 0.8,
         }}>{card.number}</span>
         {card.icon}
@@ -121,15 +121,15 @@ function DiffCard({ card, cardRef }) {
       <div>
         <div style={{
           width: "36px", height: "2px",
-          background: "linear-gradient(to right, #CCA14D, transparent)",
+          background: "linear-gradient(to right, #E8C96A, transparent)",
           marginBottom: "clamp(0.7rem,1.4vh,1.1rem)",
           borderRadius: "2px",
         }} />
         <h3 style={{
-          fontFamily: "var(--font-futura), Futura, sans-serif",
+          fontFamily: "var(--font-display)",
           fontSize: "clamp(1.45rem, 2.3vw, 1.95rem)",
-          fontWeight: 700,
-          color: "#EDEDED",
+          fontWeight: 600,
+          color: "#FFFFFF",
           lineHeight: 1.16,
           letterSpacing: "-0.02em",
           margin: 0,
@@ -140,10 +140,10 @@ function DiffCard({ card, cardRef }) {
 
       {/* Body */}
       <p style={{
-        fontFamily: "var(--font-futura), Futura, sans-serif",
+        fontFamily: "var(--font-body)",
         fontSize: "clamp(0.8rem, 1.15vw, 0.92rem)",
         fontWeight: 400,
-        color: "rgba(237,237,237,0.62)",
+        color: "#7A8FAB",
         lineHeight: 1.8,
         margin: 0,
       }}>{card.body}</p>
@@ -287,7 +287,7 @@ export default function WhatMakesUsDifferent() {
           alignItems: "center",
           justifyContent: "center",
           /* Rich warm-dark gold-tinted background */
-          background: "#163548",
+          background: "#0A1628",
         }}
       >
         {/* ── Large ambient gold radial glow ── */}
@@ -356,7 +356,7 @@ export default function WhatMakesUsDifferent() {
             fontSize: "clamp(0.55rem, 0.82vw, 0.7rem)",
             letterSpacing: "0.46em",
             textTransform: "uppercase",
-            color: "#CCA14D",
+            color: "#E8C96A",
             fontWeight: 600,
             margin: "0 0 clamp(1.2rem,2.4vh,2rem)",
             padding: "0.38em 1.1em",
@@ -370,13 +370,13 @@ export default function WhatMakesUsDifferent() {
 
           {/* Word row 1 */}
           <div style={{ display: "flex", gap: "clamp(0.5rem,1.5vw,1.8rem)", lineHeight: 1 }}>
-            <span ref={word0} style={wordStyle("#EDEDED")}>WHAT</span>
-            <span ref={word1} style={wordStyle("#EDEDED")}>MAKES</span>
+            <span ref={word0} style={wordStyle("#FFFFFF")}>WHAT</span>
+            <span ref={word1} style={wordStyle("#FFFFFF")}>MAKES</span>
           </div>
           {/* Word row 2 */}
           <div style={{ display: "flex", gap: "clamp(0.5rem,1.5vw,1.8rem)", lineHeight: 1, marginTop: "0.06em" }}>
-            <span ref={word2} style={wordStyle("#EDEDED")}>US</span>
-            <span ref={word3} style={wordStyle("#CCA14D", true)}>DIFFERENT</span>
+            <span ref={word2} style={wordStyle("#FFFFFF")}>US</span>
+            <span ref={word3} style={wordStyle("#E8C96A", true)}>DIFFERENT</span>
           </div>
         </div>
 
@@ -427,9 +427,9 @@ export default function WhatMakesUsDifferent() {
 /* Shared word span style */
 function wordStyle(color, glow = false) {
   return {
-    fontFamily: "var(--font-futura), Futura, sans-serif",
+    fontFamily: "var(--font-display)",
     fontSize: "clamp(3rem, 9vw, 9.5rem)",
-    fontWeight: 900,
+    fontWeight: 700,
     letterSpacing: "-0.035em",
     textTransform: "uppercase",
     color,
@@ -437,7 +437,7 @@ function wordStyle(color, glow = false) {
     willChange: "transform, opacity",
     display: "inline-block",
     textShadow: glow
-      ? "0 0 60px rgba(204,161,77,0.55), 0 0 120px rgba(204,161,77,0.25)"
+      ? "0 0 60px rgba(232,201,106,0.55), 0 0 120px rgba(232,201,106,0.25)"
       : "0 4px 40px rgba(0,0,0,0.5)",
   };
 }

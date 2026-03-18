@@ -140,9 +140,9 @@ export default function Hero() {
                         {/* Left: Heading */}
                         <div className="lg:col-span-8 xl:col-span-7 flex flex-col justify-end">
                             <RevealText delay={0.4}>
-                                <h1 className="tracking-tight text-[#EDEDED] leading-[1] lg:leading-[0.9] pb-4 drop-shadow-xl">
-                                    <span className="block font-bold" style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)", fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>Real Estate.</span>
-                                    <span className="block font-light -mt-1" style={{ fontSize: "clamp(1.8rem, 4.5vw, 4.5rem)", fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>Managed end-to-end.</span>
+                                <h1 className="tracking-tight text-[#FFFFFF] leading-[1] lg:leading-[0.9] pb-4 drop-shadow-xl">
+                                    <span className="block font-bold" style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)", fontFamily: "var(--font-display)" }}>Real Estate.</span>
+                                    <span className="block font-light italic -mt-1" style={{ fontSize: "clamp(1.8rem, 4.5vw, 4.5rem)", fontFamily: "var(--font-display)", color: "#C5D6EE" }}>Managed end-to-end.</span>
                                 </h1>
                             </RevealText>
                         </div>
@@ -150,7 +150,7 @@ export default function Hero() {
                         {/* Right: Tagline + CTAs */}
                         <div className="lg:col-span-4 xl:col-span-5 flex flex-col justify-end lg:pb-6">
                             <RevealText delay={0.6} className="mb-10">
-                                <p className="text-fluid-body text-[#EDEDED] font-normal leading-relaxed max-w-md xl:max-w-lg">
+                                <p className="text-fluid-body font-normal leading-relaxed max-w-md xl:max-w-lg" style={{ color: "#C5D6EE" }}>
                                     From transactions to long-term portfolio and wealth management, we manage real estate with precision.
                                 </p>
                             </RevealText>

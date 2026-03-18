@@ -32,13 +32,13 @@ export default function InnerImageExpand() {
             <div className="sticky top-0 w-full h-screen overflow-hidden bg-[#7A1315] z-10 flex flex-col justify-center items-center">
                 
                 {/* Navigation / UI Elements */}
-                <motion.div style={{ opacity: uiOpacity }} className="absolute top-1/2 left-8 -translate-y-1/2 flex items-center gap-4 z-0 text-white font-sans text-xs tracking-widest font-bold">
+                <motion.div style={{ opacity: uiOpacity }} className="absolute top-1/2 left-8 -translate-y-1/2 flex items-center gap-4 z-0 text-[#EDEDED] font-sans text-xs tracking-widest font-bold">
                     [+] NAVIGATION
                 </motion.div>
-                <motion.div style={{ opacity: uiOpacity }} className="absolute top-1/2 left-40 -translate-y-1/2 flex items-center gap-4 z-0 text-white font-sans text-xs tracking-widest font-bold">
+                <motion.div style={{ opacity: uiOpacity }} className="absolute top-1/2 left-40 -translate-y-1/2 flex items-center gap-4 z-0 text-[#EDEDED] font-sans text-xs tracking-widest font-bold">
                     RU
                 </motion.div>
-                <motion.div style={{ opacity: uiOpacity }} className="absolute top-1/2 right-8 -translate-y-1/2 flex items-center gap-4 z-0 text-white font-sans text-xs tracking-widest font-bold">
+                <motion.div style={{ opacity: uiOpacity }} className="absolute top-1/2 right-8 -translate-y-1/2 flex items-center gap-4 z-0 text-[#EDEDED] font-sans text-xs tracking-widest font-bold">
                     LET'S DISCUSS ↗
                 </motion.div>
                 
@@ -47,7 +47,7 @@ export default function InnerImageExpand() {
                     style={{ opacity: uiOpacity }}
                     className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center justify-center z-0"
                 >
-                    <h2 className="text-white text-4xl font-sans tracking-tighter" style={{ fontFamily: 'var(--font-futura), Futura, sans-serif', fontWeight: 'bold' }}>
+                    <h2 className="text-[#EDEDED] text-4xl font-sans tracking-tighter" style={{ fontFamily: 'var(--font-futura), Futura, sans-serif', fontWeight: 'bold' }}>
                         HF
                     </h2>
                 </motion.div>

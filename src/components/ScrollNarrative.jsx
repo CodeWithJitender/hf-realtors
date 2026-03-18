@@ -16,16 +16,16 @@ if (typeof window !== "undefined") {
    - Section stays PINNED until last paragraph is fully in view
 ───────────────────────────────────────────────────────── */
 export default function ScrollNarrative() {
-  const wrapRef    = useRef(null);
+  const wrapRef = useRef(null);
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
-  const p1Ref      = useRef(null);
-  const p2Ref      = useRef(null);
-  const p3Ref      = useRef(null);
+  const p1Ref = useRef(null);
+  const p2Ref = useRef(null);
+  const p3Ref = useRef(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const wrap    = wrapRef.current;
+    const wrap = wrapRef.current;
     const section = sectionRef.current;
     if (!wrap || !section) return;
 
@@ -57,9 +57,9 @@ export default function ScrollNarrative() {
       });
 
       tl.to(headingRef.current, { opacity: 1, y: 0, duration: 3.5, ease: "power2.out" }, 0.5);
-      tl.to(p1Ref.current,      { opacity: 1, y: 0, duration: 3.5, ease: "power2.out" }, 4.5);
-      tl.to(p2Ref.current,      { opacity: 1, y: 0, duration: 3.5, ease: "power2.out" }, 8.5);
-      tl.to(p3Ref.current,      { opacity: 1, y: 0, duration: 3.5, ease: "power2.out" }, 12.5);
+      tl.to(p1Ref.current, { opacity: 1, y: 0, duration: 3.5, ease: "power2.out" }, 4.5);
+      tl.to(p2Ref.current, { opacity: 1, y: 0, duration: 3.5, ease: "power2.out" }, 8.5);
+      tl.to(p3Ref.current, { opacity: 1, y: 0, duration: 3.5, ease: "power2.out" }, 12.5);
       tl.to({}, { duration: 1 }, 16); // hold at end before unpin
 
     }, wrap);
@@ -71,7 +71,7 @@ export default function ScrollNarrative() {
   const body = {
     fontFamily: "var(--font-futura), Futura, sans-serif",
     fontSize: "clamp(0.95rem, 1.55vw, 1.18rem)",
-    fontWeight: 400,
+    fontWeight: 500,
     color: "rgba(237,237,237,0.88)",
     lineHeight: 1.85,
     textAlign: "center",
@@ -80,7 +80,7 @@ export default function ScrollNarrative() {
     textShadow: "0 2px 16px rgba(0,0,0,0.7)",
   };
 
-  const gold = { color: "#CCA14D", fontWeight: 500 };
+  const gold = { color: "#E8C96A", fontWeight: 500 };
 
   return (
     <div ref={wrapRef} style={{ width: "100%", position: "relative" }}>
@@ -154,7 +154,7 @@ export default function ScrollNarrative() {
             fontSize: "clamp(0.55rem, 0.8vw, 0.68rem)",
             letterSpacing: "0.45em",
             textTransform: "uppercase",
-            color: "#CCA14D",
+            color: "#E8C96A",
             fontWeight: 600,
             margin: 0,
             opacity: 0.85,
@@ -168,7 +168,7 @@ export default function ScrollNarrative() {
               fontFamily: "var(--font-futura), Futura, sans-serif",
               fontSize: "clamp(2.4rem, 5.8vw, 5.2rem)",
               fontWeight: 700,
-              color: "#EDEDED",
+              color: "#E8C96A",
               lineHeight: 1.08,
               letterSpacing: "-0.025em",
               textTransform: "uppercase",
@@ -176,7 +176,7 @@ export default function ScrollNarrative() {
               textShadow: "0 4px 40px rgba(0,0,0,0.8), 0 0 60px rgba(204,161,77,0.15)",
             }}>
               Building &amp; Managing<br />
-              <span style={{ color: "#CCA14D", textShadow: "0 0 40px rgba(204,161,77,0.5)" }}>
+              <span style={{ color: "#E8C96A", textShadow: "0 0 40px rgba(204,161,77,0.5)" }}>
                 Real Estate Value
               </span>
             </h2>
@@ -186,7 +186,7 @@ export default function ScrollNarrative() {
           <div style={{
             width: "clamp(50px, 7vw, 90px)",
             height: "1px",
-            background: "linear-gradient(to right, transparent, #CCA14D, transparent)",
+            background: "linear-gradient(to right, transparent, #E8C96A, transparent)",
             opacity: 0.5,
           }} />
 

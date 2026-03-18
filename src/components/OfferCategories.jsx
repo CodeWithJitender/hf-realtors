@@ -91,7 +91,7 @@ export default function OfferCategories() {
                                         <div className="flex items-center gap-6 md:gap-12">
                                             <motion.span
                                                 animate={{ opacity: isHovered ? 1 : 0.3 }}
-                                                className="text-lg md:text-2xl font-light text-white font-sans hidden md:block"
+                                                className="text-lg md:text-2xl font-light text-[#EDEDED] font-sans hidden md:block"
                                             >
                                                 {service.id}
                                             </motion.span>

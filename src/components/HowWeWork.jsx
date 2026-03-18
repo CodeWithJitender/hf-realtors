@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import RevealText from "@/components/RevealText";
@@ -28,11 +28,11 @@ const journeySteps = [
 
 export default function HowWeWork() {
     return (
-        <section id="how-it-works" className="relative bg-[#163548] text-[#EDEDED] py-fluid-section min-h-screen font-sans border-t border-[#EDEDED]/5">
+        <section id="how-it-works" className="relative bg-[#0A1628] text-[#EDEDED] py-fluid-section min-h-screen font-sans border-t border-[#EDEDED]/5">
             <div className="max-w-[1920px] mx-auto w-full lg:flex lg:flex-row relative">
 
                 {/* Mobile/Tablet Header (Only visible < lg) */}
-                <div className="lg:hidden w-full px-8 py-12 md:py-20 text-center relative z-20 bg-[#163548]">
+                <div className="lg:hidden w-full px-8 py-12 md:py-20 text-center relative z-20 bg-[#0A1628]">
                     <RevealText delay={0.1} className="mb-4 text-[var(--accent)] font-bold tracking-widest uppercase text-xs">
                         <h2>The Journey</h2>
                     </RevealText>
@@ -44,12 +44,12 @@ export default function HowWeWork() {
                 </div>
 
                 {/* Left Column: Sticky Context (Desktop Only) */}
-                <div className="hidden lg:flex lg:w-[45%] sticky top-0 h-screen flex-col items-center justify-center relative overflow-hidden border-r border-[#EDEDED]/5 bg-[#163548]/50">
+                <div className="hidden lg:flex lg:w-[45%] sticky top-0 h-screen flex-col items-center justify-center relative overflow-hidden border-r border-[#EDEDED]/5 bg-[#0A1628]/50">
 
                     {/* Sticky Context Headers */}
                     <div className="absolute top-1/3 left-16 z-20 transform -translate-y-1/2">
                         <RevealText delay={0.1} className="mb-4">
-                            <h2 className="text-[#FFED7E] font-medium font-sans tracking-widest uppercase text-sm inline-block border border-[#FFED7E]/30 rounded-full py-2 px-6 bg-[#FFED7E]/10">
+                            <h2 className="text-[#E8C96A] font-medium font-sans tracking-widest uppercase text-sm inline-block border border-[#E8C96A]/30 rounded-full py-2 px-6 bg-[#E8C96A]/10">
                                 The Journey
                             </h2>
                         </RevealText>
@@ -69,11 +69,11 @@ export default function HowWeWork() {
                     <div className="absolute w-96 h-96 bg-[var(--accent)] rounded-full blur-[150px] opacity-10 animate-pulse pointer-events-none" />
 
                     {/* Bottom fade for the sticky column */}
-                    <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#163548] to-transparent z-10" />
+                    <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#0A1628] to-transparent z-10" />
                 </div>
 
                 {/* Right Column: Scrolling Timeline */}
-                <div className="w-full lg:w-[55%] relative px-fluid-container py-16 lg:pt-[50vh] lg:pb-[50vh] bg-[#163548]">
+                <div className="w-full lg:w-[55%] relative px-fluid-container py-16 lg:pt-[50vh] lg:pb-[50vh] bg-[#0A1628]">
 
                     {/* Continuous subtle background grid */}
                     <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,black,rgba(0,0,0,0))] opacity-[0.05] pointer-events-none" />
@@ -90,13 +90,13 @@ export default function HowWeWork() {
                                     )}
 
                                     {/* Active Step Indicator Dot */}
-                                    <div className="relative w-4 h-4 rounded-full bg-[#163548] border-2 border-[#EDEDED]/40 flex items-center justify-center z-10">
+                                    <div className="relative w-4 h-4 rounded-full bg-[#0A1628] border-2 border-[#EDEDED]/40 flex items-center justify-center z-10">
                                         <motion.div
                                             initial={{ scale: 0, opacity: 0 }}
                                             whileInView={{ scale: 1, opacity: 1 }}
                                             viewport={{ once: false, amount: 0.8 }}
                                             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                            className="absolute inset-0 rounded-full bg-[#FFED7E] shadow-[0_0_15px_#FFED7E] w-full h-full"
+                                            className="absolute inset-0 rounded-full bg-[#E8C96A] shadow-[0_0_15px_#E8C96A] w-full h-full"
                                         />
                                     </div>
                                 </div>
@@ -109,7 +109,7 @@ export default function HowWeWork() {
                                         </p>
                                     </RevealText>
                                     <RevealText delay={0.2} className="mb-6">
-                                        <h4 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tighter text-[#CCA14D] leading-[1.1]">
+                                        <h4 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tighter text-[#E8C96A] leading-[1.1]">
                                             {step.title}
                                         </h4>
                                     </RevealText>

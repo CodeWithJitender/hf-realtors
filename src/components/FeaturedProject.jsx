@@ -61,7 +61,7 @@ export default function FeaturedProject() {
                     {/* Bottom-Left Anchored Content */}
                     <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 flex flex-col justify-end">
                         <RevealText delay={0.3}>
-                            <h3 className="text-4xl md:text-7xl lg:text-[6rem] font-bold tracking-tighter text-white leading-none mb-6 drop-shadow-2xl">
+                            <h3 className="text-4xl md:text-7xl lg:text-[6rem] font-bold tracking-tighter text-[#EDEDED] leading-none mb-6 drop-shadow-2xl">
                                 Blueberry Hill<br />ADU
                             </h3>
                         </RevealText>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -51,17 +51,17 @@ function ServiceCard({ service, index, totalCount, isActive }) {
 
   return (
     <div
-      className={`relative border-b border-[#163548]/10 py-8 md:py-10 flex flex-col${
-        isLast ? " pb-24 md:pb-40" : ""
-      }`}
+      className={`relative border-b py-8 md:py-10 flex flex-col${isLast ? " pb-24 md:pb-40" : ""
+        }`}
+      style={{ borderBottomColor: "rgba(232,201,106,0.18)" }}
     >
       {/* Header row */}
       <div className="flex items-start md:items-center gap-6 md:gap-12 relative z-20 pb-2">
         <motion.span
           animate={{ opacity: titleOpacity }}
           transition={{ duration: 0.35 }}
-          className="text-xl md:text-3xl font-light text-[#163548] hidden md:block mt-2 select-none"
-          style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}
+          className="text-xl md:text-3xl font-light hidden md:block mt-2 select-none"
+          style={{ color: "#7A8FAB", fontFamily: "var(--font-body)", fontWeight: 400 }}
         >
           {service.id}
         </motion.span>
@@ -69,11 +69,11 @@ function ServiceCard({ service, index, totalCount, isActive }) {
         <motion.h3
           animate={{
             opacity: titleOpacity,
-            color: isActive ? "#CCA14D" : "#163548",
+            color: isActive ? "#E8C96A" : "#FFFFFF",
           }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-[7rem] font-medium tracking-tight uppercase leading-[0.85]"
-          style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
+          style={{ fontFamily: "var(--font-display)" }}
         >
           {service.title}
         </motion.h3>
@@ -106,17 +106,17 @@ function ServiceCard({ service, index, totalCount, isActive }) {
                 damping: 18,
                 delay: 0.12,
               }}
-              className="relative w-full mt-6 overflow-hidden shadow-xl border border-[#163548]/10"
+              className="relative w-full mt-6 overflow-hidden shadow-xl rounded-2xl border border-[#0A1628]/10"
               style={{ height: "300px" }}
             >
               <Image
                 src={service.imageSrc}
                 alt={service.title}
                 fill
-                className="object-cover"
+                className="object-cover rounded-2xl"
                 sizes="85vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#163548]/25 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/25 via-transparent to-transparent" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -129,8 +129,8 @@ function ServiceCard({ service, index, totalCount, isActive }) {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 8, opacity: 0 }}
               transition={{ duration: 0.5, delay: 0.28, ease: "easeOut" }}
-              className="text-lg md:text-2xl text-[#163548]/65 leading-relaxed mb-2"
-              style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}
+              className="text-lg md:text-2xl leading-relaxed mb-2"
+              style={{ color: "#7A8FAB", fontFamily: "var(--font-body)", fontWeight: 400 }}
             >
               {service.desc}
             </motion.p>
@@ -186,13 +186,13 @@ export default function SequentialRevealCategories() {
   }, []);
 
   return (
-    <section className="relative w-full bg-white py-16 md:py-24">
+    <section className="relative w-full py-16 md:py-24" style={{ backgroundColor: "#0A1628" }}>
       {/* Eyebrow */}
       <div className="w-full max-w-[95vw] md:max-w-[85vw] mx-auto mb-12 md:mb-16">
         <RevealText delay={0.1}>
           <div className="flex items-center gap-3">
-            <div className="h-[1px] w-8 md:w-12 bg-[#163548]/25" />
-            <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase text-[#163548]/50">
+            <div className="h-[1px] w-8 md:w-12 bg-[#E8C96A]/30" />
+            <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[#E8C96A]/60">
               Core Capabilities
             </span>
           </div>
@@ -200,7 +200,7 @@ export default function SequentialRevealCategories() {
       </div>
 
       {/* Card list */}
-      <div className="w-full max-w-[95vw] md:max-w-[85vw] mx-auto flex flex-col border-t border-[#163548]/10">
+      <div className="w-full max-w-[95vw] md:max-w-[85vw] mx-auto flex flex-col" style={{ borderTop: "1px solid rgba(232,201,106,0.15)" }}>
         {SERVICES.map((service, index) => (
           <div
             key={service.id}

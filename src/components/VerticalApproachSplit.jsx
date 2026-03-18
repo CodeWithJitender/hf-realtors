@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useState } from "react";
 import Image from "next/image";
@@ -46,13 +46,13 @@ export default function VerticalApproachSplit() {
 
     return (
         // The container is 400vh to allow for 4x 100vh cards to scroll past
-        <section ref={containerRef} className="relative w-full h-[400vh] bg-[#163548] text-[#EDEDED] font-sans">
+        <section ref={containerRef} className="relative w-full h-[400vh] bg-[#0A1628] text-[#EDEDED] font-sans">
             <div className="absolute inset-0 flex flex-col md:flex-row w-full h-full">
 
                 {/* LEFT SIDE: Sticky Nav Container */}
                 <div className="w-full md:w-[45%] lg:w-1/2 h-screen sticky top-0 flex flex-col justify-center p-8 md:p-12 lg:px-24 overflow-hidden z-10 border-r border-[#EDEDED]/5">
 
-                    <span className="font-sans font-bold text-[#CCA14D] uppercase tracking-widest text-sm mb-6 block drop-shadow-sm">
+                    <span className="font-sans font-bold text-[#E8C96A] uppercase tracking-widest text-sm mb-6 block drop-shadow-sm">
                         About Us
                     </span>
 
@@ -73,7 +73,7 @@ export default function VerticalApproachSplit() {
                                     <div className="w-3 h-3 flex items-center justify-center">
                                         <svg
                                             width="10" height="10" viewBox="0 0 24 24"
-                                            fill={isActive ? "#CCA14D" : "transparent"}
+                                            fill={isActive ? "#E8C96A" : "transparent"}
                                             stroke={isActive ? "transparent" : "transparent"}
                                             xmlns="http://www.w3.org/2000/svg"
                                             className={`transition-all duration-300 ${isActive ? 'translate-x-0 opacity-100' : '-translate-x-2 opacity-0'}`}
@@ -82,7 +82,7 @@ export default function VerticalApproachSplit() {
                                         </svg>
                                     </div>
                                     <span
-                                        className={`font-sans text-base lg:text-lg transition-colors duration-500 cursor-pointer ${isActive ? 'text-[#CCA14D]' : 'text-[#EDEDED]/50 hover:text-[#EDEDED]/80'}`}
+                                        className={`font-sans text-base lg:text-lg transition-colors duration-500 cursor-pointer ${isActive ? 'text-[#E8C96A]' : 'text-[#EDEDED]/50 hover:text-[#EDEDED]/80'}`}
                                         style={{ fontFamily: 'sans-serif' }}
                                         onClick={() => setActiveIndex(i)}
                                     >
@@ -94,7 +94,7 @@ export default function VerticalApproachSplit() {
                     </div>
 
                     {/* Sliding Image Box (Slides Down on Change) */}
-                    <div className="relative w-full max-w-md aspect-video rounded-[2rem] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] bg-[#163548]">
+                    <div className="relative w-full max-w-md aspect-video rounded-[2rem] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] bg-[#0A1628]">
                         <AnimatePresence>
                             <motion.div
                                 key={activeIndex}
@@ -113,13 +113,13 @@ export default function VerticalApproachSplit() {
                                 />
                             </motion.div>
                         </AnimatePresence>
-                        <div className="absolute inset-0 bg-[#163548]/30 mix-blend-multiply pointer-events-none z-20" />
+                        <div className="absolute inset-0 bg-[#0A1628]/30 mix-blend-multiply pointer-events-none z-20" />
                     </div>
 
                 </div>
 
                 {/* RIGHT SIDE: Scrolling Cards Container */}
-                <div className="w-full md:w-[55%] lg:w-1/2 flex flex-col z-20 bg-[#163548]">
+                <div className="w-full md:w-[55%] lg:w-1/2 flex flex-col z-20 bg-[#0A1628]">
 
                     {services.map((service, index) => (
                         <motion.div
@@ -147,12 +147,12 @@ export default function VerticalApproachSplit() {
                                         priority={index === 0}
                                     />
                                     {/* Cinematic tint */}
-                                    <div className="absolute inset-0 bg-[#163548]/10 mix-blend-multiply transition-opacity duration-500 hover:opacity-0" />
+                                    <div className="absolute inset-0 bg-[#0A1628]/10 mix-blend-multiply transition-opacity duration-500 hover:opacity-0" />
                                 </div>
 
-                                <div className="pl-6 border-l-2 border-[#CCA14D]/30 py-2">
+                                <div className="pl-6 border-l-2 border-[#E8C96A]/30 py-2">
                                     <h3
-                                        className="text-2xl sm:text-3xl lg:text-4xl text-[#CCA14D] mb-4 tracking-tight"
+                                        className="text-2xl sm:text-3xl lg:text-4xl text-[#E8C96A] mb-4 tracking-tight"
                                         style={{ fontFamily: 'sans-serif' }}
                                     >
                                         {service.title}

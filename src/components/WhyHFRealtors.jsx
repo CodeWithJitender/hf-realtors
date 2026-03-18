@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -38,7 +38,7 @@ export default function WhyHFRealtors() {
     const bodyWords = bodyText.split(" ");
 
     return (
-        <section ref={containerRef} className="py-fluid-section w-full min-h-screen flex items-center justify-center relative bg-[#163548] px-fluid-container">
+        <section ref={containerRef} className="py-fluid-section w-full min-h-screen flex items-center justify-center relative bg-[#0A1628] px-fluid-container">
 
             {/* Isolated clipping layer for the background to accommodate the -top offset */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -57,7 +57,7 @@ export default function WhyHFRealtors() {
             </div>
 
             {/* Dark Overlay to Sink the Background gently */}
-            <div className="absolute inset-0 bg-[#163548]/80 z-0 mix-blend-overlay pointer-events-none" />
+            <div className="absolute inset-0 bg-[#0A1628]/80 z-0 mix-blend-overlay pointer-events-none" />
 
             {/* Inner Frame: Massive Centered Content Overlay Card / Bento Surface */}
             <motion.div
@@ -65,16 +65,16 @@ export default function WhyHFRealtors() {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ type: "spring", stiffness: 80, damping: 20 }}
-                className="relative w-full max-w-[1400px] bg-[#224d68]/40 backdrop-blur-md px-fluid-container py-fluid-section flex flex-col items-center text-center shadow-2xl z-10 border border-[#FFED7E]/5 rounded-[3rem]"
+                className="relative w-full max-w-[1400px] bg-[#0F1E38]/40 backdrop-blur-md px-fluid-container py-fluid-section flex flex-col items-center text-center shadow-2xl z-10 border border-[#E8C96A]/5 rounded-[3rem]"
             >
 
                 {/* 1. Monospace / Wide-Tracked Eyebrow */}
                 <RevealText delay={0.1} className="mb-10 md:mb-14">
                     <div className="flex flex-col items-center">
-                        <div className="w-8 h-8 md:w-12 md:h-12 border border-[#FFED7E]/10 rounded-full flex items-center justify-center mb-6">
-                            <div className="w-1 h-1 bg-[#FFED7E] rounded-full"></div>
+                        <div className="w-8 h-8 md:w-12 md:h-12 border border-[#E8C96A]/10 rounded-full flex items-center justify-center mb-6">
+                            <div className="w-1 h-1 bg-[#E8C96A] rounded-full"></div>
                         </div>
-                        <h2 className="text-[10px] md:text-sm font-semibold tracking-[0.3em] uppercase text-[#FFED7E]/70 font-medium font-sans">
+                        <h2 className="text-[10px] md:text-sm font-semibold tracking-[0.3em] uppercase text-[#E8C96A]/70 font-medium font-sans">
                             Welcome to HF Realtors
                         </h2>
                     </div>

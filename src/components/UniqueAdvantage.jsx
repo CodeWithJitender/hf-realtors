@@ -27,7 +27,7 @@ export default function UniqueAdvantage() {
     };
 
     return (
-        <section className="relative w-full min-h-screen py-fluid-section px-fluid-container flex flex-col items-center justify-center bg-[#163548]">
+        <section className="relative w-full min-h-screen py-fluid-section px-fluid-container flex flex-col items-center justify-center bg-[#0A1628]">
 
             {/* The Zentry-style Eyebrow Label */}
             {/* <div className="text-center mb-16 md:mb-24">
@@ -37,7 +37,7 @@ export default function UniqueAdvantage() {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }}
                 >
-                    <p className="text-[10px] md:text-xs font-semibold tracking-[0.3em] text-[#FFED7E]/70 uppercase">
+                    <p className="text-[10px] md:text-xs font-semibold tracking-[0.3em] text-[#E8C96A]/70 uppercase">
                         Who We Are
                     </p>
                 </motion.div>
@@ -46,27 +46,27 @@ export default function UniqueAdvantage() {
             {/* Massive Clip-Reveal Typography Block */}
             <div className="flex flex-col items-center justify-center w-full">
                 {textLines.map((line, index) => (
-                    <div key={index} className="flex items-center gap-4 md:gap-8 pt-2 pb-1">
+                    <div key={index} className="flex items-center justify-center gap-4 md:gap-8 pt-2 pb-1 relative">
 
                         {/* Decorative Icon Before Specific Lines */}
                         {/* {line.hasIcon && (
                             <motion.div variants={iconVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex items-center justify-center">
                                 Abstract Zentry-style blob/shape
-                                <div className="w-4 h-4 md:w-8 md:h-8 lg:w-12 lg:h-12 bg-[#CCA14D] rounded-sm rotate-45" />
+                                <div className="w-4 h-4 md:w-8 md:h-8 lg:w-12 lg:h-12 bg-[#E8C96A] rounded-sm rotate-45" />
                             </motion.div>
                         )} */}
 
-                        <h2 className="text-[14vw] md:text-[11vw] leading-[0.8] font-medium tracking-tight text-[#EDEDED] text-center flex-shrink-0 drop-shadow-md flex flex-wrap justify-center overflow-hidden" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>
+                        <h2 className="text-[14vw] md:text-[11vw] leading-[0.8] font-medium tracking-tight text-[#EDEDED] text-center flex-shrink-0 drop-shadow-md flex flex-wrap justify-center gap-x-[2vw] overflow-hidden" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>
                             {line.text.split(" ").map((word, wordIndex) => (
                                 <motion.span
                                     key={wordIndex}
-                                    className="inline-block mr-[2vw]" // spacing between words
+                                    className="inline-block"
                                     initial={{ opacity: 0, y: "100%" }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-50px" }}
                                     transition={{
                                         duration: 0.8,
-                                        delay: 0.1 * index + wordIndex * 0.1, // stagger by line then by word
+                                        delay: 0.1 * index + wordIndex * 0.1,
                                         ease: [0.16, 1, 0.3, 1]
                                     }}
                                 >
@@ -82,9 +82,9 @@ export default function UniqueAdvantage() {
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true, margin: "-50px" }}
-                                className="flex items-center justify-center"
+                                className="absolute right-[-2rem] md:right-[-3rem] flex items-center justify-center"
                             >
-                                <div className="w-3 h-3 md:w-6 md:h-6 lg:w-10 lg:h-10 bg-[#CCA14D]/80 rounded-full" />
+                                <div className="w-3 h-3 md:w-6 md:h-6 lg:w-10 lg:h-10 bg-[#E8C96A]/80 rounded-full" />
                             </motion.div>
                         )}
 
@@ -100,7 +100,7 @@ export default function UniqueAdvantage() {
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 1, delay: 0.4, ease: [0.2, 0.65, 0.3, 0.9] }}
                 >
-                    <p className="text-[#EDEDED] text-sm md:text-base leading-relaxed" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}>
+                    <p className="text-[#EDEDED] text-sm md:text-base leading-relaxed max-w-[495px]" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 500 }}>
                         Partner with the only real estate firm providing complimentary premium architectural redesign. We transform spaces before you even hold the keys.
                     </p>
                 </motion.div>
@@ -115,7 +115,7 @@ export default function UniqueAdvantage() {
                 >
                     <Button href="tel:+911234567890" variant="outlined" showArrow={false} className="gap-3">
                         <Phone size={16} />
-                        <span style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", fontWeight: 500 }}>+91 12345 67890</span>
+                        <span style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 500 }}>+91 12345 67890</span>
                     </Button>
                 </motion.div>
             </div>

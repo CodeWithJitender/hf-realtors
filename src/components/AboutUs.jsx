@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import Image from "next/image";
@@ -32,23 +32,23 @@ export default function AboutUs() {
     };
 
     return (
-        <section ref={containerRef} className="relative w-full bg-[#163548] py-24 sm:py-32 overflow-visible text-[#EDEDED]">
+        <section ref={containerRef} className="relative w-full bg-[#0A1628] py-24 sm:py-32 overflow-visible text-[#EDEDED]">
             <div className="container mx-auto px-6 lg:px-12 xl:px-24">
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 relative items-start">
 
                     {/* The Central Animated Timeline Divider */}
-                    <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-[#CCA14D]/30 hidden lg:block -translate-x-1/2 rounded-full">
+                    <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-[#E8C96A]/30 hidden lg:block -translate-x-1/2 rounded-full">
                         <motion.div
                             style={{ y: dotY }}
-                            className="absolute -left-[5.5px] w-3 h-3 bg-[#CCA14D] rounded-full shadow-[0_0_15px_#CCA14D] will-change-transform"
+                            className="absolute -left-[5.5px] w-3 h-3 bg-[#E8C96A] rounded-full shadow-[0_0_15px_#E8C96A] will-change-transform"
                         />
                     </div>
 
                     {/* Left Column (Sticky Content & Links) */}
                     <div className="sticky top-12 lg:top-24 flex flex-col justify-between order-2 lg:order-1 pt-8 lg:pt-0 h-auto lg:h-[calc(100vh-12rem)] z-10">
                         <div>
-                            <h3 className="font-sans font-bold text-[#CCA14D] uppercase tracking-widest text-sm mb-6">About Us</h3>
+                            <h3 className="font-sans font-bold text-[#E8C96A] uppercase tracking-widest text-sm mb-6">About Us</h3>
 
                             <h2 className="font-sans font-medium text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] leading-[1.1] mb-8 text-[#EDEDED] tracking-tight">
                                 Transform A Space for Work, <br className="hidden xl:block" /> Into A Space for Life
@@ -61,9 +61,9 @@ export default function AboutUs() {
                             {/* Nav Links */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4 mb-16">
                                 {["Who We Are", "Our Values", "Our Team", "Founders"].map((link) => (
-                                    <div key={link} className="flex items-center gap-3 text-[#CCA14D] group cursor-pointer w-fit">
-                                        <ArrowRight size={16} className="text-[#CCA14D] transition-transform duration-300 group-hover:translate-x-1" />
-                                        <span className="font-sans text-[#EDEDED] group-hover:text-[#CCA14D] transition-colors">{link}</span>
+                                    <div key={link} className="flex items-center gap-3 text-[#E8C96A] group cursor-pointer w-fit">
+                                        <ArrowRight size={16} className="text-[#E8C96A] transition-transform duration-300 group-hover:translate-x-1" />
+                                        <span className="font-sans text-[#EDEDED] group-hover:text-[#E8C96A] transition-colors">{link}</span>
                                     </div>
                                 ))}
                             </div>
@@ -77,14 +77,14 @@ export default function AboutUs() {
                                 fill
                                 className="object-cover"
                             />
-                            <div className="absolute inset-0 bg-[#163548]/30 mix-blend-multiply" />
+                            <div className="absolute inset-0 bg-[#0A1628]/30 mix-blend-multiply" />
                         </div>
                     </div>
 
                     {/* Right Column (Scrolling Massive Animated Statistics) */}
                     <div className="flex flex-col justify-start order-1 lg:order-2 pl-0 lg:pl-[10%] pt-8 lg:pt-[20vh] pb-8 lg:pb-[25vh] z-10">
                         <div className="mb-12">
-                            <h4 className="font-sans font-bold text-[#CCA14D] uppercase tracking-widest text-sm mb-6 lg:mb-16 ">Who We Are</h4>
+                            <h4 className="font-sans font-bold text-[#E8C96A] uppercase tracking-widest text-sm mb-6 lg:mb-16 ">Who We Are</h4>
                         </div>
 
                         <motion.div
@@ -96,30 +96,30 @@ export default function AboutUs() {
                         >
                             {/* Stat 1 */}
                             <motion.div variants={statItem} className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start xl:items-center justify-between xl:gap-8">
-                                <span className="font-sans font-light text-[6rem] sm:text-[8rem] lg:text-[7rem] xl:text-[9.5rem] leading-[0.8] text-[#CCA14D] tracking-tighter">
+                                <span className="font-sans font-light text-[6rem] sm:text-[8rem] lg:text-[7rem] xl:text-[9.5rem] leading-[0.8] text-[#E8C96A] tracking-tighter">
                                     20+
                                 </span>
-                                <span className="font-sans text-xl text-[#CCA14D] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
+                                <span className="font-sans text-xl text-[#E8C96A] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
                                     Years Of Experience
                                 </span>
                             </motion.div>
 
                             {/* Stat 2 */}
                             <motion.div variants={statItem} className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start xl:items-center justify-between xl:gap-8">
-                                <span className="font-sans font-light text-[6rem] sm:text-[8rem] lg:text-[7rem] xl:text-[9.5rem] leading-[0.8] text-[#CCA14D] tracking-tighter">
+                                <span className="font-sans font-light text-[6rem] sm:text-[8rem] lg:text-[7rem] xl:text-[9.5rem] leading-[0.8] text-[#E8C96A] tracking-tighter">
                                     08
                                 </span>
-                                <span className="font-sans text-xl text-[#CCA14D] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
+                                <span className="font-sans text-xl text-[#E8C96A] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
                                     Sq. ft. transacted
                                 </span>
                             </motion.div>
 
                             {/* Stat 3 */}
                             <motion.div variants={statItem} className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start xl:items-center justify-between xl:gap-8">
-                                <span className="font-sans font-light text-[6rem] sm:text-[8rem] lg:text-[7rem] xl:text-[9.5rem] leading-[0.8] text-[#CCA14D] tracking-tighter">
+                                <span className="font-sans font-light text-[6rem] sm:text-[8rem] lg:text-[7rem] xl:text-[9.5rem] leading-[0.8] text-[#E8C96A] tracking-tighter">
                                     3M
                                 </span>
-                                <span className="font-sans text-xl text-[#CCA14D] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
+                                <span className="font-sans text-xl text-[#E8C96A] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
                                     Closed Deals
                                 </span>
                             </motion.div>

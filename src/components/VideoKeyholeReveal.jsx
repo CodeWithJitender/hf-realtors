@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useState, useEffect } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
@@ -44,15 +44,15 @@ export default function VideoKeyholeReveal() {
     };
 
     return (
-        <section ref={containerRef} className="relative w-full h-[300vh] bg-[#163548] z-20">
+        <section ref={containerRef} className="relative w-full h-[300vh] bg-[#0A1628] z-20">
             {/* Sticky Container holds the layout for 200vh of scrolling */}
-            <div className="sticky top-0 w-full h-screen overflow-hidden bg-[#163548] z-10">
+            <div className="sticky top-0 w-full h-screen overflow-hidden bg-[#0A1628] z-10">
                 
                 {/* 
                     Background layer: Deep Navy mask.
                     We put the mask underneath as the default color, and the video on top dynamically clipped.
                 */}
-                <div className="absolute inset-0 bg-[#163548] z-0 flex items-center justify-center">
+                <div className="absolute inset-0 bg-[#0A1628] z-0 flex items-center justify-center">
                     {/* The Typography overlays the Navy mask, centered in the 'keyhole' initially. */}
                     <motion.h2 
                         style={{ opacity: textOpacity }}
@@ -101,14 +101,14 @@ export default function VideoKeyholeReveal() {
                     >
                         <button 
                             onClick={handleVolume}
-                            className="p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-colors border border-white/20"
+                            className="p-3 bg-white/10 backdrop-blur-md rounded-full text-[#EDEDED] hover:bg-white/20 transition-colors border border-white/20"
                             aria-label={isMuted ? "Unmute video" : "Mute video"}
                         >
                             {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
                         </button>
                         <button 
                             onClick={handlePlayPause}
-                            className="p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-colors border border-white/20"
+                            className="p-3 bg-white/10 backdrop-blur-md rounded-full text-[#EDEDED] hover:bg-white/20 transition-colors border border-white/20"
                             aria-label={isPlaying ? "Pause video" : "Play video"}
                         >
                             {isPlaying ? <Pause size={20} /> : <Play size={20} />}

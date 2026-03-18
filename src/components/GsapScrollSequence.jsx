@@ -14,7 +14,7 @@ if (typeof window !== "undefined") {
 export default function GsapScrollSequence() {
   const triggerRef = useRef(null);
   const containerRef = useRef(null);
-  
+
   // Elements to animate
   const imagesRef = useRef([]);
   const finalContainerRef = useRef(null);
@@ -46,7 +46,7 @@ export default function GsapScrollSequence() {
 
     // Reset initial states
     gsap.set(imagesRef.current, { scale: 0, opacity: 1 });
-    gsap.set(finalContainerRef.current, { scale: 0, backgroundColor: "#163548" });
+    gsap.set(finalContainerRef.current, { scale: 0, backgroundColor: "#0A1628" });
     gsap.set(textRef.current, { opacity: 0, y: 30 });
 
     // --- PHASE 1: The Gallery (Overlapping Fast Zoom) ---
@@ -58,17 +58,17 @@ export default function GsapScrollSequence() {
       .to(imagesRef.current[2], { scale: 1, ease: "power2.inOut", duration: 1.2 }, "gallery+=0.4")
       .to(imagesRef.current[3], { scale: 1, ease: "power2.inOut", duration: 1.2 }, "gallery+=0.6")
       .to(imagesRef.current[4], { scale: 1, ease: "power2.inOut", duration: 1.2 }, "gallery+=0.6")
-      
+
       // Pause to let user observe the final image
       .to({}, { duration: 0.5 })
 
-    // --- PHASE 2: The Text Reveal ---
-    // The final container zooms up as a solid block right on the heels of the images
+      // --- PHASE 2: The Text Reveal ---
+      // The final container zooms up as a solid block right on the heels of the images
       .addLabel("textZoom", "-=0.2")
       .to(finalContainerRef.current, { scale: 1, ease: "power3.inOut", duration: 1.2 }, "textZoom")
-    // Fade in text quickly
+      // Fade in text quickly
       .to(textRef.current, { opacity: 1, y: 0, ease: "power2.out", duration: 0.8 }, "textZoom+=0.6")
-      
+
       // Keep it pinned for a moment to let the user read before unpinning
       .to({}, { duration: 1.5 });
 
@@ -78,57 +78,57 @@ export default function GsapScrollSequence() {
     // -mt-[100vh] combined with relative z-50 forces this container to physically overlay the previous 100vh section (the Hero section).
     <div ref={triggerRef} className="w-full relative -mt-[100vh] z-50 pointer-events-none">
       <section ref={containerRef} className="relative w-full h-screen bg-transparent overflow-hidden flex items-center justify-center pointer-events-none" style={{ willChange: "transform" }}>
-      
-      {/* Gallery Images Container (Overlaying the Hero section transparently until scaled) */}
-      <div className="absolute inset-0 z-20 pointer-events-none">
-        {images.map((img, i) => (
-          <div 
-            key={i}
-            ref={(el) => { if (el) imagesRef.current[i] = el; }}
-            // absolute inset-0 sets width and height to 100% naturally. Scale will visually shrink it.
-            className={`absolute inset-0 shadow-2xl overflow-hidden origin-center grayscale-[20%] contrast-110`}
-          >
-            <Image 
-              src={img.src} 
-              alt={`Gallery image ${i+1}`} 
-              fill 
-              className="object-cover"
-            />
-          </div>
-        ))}
-      </div>
 
-      {/* 
+        {/* Gallery Images Container (Overlaying the Hero section transparently until scaled) */}
+        <div className="absolute inset-0 z-20 pointer-events-none">
+          {images.map((img, i) => (
+            <div
+              key={i}
+              ref={(el) => { if (el) imagesRef.current[i] = el; }}
+              // absolute inset-0 sets width and height to 100% naturally. Scale will visually shrink it.
+              className={`absolute inset-0 shadow-2xl overflow-hidden origin-center grayscale-[20%] contrast-110`}
+            >
+              <Image
+                src={img.src}
+                alt={`Gallery image ${i + 1}`}
+                fill
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* 
         Phase 3 Text Overlay Container.
         Instead of splitting, this just sits on top and fades in a dark tint to ensure text readability.
       */}
-      <div 
-        ref={finalContainerRef}
-        className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none"
-      >
-          <div 
+        <div
+          ref={finalContainerRef}
+          className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none"
+        >
+          <div
             ref={textRef}
             className="flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto z-40"
           >
-            <h2 
-              className="text-[#EDEDED] text-3xl md:text-5xl lg:text-[4rem] leading-[1.1] font-bold uppercase tracking-tighter mb-8"
-              style={{ fontFamily: 'var(--font-futura), Futura, sans-serif' }}
+            <h2
+              className="text-[#E8C96A] text-3xl md:text-5xl lg:text-[4rem] leading-[1.1] font-bold uppercase tracking-tighter mb-8"
+              style={{ fontFamily: 'var(--font-display)' }}
             >
               Building and Managing Real Estate Value
             </h2>
-            <p className="text-[#EDEDED]/75 font-sans text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-light mb-4">
+            <p className="font-sans text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-medium mb-4" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>
               HF Realtors is an independent real estate advisory firm focused on helping clients build, manage, and optimize property investments with clarity and confidence.
             </p>
-            <p className="text-[#EDEDED]/75 font-sans text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-light mb-4">
+            <p className="font-sans text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-medium mb-4" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>
               We work closely with individuals and investors to identify opportunities in residential and commercial real estate, ensuring every decision is guided by market insight, transparency, and long-term value creation.
             </p>
-            <p className="text-[#EDEDED]/75 font-sans text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-light">
+            <p className="font-sans text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-medium" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>
               As the market evolves, we continue to refine our approach, delivering thoughtful advisory and sustainable outcomes for every client we serve.
             </p>
           </div>
-      </div>
+        </div>
 
-    </section>
-  </div>
+      </section>
+    </div>
   );
 }

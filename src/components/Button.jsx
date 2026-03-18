@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
@@ -85,10 +85,10 @@ export default function Button({
         if (variant === "outlined") {
             return {
                 bgClass: "bg-transparent",
-                borderClass: "bg-[linear-gradient(to_right,#CCA14D,#FFED7E)]", // Gold Gradient Border
+                borderClass: "bg-[linear-gradient(to_right,#E8C96A,#E8C96A)]", // Gold Gradient Border
                 paddingClass: "p-[2px]", // Creates 2px border
                 fillColor: "#EDEDED", // White goo
-                textColor: isHovered ? "#163548" : "#ffffff", // White -> Deep Navy
+                textColor: isHovered ? "#0A1628" : "#EDEDED", // White -> Deep Navy
             };
         }
         if (variant === "white-outlined") {
@@ -96,28 +96,28 @@ export default function Button({
                 bgClass: "bg-transparent",
                 borderClass: "bg-white", // Solid White Border
                 paddingClass: "p-[1px]", // Creates 1px border like perfectly drawn outline
-                fillColor: "#ffffff", // Pure white goo
-                textColor: isHovered ? "#000000" : "#ffffff", // White -> Black text
+                fillColor: "#EDEDED", // Pure white goo
+                textColor: isHovered ? "#000000" : "#EDEDED", // White -> Black text
             };
         }
 
         if (variant === "gold") {
             return {
-                bgClass: "bg-[linear-gradient(to_right,#9C772E,#FFED7E)]",
-                borderClass: "bg-[linear-gradient(to_right,#9C772E,#FFED7E)]",
+                bgClass: "bg-[linear-gradient(to_right,#B8913A,#E8C96A)]",
+                borderClass: "bg-[linear-gradient(to_right,#B8913A,#E8C96A)]",
                 paddingClass: "p-0",
-                fillColor: "#163548",
-                textColor: isHovered ? "#FFED7E" : "#163548",
+                fillColor: "#0A1628",
+                textColor: isHovered ? "#E8C96A" : "#0A1628",
             };
         }
 
         // Default: solid
         return {
-            bgClass: "bg-[#163548]", // Deep Navy
-            borderClass: "bg-[linear-gradient(to_right,#CCA14D,#FFED7E)]", // Gold Gradient Border
+            bgClass: "bg-[#0A1628]", // Deep Navy
+            borderClass: "bg-[linear-gradient(to_right,#E8C96A,#E8C96A)]", // Gold Gradient Border
             paddingClass: "p-[2px]", // Creates 2px border
             fillColor: "#EDEDED", // White goo
-            textColor: isHovered ? "#163548" : "#EDEDED", // Off-white -> Deep Navy
+            textColor: isHovered ? "#0A1628" : "#EDEDED", // Off-white -> Deep Navy
         };
     };
 
@@ -192,11 +192,11 @@ export default function Button({
 
             {/* Actual Content */}
             <span
-                className="relative z-10 flex items-center justify-center gap-2 font-medium text-[13px] md:text-sm tracking-widest pointer-events-none whitespace-nowrap transition-colors duration-500 uppercase px-8 py-4"
-                style={{ color: styles.textColor, fontFamily: "'Futura', var(--font-poppins), sans-serif", fontWeight: 500 }}
+                className="relative z-10 flex items-center justify-center gap-2 font-bold text-[13px] md:text-sm tracking-widest pointer-events-none whitespace-nowrap transition-colors duration-500 uppercase px-8 py-4"
+                style={{ color: styles.textColor, fontFamily: "'Futura', var(--font-inter), sans-serif", fontWeight: 700 }}
             >
                 {children}
-                {showArrow && <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform flex-shrink-0" />}
+                {showArrow && <ChevronRight size={18} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform flex-shrink-0" />}
             </span>
         </Wrapper>
     );

@@ -1,4 +1,4 @@
-import ServicesHero from '@/components/ServicesHero';
+﻿import ServicesHero from '@/components/ServicesHero';
 import HowWeEngage from '@/components/HowWeEngage';
 
 export const metadata = {
@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="flex flex-col min-h-screen bg-[#163548] text-[#EDEDED] font-sans overflow-hidden">
+    <main className="flex flex-col min-h-screen bg-[#0A1628] text-[#EDEDED] font-sans overflow-hidden">
       <ServicesHero />
       <HowWeEngage />
     </main>

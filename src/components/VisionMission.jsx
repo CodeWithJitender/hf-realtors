@@ -14,8 +14,8 @@ function VisionSVG() {
     <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" aria-hidden="true">
       <defs>
         <linearGradient id="vm-gold-v" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#CCA14D" />
-          <stop offset="100%" stopColor="#CCA14D" />
+          <stop offset="0%" stopColor="#E8C96A" />
+          <stop offset="100%" stopColor="#E8C96A" />
         </linearGradient>
       </defs>
 
@@ -24,16 +24,16 @@ function VisionSVG() {
       {/* Middle ring */}
       <circle id="v-ring-mid" cx="90" cy="90" r="54" stroke="url(#vm-gold-v)" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.7" />
       {/* Inner ring */}
-      <circle id="v-ring-inner" cx="90" cy="90" r="34" stroke="#CCA14D" strokeWidth="1.5" opacity="0.9" />
+      <circle id="v-ring-inner" cx="90" cy="90" r="34" stroke="#E8C96A" strokeWidth="1.5" opacity="0.9" />
       {/* Crosshairs */}
-      <line x1="90" y1="8" x2="90" y2="28" stroke="#CCA14D" strokeWidth="1" opacity="0.5" />
-      <line x1="90" y1="152" x2="90" y2="172" stroke="#CCA14D" strokeWidth="1" opacity="0.5" />
-      <line x1="8" y1="90" x2="28" y2="90" stroke="#CCA14D" strokeWidth="1" opacity="0.5" />
-      <line x1="152" y1="90" x2="172" y2="90" stroke="#CCA14D" strokeWidth="1" opacity="0.5" />
+      <line x1="90" y1="8" x2="90" y2="28" stroke="#E8C96A" strokeWidth="1" opacity="0.5" />
+      <line x1="90" y1="152" x2="90" y2="172" stroke="#E8C96A" strokeWidth="1" opacity="0.5" />
+      <line x1="8" y1="90" x2="28" y2="90" stroke="#E8C96A" strokeWidth="1" opacity="0.5" />
+      <line x1="152" y1="90" x2="172" y2="90" stroke="#E8C96A" strokeWidth="1" opacity="0.5" />
       {/* Orbiting planet dot */}
-      <circle id="v-planet" cx="90" cy="16" r="6" fill="#CCA14D" />
+      <circle id="v-planet" cx="90" cy="16" r="6" fill="#E8C96A" />
       {/* Center dot */}
-      <circle cx="90" cy="90" r="5" fill="#163548" />
+      <circle cx="90" cy="90" r="5" fill="#0A1628" />
     </svg>
   );
 }
@@ -44,35 +44,35 @@ function MissionSVG() {
     <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" aria-hidden="true">
       <defs>
         <linearGradient id="vm-gold-m" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#163548" />
-          <stop offset="50%" stopColor="#CCA14D" />
-          <stop offset="100%" stopColor="#CCA14D" />
+          <stop offset="0%" stopColor="#0A1628" />
+          <stop offset="50%" stopColor="#E8C96A" />
+          <stop offset="100%" stopColor="#E8C96A" />
         </linearGradient>
       </defs>
 
       {/* Base line */}
-      <line x1="18" y1="152" x2="162" y2="152" stroke="#CCA14D" strokeWidth="1" opacity="0.4" />
+      <line x1="18" y1="152" x2="162" y2="152" stroke="#E8C96A" strokeWidth="1" opacity="0.4" />
 
       {/* Bar 1 */}
-      <rect id="m-bar1" x="22" y="122" width="20" height="30" rx="2" stroke="#CCA14D" strokeWidth="1.5" fill="rgba(204,161,77,0.06)" />
+      <rect id="m-bar1" x="22" y="122" width="20" height="30" rx="2" stroke="#E8C96A" strokeWidth="1.5" fill="rgba(204,161,77,0.06)" />
       {/* Bar 2 */}
       <rect id="m-bar2" x="52" y="98" width="20" height="54" rx="2" stroke="url(#vm-gold-m)" strokeWidth="1.5" fill="rgba(204,161,77,0.08)" />
       {/* Bar 3 */}
       <rect id="m-bar3" x="82" y="70" width="20" height="82" rx="2" stroke="url(#vm-gold-m)" strokeWidth="1.5" fill="rgba(204,161,77,0.1)" />
       {/* Bar 4 — tallest */}
-      <rect id="m-bar4" x="112" y="34" width="20" height="118" rx="2" stroke="#CCA14D" strokeWidth="2" fill="rgba(204,161,77,0.12)" />
+      <rect id="m-bar4" x="112" y="34" width="20" height="118" rx="2" stroke="#E8C96A" strokeWidth="2" fill="rgba(204,161,77,0.12)" />
 
       {/* Trend line */}
-      <polyline id="m-trend" points="32,122 62,98 92,70 122,34" stroke="#CCA14D" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <polyline id="m-trend" points="32,122 62,98 92,70 122,34" stroke="#E8C96A" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
 
       {/* Arrow tip */}
-      <polyline points="108,28 122,34 116,48" stroke="#CCA14D" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <polyline points="108,28 122,34 116,48" stroke="#E8C96A" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
 
       {/* Floating dots on trend */}
-      <circle id="m-dot1" cx="32" cy="122" r="4" fill="#CCA14D" opacity="0.7" />
-      <circle id="m-dot2" cx="62" cy="98" r="4" fill="#CCA14D" opacity="0.8" />
-      <circle id="m-dot3" cx="92" cy="70" r="4" fill="#CCA14D" opacity="0.9" />
-      <circle id="m-dot4" cx="122" cy="34" r="5" fill="#163548" />
+      <circle id="m-dot1" cx="32" cy="122" r="4" fill="#E8C96A" opacity="0.7" />
+      <circle id="m-dot2" cx="62" cy="98" r="4" fill="#E8C96A" opacity="0.8" />
+      <circle id="m-dot3" cx="92" cy="70" r="4" fill="#E8C96A" opacity="0.9" />
+      <circle id="m-dot4" cx="122" cy="34" r="5" fill="#0A1628" />
     </svg>
   );
 }
@@ -268,7 +268,7 @@ export default function VisionMission() {
       style={{
         width: "100vw",
         marginLeft: "calc((100% - 100vw) / 2)",
-        background: "#ffffff",
+        background: "#0A1628",
         padding: "clamp(5rem,10vh,9rem) clamp(1.5rem,6vw,7rem)",
         position: "relative",
         overflow: "hidden",
@@ -296,30 +296,30 @@ export default function VisionMission() {
           fontSize: "clamp(0.65rem, 1vw, 0.78rem)",
           letterSpacing: "0.38em",
           textTransform: "uppercase",
-          color: "#CCA14D",
+          color: "#E8C96A",
           fontWeight: 500,
           marginBottom: "1rem",
         }}>
           HF Realtors
         </p> */}
         <h2 style={{
-          fontFamily: "'Futura-Bold', 'Futura', sans-serif",
+          fontFamily: "var(--font-display)",
           fontSize: "clamp(2.5rem, 6.5vw, 5.5rem)",
           fontWeight: 700,
-          color: "#163548",
+          color: "#FFFFFF",
           lineHeight: 1.05,
           textTransform: "uppercase",
           letterSpacing: "-0.02em",
         }}>
           Our Vision<br />
-          <span style={{ color: "#CCA14D" }}>&amp; Mission</span>
+          <span style={{ color: "#E8C96A" }}>&amp; Mission</span>
         </h2>
       </div>
 
       {/* ── GOLD DIVIDER ── */}
       <div ref={dividerRef} style={{
         height: "1px",
-        background: "linear-gradient(to right, transparent, #CCA14D, transparent)",
+        background: "linear-gradient(to right, transparent, #E8C96A, transparent)",
         marginBottom: "clamp(3rem,5vw,4.5rem)",
         transformOrigin: "center",
       }} />
@@ -339,8 +339,8 @@ export default function VisionMission() {
           ref={card1Ref}
           style={{
             flex: 1,
-            background: "linear-gradient(145deg, rgba(22,53,72,0.06) 0%, rgba(22,53,72,0.10) 100%)",
-            border: "1px solid rgba(22,53,72,0.18)",
+            background: "#0F1E38",
+            border: "1px solid rgba(232,201,106,0.18)",
             borderRadius: "24px",
             padding: "clamp(2rem,4vw,3.5rem)",
             backdropFilter: "blur(12px)",
@@ -356,11 +356,11 @@ export default function VisionMission() {
           }} />
 
           <p ref={c1LabelRef} style={{
-            fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+            fontFamily: "var(--font-inter), 'Inter', sans-serif",
             fontSize: "clamp(0.7rem, 1vw, 0.8rem)",
             letterSpacing: "0.3em",
             textTransform: "uppercase",
-            color: "#CCA14D",
+            color: "#E8C96A",
             fontWeight: 500,
             marginBottom: "clamp(1.5rem,3vw,2.5rem)",
           }}>
@@ -382,18 +382,18 @@ export default function VisionMission() {
           <div style={{ height: "1px", background: "rgba(22,53,72,0.15)", marginBottom: "clamp(1.5rem,3vw,2rem)" }} />
 
           <h3 ref={c1TitleRef} style={{
-            fontFamily: "'Futura-Bold', 'Futura', sans-serif",
+            fontFamily: "var(--font-display)",
             fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
             fontWeight: 600,
-            color: "#163548",
+            color: "#FFFFFF",
             marginBottom: "0.8rem",
           }}>
             Strategic Foresight
           </h3>
           <p ref={c1BodyRef} style={{
-            fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+            fontFamily: "var(--font-body)",
             fontSize: "clamp(0.9rem, 1.2vw, 1.05rem)",
-            color: "rgba(22,53,72,0.80)",
+            color: "#7A8FAB",
             lineHeight: 1.78,
             fontWeight: 400,
           }}>
@@ -406,8 +406,8 @@ export default function VisionMission() {
           ref={card2Ref}
           style={{
             flex: 1,
-            background: "linear-gradient(145deg, rgba(22,53,72,0.06) 0%, rgba(22,53,72,0.10) 100%)",
-            border: "1px solid rgba(22,53,72,0.18)",
+            background: "#0F1E38",
+            border: "1px solid rgba(232,201,106,0.18)",
             borderRadius: "24px",
             padding: "clamp(2rem,4vw,3.5rem)",
             backdropFilter: "blur(12px)",
@@ -418,11 +418,11 @@ export default function VisionMission() {
 
 
           <p ref={c2LabelRef} style={{
-            fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+            fontFamily: "var(--font-inter), 'Inter', sans-serif",
             fontSize: "clamp(0.7rem, 1vw, 0.8rem)",
             letterSpacing: "0.3em",
             textTransform: "uppercase",
-            color: "#CCA14D",
+            color: "#E8C96A",
             fontWeight: 500,
             marginBottom: "clamp(1.5rem,3vw,2.5rem)",
           }}>
@@ -444,18 +444,18 @@ export default function VisionMission() {
           <div style={{ height: "1px", background: "rgba(22,53,72,0.15)", marginBottom: "clamp(1.5rem,3vw,2rem)" }} />
 
           <h3 ref={c2TitleRef} style={{
-            fontFamily: "'Futura-Bold', 'Futura', sans-serif",
+            fontFamily: "var(--font-display)",
             fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
             fontWeight: 600,
-            color: "#163548",
+            color: "#FFFFFF",
             marginBottom: "0.8rem",
           }}>
             Guided Growth
           </h3>
           <p ref={c2BodyRef} style={{
-            fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+            fontFamily: "var(--font-body)",
             fontSize: "clamp(0.9rem, 1.2vw, 1.05rem)",
-            color: "rgba(22,53,72,0.80)",
+            color: "#7A8FAB",
             lineHeight: 1.78,
             fontWeight: 400,
           }}>

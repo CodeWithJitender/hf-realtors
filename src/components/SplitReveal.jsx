@@ -24,7 +24,7 @@ function RevealWords({ text, className, delay = 0, animate = "visible" }) {
             animate={animate}
         >
             {words.map((word, i) => (
-                <span key={i} className="inline-block overflow-hidden" style={{ verticalAlign: "bottom" }}>
+                <span key={i} className="inline-block overflow-hidden pb-[0.15em] mb-[-0.15em]" style={{ verticalAlign: "bottom" }}>
                     <motion.span className="inline-block" variants={item}>
                         {word}&nbsp;
                     </motion.span>
@@ -110,7 +110,7 @@ const tabs = [
 const SplitText = () => (
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-fluid-container w-full h-full pointer-events-none">
         <h2
-            className="font-bold uppercase leading-[0.85] tracking-tighter text-[#CCA14D] drop-shadow-2xl text-[8vw] sm:text-[7vw] lg:text-[6.5vw] max-w-[95vw]"
+            className="font-bold leading-[1.05] tracking-tighter text-[#E8C96A] drop-shadow-2xl text-[8vw] sm:text-[7vw] lg:text-[6.5vw] max-w-[95vw]"
             style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
         >
             Pioneering a New Standard in Real Estate.
@@ -126,10 +126,10 @@ function StatsContent({ tab, isActive }) {
             {tab.stats.map((stat, i) => (
                 <FadeUp key={i} delay={0.1 + i * 0.12} animate={anim}>
                     <div className="flex flex-row items-center gap-6 md:gap-8 xl:gap-16 w-full">
-                        <span className="font-light text-[4rem] md:text-[6rem] xl:text-[9rem] text-[#CCA14D] tracking-tighter min-w-[120px] md:min-w-[180px] xl:min-w-[240px] leading-none" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>
+                        <span className="font-light text-[4rem] md:text-[6rem] xl:text-[9rem] text-[#E8C96A] tracking-tighter min-w-[120px] md:min-w-[180px] xl:min-w-[240px] leading-none" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>
                             {stat.value}
                         </span>
-                        <span className="font-medium text-base md:text-xl xl:text-2xl text-[#163548] leading-tight whitespace-pre-line uppercase tracking-wide" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>
+                        <span className="font-medium text-base md:text-xl xl:text-2xl text-[#fff] leading-tight whitespace-pre-line uppercase tracking-wide" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}>
                             {stat.label}
                         </span>
                     </div>
@@ -143,15 +143,15 @@ function ValuesContent({ tab, isActive }) {
     const anim = isActive ? "visible" : "hidden";
     return (
         <div className="flex flex-col w-full max-w-2xl">
-            <div className="flex flex-col rounded-2xl md:rounded-[2rem] overflow-hidden border border-[#CCA14D]/20 shadow-lg bg-white">
+            <div className="flex flex-col rounded-2xl md:rounded-[2rem] overflow-hidden border border-[#E8C96A]/20 shadow-lg bg-white">
                 {tab.values.map((val, i) => (
                     <FadeUp key={i} delay={0.1 + i * 0.1} animate={anim}>
-                        <div className="flex flex-row items-center justify-between p-6 md:p-8 border-b border-[#CCA14D]/10 last:border-0 hover:bg-[#CCA14D]/5 transition-colors">
+                        <div className="flex flex-row items-center justify-between p-6 md:p-8 border-b border-[#E8C96A]/10 last:border-0 hover:bg-[#E8C96A]/5 transition-colors">
                             <div className="flex flex-col">
-                                <span className="font-bold text-lg md:text-2xl text-[#CCA14D] mb-1" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{val.title}</span>
-                                <span className="text-sm md:text-base text-[#163548]/70 whitespace-pre-line leading-relaxed" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>{val.desc}</span>
+                                <span className="font-bold text-lg md:text-2xl text-[#E8C96A] mb-1" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{val.title}</span>
+                                <span className="text-sm md:text-base text-[#0A1628]/70 whitespace-pre-line leading-relaxed" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}>{val.desc}</span>
                             </div>
-                            <span className="font-light text-[3rem] md:text-[4.5rem] leading-none text-[#CCA14D] opacity-25 ml-4" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{val.num}</span>
+                            <span className="font-light text-[3rem] md:text-[4.5rem] leading-none text-[#E8C96A] opacity-25 ml-4" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{val.num}</span>
                         </div>
                     </FadeUp>
                 ))}
@@ -166,15 +166,15 @@ function TeamContent({ tab, isActive }) {
         <div className="flex flex-col items-center justify-center w-full h-full relative">
             <motion.h3
                 initial={{ opacity: 0 }}
-                animate={isActive ? { opacity: 0.1 } : { opacity: 0 }}
+                animate={isActive ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="hidden md:block text-[5rem] xl:text-[9rem] tracking-tighter text-[#163548] leading-none whitespace-nowrap absolute top-[-4rem] xl:top-[-7rem] z-0" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
+                className="hidden md:block text-[5rem] xl:text-[5rem] tracking-tighter text-[#E8C96A] leading-none whitespace-nowrap absolute top-[-4rem] z-0" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
             >
                 {tab.title}
             </motion.h3>
-            <FadeUp delay={0.08} animate={anim} className="relative w-full aspect-[4/3] xl:aspect-video z-10 mt-12 overflow-hidden shadow-2xl border border-[#CCA14D]/20">
-                <Image src={tab.teamImage} alt="Our Team" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#163548]/40 via-transparent to-transparent" />
+            <FadeUp delay={0.08} animate={anim} className="relative w-full aspect-[4/3] xl:aspect-video rounded-2xl z-10 mt-2 overflow-hidden shadow-2xl border border-[#E8C96A]/20">
+                <Image src={tab.teamImage} alt="Our Team" fill className="object-cover rounded-2xl" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/40 via-transparent to-transparent" />
             </FadeUp>
             <div className="mt-10 flex flex-col items-center text-center gap-3 z-20">
                 {tab.roles.map((line, i) => (
@@ -183,7 +183,7 @@ function TeamContent({ tab, isActive }) {
                         text={line}
                         animate={anim}
                         delay={0.3 + i * 0.15}
-                        className="font-sans text-[10px] sm:text-xs xl:text-sm tracking-[0.18em] text-[#163548] font-semibold uppercase"
+                        className="font-sans text-[10px] sm:text-xs xl:text-sm tracking-[0.18em] text-[#fff] font-semibold uppercase"
                     />
                 ))}
             </div>
@@ -198,10 +198,10 @@ function FoundersContent({ tab, isActive }) {
             {/* Portrait card — large, fills former 3-card row */}
             {tab.founders.map((founder, i) => (
                 <FadeUp key={i} delay={0.05 + i * 0.12} animate={anim} className="w-full sm:w-[50%] flex-shrink-0">
-                    <div className="relative w-full aspect-[3/4] group rounded-2xl overflow-hidden border border-[#CCA14D]/25 shadow-xl bg-[#1D3E53]">
+                    <div className="relative w-full aspect-[3/4] group rounded-2xl overflow-hidden border border-[#E8C96A]/25 shadow-xl bg-[#0F1E38]">
                         <Image src={founder.image} alt={founder.name} fill className="object-cover opacity-90 grayscale group-hover:grayscale-0 transition-all duration-500" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                        <span className="absolute bottom-4 left-0 right-0 text-center font-sans font-semibold text-base text-white px-2">{founder.name}</span>
+                        <span className="absolute bottom-4 left-0 right-0 text-center font-sans font-semibold text-base text-[#EDEDED] px-2">{founder.name}</span>
                     </div>
                 </FadeUp>
             ))}
@@ -209,7 +209,7 @@ function FoundersContent({ tab, isActive }) {
             <div className="flex-1 flex items-end pb-4">
                 <RevealWords
                     text="Meet Our Founder"
-                    className="text-[2.5rem] xl:text-[4rem] tracking-tighter text-[#CCA14D] leading-[0.9] block" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
+                    className="text-[2.5rem] xl:text-[4rem] tracking-tighter text-[#E8C96A] leading-[0.9] block" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
                     delay={0.15}
                     animate={anim}
                 />
@@ -298,11 +298,11 @@ function DesktopReveal() {
     const dotTop = useTransform(scrollYProgress, [0.15, 0.95], ["5%", "95%"]);
 
     return (
-        <section ref={sectionRef} className="relative w-full bg-white h-[300vh] lg:h-[700vh]">
+        <section ref={sectionRef} className="relative w-full h-[300vh] lg:h-[700vh]" style={{ backgroundColor: "#0A1628" }}>
             <div className="sticky top-0 w-full h-screen overflow-hidden">
 
                 {/* ── Layer 0: About Us Content ── */}
-                <div className="absolute inset-0 z-0 flex flex-col md:flex-row w-full h-full text-[#163548] px-fluid-container py-4 md:py-fluid-section">
+                <div className="absolute inset-0 z-0 flex flex-col md:flex-row w-full h-full text-[#FFFFFF] px-fluid-container py-4 md:py-fluid-section">
 
                     {/* Left Panel */}
                     <div className="w-full md:w-1/2 flex-none md:flex flex-col justify-start md:justify-center lg:pr-12 z-10">
@@ -311,12 +311,12 @@ function DesktopReveal() {
                             initial={{ opacity: 0, y: 16 }}
                             animate={doorsOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                             transition={{ duration: 0.6, delay: 0.05 }}
-                            className="font-sans font-semibold text-[#CCA14D] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-6 block"
+                            className="font-sans font-semibold text-[#FFFFFF] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-6 block"
                         >
                             ABOUT US
                         </motion.span>
 
-                        <h2 className="text-fluid-h1 tracking-tight leading-[1.2] text-[#163548] mb-6 pb-1" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>
+                        <h2 className="text-fluid-h1 tracking-tight leading-[1.2] text-[#E8C96A] mb-6 pb-1" style={{ fontFamily: "var(--font-display)" }}>
                             <RevealWords
                                 text="Leading the Future of Real Estate"
                                 animate={doorsOpen ? "visible" : "hidden"}
@@ -328,7 +328,7 @@ function DesktopReveal() {
                             initial={{ opacity: 0, y: 14 }}
                             animate={doorsOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
                             transition={{ duration: 0.65, delay: 0.55 }}
-                            className="hidden md:block text-sm md:text-base text-[#163548]/60 font-poppins font-medium leading-relaxed mb-6 md:mb-10"
+                            className="hidden md:block text-sm md:text-base font-medium leading-relaxed mb-6 md:mb-10" style={{ color: "#fff", fontFamily: "var(--font-body)" }}
                         >
                             Our framework is driven by research, compliance, discretion, and long-term capital performance, <br className="hidden sm:block" /> delivering breakthrough outcomes in an evolving market.
                         </motion.p>
@@ -361,7 +361,7 @@ function DesktopReveal() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={doorsOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ duration: 0.7, delay: 0.35 }}
-                            className="hidden md:block relative w-full md:aspect-[16/9] lg:aspect-[21/9] rounded-3xl md:rounded-[4rem] overflow-hidden shadow-xl bg-[#F0ECE4]"
+                            className="hidden md:block relative w-full md:aspect-[16/9] lg:aspect-[21/9] rounded-3xl md:rounded-[4rem] overflow-hidden shadow-xl bg-[#0F1E38] border border-[rgba(232,201,106,0.1)]"
                         >
                             {tabs.map((tab, i) => (
                                 <motion.div
@@ -378,13 +378,13 @@ function DesktopReveal() {
                     {/* Right Panel */}
                     <div className="w-full md:w-1/2 flex-1 md:flex-none flex items-start md:items-center justify-center relative lg:pl-20 xl:pl-32 overflow-y-auto md:overflow-visible">
                         <motion.div
-                            className="absolute left-4 lg:left-12 top-0 bottom-0 w-[1px] bg-[#CCA14D]/30 z-30 hidden md:block origin-top"
+                            className="absolute left-4 lg:left-12 top-0 bottom-0 w-[1px] bg-[#E8C96A]/30 z-30 hidden md:block origin-top"
                             initial={{ scaleY: 0, opacity: 0 }}
                             animate={doorsOpen ? { scaleY: 1, opacity: 1 } : { scaleY: 0, opacity: 0 }}
                             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
                         >
                             <motion.div
-                                className="absolute w-3 h-3 rounded-full bg-[#CCA14D] shadow-[0_0_12px_#CCA14D]"
+                                className="absolute w-3 h-3 rounded-full bg-[#E8C96A] shadow-[0_0_12px_#E8C96A]"
                                 style={{ left: "-5px", top: dotTop }}
                                 initial={{ opacity: 0 }}
                                 animate={doorsOpen ? { opacity: 1 } : { opacity: 0 }}
@@ -413,18 +413,18 @@ function DesktopReveal() {
                 <motion.div style={{ opacity: doorOpacity }} className="absolute inset-0 z-50 pointer-events-none">
                     <motion.div
                         style={{ x: leftX, clipPath: "polygon(0 0, 50% 0, 50% 100%, 0 100%)" }}
-                        className="absolute inset-0 bg-[#163548] will-change-transform"
+                        className="absolute inset-0 bg-[#0A1628] will-change-transform"
                     >
                         <Image src="/images/splitreveal-bg.jpg" alt="Split Left" fill className="object-cover" priority />
-                        <div className="absolute inset-0 bg-[#163548]/80 mix-blend-multiply" />
+                        <div className="absolute inset-0 bg-[#0A1628]/80 mix-blend-multiply" />
                         <SplitText />
                     </motion.div>
                     <motion.div
                         style={{ x: rightX, clipPath: "polygon(50% 0, 100% 0, 100% 100%, 50% 100%)" }}
-                        className="absolute inset-0 bg-[#163548] will-change-transform"
+                        className="absolute inset-0 bg-[#0A1628] will-change-transform"
                     >
                         <Image src="/images/splitreveal-bg.jpg" alt="Split Right" fill className="object-cover" priority />
-                        <div className="absolute inset-0 bg-[#163548]/80 mix-blend-multiply" />
+                        <div className="absolute inset-0 bg-[#0A1628]/80 mix-blend-multiply" />
                         <SplitText />
                     </motion.div>
                 </motion.div>
@@ -443,8 +443,8 @@ function MobileReveal() {
     });
 
     // Doors slide open over the first 70% of the scroll, then fade
-    const leftX  = useTransform(scrollYProgress, [0, 0.7], ["0%", "-100%"]);
-    const rightX = useTransform(scrollYProgress, [0, 0.7], ["0%",  "100%"]);
+    const leftX = useTransform(scrollYProgress, [0, 0.7], ["0%", "-100%"]);
+    const rightX = useTransform(scrollYProgress, [0, 0.7], ["0%", "100%"]);
     const doorOpacity = useTransform(scrollYProgress, [0.65, 0.85], [1, 0]);
 
     // Shared fade-up variant for section entries
@@ -462,30 +462,30 @@ function MobileReveal() {
                         {/* Left door */}
                         <motion.div
                             style={{ x: leftX, clipPath: "polygon(0 0, 50% 0, 50% 100%, 0 100%)" }}
-                            className="absolute inset-0 bg-[#163548] will-change-transform"
+                            className="absolute inset-0 bg-[#0A1628] will-change-transform"
                         >
                             <Image src="/images/splitreveal-bg.jpg" alt="" fill className="object-cover" priority />
-                            <div className="absolute inset-0 bg-[#163548]/80 mix-blend-multiply" />
+                            <div className="absolute inset-0 bg-[#0A1628]/80 mix-blend-multiply" />
                             <SplitText />
                         </motion.div>
                         {/* Right door */}
                         <motion.div
                             style={{ x: rightX, clipPath: "polygon(50% 0, 100% 0, 100% 100%, 50% 100%)" }}
-                            className="absolute inset-0 bg-[#163548] will-change-transform"
+                            className="absolute inset-0 bg-[#0A1628] will-change-transform"
                         >
                             <Image src="/images/splitreveal-bg.jpg" alt="" fill className="object-cover" priority />
-                            <div className="absolute inset-0 bg-[#163548]/80 mix-blend-multiply" />
+                            <div className="absolute inset-0 bg-[#0A1628]/80 mix-blend-multiply" />
                             <SplitText />
                         </motion.div>
                     </motion.div>
 
                     {/* About Us content anchored to bottom, no dead whitespace */}
-                    <div className="absolute inset-0 flex flex-col justify-end px-6 pb-16 bg-white">
-                        <span className="block font-sans font-semibold text-[#CCA14D] uppercase tracking-widest text-[10px] mb-4">ABOUT US</span>
-                        <h2 className="text-[2.2rem] font-bold tracking-tight leading-[1.2] text-[#163548] mb-4 pb-1" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>
+                    <div className="absolute inset-0 flex flex-col justify-end px-6 pb-16" style={{ backgroundColor: "#0A1628" }}>
+                        <span className="block font-sans font-semibold text-[#E8C96A] uppercase tracking-widest text-[10px] mb-4">ABOUT US</span>
+                        <h2 className="text-[2.2rem] font-bold tracking-tight leading-[1.2] text-[#FFFFFF] mb-4 pb-1" style={{ fontFamily: "var(--font-display)" }}>
                             Leading the Future of Real Estate
                         </h2>
-                        <p className="text-sm text-[#163548]/60 leading-relaxed" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>
+                        <p className="text-sm leading-relaxed" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>
                             Our framework is driven by research, compliance, discretion, and long-term capital performance.
                         </p>
                     </div>
@@ -493,17 +493,17 @@ function MobileReveal() {
             </section>
 
             {/* ―― 2. Stacked Scroll-Reveal Sections ―― */}
-            <div className="bg-white text-[#163548]">
+            <div style={{ backgroundColor: "#0A1628", color: "#FFFFFF" }}>
 
                 {/* WHO WE ARE */}
                 <motion.section
-                    className="px-6 py-14 border-t border-[#CCA14D]/20"
+                    className="px-6 py-14 border-t border-[#E8C96A]/20"
                     variants={sectionVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-60px" }}
                 >
-                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-8">WHO WE ARE</h3>
+                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#E8C96A] mb-8">WHO WE ARE</h3>
                     <div className="flex flex-col gap-8">
                         {tabs[0].stats.map((stat, i) => (
                             <motion.div
@@ -514,8 +514,8 @@ function MobileReveal() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
                             >
-                                <span className="font-light text-[3.5rem] text-[#CCA14D] tracking-tighter min-w-[110px] leading-none" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{stat.value}</span>
-                                <span className="font-semibold text-sm text-[#163548] uppercase tracking-wide whitespace-pre-line leading-tight" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>{stat.label}</span>
+                                <span className="font-light text-[3.5rem] text-[#E8C96A] tracking-tighter min-w-[110px] leading-none" style={{ fontFamily: "var(--font-display)" }}>{stat.value}</span>
+                                <span className="font-semibold text-sm uppercase tracking-wide whitespace-pre-line leading-tight" style={{ color: "#C5D6EE", fontFamily: "var(--font-body)" }}>{stat.label}</span>
                             </motion.div>
                         ))}
                     </div>
@@ -523,28 +523,28 @@ function MobileReveal() {
 
                 {/* OUR VALUES */}
                 <motion.section
-                    className="px-6 py-14 border-t border-[#CCA14D]/20"
+                    className="px-6 py-14 border-t border-[#E8C96A]/20"
                     variants={sectionVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-60px" }}
                 >
-                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-8">OUR VALUES</h3>
-                    <div className="flex flex-col border border-[#CCA14D]/20 shadow-sm">
+                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#E8C96A] mb-8">OUR VALUES</h3>
+                    <div className="flex flex-col border border-[#E8C96A]/20 shadow-sm">
                         {tabs[1].values.map((val, i) => (
                             <motion.div
                                 key={i}
-                                className="flex flex-row items-center justify-between p-5 border-b border-[#CCA14D]/10 last:border-0"
+                                className="flex flex-row items-center justify-between p-5 border-b border-[#E8C96A]/10 last:border-0"
                                 initial={{ opacity: 0, y: 16 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                             >
                                 <div className="flex flex-col">
-                                    <span className="font-bold text-base text-[#CCA14D] mb-1" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{val.title}</span>
-                                    <span className="text-xs text-[#163548]/70 leading-relaxed" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif" }}>{val.desc}</span>
+                                    <span className="font-bold text-base text-[#E8C96A] mb-1" style={{ fontFamily: "var(--font-display)" }}>{val.title}</span>
+                                    <span className="text-xs leading-relaxed" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>{val.desc}</span>
                                 </div>
-                                <span className="font-light text-[2.5rem] text-[#CCA14D] opacity-20 ml-4 leading-none" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{val.num}</span>
+                                <span className="font-light text-[2.5rem] text-[#E8C96A] opacity-20 ml-4 leading-none" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{val.num}</span>
                             </motion.div>
                         ))}
                     </div>
@@ -552,37 +552,37 @@ function MobileReveal() {
 
                 {/* OUR TEAM */}
                 <motion.section
-                    className="px-6 py-14 border-t border-[#CCA14D]/20"
+                    className="px-6 py-14 border-t border-[#E8C96A]/20"
                     variants={sectionVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-60px" }}
                 >
-                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-8">OUR TEAM</h3>
-                    <div className="relative w-full aspect-[4/3] overflow-hidden shadow-xl border border-[#CCA14D]/20 mb-6">
-                        <Image src={tabs[2].teamImage} alt="Our Team" fill className="object-cover" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#163548]/40 via-transparent to-transparent" />
+                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#E8C96A] mb-8">OUR TEAM</h3>
+                    <div className="relative w-full aspect-[4/3] overflow-hidden shadow-xl border border-[#E8C96A]/20 mb-6 ">
+                        <Image src={tabs[2].teamImage} alt="Our Team" fill className="object-cover " />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/40 via-transparent to-transparent" />
                     </div>
                     <div className="flex flex-col items-center text-center gap-2">
                         {tabs[2].roles.map((line, i) => (
-                            <p key={i} className="font-sans text-[10px] tracking-[0.15em] text-[#163548] font-semibold uppercase">{line}</p>
+                            <p key={i} className="font-sans text-[10px] tracking-[0.15em] font-semibold uppercase" style={{ color: "#C5D6EE" }}>{line}</p>
                         ))}
                     </div>
                 </motion.section>
 
                 {/* FOUNDERS */}
                 <motion.section
-                    className="px-6 py-14 border-t border-[#CCA14D]/20"
+                    className="px-6 py-14 border-t border-[#E8C96A]/20"
                     variants={sectionVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-60px" }}
                 >
-                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#CCA14D] mb-8">MEET OUR FOUNDER</h3>
+                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#E8C96A] mb-8">MEET OUR FOUNDER</h3>
                     {tabs[3].founders.map((founder, i) => (
                         <motion.div
                             key={i}
-                            className="relative w-full aspect-[3/4] overflow-hidden border border-[#CCA14D]/25 shadow-xl"
+                            className="relative w-full aspect-[3/4] overflow-hidden border border-[#E8C96A]/25 shadow-xl"
                             initial={{ opacity: 0, scale: 0.97 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
@@ -590,7 +590,7 @@ function MobileReveal() {
                         >
                             <Image src={founder.image} alt={founder.name} fill className="object-cover grayscale" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                            <span className="absolute bottom-4 left-0 right-0 text-center font-sans font-semibold text-base text-white">{founder.name}</span>
+                            <span className="absolute bottom-4 left-0 right-0 text-center font-sans font-semibold text-base text-[#EDEDED]">{founder.name}</span>
                         </motion.div>
                     ))}
                 </motion.section>
@@ -624,7 +624,7 @@ function TabButton({ tab, index, activeIndex }) {
     const markerWidth = useTransform(isActive, (a) => a ? "12px" : "0px");
     const markerOpacity = useTransform(isActive, (a) => a ? 1 : 0);
     const markerMR = useTransform(isActive, (a) => a ? "8px" : "0px");
-    const textColor = useTransform(isActive, (a) => a ? "#CCA14D" : "#6B7A8A");
+    const textColor = useTransform(isActive, (a) => a ? "#E8C96A" : "#6B7A8A");
     const fontWeight = useTransform(isActive, (a) => a ? 700 : 500);
 
     return (
@@ -634,12 +634,12 @@ function TabButton({ tab, index, activeIndex }) {
                 className="flex items-center overflow-hidden"
             >
                 <svg width="8" height="8" viewBox="0 0 24 24">
-                    <polygon points="5 3 19 12 5 21 5 3" fill="#CCA14D" />
+                    <polygon points="5 3 19 12 5 21 5 3" fill="#E8C96A" />
                 </svg>
             </motion.div>
             <motion.span
                 style={{ color: textColor, fontWeight }}
-                className="font-sans whitespace-nowrap text-base md:text-lg lg:text-xl group-hover:text-[#163548] transition-colors duration-300"
+                className="font-sans whitespace-nowrap text-base md:text-lg lg:text-xl group-hover:text-[#0A1628] transition-colors duration-300"
             >
                 {tab.label}
             </motion.span>
