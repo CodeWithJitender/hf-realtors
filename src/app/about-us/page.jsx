@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function AboutUsPage() {
   return (
-    <main className="flex flex-col min-h-screen bg-[#0A1628] text-[#EDEDED] font-sans selection:bg-[#E8C96A] selection:text-[#0A1628]">
+    <main className="flex flex-col min-h-screen bg-[#0A1628] text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif selection:bg-[#E8C96A] selection:text-[#0A1628]">
 
       {/* 
         HERO + GSAP Overlay Wrapper 

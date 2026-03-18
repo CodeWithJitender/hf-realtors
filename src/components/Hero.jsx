@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useEffect } from "react";
 
@@ -118,7 +118,7 @@ export default function Hero() {
         <div ref={wrapperRef} className="relative h-[120vh] lg:h-[400vh]">
 
             {/* ── Sticky viewport — true 100vw × 100vh ── */}
-            <div className="sticky top-0 w-screen h-screen bg-[#0a1a28] font-sans overflow-hidden" style={{ willChange: "transform" }}>
+            <div className="sticky top-0 w-screen h-screen bg-[#0a1a28] 'Helvetica Neue', Helvetica, Arial, sans-serif overflow-hidden" style={{ willChange: "transform" }}>
 
                 {/* Canvas — full-bleed, cover-fit frame display */}
                 <canvas

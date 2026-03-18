@@ -16,13 +16,13 @@ export default function FinalTextSection() {
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     className="text-3xl md:text-5xl tracking-tight text-center font-bold text-[#E8C96A]"
-                    style={{ fontFamily: 'var(--font-futura), Futura, sans-serif' }}
+                    style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
                 >
                     Building and Managing Real Estate Value
                 </motion.h2>
 
                 {/* Paragraphs */}
-                <div className="flex flex-col gap-6 md:gap-8 text-base md:text-xl leading-relaxed tracking-wide font-sans text-black/80 font-medium">
+                <div className="flex flex-col gap-6 md:gap-8 text-base md:text-xl leading-relaxed tracking-wide text-black/80 font-medium">
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

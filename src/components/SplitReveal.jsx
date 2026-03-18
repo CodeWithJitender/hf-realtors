@@ -111,7 +111,7 @@ const SplitText = () => (
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-fluid-container w-full h-full pointer-events-none">
         <h2
             className="font-bold leading-[1.05] tracking-tighter text-[#E8C96A] drop-shadow-2xl text-[8vw] sm:text-[7vw] lg:text-[6.5vw] max-w-[95vw]"
-            style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
+            style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: "#E8C96A" }}
         >
             Pioneering a New Standard in Real Estate.
         </h2>
@@ -126,10 +126,10 @@ function StatsContent({ tab, isActive }) {
             {tab.stats.map((stat, i) => (
                 <FadeUp key={i} delay={0.1 + i * 0.12} animate={anim}>
                     <div className="flex flex-row items-center gap-6 md:gap-8 xl:gap-16 w-full">
-                        <span className="font-light text-[4rem] md:text-[6rem] xl:text-[9rem] text-[#E8C96A] tracking-tighter min-w-[120px] md:min-w-[180px] xl:min-w-[240px] leading-none" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>
+                        <span className="font-light text-[4rem] md:text-[6rem] xl:text-[9rem] text-[#E8C96A] tracking-tighter min-w-[120px] md:min-w-[180px] xl:min-w-[240px] leading-none" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                             {stat.value}
                         </span>
-                        <span className="font-medium text-base md:text-xl xl:text-2xl text-[#fff] leading-tight whitespace-pre-line uppercase tracking-wide" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}>
+                        <span className="font-medium text-base md:text-xl xl:text-2xl text-[#fff] leading-tight whitespace-pre-line uppercase tracking-wide" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                             {stat.label}
                         </span>
                     </div>
@@ -148,10 +148,10 @@ function ValuesContent({ tab, isActive }) {
                     <FadeUp key={i} delay={0.1 + i * 0.1} animate={anim}>
                         <div className="flex flex-row items-center justify-between p-6 md:p-8 border-b border-[#E8C96A]/10 last:border-0 hover:bg-[#E8C96A]/5 transition-colors">
                             <div className="flex flex-col">
-                                <span className="font-bold text-lg md:text-2xl text-[#E8C96A] mb-1" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{val.title}</span>
-                                <span className="text-sm md:text-base text-[#0A1628]/70 whitespace-pre-line leading-relaxed" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}>{val.desc}</span>
+                                <span className="font-bold text-lg md:text-2xl text-[#E8C96A] mb-1" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.title}</span>
+                                <span className="text-sm md:text-base text-[#0A1628]/70 whitespace-pre-line leading-relaxed" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.desc}</span>
                             </div>
-                            <span className="font-light text-[3rem] md:text-[4.5rem] leading-none text-[#E8C96A] opacity-25 ml-4" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{val.num}</span>
+                            <span className="font-light text-[3rem] md:text-[4.5rem] leading-none text-[#E8C96A] opacity-25 ml-4" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.num}</span>
                         </div>
                     </FadeUp>
                 ))}
@@ -168,7 +168,7 @@ function TeamContent({ tab, isActive }) {
                 initial={{ opacity: 0 }}
                 animate={isActive ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="hidden md:block text-[5rem] xl:text-[5rem] tracking-tighter text-[#E8C96A] leading-none whitespace-nowrap absolute top-[-4rem] z-0" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
+                className="hidden md:block text-[5rem] xl:text-[5rem] tracking-tighter text-[#E8C96A] leading-none whitespace-nowrap absolute top-[-4rem] z-0" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
             >
                 {tab.title}
             </motion.h3>
@@ -183,7 +183,7 @@ function TeamContent({ tab, isActive }) {
                         text={line}
                         animate={anim}
                         delay={0.3 + i * 0.15}
-                        className="font-sans text-[10px] sm:text-xs xl:text-sm tracking-[0.18em] text-[#fff] font-semibold uppercase"
+                        className="'Helvetica Neue', Helvetica, Arial, sans-serif text-[10px] sm:text-xs xl:text-sm tracking-[0.18em] text-[#fff] font-semibold uppercase"
                     />
                 ))}
             </div>
@@ -201,7 +201,7 @@ function FoundersContent({ tab, isActive }) {
                     <div className="relative w-full aspect-[3/4] group rounded-2xl overflow-hidden border border-[#E8C96A]/25 shadow-xl bg-[#0F1E38]">
                         <Image src={founder.image} alt={founder.name} fill className="object-cover opacity-90 grayscale group-hover:grayscale-0 transition-all duration-500" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                        <span className="absolute bottom-4 left-0 right-0 text-center font-sans font-semibold text-base text-[#EDEDED] px-2">{founder.name}</span>
+                        <span className="absolute bottom-4 left-0 right-0 text-center 'Helvetica Neue', Helvetica, Arial, sans-serif font-semibold text-base text-[#EDEDED] px-2">{founder.name}</span>
                     </div>
                 </FadeUp>
             ))}
@@ -209,7 +209,7 @@ function FoundersContent({ tab, isActive }) {
             <div className="flex-1 flex items-end pb-4">
                 <RevealWords
                     text="Meet Our Founder"
-                    className="text-[2.5rem] xl:text-[4rem] tracking-tighter text-[#E8C96A] leading-[0.9] block" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}
+                    className="text-[2.5rem] xl:text-[4rem] tracking-tighter text-[#E8C96A] leading-[0.9] block" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
                     delay={0.15}
                     animate={anim}
                 />
@@ -311,12 +311,12 @@ function DesktopReveal() {
                             initial={{ opacity: 0, y: 16 }}
                             animate={doorsOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                             transition={{ duration: 0.6, delay: 0.05 }}
-                            className="font-sans font-semibold text-[#FFFFFF] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-6 block"
+                            className="'Helvetica Neue', Helvetica, Arial, sans-serif font-semibold text-[#FFFFFF] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-6 block"
                         >
                             ABOUT US
                         </motion.span>
 
-                        <h2 className="text-fluid-h1 tracking-tight leading-[1.2] text-[#E8C96A] mb-6 pb-1" style={{ fontFamily: "var(--font-display)" }}>
+                        <h2 className="text-fluid-h1 tracking-tight leading-[1.2] mb-6 pb-1" style={{ color: "#E8C96A", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                             <RevealWords
                                 text="Leading the Future of Real Estate"
                                 animate={doorsOpen ? "visible" : "hidden"}
@@ -481,8 +481,8 @@ function MobileReveal() {
 
                     {/* About Us content anchored to bottom, no dead whitespace */}
                     <div className="absolute inset-0 flex flex-col justify-end px-6 pb-16" style={{ backgroundColor: "#0A1628" }}>
-                        <span className="block font-sans font-semibold text-[#E8C96A] uppercase tracking-widest text-[10px] mb-4">ABOUT US</span>
-                        <h2 className="text-[2.2rem] font-bold tracking-tight leading-[1.2] text-[#FFFFFF] mb-4 pb-1" style={{ fontFamily: "var(--font-display)" }}>
+                        <span className="block 'Helvetica Neue', Helvetica, Arial, sans-serif font-semibold text-[#E8C96A] uppercase tracking-widest text-[10px] mb-4">ABOUT US</span>
+                        <h2 className="text-[2.2rem] font-bold tracking-tight leading-[1.2] text-[#E8C96A] mb-4 pb-1" style={{ fontFamily: "var(--font-display)" }}>
                             Leading the Future of Real Estate
                         </h2>
                         <p className="text-sm leading-relaxed" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>
@@ -503,7 +503,7 @@ function MobileReveal() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-60px" }}
                 >
-                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#E8C96A] mb-8">WHO WE ARE</h3>
+                    <h3 className="'Helvetica Neue', Helvetica, Arial, sans-serif font-bold uppercase tracking-widest text-[10px] text-[#E8C96A] mb-8">WHO WE ARE</h3>
                     <div className="flex flex-col gap-8">
                         {tabs[0].stats.map((stat, i) => (
                             <motion.div
@@ -529,7 +529,7 @@ function MobileReveal() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-60px" }}
                 >
-                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#E8C96A] mb-8">OUR VALUES</h3>
+                    <h3 className="'Helvetica Neue', Helvetica, Arial, sans-serif font-bold uppercase tracking-widest text-[10px] text-[#E8C96A] mb-8">OUR VALUES</h3>
                     <div className="flex flex-col border border-[#E8C96A]/20 shadow-sm">
                         {tabs[1].values.map((val, i) => (
                             <motion.div
@@ -544,7 +544,7 @@ function MobileReveal() {
                                     <span className="font-bold text-base text-[#E8C96A] mb-1" style={{ fontFamily: "var(--font-display)" }}>{val.title}</span>
                                     <span className="text-xs leading-relaxed" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>{val.desc}</span>
                                 </div>
-                                <span className="font-light text-[2.5rem] text-[#E8C96A] opacity-20 ml-4 leading-none" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>{val.num}</span>
+                                <span className="font-light text-[2.5rem] text-[#E8C96A] opacity-20 ml-4 leading-none" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.num}</span>
                             </motion.div>
                         ))}
                     </div>
@@ -558,14 +558,14 @@ function MobileReveal() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-60px" }}
                 >
-                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#E8C96A] mb-8">OUR TEAM</h3>
+                    <h3 className="'Helvetica Neue', Helvetica, Arial, sans-serif font-bold uppercase tracking-widest text-[10px] text-[#E8C96A] mb-8">OUR TEAM</h3>
                     <div className="relative w-full aspect-[4/3] overflow-hidden shadow-xl border border-[#E8C96A]/20 mb-6 ">
                         <Image src={tabs[2].teamImage} alt="Our Team" fill className="object-cover " />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/40 via-transparent to-transparent" />
                     </div>
                     <div className="flex flex-col items-center text-center gap-2">
                         {tabs[2].roles.map((line, i) => (
-                            <p key={i} className="font-sans text-[10px] tracking-[0.15em] font-semibold uppercase" style={{ color: "#C5D6EE" }}>{line}</p>
+                            <p key={i} className="'Helvetica Neue', Helvetica, Arial, sans-serif text-[10px] tracking-[0.15em] font-semibold uppercase" style={{ color: "#C5D6EE" }}>{line}</p>
                         ))}
                     </div>
                 </motion.section>
@@ -578,7 +578,7 @@ function MobileReveal() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-60px" }}
                 >
-                    <h3 className="font-sans font-bold uppercase tracking-widest text-[10px] text-[#E8C96A] mb-8">MEET OUR FOUNDER</h3>
+                    <h3 className="'Helvetica Neue', Helvetica, Arial, sans-serif font-bold uppercase tracking-widest text-[10px] text-[#E8C96A] mb-8">MEET OUR FOUNDER</h3>
                     {tabs[3].founders.map((founder, i) => (
                         <motion.div
                             key={i}
@@ -590,7 +590,7 @@ function MobileReveal() {
                         >
                             <Image src={founder.image} alt={founder.name} fill className="object-cover grayscale" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                            <span className="absolute bottom-4 left-0 right-0 text-center font-sans font-semibold text-base text-[#EDEDED]">{founder.name}</span>
+                            <span className="absolute bottom-4 left-0 right-0 text-center 'Helvetica Neue', Helvetica, Arial, sans-serif font-semibold text-base text-[#EDEDED]">{founder.name}</span>
                         </motion.div>
                     ))}
                 </motion.section>
@@ -639,7 +639,7 @@ function TabButton({ tab, index, activeIndex }) {
             </motion.div>
             <motion.span
                 style={{ color: textColor, fontWeight }}
-                className="font-sans whitespace-nowrap text-base md:text-lg lg:text-xl group-hover:text-[#0A1628] transition-colors duration-300"
+                className="'Helvetica Neue', Helvetica, Arial, sans-serif whitespace-nowrap text-base md:text-lg lg:text-xl group-hover:text-[#0A1628] transition-colors duration-300"
             >
                 {tab.label}
             </motion.span>

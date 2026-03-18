@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import gsap from "gsap";
@@ -132,7 +132,7 @@ export default function HowWeEngage() {
     >
       {/* Section Header */}
       <div className="w-full text-center pt-[clamp(3rem,6vw,5rem)] pb-[clamp(2rem,4vw,3.5rem)] px-6">
-        {/* <p className="text-[#E8C96A] text-xs tracking-[0.4em] uppercase font-sans mb-4 font-medium">
+        {/* <p className="text-[#E8C96A] text-xs tracking-[0.4em] uppercase 'Helvetica Neue', Helvetica, Arial, sans-serif mb-4 font-medium">
           Our Services
         </p> */}
         <h2
@@ -196,7 +196,7 @@ export default function HowWeEngage() {
                       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E8C96A] to-transparent opacity-60" />
                     </div>
 
-                    <span className="relative z-10 text-[#E8C96A] text-xs font-semibold tracking-[0.35em] uppercase" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 500 }}>
+                    <span className="relative z-10 text-[#E8C96A] text-xs font-semibold tracking-[0.35em] uppercase" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 500 }}>
                       {data.index}
                     </span>
 
@@ -214,7 +214,7 @@ export default function HowWeEngage() {
                       <div className="h-px w-10 bg-[#E8C96A] mb-4" />
                       <p
                         className="text-white/75 font-light leading-snug"
-                        style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 500, fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)" }}
+                        style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 500, fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)" }}
                       >
                         {data.subtitle}
                       </p>

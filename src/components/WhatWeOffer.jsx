@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -77,12 +77,12 @@ function ServiceCard({ service }) {
                     {/* Right: Project Details */}
                     <div className="text-left md:text-right max-w-sm lg:max-w-md mt-4 md:mt-0">
                         <RevealText delay={0.2} className="mb-2">
-                            <p className="font-sans text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-[#F9F8F6]/50">
+                            <p className="'Helvetica Neue', Helvetica, Arial, sans-serif text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-[#F9F8F6]/50">
                                 Step {service.id}
                             </p>
                         </RevealText>
                         <RevealText delay={0.3}>
-                            <p className="text-[#F9F8F6]/80 font-sans text-sm md:text-base leading-relaxed">
+                            <p className="text-[#F9F8F6]/80 'Helvetica Neue', Helvetica, Arial, sans-serif text-sm md:text-base leading-relaxed">
                                 {service.desc}
                             </p>
                         </RevealText>
@@ -97,7 +97,7 @@ function ServiceCard({ service }) {
 export default function WhatWeOffer() {
 
     return (
-        <section id="services" className="relative bg-[#1A1A1A] text-[#F9F8F6] font-sans z-10 py-fluid-section min-h-screen">
+        <section id="services" className="relative bg-[#1A1A1A] text-[#F9F8F6] 'Helvetica Neue', Helvetica, Arial, sans-serif z-10 py-fluid-section min-h-screen">
 
             {/* PART 2: THE IMMERSIVE CARDS */}
             <div className="relative w-full z-20 flex flex-col items-center">

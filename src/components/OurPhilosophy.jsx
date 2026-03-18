@@ -41,16 +41,16 @@ export default function OurPhilosophy() {
     const leftColOpacity = useTransform(scrollYProgress, [0.8, 1], [1, 0.3]);
 
     return (
-        <section ref={containerRef} className="relative w-full bg-[#0A1628] font-sans border-t border-[#EDEDED]/10">
+        <section ref={containerRef} className="relative w-full bg-[#0A1628] 'Helvetica Neue', Helvetica, Arial, sans-serif border-t border-[#EDEDED]/10">
             {/* 300vh height to accommodate 3 full-screen cards scrolling */}
             <div className="flex flex-col md:flex-row w-full max-w-[1920px] mx-auto min-h-[300vh]">
                 
                 {/* LEFT SIDE: Sticky Title Container */}
                 <div className="w-full md:w-[40%] h-[40vh] md:h-screen md:sticky md:top-0 flex flex-col justify-center p-8 md:p-12 lg:px-24 border-r border-[#EDEDED]/5 bg-[#0A1628] z-10 md:z-0">
                     <motion.div style={{ opacity: leftColOpacity }} className="flex flex-col">
-                        <span className="font-sans font-medium text-[#E8C96A] uppercase tracking-widest text-[11px] md:text-xs mb-6 lg:mb-8 block">THE FOUNDATION</span>
+                        <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-medium text-[#E8C96A] uppercase tracking-widest text-[11px] md:text-xs mb-6 lg:mb-8 block">THE FOUNDATION</span>
                         
-                        <h2 className="text-fluid-h1 tracking-tighter leading-[0.9] text-[#EDEDED] mb-6 uppercase" style={{ fontFamily: 'var(--font-futura), Futura, sans-serif', fontWeight: 'bold' }}>
+                        <h2 className="text-fluid-h1 tracking-tighter leading-[0.9] text-[#EDEDED] mb-6 uppercase" style={{ fontFamily: 'var(--font-futura), 'Helvetica Neue', Helvetica, Arial, sans-serif', fontWeight: 'bold' }}>
                             Our <br className="hidden md:block"/>
                             Core <br className="hidden md:block"/>
                             Values
@@ -94,19 +94,19 @@ export default function OurPhilosophy() {
                                         <div className="flex items-baseline gap-4 mb-4">
                                             <span 
                                                 className="text-[#E8C96A] text-lg lg:text-3xl tracking-tighter"
-                                                style={{ fontFamily: 'var(--font-futura), Futura, sans-serif', fontWeight: 'bold' }}
+                                                style={{ fontFamily: 'var(--font-futura), 'Helvetica Neue', Helvetica, Arial, sans-serif', fontWeight: 'bold' }}
                                             >
                                                 {card.number}
                                             </span>
                                             <h3 
                                                 className="text-fluid-h2 tracking-tighter leading-[1] text-[#EDEDED] uppercase" 
-                                                style={{ fontFamily: 'var(--font-futura), Futura, sans-serif', fontWeight: 'bold' }}
+                                                style={{ fontFamily: 'var(--font-futura), 'Helvetica Neue', Helvetica, Arial, sans-serif', fontWeight: 'bold' }}
                                             >
                                                 {card.title}
                                             </h3>
                                         </div>
                                         
-                                        <p className="font-sans text-[#EDEDED] text-fluid-body max-w-lg leading-relaxed pt-4 font-light tracking-wide opacity-90">
+                                        <p className="'Helvetica Neue', Helvetica, Arial, sans-serif text-[#EDEDED] text-fluid-body max-w-lg leading-relaxed pt-4 font-light tracking-wide opacity-90">
                                             {card.desc}
                                         </p>
                                     </div>

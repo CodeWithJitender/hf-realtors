@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
@@ -206,7 +206,7 @@ export default function ContactHero() {
           <h1
             className="anim-heading font-bold uppercase leading-[0.88] tracking-tight"
             style={{
-              fontFamily: "var(--font-display)",
+              fontFamily: "'Helvetica Neue', 'Helvetica', Arial, sans-serif",
               fontSize: "clamp(3.5rem, 13vw, 10rem)",
               color: "#E8C96A",
               opacity: 0,
@@ -218,7 +218,7 @@ export default function ContactHero() {
 
         <p
           className="anim-tagline italic text-center mt-5 leading-snug"
-          style={{ fontSize: "clamp(1.2rem, 2.5vw, 2rem)", color: "#C5D6EE", opacity: 0, fontFamily: "var(--font-display)" }}
+          style={{ fontSize: "clamp(1.2rem, 2.5vw, 2rem)", color: "#C5D6EE", opacity: 0, fontFamily: "'Helvetica Neue', 'Helvetica', Arial, sans-serif" }}
         >
           Let's build your legacy together.
         </p>
@@ -231,7 +231,7 @@ export default function ContactHero() {
             maxWidth: "46ch",
             margin: "0.75rem auto 0",
             opacity: 0,
-            fontFamily: "var(--font-body)",
+            fontFamily: "'Helvetica Neue', 'Helvetica', Arial, sans-serif",
           }}
         >
           Whether you're acquiring a property, managing a portfolio, or planning generational wealth — we'd love to hear from you.
@@ -256,7 +256,7 @@ export default function ContactHero() {
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
-            <h3 className="font-semibold text-xl mb-2 text-[#EDEDED]" style={{ fontFamily: "var(--font-futura), Futura, sans-serif" }}>
+            <h3 className="font-semibold text-xl mb-2 text-[#EDEDED]" style={{ fontFamily: "var(--font-futura), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
               Message Received
             </h3>
             <p className="text-[#EDEDED]/40 text-sm">We'll be in touch with you shortly.</p>
@@ -324,7 +324,7 @@ export default function ContactHero() {
 
             {/* Error message */}
             {error && (
-              <p className="mb-4 text-sm text-red-400" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}>
+              <p className="mb-4 text-sm text-red-400" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                 {error}
               </p>
             )}
@@ -349,7 +349,7 @@ export default function ContactHero() {
             target={href.startsWith("http") ? "_blank" : undefined}
             rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
             className="anim-contact inline-flex items-center gap-2 hover:opacity-100 transition-colors duration-200"
-            style={{ color: "#fff", fontSize: "clamp(0.8rem, 1.1vw, 0.95rem)", opacity: 0, fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 600 }}
+            style={{ color: "#fff", fontSize: "clamp(0.8rem, 1.1vw, 0.95rem)", opacity: 0, fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 600 }}
           >
             <span style={{ color: "#E8C96A" }}>{icon}</span>
             {label}

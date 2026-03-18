@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
@@ -107,7 +107,7 @@ function DiffCard({ card, cardRef }) {
       {/* Header row */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
         <span style={{
-          fontFamily: "var(--font-futura), Futura, sans-serif",
+          fontFamily: "var(--font-futura), 'Helvetica Neue', Helvetica, Arial, sans-serif",
           fontSize: "clamp(0.62rem, 0.85vw, 0.75rem)",
           fontWeight: 700,
           letterSpacing: "0.35em",
@@ -319,7 +319,7 @@ export default function WhatMakesUsDifferent() {
           position: "absolute",
           bottom: "-8%", left: "50%",
           transform: "translateX(-50%)",
-          fontFamily: "var(--font-futura), Futura, sans-serif",
+          fontFamily: "var(--font-futura), 'Helvetica Neue', Helvetica, Arial, sans-serif",
           fontSize: "clamp(7rem, 20vw, 18rem)",
           fontWeight: 900,
           letterSpacing: "-0.06em",
@@ -352,7 +352,7 @@ export default function WhatMakesUsDifferent() {
         >
           {/* Sub-label */}
           {/* <p ref={subRef} style={{
-            fontFamily: "var(--font-futura), Futura, sans-serif",
+            fontFamily: "var(--font-futura), 'Helvetica Neue', Helvetica, Arial, sans-serif",
             fontSize: "clamp(0.55rem, 0.82vw, 0.7rem)",
             letterSpacing: "0.46em",
             textTransform: "uppercase",

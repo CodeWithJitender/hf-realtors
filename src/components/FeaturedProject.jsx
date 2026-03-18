@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -19,7 +19,7 @@ export default function FeaturedProject() {
     const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
 
     return (
-        <section ref={containerRef} className="relative bg-[#1A1A1A] text-[#F9F8F6] font-sans py-32 overflow-hidden">
+        <section ref={containerRef} className="relative bg-[#1A1A1A] text-[#F9F8F6] 'Helvetica Neue', Helvetica, Arial, sans-serif py-32 overflow-hidden">
             <div className="max-w-[95vw] md:max-w-[85vw] mx-auto flex flex-col items-center">
 
                 {/* Section Header */}

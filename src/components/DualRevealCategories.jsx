@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -102,7 +102,7 @@ export default function DualRevealCategories() {
                                         <motion.span
                                             animate={{ opacity: titleOpacity }}
                                             transition={{ duration: 0.4 }}
-                                            className="text-lg md:text-2xl font-light text-[#EDEDED] font-sans hidden md:block"
+                                            className="text-lg md:text-2xl font-light text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif hidden md:block"
                                         >
                                             {service.id}
                                         </motion.span>

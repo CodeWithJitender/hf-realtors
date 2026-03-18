@@ -1,4 +1,4 @@
-import ContactHero from "@/components/ContactHero";
+﻿import ContactHero from "@/components/ContactHero";
 
 export const metadata = {
   title: "Contact Us | HF Realtors",
@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function ContactUsPage() {
   return (
-    <main className="flex flex-col min-h-screen font-sans overflow-hidden">
+    <main className="flex flex-col min-h-screen 'Helvetica Neue', Helvetica, Arial, sans-serif overflow-hidden">
       <ContactHero />
     </main>
   );

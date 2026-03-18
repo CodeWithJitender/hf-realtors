@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import gsap from "gsap";
@@ -86,7 +86,7 @@ export default function BuiltTogether() {
             <h2 
               ref={headlineRef}
               className="text-[#1A1A1A] text-[13vw] leading-[0.85] w-full text-center uppercase tracking-tighter whitespace-nowrap will-change-transform"
-              style={{ fontFamily: 'var(--font-futura), Futura, sans-serif', fontWeight: '800' }}
+              style={{ fontFamily: 'var(--font-futura), 'Helvetica Neue', Helvetica, Arial, sans-serif', fontWeight: '800' }}
             >
               Built Together
             </h2>

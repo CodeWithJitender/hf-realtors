@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { Mail, Linkedin, MessagesSquare } from "lucide-react";
@@ -14,15 +14,15 @@ export default function Footer() {
             {/* Top Section: Massive Hook */}
             <div className="text-center mb-16 relative">
                 <RevealText delay={0.1} as="h2" className="text-6xl md:text-8xl lg:text-9xl font-medium uppercase text-[#EDEDED] mb-2 leading-[1] tracking-tight drop-shadow-md">
-                    <span className="block" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>LET'S WORK</span>
-                    <span className="block" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>TOGETHER</span>
+                    <span className="block" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>LET'S WORK</span>
+                    <span className="block" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>TOGETHER</span>
                 </RevealText>
             </div>
 
             {/* Middle Section: Contact Info */}
             <div className="flex flex-col items-center mb-16">
                 <RevealText delay={0.2} className="mb-4">
-                    <p className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[#E8C96A] uppercase" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 500 }}>
+                    <p className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[#E8C96A] uppercase" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 500 }}>
                         CONNECT WITH US
                     </p>
                 </RevealText>
@@ -33,7 +33,7 @@ export default function Footer() {
                         showArrow={false}
                         className="border-transparent hover:border-[#E8C96A]/20 transition-all bg-transparent text-[#E8C96A] hover:text-[#0A1628]"
                     >
-                        <span style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 500 }}>HELLO@HFREALTORS.COM</span>
+                        <span style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 500 }}>HELLO@HFREALTORS.COM</span>
                     </Button>
                 </RevealText>
             </div>
@@ -49,12 +49,12 @@ export default function Footer() {
             {/* Bottom Meta Row */}
             <div className="w-full max-w-7xl border-t border-[#EDEDED]/10 pt-8 mt-auto flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] md:text-xs text-[#EDEDED]/60 font-medium tracking-wide">
 
-                <div className="text-center md:text-left" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}>
+                <div className="text-center md:text-left" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                     &copy; {currentYear} HF Realtors
                 </div>
 
 
-                <nav className="flex items-center gap-4 text-center md:text-right" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}>
+                <nav className="flex items-center gap-4 text-center md:text-right" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                     <Link href="/" className="hover:text-[#E8C96A] transition-colors">Home</Link>
                     <span className="opacity-30">-</span>
                     <Link href="/about-us" className="hover:text-[#E8C96A] transition-colors">About</Link>

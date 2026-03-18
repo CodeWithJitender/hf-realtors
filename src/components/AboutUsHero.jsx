@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -55,7 +55,7 @@ export default function AboutUsHero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={isPreloaderDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ duration: 1, delay: isPreloaderDone ? 1.7 : 0, ease: [0.2, 0.65, 0.3, 0.9] }}
-                    className="mt-6 max-w-2xl text-white/80 font-sans font-light text-sm sm:text-base md:text-lg leading-relaxed tracking-wide"
+                    className="mt-6 max-w-2xl text-white/80 'Helvetica Neue', Helvetica, Arial, sans-serif font-light text-sm sm:text-base md:text-lg leading-relaxed tracking-wide"
                 >
                     HF Realtors was founded with a simple belief: real estate decisions deserve clarity, expertise, and a trusted partner who prioritizes long-term value over short-term transactions.
                 </motion.p>
@@ -68,7 +68,7 @@ export default function AboutUsHero() {
                     initial={{ opacity: 0 }}
                     animate={isPreloaderDone ? { opacity: 1 } : { opacity: 0 }}
                     transition={{ delay: isPreloaderDone ? 1.8 : 0, duration: 1 }}
-                    className="flex flex-col items-start gap-2 text-[#EDEDED] font-sans text-xs md:text-sm font-bold tracking-[0.1em] uppercase"
+                    className="flex flex-col items-start gap-2 text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif text-xs md:text-sm font-bold tracking-[0.1em] uppercase"
                 >
                     <div className="flex items-center gap-2 cursor-pointer group hover:opacity-70 transition-opacity">
                         <span>Scroll Down</span>
@@ -87,7 +87,7 @@ export default function AboutUsHero() {
                     initial={{ opacity: 0 }}
                     animate={isPreloaderDone ? { opacity: 1 } : { opacity: 0 }}
                     transition={{ delay: isPreloaderDone ? 1.8 : 0, duration: 1 }}
-                    className="flex items-center gap-3 text-[#EDEDED] font-sans text-xs md:text-sm font-bold tracking-[0.1em] uppercase opacity-90"
+                    className="flex items-center gap-3 text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif text-xs md:text-sm font-bold tracking-[0.1em] uppercase opacity-90"
                 >
                     {/* Minimalist Circle Indicator */}
                     <span className="w-1.5 h-1.5 rounded-full border-[1.5px] border-white/60" />

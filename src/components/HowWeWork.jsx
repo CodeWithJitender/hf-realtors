@@ -28,7 +28,7 @@ const journeySteps = [
 
 export default function HowWeWork() {
     return (
-        <section id="how-it-works" className="relative bg-[#0A1628] text-[#EDEDED] py-fluid-section min-h-screen font-sans border-t border-[#EDEDED]/5">
+        <section id="how-it-works" className="relative bg-[#0A1628] text-[#EDEDED] py-fluid-section min-h-screen 'Helvetica Neue', Helvetica, Arial, sans-serif border-t border-[#EDEDED]/5">
             <div className="max-w-[1920px] mx-auto w-full lg:flex lg:flex-row relative">
 
                 {/* Mobile/Tablet Header (Only visible < lg) */}
@@ -49,7 +49,7 @@ export default function HowWeWork() {
                     {/* Sticky Context Headers */}
                     <div className="absolute top-1/3 left-16 z-20 transform -translate-y-1/2">
                         <RevealText delay={0.1} className="mb-4">
-                            <h2 className="text-[#E8C96A] font-medium font-sans tracking-widest uppercase text-sm inline-block border border-[#E8C96A]/30 rounded-full py-2 px-6 bg-[#E8C96A]/10">
+                            <h2 className="text-[#E8C96A] font-medium 'Helvetica Neue', Helvetica, Arial, sans-serif tracking-widest uppercase text-sm inline-block border border-[#E8C96A]/30 rounded-full py-2 px-6 bg-[#E8C96A]/10">
                                 The Journey
                             </h2>
                         </RevealText>
@@ -59,7 +59,7 @@ export default function HowWeWork() {
                             </h3>
                         </RevealText>
                         <RevealText delay={0.3} className="mt-8">
-                            <p className="text-[#EDEDED] text-lg sm:text-xl font-sans leading-relaxed max-w-lg">
+                            <p className="text-[#EDEDED] text-lg sm:text-xl 'Helvetica Neue', Helvetica, Arial, sans-serif leading-relaxed max-w-lg">
                                 Our 5-step methodology ensures absolute precision from conceptualization to execution, delivering unmatched wealth-tech service tailored to your distinct operational reality.
                             </p>
                         </RevealText>
@@ -114,7 +114,7 @@ export default function HowWeWork() {
                                         </h4>
                                     </RevealText>
                                     <RevealText delay={0.3}>
-                                        <p className="text-[#EDEDED] font-sans text-base sm:text-lg lg:text-xl leading-relaxed">
+                                        <p className="text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif text-base sm:text-lg lg:text-xl leading-relaxed">
                                             {step.desc}
                                         </p>
                                     </RevealText>

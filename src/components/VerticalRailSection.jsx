@@ -72,13 +72,13 @@ export default function VerticalRailSection() {
                                         className="max-w-xl flex flex-col items-start lg:items-stretch"
                                     >
                                         <div className={`w-full flex flex-col ${isLeft ? 'lg:items-end' : 'items-start'}`}>
-                                            <span className="font-sans font-bold text-[#E8C96A] uppercase tracking-widest text-sm mb-4 block">
+                                            <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-bold text-[#E8C96A] uppercase tracking-widest text-sm mb-4 block">
                                                 {milestone.title}
                                             </span>
-                                            <h2 className={`font-sans font-bold text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] text-[#E8C96A] leading-[1.1] tracking-tight mb-6 ${isLeft ? 'lg:text-right' : 'text-left'}`} style={{ fontFamily: 'sans-serif' }}>
+                                            <h2 className={`'Helvetica Neue', Helvetica, Arial, sans-serif font-bold text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] text-[#E8C96A] leading-[1.1] tracking-tight mb-6 ${isLeft ? 'lg:text-right' : 'text-left'}`} style={{ fontFamily: 'sans-serif' }}>
                                                 {milestone.heading}
                                             </h2>
-                                            <p className={`font-sans font-regular text-lg text-[#EDEDED] mb-10 w-full ${isLeft ? 'lg:text-right' : 'text-left'}`}>
+                                            <p className={`'Helvetica Neue', Helvetica, Arial, sans-serif font-regular text-lg text-[#EDEDED] mb-10 w-full ${isLeft ? 'lg:text-right' : 'text-left'}`}>
                                                 {milestone.text}
                                             </p>
                                             <div className={`flex w-full ${isLeft ? 'lg:justify-end' : 'justify-start'}`}>

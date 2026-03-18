@@ -56,7 +56,7 @@ export default function UniqueAdvantage() {
                             </motion.div>
                         )} */}
 
-                        <h2 className="text-[14vw] md:text-[11vw] leading-[0.8] font-medium tracking-tight text-[#EDEDED] text-center flex-shrink-0 drop-shadow-md flex flex-wrap justify-center gap-x-[2vw] overflow-hidden" style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif" }}>
+                        <h2 className="text-[14vw] md:text-[11vw] leading-[0.8] font-medium tracking-tight text-center flex-shrink-0 drop-shadow-md flex flex-wrap justify-center gap-x-[2vw] overflow-hidden" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: "#E8C96A" }}>
                             {line.text.split(" ").map((word, wordIndex) => (
                                 <motion.span
                                     key={wordIndex}
@@ -100,7 +100,7 @@ export default function UniqueAdvantage() {
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 1, delay: 0.4, ease: [0.2, 0.65, 0.3, 0.9] }}
                 >
-                    <p className="text-[#EDEDED] text-sm md:text-base leading-relaxed max-w-[495px]" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 500 }}>
+                    <p className="text-[#EDEDED] text-sm md:text-base leading-relaxed max-w-[495px]" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 500 }}>
                         Partner with the only real estate firm providing complimentary premium architectural redesign. We transform spaces before you even hold the keys.
                     </p>
                 </motion.div>
@@ -115,7 +115,7 @@ export default function UniqueAdvantage() {
                 >
                     <Button href="tel:+911234567890" variant="outlined" showArrow={false} className="gap-3">
                         <Phone size={16} />
-                        <span style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 500 }}>+91 12345 67890</span>
+                        <span style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 500 }}>+91 12345 67890</span>
                     </Button>
                 </motion.div>
             </div>

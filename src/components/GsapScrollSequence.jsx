@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import gsap from "gsap";
@@ -116,13 +116,13 @@ export default function GsapScrollSequence() {
             >
               Building and Managing Real Estate Value
             </h2>
-            <p className="font-sans text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-medium mb-4" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>
+            <p className="'Helvetica Neue', Helvetica, Arial, sans-serif text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-medium mb-4" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>
               HF Realtors is an independent real estate advisory firm focused on helping clients build, manage, and optimize property investments with clarity and confidence.
             </p>
-            <p className="font-sans text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-medium mb-4" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>
+            <p className="'Helvetica Neue', Helvetica, Arial, sans-serif text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-medium mb-4" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>
               We work closely with individuals and investors to identify opportunities in residential and commercial real estate, ensuring every decision is guided by market insight, transparency, and long-term value creation.
             </p>
-            <p className="font-sans text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-medium" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>
+            <p className="'Helvetica Neue', Helvetica, Arial, sans-serif text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed font-medium" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>
               As the market evolves, we continue to refine our approach, delivering thoughtful advisory and sustainable outcomes for every client we serve.
             </p>
           </div>

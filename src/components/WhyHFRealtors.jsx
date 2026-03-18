@@ -74,7 +74,7 @@ export default function WhyHFRealtors() {
                         <div className="w-8 h-8 md:w-12 md:h-12 border border-[#E8C96A]/10 rounded-full flex items-center justify-center mb-6">
                             <div className="w-1 h-1 bg-[#E8C96A] rounded-full"></div>
                         </div>
-                        <h2 className="text-[10px] md:text-sm font-semibold tracking-[0.3em] uppercase text-[#E8C96A]/70 font-medium font-sans">
+                        <h2 className="text-[10px] md:text-sm font-semibold tracking-[0.3em] uppercase text-[#E8C96A]/70 font-medium 'Helvetica Neue', Helvetica, Arial, sans-serif">
                             Welcome to HF Realtors
                         </h2>
                     </div>
@@ -91,7 +91,7 @@ export default function WhyHFRealtors() {
                     </h3>
 
                     {/* 3. Elegant Editorial Body Copy */}
-                    <p className="mb-6 text-lg md:text-xl lg:text-2xl font-sans max-w-4xl leading-relaxed text-center">
+                    <p className="mb-6 text-lg md:text-xl lg:text-2xl 'Helvetica Neue', Helvetica, Arial, sans-serif max-w-4xl leading-relaxed text-center">
                         {bodyWords.map((word, i) => {
                             const start = 0.45 + (i / bodyWords.length) * 0.55;
                             const end = start + (0.55 / bodyWords.length);
@@ -108,7 +108,7 @@ export default function WhyHFRealtors() {
                 </div>
 
                 <RevealText delay={0.4} className="mb-16 mt-6">
-                    <p className="text-base md:text-lg text-[#EDEDED] font-sans max-w-2xl leading-relaxed">
+                    <p className="text-base md:text-lg text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif max-w-2xl leading-relaxed">
                         Acquire a property through our strategic advisory and receive comprehensive 3D interior design and spatial planning completely free, powered exclusively by our partners at GlocalDesign.in.
                     </p>
                 </RevealText>

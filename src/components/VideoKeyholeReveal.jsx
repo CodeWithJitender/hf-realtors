@@ -56,7 +56,7 @@ export default function VideoKeyholeReveal() {
                     {/* The Typography overlays the Navy mask, centered in the 'keyhole' initially. */}
                     <motion.h2 
                         style={{ opacity: textOpacity }}
-                        className="font-sans font-bold uppercase text-[#EDEDED] text-center w-full px-4 text-[clamp(2rem,6vw,5rem)] leading-tight tracking-wide mix-blend-difference pointer-events-none"
+                        className="'Helvetica Neue', Helvetica, Arial, sans-serif font-bold uppercase text-[#EDEDED] text-center w-full px-4 text-[clamp(2rem,6vw,5rem)] leading-tight tracking-wide mix-blend-difference pointer-events-none"
                     >
                         We Are Building <br />
                         The Future Of <br />

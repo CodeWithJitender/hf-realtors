@@ -48,13 +48,13 @@ export default function AboutUs() {
                     {/* Left Column (Sticky Content & Links) */}
                     <div className="sticky top-12 lg:top-24 flex flex-col justify-between order-2 lg:order-1 pt-8 lg:pt-0 h-auto lg:h-[calc(100vh-12rem)] z-10">
                         <div>
-                            <h3 className="font-sans font-bold text-[#E8C96A] uppercase tracking-widest text-sm mb-6">About Us</h3>
+                            <h3 className="'Helvetica Neue', Helvetica, Arial, sans-serif font-bold text-[#E8C96A] uppercase tracking-widest text-sm mb-6">About Us</h3>
 
-                            <h2 className="font-sans font-medium text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] leading-[1.1] mb-8 text-[#EDEDED] tracking-tight">
+                            <h2 className="'Helvetica Neue', Helvetica, Arial, sans-serif font-medium text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] leading-[1.1] mb-8 text-[#EDEDED] tracking-tight">
                                 Transform A Space for Work, <br className="hidden xl:block" /> Into A Space for Life
                             </h2>
 
-                            <p className="font-sans text-lg text-[#EDEDED]/80 max-w-lg mb-12">
+                            <p className="'Helvetica Neue', Helvetica, Arial, sans-serif text-lg text-[#EDEDED]/80 max-w-lg mb-12">
                                 HF Realtors is a reliable architecture & real estate firm in the global market that provides integrated services for elite emotional acquisition.
                             </p>
 
@@ -63,7 +63,7 @@ export default function AboutUs() {
                                 {["Who We Are", "Our Values", "Our Team", "Founders"].map((link) => (
                                     <div key={link} className="flex items-center gap-3 text-[#E8C96A] group cursor-pointer w-fit">
                                         <ArrowRight size={16} className="text-[#E8C96A] transition-transform duration-300 group-hover:translate-x-1" />
-                                        <span className="font-sans text-[#EDEDED] group-hover:text-[#E8C96A] transition-colors">{link}</span>
+                                        <span className="'Helvetica Neue', Helvetica, Arial, sans-serif text-[#EDEDED] group-hover:text-[#E8C96A] transition-colors">{link}</span>
                                     </div>
                                 ))}
                             </div>
@@ -84,7 +84,7 @@ export default function AboutUs() {
                     {/* Right Column (Scrolling Massive Animated Statistics) */}
                     <div className="flex flex-col justify-start order-1 lg:order-2 pl-0 lg:pl-[10%] pt-8 lg:pt-[20vh] pb-8 lg:pb-[25vh] z-10">
                         <div className="mb-12">
-                            <h4 className="font-sans font-bold text-[#E8C96A] uppercase tracking-widest text-sm mb-6 lg:mb-16 ">Who We Are</h4>
+                            <h4 className="'Helvetica Neue', Helvetica, Arial, sans-serif font-bold text-[#E8C96A] uppercase tracking-widest text-sm mb-6 lg:mb-16 ">Who We Are</h4>
                         </div>
 
                         <motion.div
@@ -96,30 +96,30 @@ export default function AboutUs() {
                         >
                             {/* Stat 1 */}
                             <motion.div variants={statItem} className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start xl:items-center justify-between xl:gap-8">
-                                <span className="font-sans font-light text-[6rem] sm:text-[8rem] lg:text-[7rem] xl:text-[9.5rem] leading-[0.8] text-[#E8C96A] tracking-tighter">
+                                <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-light text-[6rem] sm:text-[8rem] lg:text-[7rem] xl:text-[9.5rem] leading-[0.8] text-[#E8C96A] tracking-tighter">
                                     20+
                                 </span>
-                                <span className="font-sans text-xl text-[#E8C96A] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
+                                <span className="'Helvetica Neue', Helvetica, Arial, sans-serif text-xl text-[#E8C96A] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
                                     Years Of Experience
                                 </span>
                             </motion.div>
 
                             {/* Stat 2 */}
                             <motion.div variants={statItem} className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start xl:items-center justify-between xl:gap-8">
-                                <span className="font-sans font-light text-[6rem] sm:text-[8rem] lg:text-[7rem] xl:text-[9.5rem] leading-[0.8] text-[#E8C96A] tracking-tighter">
+                                <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-light text-[6rem] sm:text-[8rem] lg:text-[7rem] xl:text-[9.5rem] leading-[0.8] text-[#E8C96A] tracking-tighter">
                                     08
                                 </span>
-                                <span className="font-sans text-xl text-[#E8C96A] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
+                                <span className="'Helvetica Neue', Helvetica, Arial, sans-serif text-xl text-[#E8C96A] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
                                     Sq. ft. transacted
                                 </span>
                             </motion.div>
 
                             {/* Stat 3 */}
                             <motion.div variants={statItem} className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start xl:items-center justify-between xl:gap-8">
-                                <span className="font-sans font-light text-[6rem] sm:text-[8rem] lg:text-[7rem] xl:text-[9.5rem] leading-[0.8] text-[#E8C96A] tracking-tighter">
+                                <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-light text-[6rem] sm:text-[8rem] lg:text-[7rem] xl:text-[9.5rem] leading-[0.8] text-[#E8C96A] tracking-tighter">
                                     3M
                                 </span>
-                                <span className="font-sans text-xl text-[#E8C96A] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
+                                <span className="'Helvetica Neue', Helvetica, Arial, sans-serif text-xl text-[#E8C96A] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
                                     Closed Deals
                                 </span>
                             </motion.div>

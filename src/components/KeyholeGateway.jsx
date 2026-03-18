@@ -7,7 +7,7 @@ import Button from "@/components/Button";
 
 const Content = () => (
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 w-full h-full pointer-events-none">
-        <h2 className="font-sans font-bold uppercase leading-[0.85] tracking-tight text-[#E8C96A] drop-shadow-2xl text-[10vw] sm:text-[8vw] lg:text-[7vw]">
+        <h2 className="'Helvetica Neue', Helvetica, Arial, sans-serif font-bold uppercase leading-[0.85] tracking-tight text-[#E8C96A] drop-shadow-2xl text-[10vw] sm:text-[8vw] lg:text-[7vw]">
             Value Through <br /> Architecture
         </h2>
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-12 pointer-events-auto">
@@ -46,10 +46,10 @@ export default function KeyholeGateway() {
                         <div className="absolute inset-0 bg-[#0A1628]/90 mix-blend-multiply" />
 
                         <div className="relative z-10 flex flex-col items-center justify-center h-full max-w-4xl mx-auto px-fluid-container text-center">
-                            <h2 className="text-[2.5rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] font-sans font-bold uppercase tracking-tight text-[#E8C96A] leading-[1] mb-6 drop-shadow-lg">
+                            <h2 className="text-[2.5rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] 'Helvetica Neue', Helvetica, Arial, sans-serif font-bold uppercase tracking-tight text-[#E8C96A] leading-[1] mb-6 drop-shadow-lg">
                                 Why HF Realtors
                             </h2>
-                            <p className="text-[#EDEDED] font-sans text-lg md:text-xl mb-10 drop-shadow-md">
+                            <p className="text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif text-lg md:text-xl mb-10 drop-shadow-md">
                                 We operate at the intersection of architectural brilliance and financial strategic advantage. A new sense of self.
                             </p>
                         </div>

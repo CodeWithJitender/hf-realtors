@@ -51,7 +51,7 @@ export default function ThankYouPage() {
         <h1
           className="ty-heading uppercase tracking-tight leading-none text-[#EDEDED] mb-4 opacity-0"
           style={{
-            fontFamily: "'Futura-Bold', 'Futura', sans-serif",
+            fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
             fontSize: "clamp(2.5rem, 8vw, 5rem)",
           }}
         >
@@ -65,7 +65,7 @@ export default function ThankYouPage() {
         <p
           className="ty-body text-[#EDEDED]/65 leading-relaxed mb-10 opacity-0"
           style={{
-            fontFamily: "var(--font-inter), 'Inter', sans-serif",
+            fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif",
             fontWeight: 500,
             fontSize: "clamp(1rem, 1.5vw, 1.15rem)",
           }}
@@ -80,7 +80,7 @@ export default function ThankYouPage() {
           className="ty-cta inline-flex items-center gap-2 text-[#E8C96A] uppercase tracking-widest text-xs font-semibold
                      border border-[#E8C96A]/40 rounded-full px-8 py-4 hover:bg-[#E8C96A] hover:text-[#0A1628]
                      transition-all duration-300 opacity-0"
-          style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}
+          style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}
         >
           Back to Home
         </Link>

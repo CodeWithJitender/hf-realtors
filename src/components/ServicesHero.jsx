@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from 'react';
 import TextRotator from './TextRotator';
@@ -24,7 +24,7 @@ export default function ServicesHero() {
           <TextRotator words={words} className="text-[#E8C96A] block mt-1" />
         </h1>
 
-        <p className="font-sans text-lg md:text-xl max-w-xl leading-relaxed mb-10 font-light tracking-wide opacity-90" style={{ color: "#C5D6EE", fontFamily: "var(--font-body)" }}>
+        <p className="'Helvetica Neue', Helvetica, Arial, sans-serif text-lg md:text-xl max-w-xl leading-relaxed mb-10 font-light tracking-wide opacity-90" style={{ color: "#C5D6EE", fontFamily: "var(--font-body)" }}>
           From strategic wealth planning to finding the perfect property, our expert advisory team is dedicated to securing your generational legacy.
         </p>
 

@@ -137,7 +137,7 @@ export default function AgencyOffice() {
                   onClick={() => handleTabClick(idx)}
                   className={`font-bold tracking-widest text-[13px] uppercase transition-colors duration-300 ${activeTab === idx ? "text-[#EDEDED]" : "text-gray-500 hover:text-gray-300"
                     }`}
-                  style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 500 }}
+                  style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 500 }}
                 >
                   {item.city}
                 </button>
@@ -155,20 +155,20 @@ export default function AgencyOffice() {
                 className="flex flex-col items-start"
               >
                   <h2
-                  className="font-sans font-extrabold text-fluid-h1 tracking-tighter leading-[1.05] uppercase mb-6"
-                  style={{ fontFamily: "'Futura-Bold', 'Futura', sans-serif", color: "#EDEDED" }}
+                  className="'Helvetica Neue', Helvetica, Arial, sans-serif font-extrabold text-fluid-h1 tracking-tighter leading-[1.05] uppercase mb-6"
+                  style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: "#EDEDED" }}
                 >
                   {loc.title.split('\n').map((line, i) => (
                     <span key={i} className="block">{line}</span>
                   ))}
                 </h2>
 
-                <p className="font-sans text-gray-300 text-fluid-body leading-[1.8] tracking-widest uppercase max-w-[400px] mb-8 font-semibold">
+                <p className="'Helvetica Neue', Helvetica, Arial, sans-serif text-gray-300 text-fluid-body leading-[1.8] tracking-widest uppercase max-w-[400px] mb-8 font-semibold">
                   {loc.description}
                 </p>
 
                 <Button variant="gold" href={loc.mapLink}>
-                  <span style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 700 }}>SHOW ON MAP</span>
+                  <span style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 700 }}>SHOW ON MAP</span>
                 </Button>
               </motion.div>
             </AnimatePresence>

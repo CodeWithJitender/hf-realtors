@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
@@ -292,7 +292,7 @@ export default function VisionMission() {
       {/* ── HEADING ── */}
       <div ref={headingRef} className="text-center mb-[clamp(3.5rem,6vw,6rem)] relative z-10">
         {/* <p style={{
-          fontFamily: "var(--font-futura), Futura, sans-serif",
+          fontFamily: "var(--font-futura), 'Helvetica Neue', Helvetica, Arial, sans-serif",
           fontSize: "clamp(0.65rem, 1vw, 0.78rem)",
           letterSpacing: "0.38em",
           textTransform: "uppercase",
@@ -356,7 +356,7 @@ export default function VisionMission() {
           }} />
 
           <p ref={c1LabelRef} style={{
-            fontFamily: "var(--font-inter), 'Inter', sans-serif",
+            fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif",
             fontSize: "clamp(0.7rem, 1vw, 0.8rem)",
             letterSpacing: "0.3em",
             textTransform: "uppercase",
@@ -418,7 +418,7 @@ export default function VisionMission() {
 
 
           <p ref={c2LabelRef} style={{
-            fontFamily: "var(--font-inter), 'Inter', sans-serif",
+            fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif",
             fontSize: "clamp(0.7rem, 1vw, 0.8rem)",
             letterSpacing: "0.3em",
             textTransform: "uppercase",

@@ -89,7 +89,7 @@ export default function AboutUsSticky() {
                 {/* ─── LEFT: Sticky panel ─── */}
                 <div className="w-full md:w-1/2 md:sticky md:top-0 md:h-screen flex flex-col justify-center p-6 md:p-12 lg:p-24 lg:pr-12 pt-24 md:pt-0 z-10">
 
-                    <span className="font-sans font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-6 block">ABOUT US</span>
+                    <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-6 block">ABOUT US</span>
 
                     <h2 className="text-[1.85rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] tracking-tight leading-[1.1] md:leading-[1.05] text-[#EDEDED] mb-6 md:mb-10" style={{ fontFamily: 'sans-serif' }}>
                         Transform A Space for Work, Into A Space for Life
@@ -110,7 +110,7 @@ export default function AboutUsSticky() {
                                             <polygon points="5 3 19 12 5 21 5 3" fill="#E8C96A" />
                                         </svg>
                                     </div>
-                                    <span className={`font-sans transition-colors duration-300 whitespace-nowrap ${isActive ? 'text-[#E8C96A] font-bold text-base md:text-lg lg:text-xl' : 'text-[#8A98A5] font-semibold text-base md:text-lg lg:text-xl group-hover:text-[#EDEDED]'}`}>
+                                    <span className={`'Helvetica Neue', Helvetica, Arial, sans-serif transition-colors duration-300 whitespace-nowrap ${isActive ? 'text-[#E8C96A] font-bold text-base md:text-lg lg:text-xl' : 'text-[#8A98A5] font-semibold text-base md:text-lg lg:text-xl group-hover:text-[#EDEDED]'}`}>
                                         {tab.label}
                                     </span>
                                 </div>
@@ -175,11 +175,11 @@ export default function AboutUsSticky() {
                             >
                                 {tab.type === "stats" && (
                                     <div className="flex flex-col gap-6 md:gap-12 w-full">
-                                        <span className="font-sans font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-2 md:mb-4">{tab.title}</span>
+                                        <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-2 md:mb-4">{tab.title}</span>
                                         {tab.stats.map((stat, i) => (
                                             <div key={i} className="flex flex-row items-center gap-6 md:gap-8 xl:gap-16 w-full">
-                                                <span className="font-sans font-light text-[4rem] md:text-[6rem] xl:text-[7rem] text-[#E8C96A] tracking-tighter min-w-[100px] md:min-w-[150px] xl:min-w-[180px] leading-none">{stat.value}</span>
-                                                <span className="font-sans font-medium text-base md:text-xl xl:text-2xl text-[#FFFFFF] leading-tight whitespace-pre-line uppercase tracking-wide">{stat.label}</span>
+                                                <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-light text-[4rem] md:text-[6rem] xl:text-[7rem] text-[#E8C96A] tracking-tighter min-w-[100px] md:min-w-[150px] xl:min-w-[180px] leading-none">{stat.value}</span>
+                                                <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-medium text-base md:text-xl xl:text-2xl text-[#FFFFFF] leading-tight whitespace-pre-line uppercase tracking-wide">{stat.label}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -187,15 +187,15 @@ export default function AboutUsSticky() {
 
                                 {tab.type === "values" && (
                                     <div className="flex flex-col w-full max-w-2xl">
-                                        <span className="font-sans font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-8">{tab.title}</span>
-                                        <div className="flex flex-col rounded-2xl md:rounded-[2rem] overflow-hidden border border-[#E8C96A]/20 shadow-2xl bg-[#0F1E38]/80 backdrop-blur-md">
+                                        <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-8">{tab.title}</span>
+                                        <div className="flex flex-col rounded-2xl md:rounded-[2rem] overflow-hidden border border-[#E8C96A]/20 shadow-2xl bg-[#1E3A5F]/70 backdrop-blur-md">
                                             {tab.values.map((val, i) => (
                                                 <div key={i} className="flex flex-row items-center justify-between p-6 md:p-8 xl:p-10 border-b border-[#E8C96A]/10 last:border-0 hover:bg-[#E8C96A]/5 transition-colors">
                                                     <div className="flex flex-col">
-                                                        <span className="font-sans font-bold text-lg md:text-2xl mb-1 md:mb-3" style={{ color: "#E8C96A", opacity: 1 }}>{val.title}</span>
-                                                        <span className="font-sans text-sm md:text-base text-[#EDEDED] whitespace-pre-line leading-relaxed opacity-80">{val.desc}</span>
+                                                        <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-bold text-lg md:text-2xl mb-1 md:mb-3" style={{ color: "#E8C96A", opacity: 1 }}>{val.title}</span>
+                                                        <span className="'Helvetica Neue', Helvetica, Arial, sans-serif text-sm md:text-base text-[#EDEDED] whitespace-pre-line leading-relaxed opacity-80">{val.desc}</span>
                                                     </div>
-                                                    <span className="font-sans font-light text-[3.5rem] md:text-[5rem] leading-none text-[#E8C96A] opacity-40 ml-4">{val.num}</span>
+                                                    <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-light text-[3.5rem] md:text-[5rem] leading-none text-[#E8C96A] opacity-40 ml-4">{val.num}</span>
                                                 </div>
                                             ))}
                                         </div>
@@ -211,7 +211,7 @@ export default function AboutUsSticky() {
                                         </div>
                                         <div className="mt-12 flex flex-col items-center text-center gap-4 z-20">
                                             {tab.roles.map((line, i) => (
-                                                <p key={i} className="font-sans text-xs sm:text-sm xl:text-base tracking-[0.2em] text-[#EDEDED] font-bold uppercase opacity-90">{line}</p>
+                                                <p key={i} className="text-xs sm:text-sm xl:text-base tracking-[0.2em] text-[#EDEDED] font-bold uppercase opacity-90" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{line}</p>
                                             ))}
                                         </div>
                                     </div>
@@ -225,7 +225,7 @@ export default function AboutUsSticky() {
                                                 <div key={i} className="relative w-full h-full">
                                                     <Image src={founder.image} alt={founder.name} fill className="object-cover opacity-90 grayscale group-hover:grayscale-0 transition-all duration-500" />
                                                     <div className="absolute inset-0 bg-gradient-to-t from-[#000] via-transparent to-transparent opacity-60" />
-                                                    <span className="absolute bottom-4 left-0 right-0 text-center font-sans font-bold text-base text-[#EDEDED] px-2">{founder.name}</span>
+                                                    <span className="absolute bottom-4 left-0 right-0 text-center 'Helvetica Neue', Helvetica, Arial, sans-serif font-bold text-base text-[#EDEDED] px-2">{founder.name}</span>
                                                 </div>
                                             ))}
                                         </div>

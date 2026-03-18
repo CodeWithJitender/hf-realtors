@@ -46,13 +46,13 @@ export default function VerticalApproachSplit() {
 
     return (
         // The container is 400vh to allow for 4x 100vh cards to scroll past
-        <section ref={containerRef} className="relative w-full h-[400vh] bg-[#0A1628] text-[#EDEDED] font-sans">
+        <section ref={containerRef} className="relative w-full h-[400vh] bg-[#0A1628] text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif">
             <div className="absolute inset-0 flex flex-col md:flex-row w-full h-full">
 
                 {/* LEFT SIDE: Sticky Nav Container */}
                 <div className="w-full md:w-[45%] lg:w-1/2 h-screen sticky top-0 flex flex-col justify-center p-8 md:p-12 lg:px-24 overflow-hidden z-10 border-r border-[#EDEDED]/5">
 
-                    <span className="font-sans font-bold text-[#E8C96A] uppercase tracking-widest text-sm mb-6 block drop-shadow-sm">
+                    <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-bold text-[#E8C96A] uppercase tracking-widest text-sm mb-6 block drop-shadow-sm">
                         About Us
                     </span>
 
@@ -60,7 +60,7 @@ export default function VerticalApproachSplit() {
                         Transform A Space for Work, <br className="hidden lg:block" /> Into A Space for Life
                     </h2>
 
-                    <p className="font-sans text-[#EDEDED]/80 text-base lg:text-lg max-w-lg mb-12 lg:mb-16 leading-relaxed">
+                    <p className="'Helvetica Neue', Helvetica, Arial, sans-serif text-[#EDEDED]/80 text-base lg:text-lg max-w-lg mb-12 lg:mb-16 leading-relaxed">
                         HF Realtors is a reliable architecture & real estate firm in the global market that provides integrated services for elite emotional acquisition.
                     </p>
 
@@ -82,7 +82,7 @@ export default function VerticalApproachSplit() {
                                         </svg>
                                     </div>
                                     <span
-                                        className={`font-sans text-base lg:text-lg transition-colors duration-500 cursor-pointer ${isActive ? 'text-[#E8C96A]' : 'text-[#EDEDED]/50 hover:text-[#EDEDED]/80'}`}
+                                        className={`'Helvetica Neue', Helvetica, Arial, sans-serif text-base lg:text-lg transition-colors duration-500 cursor-pointer ${isActive ? 'text-[#E8C96A]' : 'text-[#EDEDED]/50 hover:text-[#EDEDED]/80'}`}
                                         style={{ fontFamily: 'sans-serif' }}
                                         onClick={() => setActiveIndex(i)}
                                     >
@@ -157,7 +157,7 @@ export default function VerticalApproachSplit() {
                                     >
                                         {service.title}
                                     </h3>
-                                    <p className="font-sans text-[#EDEDED]/90 text-base sm:text-justify lg:text-lg max-w-md leading-relaxed mb-8">
+                                    <p className="'Helvetica Neue', Helvetica, Arial, sans-serif text-[#EDEDED]/90 text-base sm:text-justify lg:text-lg max-w-md leading-relaxed mb-8">
                                         {service.desc}
                                     </p>
                                     <Button variant="outlined">

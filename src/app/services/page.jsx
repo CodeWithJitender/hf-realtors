@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="flex flex-col min-h-screen bg-[#0A1628] text-[#EDEDED] font-sans overflow-hidden">
+    <main className="flex flex-col min-h-screen bg-[#0A1628] text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif overflow-hidden">
       <ServicesHero />
       <HowWeEngage />
     </main>
