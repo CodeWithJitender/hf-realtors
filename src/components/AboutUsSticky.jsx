@@ -188,14 +188,30 @@ export default function AboutUsSticky() {
                                 {tab.type === "values" && (
                                     <div className="flex flex-col w-full max-w-2xl">
                                         <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-8">{tab.title}</span>
-                                        <div className="flex flex-col rounded-2xl md:rounded-[2rem] overflow-hidden border border-[#E8C96A]/20 shadow-2xl bg-[#1E3A5F]/70 backdrop-blur-md">
+                                        <div
+                                            className="flex flex-col rounded-2xl md:rounded-[2rem] overflow-hidden border border-[#E8C96A]/25"
+                                            style={{
+                                                background: "rgba(8, 18, 35, 0.55)",
+                                                backdropFilter: "blur(24px)",
+                                                WebkitBackdropFilter: "blur(24px)",
+                                                boxShadow: "0 8px 48px rgba(0,0,0,0.55), inset 0 0 0 1px rgba(232,201,106,0.08), 0 0 0 1px rgba(232,201,106,0.12)",
+                                            }}
+                                        >
                                             {tab.values.map((val, i) => (
-                                                <div key={i} className="flex flex-row items-center justify-between p-6 md:p-8 xl:p-10 border-b border-[#E8C96A]/10 last:border-0 hover:bg-[#E8C96A]/5 transition-colors">
-                                                    <div className="flex flex-col">
-                                                        <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-bold text-lg md:text-2xl mb-1 md:mb-3" style={{ color: "#E8C96A", opacity: 1 }}>{val.title}</span>
-                                                        <span className="'Helvetica Neue', Helvetica, Arial, sans-serif text-sm md:text-base text-[#EDEDED] whitespace-pre-line leading-relaxed opacity-80">{val.desc}</span>
+                                                <div
+                                                    key={i}
+                                                    className="group flex flex-row items-center justify-between p-6 md:p-8 xl:p-10 border-b border-[#E8C96A]/10 last:border-0 transition-all duration-300 relative overflow-hidden"
+                                                    style={{ cursor: "default" }}
+                                                >
+                                                    {/* Row hover shimmer */}
+                                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                                                        style={{ background: "linear-gradient(90deg, rgba(232,201,106,0.06) 0%, rgba(232,201,106,0.02) 60%, transparent 100%)" }}
+                                                    />
+                                                    <div className="flex flex-col relative z-10">
+                                                        <span className="font-bold text-lg md:text-2xl mb-1 md:mb-3" style={{ color: "#E8C96A" }}>{val.title}</span>
+                                                        <span className="text-sm md:text-base text-[#EDEDED] whitespace-pre-line leading-relaxed opacity-70">{val.desc}</span>
                                                     </div>
-                                                    <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-light text-[3.5rem] md:text-[5rem] leading-none text-[#E8C96A] opacity-40 ml-4">{val.num}</span>
+                                                    <span className="font-light text-[3.5rem] md:text-[5rem] leading-none ml-4 relative z-10 transition-opacity duration-300 opacity-30 group-hover:opacity-60" style={{ color: "#E8C96A" }}>{val.num}</span>
                                                 </div>
                                             ))}
                                         </div>

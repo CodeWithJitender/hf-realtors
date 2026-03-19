@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import NavigationMenu from "./NavigationMenu";
 import Link from "next/link";
+import { usePreloader } from "@/context/PreloaderContext";
 
 // Pages that start with a light background — header must use dark text at top
 const LIGHT_BG_PAGES = ["/contact-us"];
@@ -13,6 +14,7 @@ const LIGHT_BG_PAGES = ["/contact-us"];
 export default function Header() {
     const pathname = usePathname();
     const isLightPage = LIGHT_BG_PAGES.includes(pathname);
+    const { isPreloaderDone } = usePreloader();
 
     const [scrolled, setScrolled] = useState(false);
     const [hidden, setHidden] = useState(false);
@@ -36,17 +38,21 @@ export default function Header() {
 
     return (
         <motion.header
-            variants={{
-                visible: { y: 0 },
-                hidden: { y: "-100%" }
-            }}
-            animate={hidden ? "hidden" : "visible"}
+            animate={{ top: hidden ? "-100%" : "0%" }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-        className={`fixed top-0 w-full z-50 transition-all duration-500 border-b ${scrolled
+            className={`fixed w-full z-[1000] transition-all duration-500 border-b ${scrolled
                 ? "border-[rgba(232,201,106,0.15)] py-4"
                 : "border-transparent py-6"
             }`}
-        style={scrolled ? { backgroundColor: "rgba(10,22,40,0.95)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", color: "#E8C96A" } : { backgroundColor: "transparent", color: "#E8C96A" }}
+            style={{
+                ...(scrolled
+                    ? { backgroundColor: "rgba(10,22,40,0.95)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", color: "#E8C96A" }
+                    : { backgroundColor: "transparent", color: "#E8C96A" }
+                ),
+                opacity: isPreloaderDone ? 1 : 0,
+                pointerEvents: isPreloaderDone ? "auto" : "none",
+                transition: "opacity 0.5s ease",
+            }}
         >
             {/* ── Desktop layout: 3-column grid (menu | logo | contact) ── */}
             <div className="hidden md:grid grid-cols-3 items-center px-12 w-full">

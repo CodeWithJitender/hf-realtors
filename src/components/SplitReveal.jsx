@@ -143,15 +143,28 @@ function ValuesContent({ tab, isActive }) {
     const anim = isActive ? "visible" : "hidden";
     return (
         <div className="flex flex-col w-full max-w-2xl">
-            <div className="flex flex-col rounded-2xl md:rounded-[2rem] overflow-hidden border border-[#E8C96A]/20 shadow-lg bg-white">
+            <div
+                className="flex flex-col rounded-2xl md:rounded-[2rem] overflow-hidden border border-[#E8C96A]/25"
+                style={{
+                    background: "rgba(8, 18, 35, 0.55)",
+                    backdropFilter: "blur(24px)",
+                    WebkitBackdropFilter: "blur(24px)",
+                    boxShadow: "0 8px 48px rgba(0,0,0,0.55), inset 0 0 0 1px rgba(232,201,106,0.08), 0 0 0 1px rgba(232,201,106,0.12)",
+                }}
+            >
                 {tab.values.map((val, i) => (
                     <FadeUp key={i} delay={0.1 + i * 0.1} animate={anim}>
-                        <div className="flex flex-row items-center justify-between p-6 md:p-8 border-b border-[#E8C96A]/10 last:border-0 hover:bg-[#E8C96A]/5 transition-colors">
-                            <div className="flex flex-col">
+                        <div className="group relative flex flex-row items-center justify-between p-6 md:p-8 border-b border-[#E8C96A]/10 last:border-0 transition-all duration-300 overflow-hidden">
+                            {/* Row hover shimmer */}
+                            <div
+                                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                                style={{ background: "linear-gradient(90deg, rgba(232,201,106,0.06) 0%, rgba(232,201,106,0.02) 60%, transparent 100%)" }}
+                            />
+                            <div className="flex flex-col relative z-10">
                                 <span className="font-bold text-lg md:text-2xl text-[#E8C96A] mb-1" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.title}</span>
-                                <span className="text-sm md:text-base text-[#0A1628]/70 whitespace-pre-line leading-relaxed" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.desc}</span>
+                                <span className="text-sm md:text-base text-[#EDEDED]/70 whitespace-pre-line leading-relaxed" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.desc}</span>
                             </div>
-                            <span className="font-light text-[3rem] md:text-[4.5rem] leading-none text-[#E8C96A] opacity-25 ml-4" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.num}</span>
+                            <span className="font-light text-[3rem] md:text-[4.5rem] leading-none text-[#E8C96A] opacity-25 group-hover:opacity-50 ml-4 relative z-10 transition-opacity duration-300" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.num}</span>
                         </div>
                     </FadeUp>
                 ))}
@@ -165,18 +178,19 @@ function TeamContent({ tab, isActive }) {
     return (
         <div className="flex flex-col items-center justify-center w-full h-full relative">
             <motion.h3
-                initial={{ opacity: 0 }}
-                animate={isActive ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-                className="hidden md:block text-[5rem] xl:text-[5rem] tracking-tighter text-[#E8C96A] leading-none whitespace-nowrap absolute top-[-4rem] z-0" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
+                initial={{ opacity: 0, y: 16 }}
+                animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="hidden md:block text-[2.5rem] lg:text-[3.5rem] xl:text-[4.5rem] tracking-tighter text-[#E8C96A] leading-none mb-6 w-full"
+                style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
             >
                 {tab.title}
             </motion.h3>
-            <FadeUp delay={0.08} animate={anim} className="relative w-full aspect-[4/3] xl:aspect-video rounded-2xl z-10 mt-2 overflow-hidden shadow-2xl border border-[#E8C96A]/20">
+            <FadeUp delay={0.08} animate={anim} className="relative w-full aspect-[4/3] xl:aspect-video rounded-2xl z-10 overflow-hidden shadow-2xl border border-[#E8C96A]/20">
                 <Image src={tab.teamImage} alt="Our Team" fill className="object-cover rounded-2xl" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/40 via-transparent to-transparent" />
             </FadeUp>
-            <div className="mt-10 flex flex-col items-center text-center gap-3 z-20">
+            <div className="mt-8 flex flex-col items-center text-center gap-3 z-20">
                 {tab.roles.map((line, i) => (
                     <RevealLine
                         key={i}
@@ -530,7 +544,15 @@ function MobileReveal() {
                     viewport={{ once: true, margin: "-60px" }}
                 >
                     <h3 className="'Helvetica Neue', Helvetica, Arial, sans-serif font-bold uppercase tracking-widest text-[10px] text-[#E8C96A] mb-8">OUR VALUES</h3>
-                    <div className="flex flex-col border border-[#E8C96A]/20 shadow-sm">
+                    <div
+                        className="flex flex-col border border-[#E8C96A]/25 rounded-2xl overflow-hidden"
+                        style={{
+                            background: "rgba(8, 18, 35, 0.55)",
+                            backdropFilter: "blur(24px)",
+                            WebkitBackdropFilter: "blur(24px)",
+                            boxShadow: "0 8px 48px rgba(0,0,0,0.55), inset 0 0 0 1px rgba(232,201,106,0.08)",
+                        }}
+                    >
                         {tabs[1].values.map((val, i) => (
                             <motion.div
                                 key={i}

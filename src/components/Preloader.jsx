@@ -37,7 +37,7 @@ export default function Preloader() {
                 document.body.style.overflow = "auto";
                 markPreloaderDone();
             }}
-            className="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none"
+            className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none"
         >
             {/*
               The Circle SVG Mask.
