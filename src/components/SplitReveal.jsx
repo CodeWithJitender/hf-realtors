@@ -74,9 +74,9 @@ const tabs = [
         id: "who-we-are", label: "Who We Are", image: "/images/interior.png",
         type: "stats", title: "WHO WE ARE",
         stats: [
-            { value: "3K", label: "Happy \nCustomers" },
             { value: "18+", label: "Years Of\nExperience" },
-            { value: "250+", label: "Real Estate\n Professionals" },
+            { value: "3K", label: "Happy \nCustomers" },
+            { value: "50+", label: "Developers \n Connected" },
         ],
     },
     {

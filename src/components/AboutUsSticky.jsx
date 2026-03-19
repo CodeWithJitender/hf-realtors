@@ -12,9 +12,9 @@ const tabs = [
         type: "stats",
         title: "WHO WE ARE",
         stats: [
-            { value: "18+", label: "Years Of\nExperience" },
-            { value: "08", label: "Sq. ft.\n transacted" },
-            { value: "3M", label: "Closed \nDeals" }
+            { value: "18+", label: "Years Of\n Experience" },
+            { value: "3K", label: "Happy \n Customers" },
+            { value: "50+", label: "Developers \n Connected" },
         ]
     },
     {
