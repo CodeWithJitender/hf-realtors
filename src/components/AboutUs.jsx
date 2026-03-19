@@ -97,7 +97,7 @@ export default function AboutUs() {
                             {/* Stat 1 */}
                             <motion.div variants={statItem} className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start xl:items-center justify-between xl:gap-8">
                                 <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-light text-[6rem] sm:text-[8rem] lg:text-[7rem] xl:text-[9.5rem] leading-[0.8] text-[#E8C96A] tracking-tighter">
-                                    20+
+                                    18+
                                 </span>
                                 <span className="'Helvetica Neue', Helvetica, Arial, sans-serif text-xl text-[#E8C96A] text-left sm:text-right lg:text-left xl:text-right mt-4 sm:mt-8 lg:mt-4 xl:mt-8 xl:w-48 leading-snug">
                                     Years Of Experience

@@ -74,9 +74,9 @@ const tabs = [
         id: "who-we-are", label: "Who We Are", image: "/images/interior.png",
         type: "stats", title: "WHO WE ARE",
         stats: [
-            { value: "20+", label: "Years Of\nExperience" },
-            { value: "08", label: "Sq. ft. \n transacted" },
-            { value: "3M", label: "Closed \nDeals" },
+            { value: "3K", label: "Happy \nCustomers" },
+            { value: "18+", label: "Years Of\nExperience" },
+            { value: "250+", label: "Real Estate\n Professionals" },
         ],
     },
     {
@@ -125,8 +125,8 @@ function StatsContent({ tab, isActive }) {
         <div className="flex flex-col gap-6 md:gap-10 w-full">
             {tab.stats.map((stat, i) => (
                 <FadeUp key={i} delay={0.1 + i * 0.12} animate={anim}>
-                    <div className="flex flex-row items-center gap-6 md:gap-8 xl:gap-16 w-full">
-                        <span className="font-light text-[4rem] md:text-[6rem] xl:text-[9rem] text-[#E8C96A] tracking-tighter min-w-[120px] md:min-w-[180px] xl:min-w-[240px] leading-none" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
+                    <div className="flex flex-row items-center w-full">
+                        <span className="font-light text-[4rem] md:text-[6rem] xl:text-[9rem] text-[#E8C96A] tracking-tighter w-[140px] md:w-[220px] xl:w-[320px] flex-shrink-0 leading-none" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                             {stat.value}
                         </span>
                         <span className="font-medium text-base md:text-xl xl:text-2xl text-[#fff] leading-tight whitespace-pre-line uppercase tracking-wide" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>

@@ -12,7 +12,7 @@ const tabs = [
         type: "stats",
         title: "WHO WE ARE",
         stats: [
-            { value: "20+", label: "Years Of\nExperience" },
+            { value: "18+", label: "Years Of\nExperience" },
             { value: "08", label: "Sq. ft.\n transacted" },
             { value: "3M", label: "Closed \nDeals" }
         ]
