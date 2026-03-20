@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const tabs = [
     {
@@ -53,43 +53,88 @@ const tabs = [
     }
 ];
 
+// How much total deltaY accumulation needed to advance one tab
+const SCROLL_THRESHOLD = 600;
+// Cooldown in ms after a tab switches before the next switch can happen
+const COOLDOWN_MS = 1200;
+
 export default function AboutUsSticky() {
-    const containerRef = useRef(null);
-    const rightColRef = useRef(null);
+    const sectionRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const [direction, setDirection] = useState(0);
 
-    // Track scroll within the right column for the glowing dot
-    const { scrollYProgress } = useScroll({
-        target: rightColRef,
-        offset: ["start start", "end end"]
-    });
-    const dotTop = useTransform(scrollYProgress, [0, 1], ["5%", "95%"]);
+    // Dot position: map activeIndex → percentage
+    const dotPercent = `${(activeIndex / (tabs.length - 1)) * 90 + 5}%`;
+
+    // Accumulated scroll delta
+    const accumulated = useRef(0);
+    const isCoolingDown = useRef(false);
+    const isLocked = useRef(false);
+
+    const goTo = useCallback((next) => {
+        if (next < 0 || next >= tabs.length) return;
+        setDirection(next > activeIndex ? 1 : -1);
+        setActiveIndex(next);
+        accumulated.current = 0;
+        isCoolingDown.current = true;
+        setTimeout(() => { isCoolingDown.current = false; }, COOLDOWN_MS);
+    }, [activeIndex]);
+
+    useEffect(() => {
+        const section = sectionRef.current;
+        if (!section) return;
+
+        // Observer: lock scroll when section is in view (desktop only)
+        const observer = new IntersectionObserver(
+            ([entry]) => { isLocked.current = entry.isIntersecting; },
+            { threshold: 0.5 }
+        );
+        observer.observe(section);
+
+        const handleWheel = (e) => {
+            if (!isLocked.current || isCoolingDown.current) return;
+            if (window.innerWidth < 768) return; // mobile: let it scroll naturally
+
+            const atFirst = activeIndex === 0;
+            const atLast = activeIndex === tabs.length - 1;
+
+            // If scrolling up at first tab, or down at last tab → let page scroll
+            if ((e.deltaY < 0 && atFirst) || (e.deltaY > 0 && atLast)) {
+                isLocked.current = false;
+                return;
+            }
+
+            e.preventDefault();
+            accumulated.current += e.deltaY;
+
+            if (accumulated.current >= SCROLL_THRESHOLD) {
+                goTo(activeIndex + 1);
+            } else if (accumulated.current <= -SCROLL_THRESHOLD) {
+                goTo(activeIndex - 1);
+            }
+        };
+
+        window.addEventListener("wheel", handleWheel, { passive: false });
+        return () => {
+            window.removeEventListener("wheel", handleWheel);
+            observer.disconnect();
+        };
+    }, [activeIndex, goTo]);
 
     const handleTabClick = (index) => {
-        if (rightColRef.current) {
-            const tabHeight = rightColRef.current.offsetHeight / tabs.length;
-            const scrollTarget = rightColRef.current.offsetTop + (tabHeight * index);
-            window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
-        }
-    };
-
-    const updateActiveIndex = (index) => {
-        if (index !== activeIndex) {
-            setDirection(index > activeIndex ? 1 : -1);
-            setActiveIndex(index);
-        }
+        accumulated.current = 0;
+        setDirection(index > activeIndex ? 1 : -1);
+        setActiveIndex(index);
     };
 
     return (
-        // Standard sticky sidebar pattern: no fixed height on section, flex row
-        <section ref={containerRef} className="relative w-full bg-[#0A1628] text-[#EDEDED]">
+        <section ref={sectionRef} className="relative w-full bg-[#0A1628] text-[#EDEDED]">
             <div className="flex flex-col md:flex-row w-full">
 
                 {/* ─── LEFT: Sticky panel ─── */}
                 <div className="w-full md:w-1/2 md:sticky md:top-0 md:h-screen flex flex-col justify-center p-6 md:p-12 lg:p-24 lg:pr-12 pt-24 md:pt-0 z-10">
 
-                    <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-6 block">ABOUT US</span>
+                    <span className="font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-6 block">ABOUT US</span>
 
                     <h2 className="text-[1.85rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] tracking-tight leading-[1.1] md:leading-[1.05] text-[#EDEDED] mb-6 md:mb-10" style={{ fontFamily: 'sans-serif' }}>
                         Transform A Space for Work, Into A Space for Life
@@ -110,7 +155,7 @@ export default function AboutUsSticky() {
                                             <polygon points="5 3 19 12 5 21 5 3" fill="#E8C96A" />
                                         </svg>
                                     </div>
-                                    <span className={`'Helvetica Neue', Helvetica, Arial, sans-serif transition-colors duration-300 whitespace-nowrap ${isActive ? 'text-[#E8C96A] font-bold text-base md:text-lg lg:text-xl' : 'text-[#8A98A5] font-semibold text-base md:text-lg lg:text-xl group-hover:text-[#EDEDED]'}`}>
+                                    <span className={`transition-colors duration-300 whitespace-nowrap ${isActive ? 'text-[#E8C96A] font-bold text-base md:text-lg lg:text-xl' : 'text-[#8A98A5] font-semibold text-base md:text-lg lg:text-xl group-hover:text-[#EDEDED]'}`}>
                                         {tab.label}
                                     </span>
                                 </div>
@@ -132,7 +177,7 @@ export default function AboutUsSticky() {
                                 initial="enter"
                                 animate="center"
                                 exit="exit"
-                                transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+                                transition={{ duration: 1.1, ease: [0.76, 0, 0.24, 1] }}
                                 className="absolute inset-0 w-full h-full"
                             >
                                 <Image
@@ -148,46 +193,59 @@ export default function AboutUsSticky() {
                     </div>
                 </div>
 
-                {/* ─── RIGHT: Scrolling tab content ─── */}
-                <div ref={rightColRef} className="w-full md:w-1/2 flex flex-col z-20 mt-12 md:mt-0 relative">
+                {/* ─── RIGHT: Tab content (fixed height, animated swap) ─── */}
+                <div className="w-full md:w-1/2 md:h-screen md:sticky md:top-0 flex flex-col justify-center z-20 relative overflow-hidden">
 
                     {/* Vertical Rail + Glowing Dot */}
                     <div className="absolute left-4 lg:left-12 top-0 bottom-0 w-[1px] bg-[#E8C96A]/30 z-30 hidden md:block">
                         <motion.div
                             className="absolute w-3 h-3 rounded-full bg-[#E8C96A] shadow-[0_0_15px_#E8C96A]"
-                            style={{ left: "-5px", top: dotTop }}
+                            style={{ left: "-5px" }}
+                            animate={{ top: dotPercent }}
+                            transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
                         />
                     </div>
 
-                    {tabs.map((tab, index) => (
+                    {/* Scroll progress bar at bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#E8C96A]/10 z-30 hidden md:block">
                         <motion.div
-                            key={index}
-                            onViewportEnter={() => updateActiveIndex(index)}
-                            viewport={{ amount: 0.5 }}
-                            className="w-full h-auto md:h-screen flex flex-col justify-center p-6 md:p-12 lg:p-24 lg:pl-20 xl:pl-32 mb-16 md:mb-0"
+                            className="h-full bg-[#E8C96A]"
+                            animate={{ width: `${((activeIndex + 1) / tabs.length) * 100}%` }}
+                            transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+                        />
+                    </div>
+
+                    <AnimatePresence initial={false} custom={direction} mode="wait">
+                        <motion.div
+                            key={activeIndex}
+                            custom={direction}
+                            variants={{
+                                enter: (dir) => ({ y: dir > 0 ? 60 : -60, opacity: 0 }),
+                                center: { y: 0, opacity: 1 },
+                                exit: (dir) => ({ y: dir > 0 ? -60 : 60, opacity: 0 })
+                            }}
+                            initial="enter"
+                            animate="center"
+                            exit="exit"
+                            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+                            className="w-full flex flex-col justify-center p-6 md:p-12 lg:p-24 lg:pl-20 xl:pl-32"
                         >
-                            <motion.div
-                                initial={{ opacity: 0.5, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: false, amount: 0.3 }}
-                                transition={{ duration: 0.6, ease: "easeOut" }}
-                                className="flex flex-col gap-12 w-full"
-                            >
-                                {tab.type === "stats" && (
+                            <div className="flex flex-col gap-12 w-full">
+                                {tabs[activeIndex].type === "stats" && (
                                     <div className="flex flex-col gap-6 md:gap-12 w-full">
-                                        <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-2 md:mb-4">{tab.title}</span>
-                                        {tab.stats.map((stat, i) => (
+                                        <span className="font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-2 md:mb-4">{tabs[activeIndex].title}</span>
+                                        {tabs[activeIndex].stats.map((stat, i) => (
                                             <div key={i} className="flex flex-row items-center gap-6 md:gap-8 xl:gap-16 w-full">
-                                                <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-light text-[4rem] md:text-[6rem] xl:text-[7rem] text-[#E8C96A] tracking-tighter min-w-[100px] md:min-w-[150px] xl:min-w-[180px] leading-none">{stat.value}</span>
-                                                <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-medium text-base md:text-xl xl:text-2xl text-[#FFFFFF] leading-tight whitespace-pre-line uppercase tracking-wide">{stat.label}</span>
+                                                <span className="font-light text-[4rem] md:text-[6rem] xl:text-[7rem] text-[#E8C96A] tracking-tighter min-w-[100px] md:min-w-[150px] xl:min-w-[180px] leading-none">{stat.value}</span>
+                                                <span className="font-medium text-base md:text-xl xl:text-2xl text-[#FFFFFF] leading-tight whitespace-pre-line uppercase tracking-wide">{stat.label}</span>
                                             </div>
                                         ))}
                                     </div>
                                 )}
 
-                                {tab.type === "values" && (
+                                {tabs[activeIndex].type === "values" && (
                                     <div className="flex flex-col w-full max-w-2xl">
-                                        <span className="'Helvetica Neue', Helvetica, Arial, sans-serif font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-8">{tab.title}</span>
+                                        <span className="font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-8">{tabs[activeIndex].title}</span>
                                         <div
                                             className="flex flex-col rounded-2xl md:rounded-[2rem] overflow-hidden border border-[#E8C96A]/25"
                                             style={{
@@ -197,13 +255,12 @@ export default function AboutUsSticky() {
                                                 boxShadow: "0 8px 48px rgba(0,0,0,0.55), inset 0 0 0 1px rgba(232,201,106,0.08), 0 0 0 1px rgba(232,201,106,0.12)",
                                             }}
                                         >
-                                            {tab.values.map((val, i) => (
+                                            {tabs[activeIndex].values.map((val, i) => (
                                                 <div
                                                     key={i}
                                                     className="group flex flex-row items-center justify-between p-6 md:p-8 xl:p-10 border-b border-[#E8C96A]/10 last:border-0 transition-all duration-300 relative overflow-hidden"
                                                     style={{ cursor: "default" }}
                                                 >
-                                                    {/* Row hover shimmer */}
                                                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                                                         style={{ background: "linear-gradient(90deg, rgba(232,201,106,0.06) 0%, rgba(232,201,106,0.02) 60%, transparent 100%)" }}
                                                     />
@@ -218,42 +275,40 @@ export default function AboutUsSticky() {
                                     </div>
                                 )}
 
-                                {tab.type === "team" && (
+                                {tabs[activeIndex].type === "team" && (
                                     <div className="flex flex-col items-center justify-center w-full h-full relative">
-                                        <h3 className="tracking-tighter z-0 leading-none whitespace-nowrap absolute top-[-3rem]" style={{ fontFamily: 'sans-serif', color: '#E8C96A', fontSize: '5rem' }}>{tab.title}</h3>
+                                        <h3 className="tracking-tighter z-0 leading-none whitespace-nowrap absolute top-[-3rem]" style={{ fontFamily: 'sans-serif', color: '#E8C96A', fontSize: '5rem' }}>{tabs[activeIndex].title}</h3>
                                         <div className="relative w-full aspect-[4/3] xl:aspect-video z-10 mt-6 rounded-2xl overflow-hidden shadow-2xl border border-[#E8C96A]/20">
-                                            <Image src={tab.teamImage} alt="Our Team" fill className="object-cover rounded-[2rem]" />
-                                            <div className=" absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent opacity-60" />
+                                            <Image src={tabs[activeIndex].teamImage} alt="Our Team" fill className="object-cover rounded-[2rem]" />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent opacity-60" />
                                         </div>
                                         <div className="mt-12 flex flex-col items-center text-center gap-4 z-20">
-                                            {tab.roles.map((line, i) => (
+                                            {tabs[activeIndex].roles.map((line, i) => (
                                                 <p key={i} className="text-xs sm:text-sm xl:text-base tracking-[0.2em] text-[#EDEDED] font-bold uppercase opacity-90" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{line}</p>
                                             ))}
                                         </div>
                                     </div>
                                 )}
 
-                                {tab.type === "founders" && (
+                                {tabs[activeIndex].type === "founders" && (
                                     <div className="flex flex-col sm:flex-row gap-8 w-full items-start">
-                                        {/* Large portrait card */}
                                         <div className="flex flex-col relative w-full sm:w-[45%] flex-shrink-0 aspect-[3/4] group rounded-2xl overflow-hidden border border-[#E8C96A]/30 shadow-2xl bg-[#0F1E38]">
-                                            {tab.founders.map((founder, i) => (
+                                            {tabs[activeIndex].founders.map((founder, i) => (
                                                 <div key={i} className="relative w-full h-full">
                                                     <Image src={founder.image} alt={founder.name} fill className="object-cover opacity-90 grayscale group-hover:grayscale-0 transition-all duration-500" />
                                                     <div className="absolute inset-0 bg-gradient-to-t from-[#000] via-transparent to-transparent opacity-60" />
-                                                    <span className="absolute bottom-4 left-0 right-0 text-center 'Helvetica Neue', Helvetica, Arial, sans-serif font-bold text-base text-[#EDEDED] px-2">{founder.name}</span>
+                                                    <span className="absolute bottom-4 left-0 right-0 text-center font-bold text-base text-[#EDEDED] px-2">{founder.name}</span>
                                                 </div>
                                             ))}
                                         </div>
-                                        {/* Heading fills remaining space */}
                                         <div className="flex-1 flex items-end pb-4">
-                                            <h3 className="text-[3rem] xl:text-[5rem] tracking-tighter text-[#E8C96A] leading-[0.9]" style={{ fontFamily: 'sans-serif' }}>{tab.title}</h3>
+                                            <h3 className="text-[3rem] xl:text-[5rem] tracking-tighter text-[#E8C96A] leading-[0.9] whitespace-pre-line" style={{ fontFamily: 'sans-serif' }}>{tabs[activeIndex].title}</h3>
                                         </div>
                                     </div>
                                 )}
-                            </motion.div>
+                            </div>
                         </motion.div>
-                    ))}
+                    </AnimatePresence>
                 </div>
             </div>
         </section>
