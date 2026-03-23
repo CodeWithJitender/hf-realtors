@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef } from "react";
 import gsap from "gsap";
@@ -136,8 +136,8 @@ export default function HowWeEngage() {
           Our Services
         </p> */}
         <h2
-          className="text-[clamp(2.5rem,5vw,5rem)] font-bold uppercase tracking-tighter text-[#E8C96A] leading-tight"
-          style={{ fontFamily: "var(--font-display)" }}
+          className="text-[clamp(2.5rem,5vw,5rem)] font-bold uppercase tracking-tighter leading-tight"
+          style={{ fontFamily: "var(--font-display)", color: "#E8C96A" }}
         >
           How We Engage
         </h2>

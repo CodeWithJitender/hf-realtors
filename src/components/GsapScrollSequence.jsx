@@ -111,8 +111,8 @@ export default function GsapScrollSequence() {
             className="flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto z-40"
           >
             <h2
-              className="text-[#E8C96A] leading-[1.1] font-bold uppercase tracking-tighter mb-8"
-              style={{ fontSize: "var(--text-fluid-h2)", fontFamily: 'var(--font-display)' }}
+              className="leading-[1.1] font-bold uppercase tracking-tighter mb-8"
+              style={{ fontSize: "var(--text-fluid-h2)", fontFamily: 'var(--font-display)', color: "#E8C96A" }}
             >
               Building and Managing Real Estate Value
             </h2>

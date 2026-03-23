@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
@@ -13,7 +13,8 @@ export default function Button({
     onClick,
     href = "#",
     variant = "solid",
-    showArrow = true
+    showArrow = true,
+    target
 }) {
     const buttonRef = useRef(null);
 
@@ -126,7 +127,7 @@ export default function Button({
     const baseClasses = `relative rounded-[4rem] group inline-flex items-center justify-center cursor-pointer transition-colors duration-300 isolate ${className}`;
 
     const Wrapper = MotionLink;
-    const wrapperProps = { href, rel: "noopener noreferrer", onClick };
+    const wrapperProps = { href, target, rel: target === "_blank" ? "noopener noreferrer" : undefined, onClick };
 
     return (
         <Wrapper

@@ -181,7 +181,7 @@ function TeamContent({ tab, isActive }) {
                 initial={{ opacity: 0, y: 16 }}
                 animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="hidden md:block tracking-tighter text-[#E8C96A] leading-none mb-6 w-full"
+                className="hidden md:block tracking-tighter text-[#E8C96A] leading-none mb-6 w-full text-center"
                 style={{ fontSize: "var(--text-fluid-h2)", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
             >
                 {tab.title}

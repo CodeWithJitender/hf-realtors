@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
@@ -167,7 +167,7 @@ export default function AgencyOffice() {
                   {loc.description}
                 </p>
 
-                <Button variant="gold" href={loc.mapLink}>
+                <Button variant="gold" href={loc.mapLink} target="_blank">
                   <span style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 700 }}>SHOW ON MAP</span>
                 </Button>
               </motion.div>

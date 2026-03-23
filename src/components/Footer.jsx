@@ -13,9 +13,9 @@ export default function Footer() {
 
             {/* Top Section: Massive Hook */}
             <div className="text-center mb-16 relative">
-                <RevealText delay={0.1} as="h2" className="font-medium uppercase text-[#EDEDED] mb-2 leading-[1] tracking-tight drop-shadow-md" style={{ fontSize: "var(--text-fluid-footer)" }}>
-                    <span className="block" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>LET'S WORK</span>
-                    <span className="block" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>TOGETHER</span>
+                <RevealText delay={0.1} as="h2" className="font-medium uppercase text-[#EDEDED] mb-2 leading-[1] tracking-tight drop-shadow-md">
+                    <span className="block" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontSize: "clamp(3rem, 7vw, 8rem)" }}>LET'S WORK</span>
+                    <span className="block" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontSize: "clamp(3rem, 7vw, 8rem)" }}>TOGETHER</span>
                 </RevealText>
             </div>
 
