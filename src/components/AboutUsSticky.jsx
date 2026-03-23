@@ -134,9 +134,9 @@ export default function AboutUsSticky() {
                 {/* ─── LEFT: Sticky panel ─── */}
                 <div className="w-full md:w-1/2 md:sticky md:top-0 md:h-screen flex flex-col justify-center p-6 md:p-12 lg:p-24 lg:pr-12 pt-24 md:pt-0 z-10">
 
-                    <span className="font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-4 md:mb-6 block">ABOUT US</span>
+                    <span className="font-medium text-[#E8C96A] uppercase tracking-widest mb-4 md:mb-6 block" style={{ fontSize: "var(--text-fluid-xs)" }}>ABOUT US</span>
 
-                    <h2 className="text-[1.85rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] tracking-tight leading-[1.1] md:leading-[1.05] text-[#EDEDED] mb-6 md:mb-10" style={{ fontFamily: 'sans-serif' }}>
+                    <h2 className="tracking-tight leading-[1.1] md:leading-[1.05] text-[#EDEDED] mb-6 md:mb-10" style={{ fontSize: "var(--text-fluid-h1)", fontFamily: 'sans-serif' }}>
                         Transform A Space for Work, Into A Space for Life
                     </h2>
 
@@ -155,7 +155,7 @@ export default function AboutUsSticky() {
                                             <polygon points="5 3 19 12 5 21 5 3" fill="#E8C96A" />
                                         </svg>
                                     </div>
-                                    <span className={`transition-colors duration-300 whitespace-nowrap ${isActive ? 'text-[#E8C96A] font-bold text-base md:text-lg lg:text-xl' : 'text-[#8A98A5] font-semibold text-base md:text-lg lg:text-xl group-hover:text-[#EDEDED]'}`}>
+                                    <span className={`transition-colors duration-300 whitespace-nowrap ${isActive ? 'text-[#E8C96A] font-bold' : 'text-[#8A98A5] font-semibold group-hover:text-[#EDEDED]'}`} style={{ fontSize: "var(--text-fluid-body)" }}>
                                         {tab.label}
                                     </span>
                                 </div>
@@ -236,8 +236,8 @@ export default function AboutUsSticky() {
                                         <span className="font-medium text-[#E8C96A] uppercase tracking-widest text-[10px] md:text-sm mb-2 md:mb-4">{tabs[activeIndex].title}</span>
                                         {tabs[activeIndex].stats.map((stat, i) => (
                                             <div key={i} className="flex flex-row items-center gap-6 md:gap-8 xl:gap-16 w-full">
-                                                <span className="font-light text-[4rem] md:text-[6rem] xl:text-[7rem] text-[#E8C96A] tracking-tighter min-w-[100px] md:min-w-[150px] xl:min-w-[180px] leading-none">{stat.value}</span>
-                                                <span className="font-medium text-base md:text-xl xl:text-2xl text-[#FFFFFF] leading-tight whitespace-pre-line uppercase tracking-wide">{stat.label}</span>
+                                                <span className="font-light text-[#E8C96A] tracking-tighter leading-none" style={{ fontSize: "var(--text-fluid-stat)", minWidth: "clamp(100px,12vw,180px)" }}>{stat.value}</span>
+                                                <span className="font-medium text-[#FFFFFF] leading-tight whitespace-pre-line uppercase tracking-wide" style={{ fontSize: "var(--text-fluid-h4)" }}>{stat.label}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -265,10 +265,10 @@ export default function AboutUsSticky() {
                                                         style={{ background: "linear-gradient(90deg, rgba(232,201,106,0.06) 0%, rgba(232,201,106,0.02) 60%, transparent 100%)" }}
                                                     />
                                                     <div className="flex flex-col relative z-10">
-                                                        <span className="font-bold text-lg md:text-2xl mb-1 md:mb-3" style={{ color: "#E8C96A" }}>{val.title}</span>
-                                                        <span className="text-sm md:text-base text-[#EDEDED] whitespace-pre-line leading-relaxed opacity-70">{val.desc}</span>
+                                                        <span className="font-bold mb-1 md:mb-3" style={{ color: "#E8C96A", fontSize: "var(--text-fluid-h4)" }}>{val.title}</span>
+                                                        <span className="text-[#EDEDED] whitespace-pre-line leading-relaxed opacity-70" style={{ fontSize: "var(--text-fluid-body)" }}>{val.desc}</span>
                                                     </div>
-                                                    <span className="font-light text-[3.5rem] md:text-[5rem] leading-none ml-4 relative z-10 transition-opacity duration-300 opacity-30 group-hover:opacity-60" style={{ color: "#E8C96A" }}>{val.num}</span>
+                                                    <span className="font-light leading-none ml-4 relative z-10 transition-opacity duration-300 opacity-30 group-hover:opacity-60" style={{ color: "#E8C96A", fontSize: "var(--text-fluid-stat-sm)" }}>{val.num}</span>
                                                 </div>
                                             ))}
                                         </div>
@@ -277,14 +277,14 @@ export default function AboutUsSticky() {
 
                                 {tabs[activeIndex].type === "team" && (
                                     <div className="flex flex-col items-center justify-center w-full h-full relative">
-                                        <h3 className="tracking-tighter z-0 leading-none whitespace-nowrap absolute top-[-3rem]" style={{ fontFamily: 'sans-serif', color: '#E8C96A', fontSize: '5rem' }}>{tabs[activeIndex].title}</h3>
+                                        <h3 className="tracking-tighter z-0 leading-none whitespace-nowrap absolute top-[-3rem]" style={{ fontFamily: 'sans-serif', color: '#E8C96A', fontSize: "var(--text-fluid-h2)" }}>{tabs[activeIndex].title}</h3>
                                         <div className="relative w-full aspect-[4/3] xl:aspect-video z-10 mt-6 rounded-2xl overflow-hidden shadow-2xl border border-[#E8C96A]/20">
                                             <Image src={tabs[activeIndex].teamImage} alt="Our Team" fill className="object-cover rounded-[2rem]" />
                                             <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent opacity-60" />
                                         </div>
                                         <div className="mt-12 flex flex-col items-center text-center gap-4 z-20">
                                             {tabs[activeIndex].roles.map((line, i) => (
-                                                <p key={i} className="text-xs sm:text-sm xl:text-base tracking-[0.2em] text-[#EDEDED] font-bold uppercase opacity-90" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{line}</p>
+                                                <p key={i} className="tracking-[0.2em] text-[#EDEDED] font-bold uppercase opacity-90" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontSize: "var(--text-fluid-xs)" }}>{line}</p>
                                             ))}
                                         </div>
                                     </div>
@@ -302,7 +302,7 @@ export default function AboutUsSticky() {
                                             ))}
                                         </div>
                                         <div className="flex-1 flex items-end pb-4">
-                                            <h3 className="text-[3rem] xl:text-[5rem] tracking-tighter text-[#E8C96A] leading-[0.9] whitespace-pre-line" style={{ fontFamily: 'sans-serif' }}>{tabs[activeIndex].title}</h3>
+                                            <h3 className="tracking-tighter text-[#E8C96A] leading-[0.9] whitespace-pre-line" style={{ fontFamily: 'sans-serif', fontSize: "var(--text-fluid-h1)" }}>{tabs[activeIndex].title}</h3>
                                         </div>
                                     </div>
                                 )}

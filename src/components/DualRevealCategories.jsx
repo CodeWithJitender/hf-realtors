@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -112,7 +112,7 @@ export default function DualRevealCategories() {
                                         <motion.h3
                                             animate={{ opacity: titleOpacity }}
                                             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                                            className="text-4xl sm:text-5xl md:text-6xl lg:text-[7rem] font-extrabold tracking-tighter text-[#F9F8F6] uppercase leading-[0.85]"
+                                            className="font-extrabold tracking-tighter text-[#F9F8F6] uppercase leading-[0.85]" style={{ fontSize: "var(--text-fluid-hero)" }}
                                         >
                                             {service.title}
                                         </motion.h3>
@@ -135,7 +135,7 @@ export default function DualRevealCategories() {
                                         {isHovered && (
                                             <div className="w-full lg:w-1/2">
                                                 <RevealText delay={0.1}>
-                                                    <p className="text-lg md:text-3xl text-white/90 font-light max-w-xl leading-relaxed">
+                                                    <p className="text-white/90 font-light max-w-xl leading-relaxed" style={{ fontSize: "var(--text-fluid-h3)" }}>
                                                         {service.desc}
                                                     </p>
                                                 </RevealText>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -33,9 +33,9 @@ export default function FeaturedProject() {
                         </div>
                     </RevealText>
                     <RevealText delay={0.2}>
-                        <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-[#F9F8F6] leading-[1.1]">
+                        <h2 className="font-bold tracking-tighter text-[#F9F8F6] leading-[1.1]" style={{ fontSize: "var(--text-fluid-h1)" }}>
                             The standard of <br />
-                            <span className="text-white/40 italic font-normal text-3xl md:text-5xl">executable vision.</span>
+                            <span className="text-white/40 italic font-normal" style={{ fontSize: "var(--text-fluid-h2)" }}>executable vision.</span>
                         </h2>
                     </RevealText>
                 </div>
@@ -61,7 +61,7 @@ export default function FeaturedProject() {
                     {/* Bottom-Left Anchored Content */}
                     <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 flex flex-col justify-end">
                         <RevealText delay={0.3}>
-                            <h3 className="text-4xl md:text-7xl lg:text-[6rem] font-bold tracking-tighter text-[#EDEDED] leading-none mb-6 drop-shadow-2xl">
+                            <h3 className="font-bold tracking-tighter text-[#EDEDED] leading-none mb-6 drop-shadow-2xl" style={{ fontSize: "var(--text-fluid-h1)" }}>
                                 Blueberry Hill<br />ADU
                             </h3>
                         </RevealText>

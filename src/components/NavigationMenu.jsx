@@ -122,8 +122,9 @@ function NavLinks({ setIsOpen }) {
                                 <Link
                                     href={link.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="text-5xl md:text-7xl lg:text-[7rem] font-medium tracking-tighter leading-none block"
+                                    className="font-medium tracking-tighter leading-none block"
                                     style={{
+                                        fontSize: "var(--text-fluid-nav)",
                                         color:
                                             hoveredIndex === i ? "transparent" : "#FFFFFF",
                                         backgroundImage:

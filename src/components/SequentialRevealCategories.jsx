@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -72,8 +72,8 @@ function ServiceCard({ service, index, totalCount, isActive }) {
             color: isActive ? "#E8C96A" : "#FFFFFF",
           }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-[7rem] font-medium tracking-tight uppercase leading-[0.85]"
-          style={{ fontFamily: "var(--font-display)" }}
+          className="font-medium tracking-tight uppercase leading-[0.85]"
+          style={{ fontSize: "clamp(1.25rem, 6vw, 6.5rem)", fontFamily: "var(--font-display)" }}
         >
           {service.title}
         </motion.h3>
@@ -129,8 +129,8 @@ function ServiceCard({ service, index, totalCount, isActive }) {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 8, opacity: 0 }}
               transition={{ duration: 0.5, delay: 0.28, ease: "easeOut" }}
-              className="text-lg md:text-2xl leading-relaxed mb-2"
-              style={{ color: "#7A8FAB", fontFamily: "var(--font-body)", fontWeight: 400 }}
+              className="leading-relaxed mb-2"
+              style={{ fontSize: "var(--text-fluid-h4)", color: "#7A8FAB", fontFamily: "var(--font-body)", fontWeight: 400 }}
             >
               {service.desc}
             </motion.p>

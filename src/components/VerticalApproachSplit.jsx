@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef, useState } from "react";
 import Image from "next/image";
@@ -56,11 +56,11 @@ export default function VerticalApproachSplit() {
                         About Us
                     </span>
 
-                    <h2 className="text-[2.5rem] sm:text-[3rem] lg:text-[4rem] tracking-tight leading-[1.05] text-[#EDEDED] mb-6" style={{ fontFamily: 'sans-serif' }}>
+                    <h2 className="tracking-tight leading-[1.05] text-[#EDEDED] mb-6" style={{ fontSize: "var(--text-fluid-h1)", fontFamily: 'sans-serif' }}>
                         Transform A Space for Work, <br className="hidden lg:block" /> Into A Space for Life
                     </h2>
 
-                    <p className="'Helvetica Neue', Helvetica, Arial, sans-serif text-[#EDEDED]/80 text-base lg:text-lg max-w-lg mb-12 lg:mb-16 leading-relaxed">
+                    <p className="'Helvetica Neue', Helvetica, Arial, sans-serif text-[#EDEDED]/80 max-w-lg mb-12 lg:mb-16 leading-relaxed" style={{ fontSize: "var(--text-fluid-body)" }}>
                         HF Realtors is a reliable architecture & real estate firm in the global market that provides integrated services for elite emotional acquisition.
                     </p>
 
@@ -82,8 +82,8 @@ export default function VerticalApproachSplit() {
                                         </svg>
                                     </div>
                                     <span
-                                        className={`'Helvetica Neue', Helvetica, Arial, sans-serif text-base lg:text-lg transition-colors duration-500 cursor-pointer ${isActive ? 'text-[#E8C96A]' : 'text-[#EDEDED]/50 hover:text-[#EDEDED]/80'}`}
-                                        style={{ fontFamily: 'sans-serif' }}
+                                        className={`'Helvetica Neue', Helvetica, Arial, sans-serif transition-colors duration-500 cursor-pointer ${isActive ? 'text-[#E8C96A]' : 'text-[#EDEDED]/50 hover:text-[#EDEDED]/80'}`}
+                                        style={{ fontFamily: 'sans-serif', fontSize: "var(--text-fluid-body)" }}
                                         onClick={() => setActiveIndex(i)}
                                     >
                                         {service.navLabel}
@@ -152,12 +152,11 @@ export default function VerticalApproachSplit() {
 
                                 <div className="pl-6 border-l-2 border-[#E8C96A]/30 py-2">
                                     <h3
-                                        className="text-2xl sm:text-3xl lg:text-4xl text-[#E8C96A] mb-4 tracking-tight"
-                                        style={{ fontFamily: 'sans-serif' }}
+                                        className="text-[#E8C96A] mb-4 tracking-tight" style={{ fontSize: "var(--text-fluid-h3)", fontFamily: 'sans-serif' }}
                                     >
                                         {service.title}
                                     </h3>
-                                    <p className="'Helvetica Neue', Helvetica, Arial, sans-serif text-[#EDEDED]/90 text-base sm:text-justify lg:text-lg max-w-md leading-relaxed mb-8">
+                                    <p className="'Helvetica Neue', Helvetica, Arial, sans-serif text-[#EDEDED]/90 max-w-md leading-relaxed mb-8" style={{ fontSize: "var(--text-fluid-body)" }}>
                                         {service.desc}
                                     </p>
                                     <Button variant="outlined">

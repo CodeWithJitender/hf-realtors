@@ -126,10 +126,10 @@ function StatsContent({ tab, isActive }) {
             {tab.stats.map((stat, i) => (
                 <FadeUp key={i} delay={0.1 + i * 0.12} animate={anim}>
                     <div className="flex flex-row items-center w-full">
-                        <span className="font-light text-[4rem] md:text-[6rem] xl:text-[9rem] text-[#E8C96A] tracking-tighter w-[140px] md:w-[220px] xl:w-[320px] flex-shrink-0 leading-none" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
+                        <span className="font-light text-[#E8C96A] tracking-tighter flex-shrink-0 leading-none" style={{ fontSize: "var(--text-fluid-stat)", width: "clamp(110px,18vw,320px)", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                             {stat.value}
                         </span>
-                        <span className="font-medium text-base md:text-xl xl:text-2xl text-[#fff] leading-tight whitespace-pre-line uppercase tracking-wide" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
+                        <span className="font-medium text-[#fff] leading-tight whitespace-pre-line uppercase tracking-wide" style={{ fontSize: "var(--text-fluid-h4)", fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                             {stat.label}
                         </span>
                     </div>
@@ -161,10 +161,10 @@ function ValuesContent({ tab, isActive }) {
                                 style={{ background: "linear-gradient(90deg, rgba(232,201,106,0.06) 0%, rgba(232,201,106,0.02) 60%, transparent 100%)" }}
                             />
                             <div className="flex flex-col relative z-10">
-                                <span className="font-bold text-lg md:text-2xl text-[#E8C96A] mb-1" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.title}</span>
-                                <span className="text-sm md:text-base text-[#EDEDED]/70 whitespace-pre-line leading-relaxed" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.desc}</span>
+                                <span className="font-bold text-[#E8C96A] mb-1" style={{ fontSize: "var(--text-fluid-h4)", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.title}</span>
+                                <span className="text-[#EDEDED]/70 whitespace-pre-line leading-relaxed" style={{ fontSize: "var(--text-fluid-body)", fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.desc}</span>
                             </div>
-                            <span className="font-light text-[3rem] md:text-[4.5rem] leading-none text-[#E8C96A] opacity-25 group-hover:opacity-50 ml-4 relative z-10 transition-opacity duration-300" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.num}</span>
+                            <span className="font-light leading-none text-[#E8C96A] opacity-25 group-hover:opacity-50 ml-4 relative z-10 transition-opacity duration-300" style={{ fontSize: "var(--text-fluid-stat-sm)", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.num}</span>
                         </div>
                     </FadeUp>
                 ))}
@@ -181,8 +181,8 @@ function TeamContent({ tab, isActive }) {
                 initial={{ opacity: 0, y: 16 }}
                 animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="hidden md:block text-[2.5rem] lg:text-[3.5rem] xl:text-[4.5rem] tracking-tighter text-[#E8C96A] leading-none mb-6 w-full"
-                style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
+                className="hidden md:block tracking-tighter text-[#E8C96A] leading-none mb-6 w-full"
+                style={{ fontSize: "var(--text-fluid-h2)", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
             >
                 {tab.title}
             </motion.h3>
@@ -496,7 +496,7 @@ function MobileReveal() {
                     {/* About Us content anchored to bottom, no dead whitespace */}
                     <div className="absolute inset-0 flex flex-col justify-end px-6 pb-16" style={{ backgroundColor: "#0A1628" }}>
                         <span className="block 'Helvetica Neue', Helvetica, Arial, sans-serif font-semibold text-[#E8C96A] uppercase tracking-widest text-[10px] mb-4">ABOUT US</span>
-                        <h2 className="text-[2.2rem] font-bold tracking-tight leading-[1.2] text-[#E8C96A] mb-4 pb-1" style={{ fontFamily: "var(--font-display)" }}>
+                        <h2 className="font-bold tracking-tight leading-[1.2] text-[#E8C96A] mb-4 pb-1" style={{ fontSize: "var(--text-fluid-h2)", fontFamily: "var(--font-display)" }}>
                             Leading the Future of Real Estate
                         </h2>
                         <p className="text-sm leading-relaxed" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>
@@ -528,8 +528,8 @@ function MobileReveal() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
                             >
-                                <span className="font-light text-[3.5rem] text-[#E8C96A] tracking-tighter min-w-[110px] leading-none" style={{ fontFamily: "var(--font-display)" }}>{stat.value}</span>
-                                <span className="font-semibold text-sm uppercase tracking-wide whitespace-pre-line leading-tight" style={{ color: "#C5D6EE", fontFamily: "var(--font-body)" }}>{stat.label}</span>
+                                <span className="font-light text-[#E8C96A] tracking-tighter leading-none" style={{ fontSize: "var(--text-fluid-stat-sm)", fontFamily: "var(--font-display)" }}>{stat.value}</span>
+                                <span className="font-semibold uppercase tracking-wide whitespace-pre-line leading-tight" style={{ fontSize: "var(--text-fluid-xs)", color: "#C5D6EE", fontFamily: "var(--font-body)" }}>{stat.label}</span>
                             </motion.div>
                         ))}
                     </div>
@@ -563,10 +563,10 @@ function MobileReveal() {
                                 transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                             >
                                 <div className="flex flex-col">
-                                    <span className="font-bold text-base text-[#E8C96A] mb-1" style={{ fontFamily: "var(--font-display)" }}>{val.title}</span>
-                                    <span className="text-xs leading-relaxed" style={{ color: "#7A8FAB", fontFamily: "var(--font-body)" }}>{val.desc}</span>
+                                    <span className="font-bold text-[#E8C96A] mb-1" style={{ fontSize: "var(--text-fluid-body)", fontFamily: "var(--font-display)" }}>{val.title}</span>
+                                    <span className="leading-relaxed" style={{ fontSize: "var(--text-fluid-xs)", color: "#7A8FAB", fontFamily: "var(--font-body)" }}>{val.desc}</span>
                                 </div>
-                                <span className="font-light text-[2.5rem] text-[#E8C96A] opacity-20 ml-4 leading-none" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.num}</span>
+                                <span className="font-light text-[#E8C96A] opacity-20 ml-4 leading-none" style={{ fontSize: "var(--text-fluid-stat-sm)", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{val.num}</span>
                             </motion.div>
                         ))}
                     </div>
@@ -660,8 +660,8 @@ function TabButton({ tab, index, activeIndex }) {
                 </svg>
             </motion.div>
             <motion.span
-                style={{ color: textColor, fontWeight }}
-                className="'Helvetica Neue', Helvetica, Arial, sans-serif whitespace-nowrap text-base md:text-lg lg:text-xl group-hover:text-[#0A1628] transition-colors duration-300"
+                style={{ color: textColor, fontWeight, fontSize: "var(--text-fluid-body)", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
+                className="whitespace-nowrap group-hover:text-[#0A1628] transition-colors duration-300"
             >
                 {tab.label}
             </motion.span>

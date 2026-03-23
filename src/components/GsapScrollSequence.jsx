@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef } from "react";
 import gsap from "gsap";
@@ -111,8 +111,8 @@ export default function GsapScrollSequence() {
             className="flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto z-40"
           >
             <h2
-              className="text-[#E8C96A] text-3xl md:text-5xl lg:text-[4rem] leading-[1.1] font-bold uppercase tracking-tighter mb-8"
-              style={{ fontFamily: 'var(--font-display)' }}
+              className="text-[#E8C96A] leading-[1.1] font-bold uppercase tracking-tighter mb-8"
+              style={{ fontSize: "var(--text-fluid-h2)", fontFamily: 'var(--font-display)' }}
             >
               Building and Managing Real Estate Value
             </h2>

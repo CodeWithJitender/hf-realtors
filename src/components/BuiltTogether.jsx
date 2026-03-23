@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef } from "react";
 import gsap from "gsap";
@@ -86,7 +86,7 @@ export default function BuiltTogether() {
             <h2 
               ref={headlineRef}
               className="text-[#1A1A1A] text-[13vw] leading-[0.85] w-full text-center uppercase tracking-tighter whitespace-nowrap will-change-transform"
-              style={{ fontFamily: 'var(--font-futura), 'Helvetica Neue', Helvetica, Arial, sans-serif', fontWeight: '800' }}
+              style={{ fontFamily: "\"Helvetica Neue\", Helvetica, Arial, sans-serif", fontWeight: '800' }}
             >
               Built Together
             </h2>
@@ -96,7 +96,7 @@ export default function BuiltTogether() {
         <div className="px-4 mb-24 md:mb-32">
             <p 
               ref={paragraphRef}
-              className="text-[#1A1A1A]/90 text-lg md:text-2xl lg:text-[1.75rem] max-w-4xl leading-[1.4] font-serif tracking-normal will-change-transform"
+              className="text-[#1A1A1A]/90 max-w-4xl leading-[1.4] font-serif tracking-normal will-change-transform" style={{ fontSize: "var(--text-fluid-h4)" }}
             >
               At HF Realtors, we build lasting partnerships based <br className="hidden md:block"/>
               on shared vision and sustainable growth. We're <br className="hidden md:block" />

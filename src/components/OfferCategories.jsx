@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -99,7 +99,7 @@ export default function OfferCategories() {
                                             {/* Font-extrabold and tracking-tighter as per instruction */}
                                             <motion.h3
                                                 animate={{ opacity: isHovered ? 1 : 0.4 }}
-                                                className="text-4xl sm:text-5xl md:text-6xl lg:text-[6.5rem] font-extrabold tracking-tighter text-[#F9F8F6] uppercase transition-colors duration-500 leading-[0.85]"
+                                                className="font-extrabold tracking-tighter text-[#F9F8F6] uppercase transition-colors duration-500 leading-[0.85]" style={{ fontSize: "var(--text-fluid-hero)" }}
                                             >
                                                 {service.title}
                                             </motion.h3>
@@ -120,7 +120,7 @@ export default function OfferCategories() {
                                         {/* Only mount RevealText when expanded to trigger the Telha Clarke staggered animation */}
                                         {isHovered && (
                                             <RevealText delay={0}>
-                                                <p className="text-base md:text-2xl text-white/80 font-normal max-w-2xl leading-relaxed mt-2 pb-2">
+                                                <p className="text-white/80 font-normal max-w-2xl leading-relaxed mt-2 pb-2" style={{ fontSize: "var(--text-fluid-h3)" }}>
                                                     {service.desc}
                                                 </p>
                                             </RevealText>

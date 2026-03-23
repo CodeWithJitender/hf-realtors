@@ -58,10 +58,25 @@
   --font-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   /* Fluid Typography Scale */
-  --text-fluid-h1: clamp(2.5rem, 8vw, 5.5rem);
-  --text-fluid-h2: clamp(2rem, 5vw, 3.5rem);
-  --text-fluid-h3: clamp(1.25rem, 3vw, 2rem);
-  --text-fluid-body: clamp(1rem, 1.5vw, 1.25rem);
+  /* Hero / Display — very large titles */
+  --text-fluid-hero:    clamp(3rem, 9vw, 9rem);
+  --text-fluid-hero-sub: clamp(1.5rem, 4vw, 4.5rem);
+  /* Section headings */
+  --text-fluid-h1:      clamp(2.25rem, 6vw, 5.5rem);
+  --text-fluid-h2:      clamp(1.75rem, 4.5vw, 3.5rem);
+  --text-fluid-h3:      clamp(1.35rem, 3vw, 2.25rem);
+  --text-fluid-h4:      clamp(1.1rem, 2vw, 1.5rem);
+  /* Stat / Number display */
+  --text-fluid-stat:    clamp(3rem, 7vw, 9rem);
+  --text-fluid-stat-sm: clamp(2rem, 4vw, 4.5rem);
+  /* Navigation */
+  --text-fluid-nav:     clamp(2.5rem, 7vw, 7rem);
+  /* Footer hook */
+  --text-fluid-footer:  clamp(3rem, 8vw, 9rem);
+  /* Body & small text */
+  --text-fluid-body:    clamp(0.9rem, 1.4vw, 1.125rem);
+  --text-fluid-sm:      clamp(0.8rem, 1.1vw, 0.95rem);
+  --text-fluid-xs:      clamp(0.65rem, 0.9vw, 0.75rem);
 
   /* Shape / Radius Tokens */
   --radius-theme-card: 4rem;

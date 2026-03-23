@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -83,7 +83,7 @@ export default function WhyHFRealtors() {
                 {/* 2 & 3. Scrub Text Area */}
                 <div ref={scrubRef} className="flex flex-col items-center w-full">
                     {/* 2. Dominant Serif Heading (H1 context) */}
-                    <h3 className="mb-12 text-5xl sm:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-serif font-medium tracking-tight leading-[0.9] max-w-6xl drop-shadow-md text-center">
+                    <h3 className="mb-12 font-serif font-medium tracking-tight leading-[0.9] max-w-6xl drop-shadow-md text-center" style={{ fontSize: "var(--text-fluid-h1)" }}>
                         <ScrubWord progress={scrubProgress} range={[0, 0.15]}>Value</ScrubWord>{" "}
                         <ScrubWord progress={scrubProgress} range={[0.15, 0.3]}>Through</ScrubWord>
                         <br className="hidden md:block" />
@@ -91,7 +91,7 @@ export default function WhyHFRealtors() {
                     </h3>
 
                     {/* 3. Elegant Editorial Body Copy */}
-                    <p className="mb-6 text-lg md:text-xl lg:text-2xl 'Helvetica Neue', Helvetica, Arial, sans-serif max-w-4xl leading-relaxed text-center">
+                    <p className="mb-6 'Helvetica Neue', Helvetica, Arial, sans-serif max-w-4xl leading-relaxed text-center" style={{ fontSize: "var(--text-fluid-h4)" }}>
                         {bodyWords.map((word, i) => {
                             const start = 0.45 + (i / bodyWords.length) * 0.55;
                             const end = start + (0.55 / bodyWords.length);
@@ -108,7 +108,7 @@ export default function WhyHFRealtors() {
                 </div>
 
                 <RevealText delay={0.4} className="mb-16 mt-6">
-                    <p className="text-base md:text-lg text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif max-w-2xl leading-relaxed">
+                    <p className="text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif max-w-2xl leading-relaxed" style={{ fontSize: "var(--text-fluid-body)" }}>
                         Acquire a property through our strategic advisory and receive comprehensive 3D interior design and spatial planning completely free, powered exclusively by our partners at GlocalDesign.in.
                     </p>
                 </RevealText>

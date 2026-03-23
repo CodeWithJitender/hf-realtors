@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { Mail, Linkedin, MessagesSquare } from "lucide-react";
@@ -13,7 +13,7 @@ export default function Footer() {
 
             {/* Top Section: Massive Hook */}
             <div className="text-center mb-16 relative">
-                <RevealText delay={0.1} as="h2" className="text-6xl md:text-8xl lg:text-9xl font-medium uppercase text-[#EDEDED] mb-2 leading-[1] tracking-tight drop-shadow-md">
+                <RevealText delay={0.1} as="h2" className="font-medium uppercase text-[#EDEDED] mb-2 leading-[1] tracking-tight drop-shadow-md" style={{ fontSize: "var(--text-fluid-footer)" }}>
                     <span className="block" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>LET'S WORK</span>
                     <span className="block" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>TOGETHER</span>
                 </RevealText>
@@ -22,7 +22,7 @@ export default function Footer() {
             {/* Middle Section: Contact Info */}
             <div className="flex flex-col items-center mb-16">
                 <RevealText delay={0.2} className="mb-4">
-                    <p className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[#E8C96A] uppercase" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 500 }}>
+                    <p className="font-semibold tracking-[0.2em] text-[#E8C96A] uppercase" style={{ fontSize: "var(--text-fluid-xs)", fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 500 }}>
                         CONNECT WITH US
                     </p>
                 </RevealText>
@@ -47,7 +47,7 @@ export default function Footer() {
             </div>
 
             {/* Bottom Meta Row */}
-            <div className="w-full max-w-7xl border-t border-[#EDEDED]/10 pt-8 mt-auto flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] md:text-xs text-[#EDEDED]/60 font-medium tracking-wide">
+            <div className="w-full max-w-7xl border-t border-[#EDEDED]/10 pt-8 mt-auto flex flex-col md:flex-row items-center justify-between gap-6 text-[#EDEDED]/60 font-medium tracking-wide" style={{ fontSize: "var(--text-fluid-xs)" }}>
 
                 <div className="text-center md:text-left" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                     &copy; {currentYear} HF Realtors
@@ -82,7 +82,7 @@ function SocialIcon({ icon, text, href, label }) {
             {icon ? (
                 icon
             ) : (
-                <span className="font-bold text-lg md:text-xl">{text}</span>
+                <span className="font-bold" style={{ fontSize: "var(--text-fluid-sm)" }}>{text}</span>
             )}
         </a>
     );

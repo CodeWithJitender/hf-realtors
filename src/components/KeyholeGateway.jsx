@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef } from "react";
 import Image from "next/image";
@@ -46,7 +46,7 @@ export default function KeyholeGateway() {
                         <div className="absolute inset-0 bg-[#0A1628]/90 mix-blend-multiply" />
 
                         <div className="relative z-10 flex flex-col items-center justify-center h-full max-w-4xl mx-auto px-fluid-container text-center">
-                            <h2 className="text-[2.5rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] 'Helvetica Neue', Helvetica, Arial, sans-serif font-bold uppercase tracking-tight text-[#E8C96A] leading-[1] mb-6 drop-shadow-lg">
+                            <h2 className="'Helvetica Neue', Helvetica, Arial, sans-serif font-bold uppercase tracking-tight text-[#E8C96A] leading-[1] mb-6 drop-shadow-lg" style={{ fontSize: "var(--text-fluid-h1)" }}>
                                 Why HF Realtors
                             </h2>
                             <p className="text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif text-lg md:text-xl mb-10 drop-shadow-md">

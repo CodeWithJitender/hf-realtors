@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef, useEffect } from "react";
 
@@ -141,8 +141,8 @@ export default function Hero() {
                         <div className="lg:col-span-8 xl:col-span-7 flex flex-col justify-end">
                             <RevealText delay={0.4}>
                                 <h1 className="tracking-tight text-[#FFFFFF] leading-[1] lg:leading-[0.9] pb-4 drop-shadow-xl">
-                                    <span className="block font-bold" style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)", fontFamily: "var(--font-display)" }}>Real Estate.</span>
-                                    <span className="block font-light italic -mt-1" style={{ fontSize: "clamp(1.8rem, 4.5vw, 4.5rem)", fontFamily: "var(--font-display)", color: "#C5D6EE" }}>Managed end-to-end.</span>
+                                    <span className="block font-bold" style={{ fontSize: "var(--text-fluid-hero)", fontFamily: "var(--font-display)" }}>Real Estate.</span>
+                                    <span className="block font-light italic -mt-1" style={{ fontSize: "var(--text-fluid-hero-sub)", fontFamily: "var(--font-display)", color: "#C5D6EE" }}>Managed end-to-end.</span>
                                 </h1>
                             </RevealText>
                         </div>

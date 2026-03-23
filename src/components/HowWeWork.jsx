@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import RevealText from "@/components/RevealText";
@@ -37,7 +37,7 @@ export default function HowWeWork() {
                         <h2>The Journey</h2>
                     </RevealText>
                     <RevealText delay={0.2}>
-                        <h3 className="text-4xl sm:text-5xl font-serif font-medium tracking-tight leading-tight text-[#EDEDED] drop-shadow-md">
+                        <h3 className="font-serif font-medium tracking-tight leading-tight text-[#EDEDED] drop-shadow-md" style={{ fontSize: "var(--text-fluid-h2)" }}>
                             Progressive <br /> Reveal.
                         </h3>
                     </RevealText>
@@ -54,12 +54,12 @@ export default function HowWeWork() {
                             </h2>
                         </RevealText>
                         <RevealText delay={0.2} className="mt-6">
-                            <h3 className="text-6xl xl:text-7xl font-serif font-medium tracking-tight text-[#EDEDED] leading-[1] drop-shadow-md">
+                            <h3 className="font-serif font-medium tracking-tight text-[#EDEDED] leading-[1] drop-shadow-md" style={{ fontSize: "var(--text-fluid-h1)" }}>
                                 Progressive <br /> Reveal.
                             </h3>
                         </RevealText>
                         <RevealText delay={0.3} className="mt-8">
-                            <p className="text-[#EDEDED] text-lg sm:text-xl 'Helvetica Neue', Helvetica, Arial, sans-serif leading-relaxed max-w-lg">
+                            <p className="text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif leading-relaxed max-w-lg" style={{ fontSize: "var(--text-fluid-body)" }}>
                                 Our 5-step methodology ensures absolute precision from conceptualization to execution, delivering unmatched wealth-tech service tailored to your distinct operational reality.
                             </p>
                         </RevealText>
@@ -109,12 +109,12 @@ export default function HowWeWork() {
                                         </p>
                                     </RevealText>
                                     <RevealText delay={0.2} className="mb-6">
-                                        <h4 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tighter text-[#E8C96A] leading-[1.1]">
+                                        <h4 className="font-bold tracking-tighter text-[#E8C96A] leading-[1.1]" style={{ fontSize: "var(--text-fluid-h2)" }}>
                                             {step.title}
                                         </h4>
                                     </RevealText>
                                     <RevealText delay={0.3}>
-                                        <p className="text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif text-base sm:text-lg lg:text-xl leading-relaxed">
+                                        <p className="text-[#EDEDED] 'Helvetica Neue', Helvetica, Arial, sans-serif leading-relaxed" style={{ fontSize: "var(--text-fluid-body)" }}>
                                             {step.desc}
                                         </p>
                                     </RevealText>
