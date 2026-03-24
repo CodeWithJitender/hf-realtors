@@ -71,7 +71,7 @@ function FadeUp({ children, delay = 0, animate = "visible", className = "" }) {
 // ─── Tab Data ──────────────────────────────────────────────────────
 const tabs = [
     {
-        id: "who-we-are", label: "Who We Are", image: "/images/interior.png",
+        id: "who-we-are", label: "Who We Are", image: "/images/who-we-are-left-side.jpg",
         type: "stats", title: "WHO WE ARE",
         stats: [
             { value: "18+", label: "Years Of\nExperience" },
@@ -80,7 +80,7 @@ const tabs = [
         ],
     },
     {
-        id: "our-values", label: "Our Values", image: "/images/hero.png",
+        id: "our-values", label: "Our Values", image: "/images/our-value-left-side.jpg",
         type: "values", title: "OUR VALUES",
         values: [
             { num: "01", title: "Transparency ", desc: "Clear communication and honest guidance at every step." },
@@ -90,7 +90,7 @@ const tabs = [
         ],
     },
     {
-        id: "our-team", label: "Our Team", image: "/images/interior.png",
+        id: "our-team", label: "Our Team", image: "/images/our-team-left-side.jpg",
         type: "team", title: "Our Team",
         teamImage: "/images/hero.png",
         roles: [
@@ -98,7 +98,7 @@ const tabs = [
         ],
     },
     {
-        id: "founders", label: "Founders", image: "/images/hero.png",
+        id: "founders", label: "Founders", image: "/images/founder-left-side.jpg",
         type: "founders", title: "Meet Our\nFounders",
         founders: [
             { name: "Kunal Jaggi", image: "https://cdn.theorg.com/707fe690-ab0c-4006-8499-de47610e4fff_medium.jpg" },
@@ -429,7 +429,7 @@ function DesktopReveal() {
                         style={{ x: leftX, clipPath: "polygon(0 0, 50% 0, 50% 100%, 0 100%)" }}
                         className="absolute inset-0 bg-[#0A1628] will-change-transform"
                     >
-                        <Image src="/images/splitreveal-bg.jpg" alt="Split Left" fill className="object-cover" priority />
+                        <Image src="/images/pioneeering-bg.jpg" alt="Split Left" fill className="object-cover" priority />
                         <div className="absolute inset-0 bg-[#0A1628]/80 mix-blend-multiply" />
                         <SplitText />
                     </motion.div>
@@ -437,7 +437,7 @@ function DesktopReveal() {
                         style={{ x: rightX, clipPath: "polygon(50% 0, 100% 0, 100% 100%, 50% 100%)" }}
                         className="absolute inset-0 bg-[#0A1628] will-change-transform"
                     >
-                        <Image src="/images/splitreveal-bg.jpg" alt="Split Right" fill className="object-cover" priority />
+                        <Image src="/images/pioneeering-bg.jpg" alt="Split Right" fill className="object-cover" priority />
                         <div className="absolute inset-0 bg-[#0A1628]/80 mix-blend-multiply" />
                         <SplitText />
                     </motion.div>
@@ -456,10 +456,10 @@ function MobileReveal() {
         offset: ["start start", "end end"],
     });
 
-    // Doors slide open over the first 70% of the scroll, then fade
-    const leftX = useTransform(scrollYProgress, [0, 0.7], ["0%", "-100%"]);
-    const rightX = useTransform(scrollYProgress, [0, 0.7], ["0%", "100%"]);
-    const doorOpacity = useTransform(scrollYProgress, [0.65, 0.85], [1, 0]);
+    // Doors slide open over the first 60% of the scroll, then fade
+    const leftX = useTransform(scrollYProgress, [0.05, 0.6], ["0%", "-100%"]);
+    const rightX = useTransform(scrollYProgress, [0.05, 0.6], ["0%", "100%"]);
+    const doorOpacity = useTransform(scrollYProgress, [0.58, 0.72], [1, 0]);
 
     // Shared fade-up variant for section entries
     const sectionVariants = {
@@ -470,7 +470,7 @@ function MobileReveal() {
     return (
         <div>
             {/* ―― 1. Door Animation ―― */}
-            <section ref={doorRef} className="relative h-[130vh]">
+            <section ref={doorRef} className="relative h-[250vh]">
                 <div className="sticky top-0 h-screen overflow-hidden">
                     <motion.div style={{ opacity: doorOpacity }} className="absolute inset-0 z-50 pointer-events-none">
                         {/* Left door */}
@@ -478,7 +478,7 @@ function MobileReveal() {
                             style={{ x: leftX, clipPath: "polygon(0 0, 50% 0, 50% 100%, 0 100%)" }}
                             className="absolute inset-0 bg-[#0A1628] will-change-transform"
                         >
-                            <Image src="/images/splitreveal-bg.jpg" alt="" fill className="object-cover" priority />
+                            <Image src="/images/pioneeering-bg.jpg" alt="" fill className="object-cover" priority />
                             <div className="absolute inset-0 bg-[#0A1628]/80 mix-blend-multiply" />
                             <SplitText />
                         </motion.div>
@@ -487,7 +487,7 @@ function MobileReveal() {
                             style={{ x: rightX, clipPath: "polygon(50% 0, 100% 0, 100% 100%, 50% 100%)" }}
                             className="absolute inset-0 bg-[#0A1628] will-change-transform"
                         >
-                            <Image src="/images/splitreveal-bg.jpg" alt="" fill className="object-cover" priority />
+                            <Image src="/images/pioneeering-bg.jpg" alt="" fill className="object-cover" priority />
                             <div className="absolute inset-0 bg-[#0A1628]/80 mix-blend-multiply" />
                             <SplitText />
                         </motion.div>

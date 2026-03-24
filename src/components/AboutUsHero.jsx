@@ -29,7 +29,7 @@ export default function AboutUsHero() {
             >
                 <Image
                     // You can replace this placeholder with a more suitable resort/building image
-                    src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1920"
+                    src="/images/about-us/hero-bg.jpeg"
                     alt="Phuket Real Estate"
                     fill
                     className="object-cover"

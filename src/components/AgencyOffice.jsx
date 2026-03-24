@@ -10,7 +10,7 @@ const locations = [
     city: "Sector 57",
     title: "Sector 57 Office B-73, Block B Noida",
     // description: "THE OFFICE IN OPUS TOWER SYMBOLIZES NOT ONLY OUR SUCCESS, BUT ALSO OUR HIGH STATUS IN THE MARKET. IT IS A PLACE WHERE WORLD-CLASS DEALS ARE CREATED AND EVERY ELEMENT SURROUNDS OUR CLIENTS WITH LUXURY AND COMFORT.",
-    bgImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2940&auto=format&fit=crop",
+    bgImage: "/images/sector-57-bg.jpeg",
     mapLink: "https://maps.app.goo.gl/xKD2DmjAMfifYppC7",
     images: [
       "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800",
@@ -23,7 +23,7 @@ const locations = [
     city: "Sector 58",
     title: "Sector 58 Office 108, Block A Noida",
     // description: "AN ARCHITECTURAL MASTERPIECE IN THE HEART OF BANGKOK, DESIGNED TO REFLECT PRESTIGE AND INNOVATION. EXPERIENCE OUR PREMIUM REAL ESTATE SERVICES IN A SETTING THAT REDEFINES CORPORATE LUXURY.",
-    bgImage: "https://images.unsplash.com/photo-1565008576549-57569a49371d?q=80&w=2940&auto=format&fit=crop",
+    bgImage: "/images/sector-58-bg.jpeg",
     mapLink: "https://maps.app.goo.gl/JbwBNekmHtPV5mwq5",
     images: [
       "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800",
@@ -36,7 +36,7 @@ const locations = [
     city: "Sector 59",
     title: "Sector 59 Office B-8, B Block Noida",
     // description: "AN ICONIC PRESENCE IN THE HEART OF LONDON. OUR OFFICE IN THE SHARD OFFERS UNPARALLELED VIEWS AND WORLD-CLASS AMENITIES, REFLECTING OUR COMMITMENT TO EXCELLENCE AND GLOBAL REACH.",
-    bgImage: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2940&auto=format&fit=crop",
+    bgImage: "/images/sector-59-bg.jpeg",
     mapLink: "https://maps.app.goo.gl/f6NKG1CFWtuWmjit5",
     images: [
       "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
@@ -154,7 +154,7 @@ export default function AgencyOffice() {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="flex flex-col items-start"
               >
-                  <h2
+                <h2
                   className="'Helvetica Neue', Helvetica, Arial, sans-serif font-extrabold text-fluid-h1 tracking-tighter leading-[1.05] uppercase mb-6"
                   style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: "#EDEDED" }}
                 >

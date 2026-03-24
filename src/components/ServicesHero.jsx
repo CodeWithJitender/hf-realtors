@@ -43,7 +43,7 @@ export default function ServicesHero() {
           style={{ borderRadius: "16px", border: "1px solid rgba(232,201,106,0.15)" }}
         >
           <Image
-            src="/images/management_dashboard.png"
+            src="/images/services/elevate-your.jpg"
             alt="Plan Your Schedule Dashboard"
             fill
             className="object-cover object-center transform hover:scale-105 transition-transform duration-700 ease-out"

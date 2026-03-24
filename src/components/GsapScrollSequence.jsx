@@ -22,11 +22,11 @@ export default function GsapScrollSequence() {
 
   // Use same high-res images, but now they all sit in the exact center and expand to full container size
   const images = [
-    { src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800", classes: "inset-0 w-full h-full" },
-    { src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800", classes: "inset-0 w-full h-full" },
-    { src: "https://images.unsplash.com/photo-1600607687931-cebf10cb4cb0?auto=format&fit=crop&q=80&w=800", classes: "inset-0 w-full h-full" },
-    { src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=800", classes: "inset-0 w-full h-full" },
-    { src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800", classes: "inset-0 w-full h-full" }
+    { src: "/images/about-us/building-and-managing-bg-1.jpg", classes: "inset-0 w-full h-full" },
+    { src: "/images/about-us/building-and-managing-bg-2.jpg", classes: "inset-0 w-full h-full" },
+    { src: "/images/about-us/building-and-managing-bg-3.jpg", classes: "inset-0 w-full h-full" },
+    { src: "/images/about-us/building-and-managing-bg-4.jpg", classes: "inset-0 w-full h-full" },
+    { src: "/images/about-us/building-and-managing-bg-5.jpg", classes: "inset-0 w-full h-full" }
   ];
 
   useGSAP(() => {

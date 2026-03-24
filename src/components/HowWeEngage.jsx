@@ -18,7 +18,7 @@ const engagementData = [
     subtitle: "Finding Opportunities Worth Owning",
     description:
       "Acquiring the right property requires more than access to listings. It requires insight, timing, and careful evaluation.\n\nOur advisory-led approach helps clients identify properties with strong potential and ensures every acquisition aligns with their financial and lifestyle goals.\n\nFrom opportunity discovery to final negotiation, we guide every step of the process with precision and discretion.",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/services/property-acquisition.jpg",
   },
   {
     index: "02",
@@ -26,7 +26,7 @@ const engagementData = [
     subtitle: "Maximizing the Value of Your Asset",
     description:
       "Selling a property is as much about strategy as it is about timing. Our team develops a tailored approach to position each property effectively in the market.\n\nThrough targeted outreach, qualified buyer networks, and careful transaction management, we ensure that every sale achieves optimal value and a seamless closing experience.",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/services/property-disposition.jpg",
   },
   {
     index: "03",
@@ -34,7 +34,7 @@ const engagementData = [
     subtitle: "Connecting the Right Spaces with the Right People",
     description:
       "Whether for residential or commercial assets, successful leasing requires understanding both market demand and tenant expectations.\n\nWe manage the entire leasing process, from positioning the property to negotiating agreements and ensuring long-term stability and value for property owners.",
-    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/services/leasing-and-rental-advisory.jpg",
   },
   {
     index: "04",
@@ -42,7 +42,7 @@ const engagementData = [
     subtitle: "Managing Assets for Long-Term Performance",
     description:
       "Real estate portfolios require continuous oversight to maintain performance and value. HF Realtors provides strategic management designed to optimize asset potential while minimizing operational complexity.\n\nOur approach focuses on monitoring performance, identifying growth opportunities, and ensuring that every property contributes meaningfully to the broader portfolio.",
-    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/services/real-estate-portfolio-management.jpg",
   },
   {
     index: "05",
@@ -50,7 +50,7 @@ const engagementData = [
     subtitle: "Turning Property Into a Strategic Asset",
     description:
       "Real estate plays a powerful role in long-term wealth creation. Our advisory services help clients evaluate opportunities through the lens of risk, return, and long-term investment strategy.\n\nBy combining market intelligence with a financial perspective, we guide clients toward investments that support sustainable growth and portfolio diversification.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/services/wealth-and-investment-advisory.jpg",
   },
   {
     index: "06",
@@ -58,7 +58,7 @@ const engagementData = [
     subtitle: "Beyond the Transaction",
     description:
       "Exceptional real estate experiences extend beyond acquiring a property. Our concierge services are designed to support clients through the transition into ownership or investment.\n\nFrom property setup to design coordination and lifestyle assistance, we ensure that every aspect of the experience is seamless and thoughtfully managed.",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/services/concierge-and-lifestyle-services.jpg",
   },
 ];
 

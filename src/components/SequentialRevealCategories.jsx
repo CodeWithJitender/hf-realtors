@@ -10,37 +10,37 @@ const SERVICES = [
     id: "01",
     title: "Property Buying",
     desc: "Expert guidance to help you identify, evaluate, and acquire the right property, backed by market insight and strategic advisory.",
-    imageSrc: "/images/hero.png",
+    imageSrc: "/images/core-capabilities-1-property-buying.jpeg",
   },
   {
     id: "02",
     title: "Property Selling",
     desc: "Maximize the value of your property with targeted marketing, qualified buyers, and a smooth, well-managed transaction process.",
-    imageSrc: "/images/interior.png",
+    imageSrc: "/images/core-capabilities-2-property-selling.jpg",
   },
   {
     id: "03",
     title: "Leasing & Rentals",
     desc: "End-to-end support for leasing residential and commercial spaces, connecting the right properties with the right tenants.",
-    imageSrc: "/images/abstract_modern_building.png",
+    imageSrc: "/images/core-capabilities-3-leasing-rental.jpeg",
   },
   {
     id: "04",
     title: "Property Portfolio Management",
     desc: "Strategic management of real estate assets to help optimize performance, maintain value, and support long-term investment goals.",
-    imageSrc: "/images/hero.png",
+    imageSrc: "/images/core-capabilities-4-property-portfolio.jpeg",
   },
   {
     id: "05",
     title: "Wealth & Investment Advisory",
     desc: "Data-driven insights and expert advice to help you make informed real estate investment decisions that build lasting wealth.",
-    imageSrc: "/images/interior.png",
+    imageSrc: "/images/core-capabilities-5-wealth-investment.jpg",
   },
   {
     id: "06",
     title: "Concierge Services",
     desc: "Personalized assistance that goes beyond transactions — from property setup to design and lifestyle support.",
-    imageSrc: "/images/abstract_modern_building.png",
+    imageSrc: "/images/core-capabilities-6-concierge.jpeg",
   },
 ];
 
