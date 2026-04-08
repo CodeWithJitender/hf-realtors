@@ -75,7 +75,7 @@ const tabs = [
         type: "stats", title: "WHO WE ARE",
         stats: [
             { value: "18+", label: "Years Of\nExperience" },
-            { value: "3K", label: "Happy \nCustomers" },
+            { value: "500+", label: "Hours of \nAdvice" },
             { value: "50+", label: "Developers \n Connected" },
         ],
     },
@@ -125,8 +125,8 @@ function StatsContent({ tab, isActive }) {
         <div className="flex flex-col gap-6 md:gap-10 w-full">
             {tab.stats.map((stat, i) => (
                 <FadeUp key={i} delay={0.1 + i * 0.12} animate={anim}>
-                    <div className="flex flex-row items-center w-full">
-                        <span className="font-light text-[#E8C96A] tracking-tighter flex-shrink-0 leading-none" style={{ fontSize: "var(--text-fluid-stat)", width: "clamp(110px,18vw,320px)", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
+                    <div className="flex flex-row items-center w-full gap-6 md:gap-12">
+                        <span className="font-light text-[#E8C96A] tracking-tighter flex-shrink-0 leading-none" style={{ fontSize: "var(--text-fluid-stat)", minWidth: "clamp(150px, 26vw, 450px)", width: "clamp(150px, 26vw, 450px)", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                             {stat.value}
                         </span>
                         <span className="font-medium text-[#fff] leading-tight whitespace-pre-line uppercase tracking-wide" style={{ fontSize: "var(--text-fluid-h4)", fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
@@ -522,13 +522,13 @@ function MobileReveal() {
                         {tabs[0].stats.map((stat, i) => (
                             <motion.div
                                 key={i}
-                                className="flex flex-row items-center gap-6"
+                                className="flex flex-row items-center gap-6 md:gap-10"
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
                             >
-                                <span className="font-light text-[#E8C96A] tracking-tighter leading-none" style={{ fontSize: "var(--text-fluid-stat-sm)", fontFamily: "var(--font-display)" }}>{stat.value}</span>
+                                <span className="font-light text-[#E8C96A] tracking-tighter leading-none" style={{ fontSize: "var(--text-fluid-stat-sm)", minWidth: "120px", fontFamily: "var(--font-display)" }}>{stat.value}</span>
                                 <span className="font-semibold uppercase tracking-wide whitespace-pre-line leading-tight" style={{ fontSize: "var(--text-fluid-xs)", color: "#C5D6EE", fontFamily: "var(--font-body)" }}>{stat.label}</span>
                             </motion.div>
                         ))}

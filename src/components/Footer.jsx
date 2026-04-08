@@ -62,6 +62,8 @@ export default function Footer() {
                     <Link href="/services" className="hover:text-[#E8C96A] transition-colors">Services</Link>
                     <span className="opacity-30">-</span>
                     <Link href="/contact-us" className="hover:text-[#E8C96A] transition-colors">Contact</Link>
+                    <span className="opacity-30">-</span>
+                    <Link href="/privacy-policy" className="hover:text-[#E8C96A] transition-colors">Privacy Policy</Link>
                 </nav>
 
             </div>
