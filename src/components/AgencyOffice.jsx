@@ -13,9 +13,9 @@ const locations = [
     bgImage: "/images/sector-57-bg.jpeg",
     mapLink: "https://maps.app.goo.gl/xKD2DmjAMfifYppC7",
     images: [
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800"
+      "/images/offices/sector-57/1.jpg",
+      "/images/offices/sector-57/2.jpg",
+      "/images/offices/sector-57/3.jpg"
     ]
   },
   {
@@ -26,9 +26,9 @@ const locations = [
     bgImage: "/images/sector-58-bg.jpeg",
     mapLink: "https://maps.app.goo.gl/JbwBNekmHtPV5mwq5",
     images: [
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1497215840924-11885fcedae8?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800"
+      "/images/offices/sector-58/1.jpg",
+      "/images/offices/sector-58/2.jpg",
+      "/images/offices/sector-58/3.jpg"
     ]
   },
   {
@@ -39,9 +39,9 @@ const locations = [
     bgImage: "/images/sector-59-bg.jpeg",
     mapLink: "https://maps.app.goo.gl/f6NKG1CFWtuWmjit5",
     images: [
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+      "/images/offices/sector-59/1.jpg",
+      "/images/offices/sector-59/2.jpg",
+      "/images/offices/sector-59/3.jpg"
     ]
   }
 ];

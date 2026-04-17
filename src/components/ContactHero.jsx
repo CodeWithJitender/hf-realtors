@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useRef, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
@@ -9,93 +9,93 @@ import { usePreloader } from "@/context/PreloaderContext";
 
 // ── Magnetic gooey submit button (mirrors Button.jsx) ─────────────────
 function SubmitButton({ loading }) {
-    const btnRef = useRef(null);
-    const x = useMotionValue(0);
-    const y = useMotionValue(0);
-    const smoothX = useSpring(x, { damping: 20, stiffness: 150, mass: 0.1 });
-    const smoothY = useSpring(y, { damping: 20, stiffness: 150, mass: 0.1 });
-    const [isHovered, setIsHovered] = useState(false);
-    const [fillCoords, setFillCoords] = useState({ x: "50%", y: "50%" });
+  const btnRef = useRef(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const smoothX = useSpring(x, { damping: 20, stiffness: 150, mass: 0.1 });
+  const smoothY = useSpring(y, { damping: 20, stiffness: 150, mass: 0.1 });
+  const [isHovered, setIsHovered] = useState(false);
+  const [fillCoords, setFillCoords] = useState({ x: "50%", y: "50%" });
 
-    const handleMouseMove = (e) => {
-        if (!btnRef.current) return;
-        const { left, top, width, height } = btnRef.current.getBoundingClientRect();
-        const rawX = e.clientX - (left + width / 2);
-        const rawY = e.clientY - (top + height / 2);
-        const dist = Math.sqrt(rawX * rawX + rawY * rawY);
-        const r = 60;
-        x.set(dist > r ? (rawX / dist) * r / 2 : rawX / 2);
-        y.set(dist > r ? (rawY / dist) * r / 2 : rawY / 2);
-        if (!isHovered) {
-            setFillCoords({ x: `${((e.clientX - left) / width) * 100}%`, y: `${((e.clientY - top) / height) * 100}%` });
-        }
-    };
+  const handleMouseMove = (e) => {
+    if (!btnRef.current) return;
+    const { left, top, width, height } = btnRef.current.getBoundingClientRect();
+    const rawX = e.clientX - (left + width / 2);
+    const rawY = e.clientY - (top + height / 2);
+    const dist = Math.sqrt(rawX * rawX + rawY * rawY);
+    const r = 60;
+    x.set(dist > r ? (rawX / dist) * r / 2 : rawX / 2);
+    y.set(dist > r ? (rawY / dist) * r / 2 : rawY / 2);
+    if (!isHovered) {
+      setFillCoords({ x: `${((e.clientX - left) / width) * 100}%`, y: `${((e.clientY - top) / height) * 100}%` });
+    }
+  };
 
-    return (
-        <motion.button
-            ref={btnRef}
-            type="submit"
-            disabled={loading}
-            onMouseMove={handleMouseMove}
-            onMouseEnter={(e) => { setIsHovered(true); handleMouseMove(e); }}
-            onMouseLeave={() => { setIsHovered(false); x.set(0); y.set(0); }}
-            style={{ x: smoothX, y: smoothY }}
-            animate={{ scale: isHovered ? 1.03 : 1 }}
-            whileTap={{ scale: 0.97 }}
-            className="relative rounded-[4rem] inline-flex items-center justify-center cursor-pointer isolate disabled:opacity-60"
-        >
-            {/* SVG gooey filter */}
-            <svg style={{ visibility: "hidden", position: "absolute" }} width="0" height="0">
-                <defs>
-                    <filter id="goo-submit">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-                    </filter>
-                </defs>
-            </svg>
+  return (
+    <motion.button
+      ref={btnRef}
+      type="submit"
+      disabled={loading}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={(e) => { setIsHovered(true); handleMouseMove(e); }}
+      onMouseLeave={() => { setIsHovered(false); x.set(0); y.set(0); }}
+      style={{ x: smoothX, y: smoothY }}
+      animate={{ scale: isHovered ? 1.03 : 1 }}
+      whileTap={{ scale: 0.97 }}
+      className="relative rounded-[4rem] inline-flex items-center justify-center cursor-pointer isolate disabled:opacity-60"
+    >
+      {/* SVG gooey filter */}
+      <svg style={{ visibility: "hidden", position: "absolute" }} width="0" height="0">
+        <defs>
+          <filter id="goo-submit">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+          </filter>
+        </defs>
+      </svg>
 
-            {/* Gold gradient border */}
-            <div
-                className="absolute inset-0 rounded-[4rem] z-[-1] pointer-events-none bg-[linear-gradient(to_right,#E8C96A,#E8C96A)] p-[2px]"
-                style={{
-                    mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                    WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                    maskComposite: "exclude",
-                    WebkitMaskComposite: "xor",
-                }}
-            >
-                <div className="w-full h-full rounded-[calc(4rem-2px)] bg-transparent" />
-            </div>
+      {/* Gold gradient border */}
+      <div
+        className="absolute inset-0 rounded-[4rem] z-[-1] pointer-events-none bg-[linear-gradient(to_right,#E8C96A,#E8C96A)] p-[2px]"
+        style={{
+          mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+          WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+          maskComposite: "exclude",
+          WebkitMaskComposite: "xor",
+        }}
+      >
+        <div className="w-full h-full rounded-[calc(4rem-2px)] bg-transparent" />
+      </div>
 
-            {/* Gooey liquid fill */}
-            <div
-                className="absolute inset-[2px] rounded-[calc(4rem-2px)] z-0 pointer-events-none overflow-hidden"
-                style={{ filter: "url(#goo-submit)" }}
-            >
-                <motion.div
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: isHovered ? 35 : 0, opacity: isHovered ? 1 : 0 }}
-                    transition={{ type: "spring", stiffness: 150, damping: 20 }}
-                    style={{ left: fillCoords.x, top: fillCoords.y, background: "#EDEDED", width: "30px", height: "30px" }}
-                    className="absolute rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[1]"
-                />
-            </div>
+      {/* Gooey liquid fill */}
+      <div
+        className="absolute inset-[2px] rounded-[calc(4rem-2px)] z-0 pointer-events-none overflow-hidden"
+        style={{ filter: "url(#goo-submit)" }}
+      >
+        <motion.div
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: isHovered ? 35 : 0, opacity: isHovered ? 1 : 0 }}
+          transition={{ type: "spring", stiffness: 150, damping: 20 }}
+          style={{ left: fillCoords.x, top: fillCoords.y, background: "#EDEDED", width: "30px", height: "30px" }}
+          className="absolute rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[1]"
+        />
+      </div>
 
-            {/* Label */}
-            <span
-                className="relative z-10 flex items-center justify-center gap-2 font-bold text-[13px] md:text-sm tracking-widest pointer-events-none whitespace-nowrap uppercase px-8 py-4 transition-colors duration-500"
-                style={{ color: isHovered ? "#0A1628" : "#EDEDED", fontFamily: "'Futura', var(--font-inter), sans-serif", fontWeight: 700 }}
-            >
-                {loading ? "Sending…" : "Send Message"}
-            </span>
-        </motion.button>
-    );
+      {/* Label */}
+      <span
+        className="relative z-10 flex items-center justify-center gap-2 font-bold text-[13px] md:text-sm tracking-widest pointer-events-none whitespace-nowrap uppercase px-8 py-4 transition-colors duration-500"
+        style={{ color: isHovered ? "#0A1628" : "#EDEDED", fontFamily: "'Futura', var(--font-inter), sans-serif", fontWeight: 700 }}
+      >
+        {loading ? "Sending…" : "Send Message"}
+      </span>
+    </motion.button>
+  );
 }
 
 const EMAILJS_SERVICE_ID = "service_5ukbpwr";
 const EMAILJS_TEMPLATE_ID = "template_94wuhub";
-const EMAILJS_PUBLIC_KEY = "iaQXY9VcI_ev3jcNL";
+const EMAILJS_PUBLIC_KEY = "QpkBmnT4LJ4PGyWTX";
 
 const serviceOptions = [
   "Property Acquisition",
@@ -159,6 +159,20 @@ export default function ContactHero() {
     e.preventDefault();
     setLoading(true);
     setError("");
+
+    if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.service || !formData.message.trim()) {
+      setError("Please fill out all fields.");
+      setLoading(false);
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setError("Please enter a valid email address.");
+      setLoading(false);
+      return;
+    }
+
     try {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
@@ -281,11 +295,11 @@ export default function ContactHero() {
 
             {/* Row 2: Phone + Service */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
-              <Field label="Phone Number" name="phone" type="tel" placeholder="+1 (000) 000-0000" value={formData.phone} onChange={handleChange} />
+              <Field label="Phone Number *" name="phone" type="tel" placeholder="+1 (000) 000-0000" value={formData.phone} onChange={handleChange} />
               {/* Select */}
               <div className="flex flex-col py-5 border-b border-[#E8C96A]/20 focus-within:border-[#E8C96A] transition-colors duration-300 mb-1">
                 <label className="text-[13px] tracking-wide text-[#EDEDED]/55 mb-2 font-medium" style={{ fontFamily: "var(--font-inter), Inter, sans-serif" }}>
-                  Service Type
+                  Service Type *
                 </label>
                 <select
                   name="service"
@@ -309,14 +323,14 @@ export default function ContactHero() {
             {/* Message textarea */}
             <div className="flex flex-col py-5 border-b border-[#E8C96A]/20 focus-within:border-[#E8C96A] transition-colors duration-300 mb-8">
               <label className="text-[13px] tracking-wide text-[#EDEDED]/55 mb-2 font-medium" style={{ fontFamily: "var(--font-inter), Inter, sans-serif" }}>
-                Your Message
+                Please Describe The Type Of Service You Are Interested In *
               </label>
               <textarea
                 name="message"
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                placeholder={`Hello HF Realtors,\n\nI'm interested in discussing...`}
+                placeholder={`E.g., I am looking for guidance regarding...`}
                 className="bg-transparent focus:outline-none resize-none font-normal leading-relaxed placeholder:text-[#EDEDED]/25"
                 style={{ color: "#EDEDED", fontSize: "1.05rem", caretColor: "#E8C96A", fontFamily: "var(--font-inter), Inter, sans-serif" }}
               />
