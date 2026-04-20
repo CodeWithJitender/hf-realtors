@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function LandingHeader() {
   return (
-    <header className="w-full bg-[#293568]/0 absolute top-0 left-0 z-50 pt-6 px-6 lg:px-16 flex items-center justify-between">
+    <header className="w-full bg-[#161F48]/0 absolute top-0 left-0 z-50 pt-6 px-6 lg:px-16 flex items-center justify-between">
       {/* Left: Logo */}
       <div className="relative w-40 h-16 md:w-56 md:h-20">
         <Image 

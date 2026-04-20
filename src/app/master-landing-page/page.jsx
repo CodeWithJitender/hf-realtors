@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function MasterLandingPage() {
   return (
-    <main className="min-h-screen bg-[#293568] text-white">
+    <main className="min-h-screen bg-[#161F48] text-white">
       <LandingHeader />
       <HeroSection />
       <StatsSection />

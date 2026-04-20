@@ -151,16 +151,14 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-16 px-6 lg:px-16 overflow-hidden">
-      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/master-landing-page/hero.jpg"
           alt="Gurgaon Skyline"
           fill
-          className="object-cover opacity-30"
+          className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#293568]/95 via-[#293568]/80 to-[#293568]/60"></div>
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-center pl-0">
@@ -220,9 +218,9 @@ export default function HeroSection() {
               <div className="relative">
                 <select name="propertyType" value={formData.propertyType} onChange={handleChange} className={`${inputStyle} appearance-none`}>
                   <option value="" disabled className="text-[#E8C96A]/60">Property type</option>
-                  <option value="Residential" className="bg-[#293568]">Residential</option>
-                  <option value="Commercial" className="bg-[#293568]">Commercial</option>
-                  <option value="Retail" className="bg-[#293568]">Retail</option>
+                  <option value="Residential" className="bg-[#161F48]">Residential</option>
+                  <option value="Commercial" className="bg-[#161F48]">Commercial</option>
+                  <option value="Retail" className="bg-[#161F48]">Retail</option>
                 </select>
                 <div className="absolute right-5 top-[50%] -translate-y-1/2 pointer-events-none text-[#E8C96A]">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -232,9 +230,9 @@ export default function HeroSection() {
               <div className="relative">
                 <select name="budget" value={formData.budget} onChange={handleChange} className={`${inputStyle} appearance-none`}>
                   <option value="" disabled className="text-[#E8C96A]/60">Estimated Budget</option>
-                  <option value="5-8 Lac" className="bg-[#293568]">5-8 Lac</option>
-                  <option value="8-10 Lac" className="bg-[#293568]">8-10 Lac</option>
-                  <option value="10 Lac+" className="bg-[#293568]">10+ Lac</option>
+                  <option value="5-8 Lac" className="bg-[#161F48]">5-8 Lac</option>
+                  <option value="8-10 Lac" className="bg-[#161F48]">8-10 Lac</option>
+                  <option value="10 Lac+" className="bg-[#161F48]">10+ Lac</option>
                 </select>
                 <div className="absolute right-5 top-[50%] -translate-y-1/2 pointer-events-none text-[#E8C96A]">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>

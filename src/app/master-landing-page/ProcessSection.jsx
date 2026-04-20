@@ -27,7 +27,7 @@ export default function ProcessSection() {
   ];
 
   return (
-    <section className="w-full py-24 bg-[#293568] px-6 lg:px-16 border-t border-[#E8C96A]/10">
+    <section className="w-full py-24 bg-[#161F48] px-6 lg:px-16 border-t border-[#E8C96A]/10">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
         
         {/* Left Text Box */}

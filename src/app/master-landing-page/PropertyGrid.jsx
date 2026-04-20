@@ -14,7 +14,7 @@ export default function PropertyGrid() {
   ];
 
   return (
-    <section className="w-full py-20 bg-[#293568] px-6 lg:px-16 text-center">
+    <section className="w-full py-20 bg-[#161F48] px-6 lg:px-16 text-center">
       <div className="max-w-7xl mx-auto">
         <h2 
           className="font-semibold mb-10 bg-gradient-to-b from-[#E8C96A] to-[#B8913A] text-transparent bg-clip-text inline-block"

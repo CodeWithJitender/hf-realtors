@@ -9,7 +9,7 @@ export default function LandingFooter() {
   };
 
   return (
-    <footer className="w-full bg-[#293568] py-12 px-6 lg:px-16 border-t border-[#E8C96A]/20">
+    <footer className="w-full bg-[#161F48] py-12 px-6 lg:px-16 border-t border-[#E8C96A]/20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="text-2xl font-bold text-[#E8C96A] tracking-tighter">
           HF<span className="text-white font-light"> REALTORS</span>
