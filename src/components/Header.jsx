@@ -16,6 +16,8 @@ export default function Header() {
     const isLightPage = LIGHT_BG_PAGES.includes(pathname);
     const { isPreloaderDone } = usePreloader();
 
+    if (pathname === "/master-landing-page") return null;
+
     const [scrolled, setScrolled] = useState(false);
     const [hidden, setHidden] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);

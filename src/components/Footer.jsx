@@ -4,8 +4,13 @@ import Link from "next/link";
 import { Mail, Linkedin, MessagesSquare } from "lucide-react";
 import RevealText from "@/components/RevealText";
 import Button from "@/components/Button";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+    const pathname = usePathname();
+    
+    if (pathname === "/master-landing-page") return null;
+
     const currentYear = new Date().getFullYear();
 
     return (
