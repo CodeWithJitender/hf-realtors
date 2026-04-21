@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRouter } from "next/navigation";
 import emailjs from "@emailjs/browser";
-import CustomTurnstile from "./CustomTurnstile";
 import gsap from "gsap";
 import { usePreloader } from "@/context/PreloaderContext";
 
@@ -136,7 +135,6 @@ export default function ContactHero() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState(null);
 
   // Init EmailJS once
   useEffect(() => { emailjs.init(EMAILJS_PUBLIC_KEY); }, []);
@@ -161,12 +159,6 @@ export default function ContactHero() {
     e.preventDefault();
     setLoading(true);
     setError("");
-
-    if (!turnstileToken) {
-      setError("Please complete the CAPTCHA.");
-      setLoading(false);
-      return;
-    }
 
     if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.service || !formData.message.trim()) {
       setError("Please fill out all fields.");
@@ -351,13 +343,6 @@ export default function ContactHero() {
                 {error}
               </p>
             )}
-
-            <div className="mb-6 flex justify-center w-full">
-              <CustomTurnstile 
-                siteKey="0x4AAAAAAADAWFIhdgqs4DC1Y" 
-                onSuccess={(token) => setTurnstileToken(token)}
-              />
-            </div>
 
             {/* Submit button — real <button> so type="submit" works */}
             <SubmitButton loading={loading} />
