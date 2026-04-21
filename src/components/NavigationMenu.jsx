@@ -70,10 +70,10 @@ export default function NavigationMenu({ isOpen, setIsOpen }) {
                         >
                             <div className="flex flex-col text-sm font-semibold tracking-widest uppercase gap-1">
                                 <a
-                                    href="mailto:hello@hfrealtors.com"
-                                    className="hover:opacity-70 transition-opacity"
+                                    href="mailto:ankit@hfrealtors.com"
+                                    className="hover:text-white transition-colors duration-200"
                                 >
-                                    HELLO@HFREALTORS.COM
+                                    ankit@hfrealtors.com
                                 </a>
                             </div>
                             <div className="text-sm font-semibold tracking-widest uppercase hover:opacity-70 transition-opacity pb-1">

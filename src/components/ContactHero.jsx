@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRouter } from "next/navigation";
 import emailjs from "@emailjs/browser";
+import CustomTurnstile from "./CustomTurnstile";
 import gsap from "gsap";
 import { usePreloader } from "@/context/PreloaderContext";
 
@@ -135,6 +136,7 @@ export default function ContactHero() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState(null);
 
   // Init EmailJS once
   useEffect(() => { emailjs.init(EMAILJS_PUBLIC_KEY); }, []);
@@ -159,6 +161,12 @@ export default function ContactHero() {
     e.preventDefault();
     setLoading(true);
     setError("");
+
+    if (!turnstileToken) {
+      setError("Please complete the CAPTCHA.");
+      setLoading(false);
+      return;
+    }
 
     if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.service || !formData.message.trim()) {
       setError("Please fill out all fields.");
@@ -337,11 +345,19 @@ export default function ContactHero() {
             </div>
 
             {/* Error message */}
+            {/* error message already above, add Turnstile here */}
             {error && (
               <p className="mb-4 text-sm text-red-400" style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                 {error}
               </p>
             )}
+
+            <div className="mb-6 flex justify-center w-full">
+              <CustomTurnstile 
+                siteKey="0x4AAAAAAADAWFIhdgqs4DC1Y" 
+                onSuccess={(token) => setTurnstileToken(token)}
+              />
+            </div>
 
             {/* Submit button — real <button> so type="submit" works */}
             <SubmitButton loading={loading} />
@@ -352,8 +368,8 @@ export default function ContactHero() {
       {/* Contact links */}
       <div className="w-full flex flex-wrap justify-center gap-x-10 gap-y-4 mb-16 px-6">
         {[
-          { icon: <PhoneIcon />, label: "+1 (800) 123-4567", href: "tel:+18001234567" },
-          { icon: <EmailIcon />, label: "office@hfrealtors.com", href: "mailto:office@hfrealtors.com" },
+          { icon: <PhoneIcon />, label: "+91 99999 91036", href: "tel:+919999991036" },
+          { icon: <EmailIcon />, label: "ankit@hfrealtors.com", href: "mailto:ankit@hfrealtors.com" },
           { icon: <InstagramIcon />, label: "@hfrealtors", href: "https://instagram.com/hfrealtors" },
           { icon: <LinkedInIcon />, label: "LinkedIn", href: "https://linkedin.com/company/hfrealtors" },
         ].map(({ icon, label, href }) => (

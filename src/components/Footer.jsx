@@ -33,12 +33,12 @@ export default function Footer() {
                 </RevealText>
                 <RevealText delay={0.3}>
                     <Button
-                        href="mailto:HELLO@HFREALTORS.COM"
+                        href="mailto:ankit@hfrealtors.com"
                         variant="outlined"
                         showArrow={false}
                         className="border-transparent hover:border-[#E8C96A]/20 transition-all bg-transparent text-[#E8C96A] hover:text-[#0A1628]"
                     >
-                        <span style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 500 }}>HELLO@HFREALTORS.COM</span>
+                        <span style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 500 }}>ankit@hfrealtors.com</span>
                     </Button>
                 </RevealText>
             </div>
@@ -46,7 +46,7 @@ export default function Footer() {
             {/* Social Row */}
             <div className="flex items-center gap-4 md:gap-6 mb-24">
                 <SocialIcon icon={<MessagesSquare className="w-5 h-5" />} href="#" label="WhatsApp" />
-                <SocialIcon icon={<Mail className="w-5 h-5" />} href="mailto:hello@hfrealtors.com" label="Email" />
+                <SocialIcon icon={<Mail className="w-5 h-5" />} href="mailto:ankit@hfrealtors.com" label="Email" />
                 <SocialIcon icon={<Linkedin className="w-5 h-5" />} href="#" label="LinkedIn" />
                 <SocialIcon text="Bē" href="#" label="Behance" />
             </div>

@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Image from 'next/image';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import CustomTurnstile from '@/components/CustomTurnstile';
 
 const EMAILJS_SERVICE_ID = "service_5ukbpwr";
 const EMAILJS_TEMPLATE_ID = "template_zvqhzrw";
@@ -104,6 +105,7 @@ export default function HeroSection() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState(null);
 
   useEffect(() => {
     emailjs.init(EMAILJS_PUBLIC_KEY);
@@ -115,6 +117,12 @@ export default function HeroSection() {
     e.preventDefault();
     setLoading(true);
     setError("");
+
+    if (!turnstileToken) {
+      setError("Please complete the CAPTCHA.");
+      setLoading(false);
+      return;
+    }
 
     if (!formData.name || !formData.phone || !formData.email) {
       setError("Please fill out Name, Phone, and Email.");
@@ -272,6 +280,13 @@ export default function HeroSection() {
               />
 
               {error && <span className="text-red-400 text-sm text-center font-light">{error}</span>}
+
+              <div className="flex justify-center mt-2 mb-2 w-full">
+                <CustomTurnstile 
+                  siteKey="0x4AAAAAAADAWFIhdgqs4DC1Y" 
+                  onSuccess={(token) => setTurnstileToken(token)}
+                />
+              </div>
 
               <div className="flex justify-center mt-4">
                  <SubmitButton loading={loading} />

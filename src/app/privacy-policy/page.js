@@ -153,7 +153,7 @@ export default function PrivacyPolicy() {
           
           <div className="mt-6 p-6 bg-[#0F1E38] rounded-xl border border-[#EDEDED]/5">
             <p className="text-[#C5D6EE]/80 mb-2">To exercise your rights, please email:</p>
-            <p className="text-white font-medium">hello@hfrealtors.com</p>
+            <p className="text-white font-medium">ankit@hfrealtors.com</p>
             <p className="text-[#C5D6EE]/80 mt-2">Subject line: Data Access / Correction / Deletion Request</p>
             <p className="text-[#C5D6EE]/80 text-sm italic mt-4">We may verify your identity before processing your request.</p>
           </div>
@@ -179,7 +179,7 @@ export default function PrivacyPolicy() {
           </p>
           <ul className="list-disc pl-5 space-y-2 text-[#C5D6EE]/80">
             <li>Clicking the unsubscribe link in our emails, or</li>
-            <li>Writing to us at hello@hfrealtors.com</li>
+            <li>Writing to us at ankit@hfrealtors.com</li>
           </ul>
           <p className="text-[#C5D6EE]/80 leading-relaxed mt-4">
             We will process opt-out requests within a reasonable timeframe.
@@ -200,8 +200,8 @@ export default function PrivacyPolicy() {
           </p>
           <div className="bg-[#0F1E38] p-6 rounded-xl border border-[#EDEDED]/5 space-y-2">
             <p className="text-white font-medium text-lg">HF Realtors</p>
-            <p className="text-[#C5D6EE]/80"><span className="text-white font-medium">Email:</span> hello@hfrealtors.com</p>
-            <p className="text-[#C5D6EE]/80"><span className="text-white font-medium">Phone:</span> +971 4 456 7890</p>
+            <p className="text-[#C5D6EE]/80"><span className="text-white font-medium">Email:</span> ankit@hfrealtors.com</p>
+            <p className="text-[#C5D6EE]/80"><span className="text-white font-medium">Phone:</span> +91 99999 91036</p>
           </div>
         </section>
 

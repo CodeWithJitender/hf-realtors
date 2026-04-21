@@ -21,10 +21,10 @@ export default function LandingHeader() {
       <div className="flex items-center gap-4">
         {/* Email Pill */}
         <a 
-          href="mailto:info@hfrealtors.com" 
+          href="mailto:ankit@hfrealtors.com" 
           className="hidden md:flex items-center justify-center px-6 py-2.5 rounded-full bg-[#182046]/80 text-[#D9D9D9] text-sm hover:bg-[#182046] transition-colors"
         >
-          info@hfrealtors.com
+          ankit@hfrealtors.com
         </a>
         
         {/* Phone Pill */}
