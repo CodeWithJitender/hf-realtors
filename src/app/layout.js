@@ -9,6 +9,9 @@ import Script from "next/script";
 export const metadata = {
   title: "HF Realtors | Smart Property Decisions",
   description: "Smart property decisions. Long-term wealth creation. Real estate advisory and wealth planning.",
+  icons: {
+    icon: "/images/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
