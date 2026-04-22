@@ -191,7 +191,7 @@ export default function HeroSection() {
         </div>
 
         {/* Right Form */}
-        <div className="w-full lg:w-1/2 max-w-[500px] ml-auto">
+        <div className="w-full lg:w-1/2 max-w-[500px] mx-auto lg:ml-auto lg:mr-0">
           {submitted ? (
              <div className="bg-[#182046] border border-[#E8C96A] rounded-2xl p-10 text-center shadow-2xl">
                 <div className="w-16 h-16 rounded-full bg-[#E8C96A]/20 flex items-center justify-center mx-auto mb-4 text-[#E8C96A]">

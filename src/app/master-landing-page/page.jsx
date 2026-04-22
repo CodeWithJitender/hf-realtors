@@ -3,9 +3,11 @@ import LandingHeader from './LandingHeader';
 import HeroSection from './HeroSection';
 import StatsSection from './StatsSection';
 import ServicesSection from './ServicesSection';
+import ConciergeSection from './ConciergeSection';
 import ProcessSection from './ProcessSection';
 import PropertyGrid from './PropertyGrid';
 import LandingFooter from './LandingFooter';
+import SiteFooter from './SiteFooter';
 
 export const metadata = {
   title: "HF Realtors | Exclusive Properties",
@@ -19,9 +21,11 @@ export default function MasterLandingPage() {
       <HeroSection />
       <StatsSection />
       <ServicesSection />
+      <ConciergeSection />
       <ProcessSection />
       <PropertyGrid />
       <LandingFooter />
+      <SiteFooter />
     </main>
   );
 }

@@ -1,69 +1,113 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ProcessSection() {
+  const [activeStep, setActiveStep] = useState(null);
+
+  // Position percentages are based on a 16:9 wrapper scaling over the background image
   const steps = [
     {
-      num: "01",
-      title: "Discovery & Strategy",
-      desc: "We start by deeply understanding your portfolio goals, budget, and lifestyle requirements to curate the perfect real estate strategy."
+      id: "discovery",
+      title: "Discovery",
+      desc: "We define your requirements, budget, and timeline.",
+      pos: { top: '29.5%', left: '29.5%' },
     },
     {
-      num: "02",
+      id: "mapping",
       title: "Market Mapping",
-      desc: "Our research team maps out the finest properties and projects that align with your vision, ensuring no opportunity is missed."
+      desc: "Shortlisting across relevant NCR locations based on your goal.",
+      pos: { top: '38%', left: '36.5%' },
     },
     {
-      num: "03",
-      title: "Evaluation & Structuring",
-      desc: "We conduct rigorous due diligence, offering financial modeling, ROI evaluation, and strategic deal negotiation."
+      id: "evaluation",
+      title: "Evaluation",
+      desc: "Clear comparison of options with pros, risks, and potential.",
+      pos: { top: '49%', left: '58.5%' },
     },
     {
-      num: "04",
-      title: "Seamless Execution",
-      desc: "From paperwork to possession, our concierge team handles all formalities to ensure a frictionless transaction."
+      id: "execution",
+      title: "Execution",
+      desc: "Negotiation, documentation, and closure handled.",
+      pos: { top: '50.5%', left: '72.5%' },
     }
   ];
 
   return (
-    <section className="w-full py-24 bg-[#161F48] px-6 lg:px-16 border-t border-[#E8C96A]/10">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+    <section className="w-full py-20 lg:py-28 bg-[#161F48] border-t border-[#E8C96A]/10 overflow-hidden">
         
-        {/* Left Text Box */}
-        <div className="lg:w-1/3 flex flex-col gap-6">
+        {/* Main Heading */}
+        <div className="max-w-6xl mx-auto text-center mb-10 md:mb-16 px-4">
           <h2 
-            className="font-semibold leading-tight bg-gradient-to-b from-[#E8C96A] to-[#B8913A] text-transparent bg-clip-text"
+            className="font-semibold leading-tight bg-gradient-to-b from-[#E8C96A] to-[#B8913A] text-transparent bg-clip-text inline-block px-4"
             style={{ 
               fontFamily: "'Poppins', sans-serif", 
-              fontSize: "clamp(28px, 4vw, 36px)",
+              fontSize: "clamp(32px, 5vw, 56px)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent"
             }}
           >
-            Our Concierge <br />Approach
+            From requirement to decision, <br className="hidden md:block" />
+            structured end-to-end
           </h2>
-          <p className="text-[#D9D9D9] text-lg font-light leading-relaxed">
-            We don't just sell real estate; we manage your wealth through strategic investments. Our process is transparent, rigorous, and entirely client-centric.
-          </p>
         </div>
 
-        {/* Right Process Map */}
-        <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8 relative">
-          {/* subtle connecting line in bg for desktop */}
-          <div className="hidden sm:block absolute top-[50%] left-0 w-full h-[1px] bg-[#E8C96A]/10 -translate-y-1/2 z-0"></div>
-          <div className="hidden sm:block absolute top-0 left-[50%] w-[1px] h-full bg-[#E8C96A]/10 -translate-x-1/2 z-0"></div>
+        {/* Process Map Interactive Container (Full Width) */}
+        <div className="relative w-full overflow-visible">
+          {/* The image tag forces the exact organic aspect ratio, stopping background drift */}
+          <img 
+            src="/images/master-landing-page/fifth-sec-bg-with-point.png" 
+            alt="End-to-End Process Map"
+            className="w-full h-auto select-none pointer-events-none"
+          />
 
-          {steps.map((step, idx) => (
-            <div key={idx} className="relative z-10 bg-white/5 p-8 rounded-xl border border-[#E8C96A]/10 hover:border-[#E8C96A]/40 transition-colors shadow-lg">
-              <span className="text-4xl font-bold text-[#E8C96A]/20 absolute top-6 right-6 select-none">{step.num}</span>
-              <h4 className="text-xl font-bold text-white mb-3 mt-4">{step.title}</h4>
-              <p className="text-[#D9D9D9] text-sm leading-relaxed">{step.desc}</p>
+          {/* Absolute Interactive Overlay */}
+          <div className="absolute inset-0">
+            {steps.map((step) => (
+            <div 
+              key={step.id}
+              className="absolute z-[50]"
+              style={{ 
+                top: step.pos.top, 
+                left: step.pos.left, 
+              }}
+              onMouseEnter={() => setActiveStep(step.id)}
+              onMouseLeave={() => setActiveStep(null)}
+              onClick={() => setActiveStep(activeStep === step.id ? null : step.id)}
+            >
+              <div className="relative group cursor-pointer flex items-center select-none transform -translate-x-1/2 -translate-y-1/2">
+                {/* Invisible Hover Target over the baked-in image spot */}
+                <div className="w-10 h-3 md:w-12 md:h-4 bg-transparent cursor-pointer flex-shrink-0 relative z-10"></div>
+
+                {/* Heading Text placed absolutely to the right to prevent vertical overlap on mobile */}
+                <h3 className="absolute left-full ml-3 md:ml-4 text-white font-semibold text-[13px] md:text-base lg:text-xl whitespace-nowrap bg-[#161F48]/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none px-3 py-1.5 md:p-0 rounded-full md:rounded-none transition-all duration-300 select-none drop-shadow-md text-shadow-md group-hover:text-[#E8C96A] z-20">
+                  {step.title}
+                </h3>
+
+                {/* Pop-up Info Tooltip */}
+                <AnimatePresence>
+                  {activeStep === step.id && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full mt-3 left-1/2 -translate-x-1/2 w-[220px] md:w-[260px] p-4 bg-[#1e2a5e]/80 backdrop-blur-md border border-white/20 rounded-xl shadow-2xl z-[100] pointer-events-none"
+                    >
+                      {/* Triangle pointer linking popup to title */}
+                      <div className="absolute -top-[6px] left-1/2 -translate-x-1/2 w-3 h-3 backdrop-blur-md bg-[#253259] border-t border-l border-white/20 transform rotate-45 rounded-sm"></div>
+                      <p className="text-[#D9D9D9] text-xs md:text-sm italic font-light relative z-10 leading-relaxed text-center">
+                        {step.desc}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
           ))}
+          </div>
         </div>
-        
-      </div>
     </section>
   );
 }

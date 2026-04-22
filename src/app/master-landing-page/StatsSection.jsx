@@ -27,13 +27,12 @@ export default function StatsSection() {
             }}
           >
             Beyond{' '}
-            <span className="inline-block relative w-[40px] h-[50px] align-middle -translate-y-2 mx-1">
-              {/* Fallback to text if image not found, but we know user has second-section-icon.png */}
+            <span className="inline-block relative w-[200px] md:w-[250px] h-[50px] md:h-[65px] align-middle -translate-y-2 mx-1">
               <Image 
                 src="/images/master-landing-page/second-section-icon.png" 
                 alt="Person reaching star" 
                 fill 
-                className="object-contain" 
+                className="object-contain object-left" 
               />
             </span>
             <br />
@@ -61,12 +60,11 @@ export default function StatsSection() {
       </div>
 
       {/* Bottom Image (Skyline) */}
-      <div className="absolute bottom-0 left-0 w-full pointer-events-none opacity-80" style={{ height: "180px" }}>
-         <Image 
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none opacity-80 flex items-end">
+         <img 
            src="/images/master-landing-page/second-sec-bottom-img.png" 
            alt="Skyline Overlay" 
-           fill 
-           className="object-cover md:object-contain object-bottom" 
+           className="w-full h-auto" 
          />
       </div>
     </section>
