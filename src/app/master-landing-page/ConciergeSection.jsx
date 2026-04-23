@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ConciergeSection() {
   return (
-    <section className="relative w-full py-16 lg:py-32 bg-[#161F48] overflow-hidden">
+    <section className="relative w-full pt-16 pb-0 lg:py-32 bg-[#161F48] overflow-hidden">
       {/* Background for Desktop */}
       <div 
         className="hidden lg:block absolute inset-0 z-0"
