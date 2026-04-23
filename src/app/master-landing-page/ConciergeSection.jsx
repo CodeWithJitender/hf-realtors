@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ConciergeSection() {
   return (
-    <section className="relative w-full py-20 lg:py-32 bg-[#161F48] overflow-hidden">
+    <section className="relative w-full py-16 lg:py-32 bg-[#161F48] overflow-hidden">
       {/* Background for Desktop */}
       <div 
         className="hidden lg:block absolute inset-0 z-0"
@@ -32,7 +32,7 @@ export default function ConciergeSection() {
         {/* First Column: Text Content */}
         <div className="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left">
           <h2 
-            className="text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.15] bg-gradient-to-b from-[#E8C96A] to-[#B8913A] text-transparent bg-clip-text"
+            className="text-[32px] sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.15] bg-gradient-to-b from-[#E8C96A] to-[#B8913A] text-transparent bg-clip-text"
             style={{ WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
           >
             A concierge<br />

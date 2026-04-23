@@ -147,11 +147,16 @@ export default function HeroSection() {
     }
   };
 
-  const inputStyle = "w-full bg-[#182046] border border-[#E8C96A]/60 focus:border-[#E8C96A] py-4 px-5 text-[#E8C96A] placeholder-[#E8C96A]/60 outline-none transition-colors rounded-xl font-light text-sm shadow-md";
+  const inputStyle = "w-full bg-[#182046] border border-[#E8C96A]/60 focus:border-[#E8C96A] py-3.5 md:py-4 px-4 md:px-5 text-[#E8C96A] placeholder-[#E8C96A]/60 outline-none transition-colors rounded-xl font-light text-sm shadow-md";
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-16 px-6 lg:px-16 overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <section className="relative min-h-screen flex items-center justify-center pt-36 md:pt-40 pb-12 md:pb-16 px-6 lg:px-16 overflow-hidden">
+      <motion.div 
+        initial={{ scale: 1.1, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.5, delay: 1.2, ease: "easeOut" }}
+        className="absolute inset-0 z-0"
+      >
         <Image
           src="/images/master-landing-page/hero.jpg"
           alt="Gurgaon Skyline"
@@ -159,39 +164,52 @@ export default function HeroSection() {
           className="object-cover"
           priority
         />
-      </div>
+      </motion.div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-center pl-0">
         {/* Left Content */}
         <div className="flex flex-col gap-10 w-full lg:w-1/2 text-center lg:text-left">
-          <h1 
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="font-semibold leading-tight bg-gradient-to-b from-[#E8C96A] to-[#B8913A] text-transparent bg-clip-text"
             style={{ 
               fontFamily: "'Poppins', sans-serif", 
-              fontSize: "clamp(32px, 5vw, 40px)",
+              fontSize: "clamp(22px, 5vw, 40px)",
               maxWidth: "616px",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent"
             }}
           >
             Your personal concierge to extraordinary residential and commercial properties in Delhi NCR
-          </h1>
+          </motion.h1>
           
-          <div className="flex flex-col sm:flex-row items-center gap-5 justify-center lg:justify-start">
-            <a href="#property-grid" className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#182046] text-[#D9D9D9] border border-[#E8C96A] hover:bg-[#E8C96A] hover:text-[#0A1628] transition-colors text-sm font-light tracking-wide gap-2">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row items-center gap-5 justify-center lg:justify-start"
+          >
+            <a href="#property-grid" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#182046] text-[#D9D9D9] border border-[#E8C96A] hover:bg-[#E8C96A] hover:text-[#0A1628] transition-colors text-xs sm:text-sm font-light tracking-wide gap-2">
               Explore Opportunities &rarr;
             </a>
-            <a href="tel:9999991036" className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#182046] text-[#D9D9D9] border border-[#E8C96A] hover:bg-[#E8C96A] hover:text-[#0A1628] transition-colors text-sm font-light tracking-wide gap-3">
+            <a href="tel:9999991036" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#182046] text-[#D9D9D9] border border-[#E8C96A] hover:bg-[#E8C96A] hover:text-[#0A1628] transition-colors text-xs sm:text-sm font-light tracking-wide gap-2 sm:gap-3">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
               Speak to an Advisor
             </a>
-          </div>
+          </motion.div>
         </div>
 
         {/* Right Form */}
-        <div className="w-full lg:w-1/2 max-w-[500px] mx-auto lg:ml-auto lg:mr-0">
+        <motion.div 
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          className="w-full lg:w-1/2 max-w-[500px] mx-auto lg:ml-auto lg:mr-0"
+        >
           {submitted ? (
              <div className="bg-[#182046] border border-[#E8C96A] rounded-2xl p-10 text-center shadow-2xl">
                 <div className="w-16 h-16 rounded-full bg-[#E8C96A]/20 flex items-center justify-center mx-auto mb-4 text-[#E8C96A]">
@@ -279,7 +297,7 @@ export default function HeroSection() {
 
             </form>
           )}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

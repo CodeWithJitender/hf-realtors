@@ -16,14 +16,14 @@ export default function PropertyGrid() {
   ];
 
   return (
-    <section className="w-full py-20 lg:py-28 bg-[#161F48] px-4 lg:px-16 text-center border-t border-[#E8C96A]/10">
+    <section className="w-full py-16 lg:py-28 bg-[#161F48] px-4 lg:px-16 text-center border-t border-[#E8C96A]/10">
       <div className="max-w-6xl mx-auto">
         
         <h2 
           className="font-semibold mb-12 md:mb-16 bg-gradient-to-b from-[#E8C96A] to-[#B8913A] text-transparent bg-clip-text inline-block"
           style={{ 
             fontFamily: "'Poppins', sans-serif", 
-            fontSize: "clamp(32px, 5vw, 48px)",
+            fontSize: "clamp(28px, 6vw, 48px)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             lineHeight: "1.2"
@@ -33,7 +33,7 @@ export default function PropertyGrid() {
           developments across NCR
         </h2>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-8 lg:gap-10">
           {properties.map((prop, i) => (
             <div 
               key={i} 
@@ -48,16 +48,16 @@ export default function PropertyGrid() {
               />
               
               {/* Text Container */}
-              <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col items-center justify-end text-center h-[80px]">
+              <div className="absolute inset-x-0 bottom-0 p-4 md:p-6 flex flex-col items-center justify-end text-center h-[60px] md:h-[80px]">
                 
                 {/* Default Title - smoothly fades out and scaled to prevent harsh jumps */}
-                <h3 className="absolute bottom-6 w-full text-white font-bold text-[15px] md:text-lg tracking-wide uppercase px-4 transition-all duration-300 ease-out transform group-hover:opacity-0 group-hover:scale-95 group-hover:-translate-y-1 drop-shadow-md">
+                <h3 className="absolute bottom-4 md:bottom-6 w-full text-white font-bold text-[12px] sm:text-[14px] md:text-lg tracking-wide uppercase px-2 md:px-4 transition-all duration-300 ease-out transform group-hover:opacity-0 group-hover:scale-95 group-hover:-translate-y-1 drop-shadow-md">
                   {prop.title}
                 </h3>
 
                 {/* Hover Content - scales up and fades in cleanly */}
-                <div className="absolute bottom-6 w-full opacity-0 translate-y-2 scale-95 transition-all duration-300 ease-out transform group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 px-4">
-                  <h4 className="text-white font-bold text-[14px] md:text-base tracking-wider leading-snug drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
+                <div className="absolute bottom-4 md:bottom-6 w-full opacity-0 translate-y-2 scale-95 transition-all duration-300 ease-out transform group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 px-2 md:px-4">
+                  <h4 className="text-white font-bold text-[11px] sm:text-[13px] md:text-base tracking-wider leading-snug drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
                     {prop.hoverText}
                   </h4>
                 </div>

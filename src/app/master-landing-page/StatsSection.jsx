@@ -12,7 +12,7 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="relative w-full pt-24 pb-48 bg-[#161F48] px-6 lg:px-16 overflow-hidden">
+    <section className="relative w-full pt-16 md:pt-24 pb-24 md:pb-48 bg-[#161F48] px-6 lg:px-16 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-8 justify-between items-start">
         
         {/* Left Column */}
@@ -21,13 +21,13 @@ export default function StatsSection() {
             className="font-semibold leading-tight bg-gradient-to-b from-[#E8C96A] to-[#B8913A] text-transparent bg-clip-text"
             style={{ 
               fontFamily: "'Poppins', sans-serif", 
-              fontSize: "clamp(40px, 5vw, 64px)",
+              fontSize: "clamp(32px, 6vw, 64px)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent"
             }}
           >
             Beyond{' '}
-            <span className="inline-block relative w-[200px] md:w-[250px] h-[50px] md:h-[65px] align-middle -translate-y-2 mx-1">
+            <span className="inline-block relative w-[140px] sm:w-[180px] md:w-[250px] h-[35px] sm:h-[45px] md:h-[65px] align-middle -translate-y-1 md:-translate-y-2 mx-1">
               <Image 
                 src="/images/master-landing-page/second-section-icon.png" 
                 alt="Person reaching star" 
@@ -43,14 +43,14 @@ export default function StatsSection() {
         </div>
 
         {/* Right Column */}
-        <div className="w-full lg:w-1/2 grid grid-cols-2 gap-x-12 gap-y-16 pt-4">
+        <div className="w-full lg:w-1/2 grid grid-cols-2 gap-x-8 md:gap-x-12 gap-y-10 md:gap-y-16 pt-4">
           {stats.map((stat, idx) => (
             <div key={idx} className="flex flex-col">
-              <h3 className="text-4xl md:text-[44px] font-bold text-white mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>
+              <h3 className="text-3xl md:text-[44px] font-bold text-white mb-3 md:mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>
                 {stat.value}
               </h3>
-              <div className="w-[85%] h-[2px] bg-[#E8C96A] mb-4"></div>
-              <p className="text-[#D9D9D9] text-base md:text-[17px] italic font-light whitespace-pre-line leading-relaxed">
+              <div className="w-[85%] h-[2px] bg-[#E8C96A] mb-3 md:mb-4"></div>
+              <p className="text-[#D9D9D9] text-[14px] md:text-[17px] italic font-light whitespace-pre-line leading-relaxed">
                 {stat.label}
               </p>
             </div>

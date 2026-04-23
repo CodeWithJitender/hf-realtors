@@ -150,7 +150,7 @@ export default function LandingFooter() {
   const inputStyle = "w-full bg-transparent border border-[#E8C96A]/60 focus:border-[#E8C96A] py-4 px-5 text-[#D9D9D9] placeholder-[#E8C96A]/70 outline-none transition-colors rounded-[14px] font-light text-[14px] shadow-sm";
 
   return (
-    <section className="relative w-full bg-[#161F48] overflow-hidden pt-24 pb-8">
+    <section className="relative w-full bg-[#161F48] overflow-hidden pt-16 lg:pt-24 pb-8">
       
       {/* 
         SKYLINE & HEADERS BLOCK
@@ -169,23 +169,23 @@ export default function LandingFooter() {
         <div className="relative z-10 max-w-6xl mx-auto flex flex-col gap-20">
           
           {/* UPPER SECTION: Bordered Notification Box */}
-          <div className="w-full relative border border-[#E8C96A] rounded-[2.5rem] py-10 px-8 md:px-16 flex flex-col md:flex-row items-center gap-8 bg-[#161F48]/30 backdrop-blur-md shadow-2xl">
+          <div className="w-full relative border border-[#E8C96A] rounded-[3rem] py-12 px-6 md:px-16 flex flex-col-reverse md:flex-row items-center bg-[#161F48]/30 backdrop-blur-md shadow-2xl min-h-[240px] md:min-h-[280px]">
             {/* Star Image */}
-            <div className="relative w-28 h-40 flex-shrink-0 flex items-center justify-center">
+            <div className="relative md:absolute bottom-0 md:left-12 w-48 h-56 md:w-56 md:h-[280px] flex-shrink-0 flex items-end justify-center pointer-events-none mt-8 md:mt-0 self-center md:self-auto -mb-12 md:mb-0">
                <img 
                  src="/images/master-landing-page/star-balloon.png" 
                  alt="Star Balloon" 
-                 className="object-contain max-h-full drop-shadow-xl"
+                 className="object-contain h-full drop-shadow-xl"
                  onError={(e) => { e.target.style.display = 'none'; }}
                />
             </div>
             
             {/* Centered Text */}
-            <div className="flex-1 text-center flex justify-center">
-               <p className="text-white text-[17px] md:text-2xl leading-relaxed font-light italic tracking-wide">
-                 Because the right property is not about where <br className="hidden md:block" />
+            <div className="flex-1 text-center flex justify-center md:ml-[180px] relative z-10 w-full mb-0 md:mb-16">
+               <p className="text-white text-xl sm:text-2xl md:text-[34px] leading-relaxed font-light italic tracking-wide">
+                 Because the right property is not about where <br className="hidden lg:block" />
                  everyone is buying.<br />
-                 <span className="opacity-100 font-normal not-italic text-lg md:text-2xl block mt-2">It is about where it makes sense for you</span>
+                 <span className="opacity-100 font-normal not-italic text-2xl md:text-[36px] block mt-4">It is about where it makes sense for you</span>
                </p>
             </div>
           </div>
@@ -198,7 +198,7 @@ export default function LandingFooter() {
                 className="font-bold tracking-wide bg-gradient-to-b from-[#E8C96A] to-[#B8913A] text-transparent bg-clip-text inline-block pb-2"
                 style={{ 
                   fontFamily: "'Poppins', sans-serif", 
-                  fontSize: "clamp(32px, 4.5vw, 44px)",
+                  fontSize: "clamp(28px, 5vw, 44px)",
                   lineHeight: "1.3",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent"
@@ -218,7 +218,7 @@ export default function LandingFooter() {
               </p>
 
               {/* Base Navigational CTAs returned to their original position aligned perfectly */}
-              <div className="flex flex-col sm:flex-row justify-start md:justify-end items-start sm:items-center w-full gap-4 md:gap-6 mt-16 sm:mt-24 pointer-events-auto">
+              <div className="flex flex-col sm:flex-row justify-start md:justify-end items-start sm:items-center w-full gap-4 md:gap-6 mt-12 sm:mt-24 pointer-events-auto">
                 <a href="#property-grid" className="w-full sm:w-auto min-w-[200px] py-3.5 px-6 rounded-full border border-[#E8C96A] text-[#D9D9D9] hover:bg-[#E8C96A] hover:text-[#161F48] transition-colors text-sm font-light tracking-wide text-center">
                   Explore Opportunities &rarr;
                 </a>
@@ -239,8 +239,18 @@ export default function LandingFooter() {
         DEDICATED FORM BLOCK
       */}
       <div className="relative w-full bg-[#161F48] z-20 px-4 lg:px-16 overflow-hidden">
-         {/* Increased margins and padding perfectly to space from headers and copyright */}
-         <form onSubmit={handleSubmit} className="w-full relative flex flex-col pt-16 pb-24 mt-4 max-w-5xl mx-auto">
+         {/* Proper vertical spacing for the section */}
+         <form onSubmit={handleSubmit} className="w-full relative flex flex-col py-20 md:py-32 max-w-5xl mx-auto">
+            <h2 
+              className="text-4xl md:text-[50px] font-semibold text-center bg-gradient-to-b from-[#E8C96A] to-[#B8913A] text-transparent bg-clip-text mb-12 md:mb-20 tracking-wide self-center"
+              style={{ 
+                fontFamily: "'Poppins', sans-serif",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent"
+              }}
+            >
+              Connect with us
+            </h2>
             <div className="flex flex-col md:flex-row gap-6 lg:gap-10 w-full mb-6 relative">
               
               {/* Form Left Column */}
@@ -330,10 +340,10 @@ export default function LandingFooter() {
               </div>
             </div>
             
-            {error && <span className="text-red-400 text-sm font-light mt-2 mb-4 block text-center md:text-left">{error}</span>}
+            {error && <span className="text-red-400 text-sm font-light mt-2 mb-4 block text-center">{error}</span>}
 
             {/* Extra Submit Button generated matching identical animations to Hero form */}
-            <div className="flex justify-start w-full relative z-[100] mt-2">
+            <div className="flex justify-center w-full relative z-[100] mt-4 md:mt-8">
                <SubmitButton loading={loading} />
             </div>
               
