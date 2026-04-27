@@ -130,7 +130,7 @@ export default function LandingFooter() {
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
-          property_type: formData.propertyType,
+          propertyType: formData.propertyType,
           budget: formData.budget,
           intent: formData.intent,
           requirements: formData.requirements
@@ -273,9 +273,9 @@ export default function LandingFooter() {
                     style={{ color: !formData.budget ? 'rgba(232, 201, 106, 0.7)' : '#D9D9D9' }}
                   >
                     <option value="" disabled>Budget</option>
-                    <option value="5-8 Lac" style={{color: '#D9D9D9', background: '#161F48'}}>5-8 Lac</option>
-                    <option value="8-10 Lac" style={{color: '#D9D9D9', background: '#161F48'}}>8-10 Lac</option>
-                    <option value="10 Lac+" style={{color: '#D9D9D9', background: '#161F48'}}>10+ Lac</option>
+                    <option value="1 Cr to 1.5 Cr" style={{color: '#D9D9D9', background: '#161F48'}}>1 Cr to 1.5 Cr</option>
+                    <option value="1.5 Cr to 2.0 Cr" style={{color: '#D9D9D9', background: '#161F48'}}>1.5 Cr to 2.0 Cr</option>
+                    <option value="2 Cr +" style={{color: '#D9D9D9', background: '#161F48'}}>2 Cr +</option>
                   </select>
                   <div className="absolute right-5 top-[50%] -translate-y-1/2 pointer-events-none text-[#E8C96A]">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>

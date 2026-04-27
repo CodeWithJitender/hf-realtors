@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Image from 'next/image';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 const EMAILJS_SERVICE_ID = "service_5ukbpwr";
 const EMAILJS_TEMPLATE_ID = "template_zvqhzrw";
@@ -104,6 +105,7 @@ export default function HeroSection() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     emailjs.init(EMAILJS_PUBLIC_KEY);
@@ -130,15 +132,15 @@ export default function HeroSection() {
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
-          property_type: formData.propertyType,
+          propertyType: formData.propertyType,
           budget: formData.budget,
           intent: formData.intent,
           requirements: formData.requirements
         },
         EMAILJS_PUBLIC_KEY
       );
-      setSubmitted(true);
       setFormData({ name: "", phone: "", email: "", propertyType: "", budget: "", intent: "Buying", requirements: "" });
+      router.push('/thank-you');
     } catch (err) {
       console.error(err);
       setError("Failed to send message. Please try again.");
@@ -248,9 +250,9 @@ export default function HeroSection() {
               <div className="relative">
                 <select name="budget" value={formData.budget} onChange={handleChange} className={`${inputStyle} appearance-none`}>
                   <option value="" disabled className="text-[#E8C96A]/60">Estimated Budget</option>
-                  <option value="5-8 Lac" className="bg-[#161F48]">5-8 Lac</option>
-                  <option value="8-10 Lac" className="bg-[#161F48]">8-10 Lac</option>
-                  <option value="10 Lac+" className="bg-[#161F48]">10+ Lac</option>
+                  <option value="1 Cr to 1.5 Cr" className="bg-[#161F48]">1 Cr to 1.5 Cr</option>
+                  <option value="1.5 Cr to 2.0 Cr" className="bg-[#161F48]">1.5 Cr to 2.0 Cr</option>
+                  <option value="2 Cr +" className="bg-[#161F48]">2 Cr +</option>
                 </select>
                 <div className="absolute right-5 top-[50%] -translate-y-1/2 pointer-events-none text-[#E8C96A]">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
