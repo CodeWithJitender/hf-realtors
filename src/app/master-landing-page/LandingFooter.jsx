@@ -92,7 +92,7 @@ function SubmitButton({ loading }) {
 
 export default function LandingFooter() {
   const [formData, setFormData] = useState({ 
-    name: "", 
+    form_name: "", 
     phone: "", 
     email: "", 
     propertyType: "", 
@@ -116,8 +116,8 @@ export default function LandingFooter() {
     setLoading(true);
     setError("");
 
-    if (!formData.name || !formData.phone || !formData.email) {
-      setError("Please fill out Name, Phone, and Email.");
+    if (!formData.form_name.trim() || !formData.phone.trim() || !formData.email.trim() || !formData.propertyType || !formData.budget || !formData.requirements.trim()) {
+      setError("Please fill out all required fields.");
       setLoading(false);
       return;
     }
@@ -127,17 +127,18 @@ export default function LandingFooter() {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          propertyType: formData.propertyType,
-          budget: formData.budget,
-          intent: formData.intent,
-          requirements: formData.requirements
+          name: formData.form_name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim(),
+          propertyType: formData.propertyType || "Not Provided",
+          budget: formData.budget || "Not Provided",
+          intent: formData.intent || "Buying",
+          requirements: formData.requirements.trim() || "Not Provided",
+          time: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         },
         EMAILJS_PUBLIC_KEY
       );
-      setFormData({ name: "", phone: "", email: "", propertyType: "", budget: "", intent: "Buying", requirements: "" });
+      setFormData({ form_name: "", phone: "", email: "", propertyType: "", budget: "", intent: "Buying", requirements: "" });
       router.push('/thank-you');
     } catch (err) {
       console.error(err);
@@ -256,7 +257,7 @@ export default function LandingFooter() {
               {/* Form Left Column */}
               <div className="flex-1 flex flex-col gap-6">
                 <input 
-                  type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange}
+                  type="text" name="form_name" placeholder="Name" value={formData.form_name} onChange={handleChange}
                   className={inputStyle} required
                 />
                 <input 
@@ -271,6 +272,7 @@ export default function LandingFooter() {
                     onChange={handleChange} 
                     className={`${inputStyle} appearance-none`}
                     style={{ color: !formData.budget ? 'rgba(232, 201, 106, 0.7)' : '#D9D9D9' }}
+                    required
                   >
                     <option value="" disabled>Budget</option>
                     <option value="1 Cr to 1.5 Cr" style={{color: '#D9D9D9', background: '#161F48'}}>1 Cr to 1.5 Cr</option>
@@ -320,6 +322,7 @@ export default function LandingFooter() {
                     onChange={handleChange} 
                     className={`${inputStyle} appearance-none`}
                     style={{ color: !formData.propertyType ? 'rgba(232, 201, 106, 0.7)' : '#D9D9D9' }}
+                    required
                   >
                     <option value="" disabled>Property type</option>
                     <option value="Residential" style={{color: '#D9D9D9', background: '#161F48'}}>Residential</option>
@@ -336,6 +339,7 @@ export default function LandingFooter() {
                   value={formData.requirements} 
                   onChange={handleChange}
                   className={`${inputStyle} flex-1 resize-none h-full min-h-[140px]`}
+                  required
                 />
               </div>
             </div>

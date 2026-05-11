@@ -73,11 +73,11 @@ function SubmitButton({ loading }) {
         style={{ filter: "url(#goo-master)" }}
       >
         <motion.div
-           initial={{ scale: 0, opacity: 0 }}
-           animate={{ scale: isHovered ? 35 : 0, opacity: isHovered ? 1 : 0 }}
-           transition={{ type: "spring", stiffness: 150, damping: 20 }}
-           style={{ left: fillCoords.x, top: fillCoords.y, background: "#E8C96A", width: "30px", height: "30px" }}
-           className="absolute rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[1]"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: isHovered ? 35 : 0, opacity: isHovered ? 1 : 0 }}
+          transition={{ type: "spring", stiffness: 150, damping: 20 }}
+          style={{ left: fillCoords.x, top: fillCoords.y, background: "#E8C96A", width: "30px", height: "30px" }}
+          className="absolute rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[1]"
         />
       </div>
 
@@ -92,16 +92,16 @@ function SubmitButton({ loading }) {
 }
 
 export default function HeroSection() {
-  const [formData, setFormData] = useState({ 
-    name: "", 
-    phone: "", 
-    email: "", 
-    propertyType: "", 
-    budget: "", 
+  const [formData, setFormData] = useState({
+    form_name: "",
+    phone: "",
+    email: "",
+    propertyType: "",
+    budget: "",
     intent: "Buying",
     requirements: ""
   });
-  
+
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -118,8 +118,8 @@ export default function HeroSection() {
     setLoading(true);
     setError("");
 
-    if (!formData.name || !formData.phone || !formData.email) {
-      setError("Please fill out Name, Phone, and Email.");
+    if (!formData.form_name.trim() || !formData.phone.trim() || !formData.email.trim() || !formData.propertyType || !formData.budget || !formData.requirements.trim()) {
+      setError("Please fill out all required fields.");
       setLoading(false);
       return;
     }
@@ -129,17 +129,18 @@ export default function HeroSection() {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          propertyType: formData.propertyType,
-          budget: formData.budget,
-          intent: formData.intent,
-          requirements: formData.requirements
+          name: formData.form_name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim(),
+          propertyType: formData.propertyType || "Not Provided",
+          budget: formData.budget || "Not Provided",
+          intent: formData.intent || "Buying",
+          requirements: formData.requirements.trim() || "Not Provided",
+          time: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         },
         EMAILJS_PUBLIC_KEY
       );
-      setFormData({ name: "", phone: "", email: "", propertyType: "", budget: "", intent: "Buying", requirements: "" });
+      setFormData({ form_name: "", phone: "", email: "", propertyType: "", budget: "", intent: "Buying", requirements: "" });
       router.push('/thank-you');
     } catch (err) {
       console.error(err);
@@ -153,7 +154,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-36 md:pt-40 pb-12 md:pb-16 px-6 lg:px-16 overflow-hidden">
-      <motion.div 
+      <motion.div
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.5, delay: 1.2, ease: "easeOut" }}
@@ -171,13 +172,13 @@ export default function HeroSection() {
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-center pl-0">
         {/* Left Content */}
         <div className="flex flex-col gap-10 w-full lg:w-1/2 text-center lg:text-left">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="font-semibold leading-tight bg-gradient-to-b from-[#E8C96A] to-[#B8913A] text-transparent bg-clip-text"
-            style={{ 
-              fontFamily: "'Poppins', sans-serif", 
+            style={{
+              fontFamily: "'Poppins', sans-serif",
               fontSize: "clamp(22px, 5vw, 40px)",
               maxWidth: "616px",
               WebkitBackgroundClip: "text",
@@ -186,8 +187,8 @@ export default function HeroSection() {
           >
             Your personal concierge to extraordinary residential and commercial properties in Delhi NCR
           </motion.h1>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -206,56 +207,56 @@ export default function HeroSection() {
         </div>
 
         {/* Right Form */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="w-full lg:w-1/2 max-w-[500px] mx-auto lg:ml-auto lg:mr-0"
         >
           {submitted ? (
-             <div className="bg-[#182046] border border-[#E8C96A] rounded-2xl p-10 text-center shadow-2xl">
-                <div className="w-16 h-16 rounded-full bg-[#E8C96A]/20 flex items-center justify-center mx-auto mb-4 text-[#E8C96A]">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <h4 className="text-2xl font-bold text-[#E8C96A] mb-2">Request Received</h4>
-                <p className="text-[#D9D9D9] text-sm">Our experts will contact you shortly.</p>
-             </div>
+            <div className="bg-[#182046] border border-[#E8C96A] rounded-2xl p-10 text-center shadow-2xl">
+              <div className="w-16 h-16 rounded-full bg-[#E8C96A]/20 flex items-center justify-center mx-auto mb-4 text-[#E8C96A]">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <h4 className="text-2xl font-bold text-[#E8C96A] mb-2">Request Received</h4>
+              <p className="text-[#D9D9D9] text-sm">Our experts will contact you shortly.</p>
+            </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-[14px]">
-              <input 
-                type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange}
+              <input
+                type="text" name="form_name" placeholder="Name" value={formData.form_name} onChange={handleChange}
                 className={inputStyle} required
               />
-              <input 
+              <input
                 type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange}
                 className={inputStyle} required
               />
-              <input 
+              <input
                 type="tel" name="phone" placeholder="Phone No." value={formData.phone} onChange={handleChange}
                 className={inputStyle} required
               />
-              
+
               <div className="relative">
-                <select name="propertyType" value={formData.propertyType} onChange={handleChange} className={`${inputStyle} appearance-none`}>
+                <select name="propertyType" value={formData.propertyType} onChange={handleChange} className={`${inputStyle} appearance-none`} required>
                   <option value="" disabled className="text-[#E8C96A]/60">Property type</option>
                   <option value="Residential" className="bg-[#161F48]">Residential</option>
                   <option value="Commercial" className="bg-[#161F48]">Commercial</option>
                   <option value="Retail" className="bg-[#161F48]">Retail</option>
                 </select>
                 <div className="absolute right-5 top-[50%] -translate-y-1/2 pointer-events-none text-[#E8C96A]">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
                 </div>
               </div>
 
               <div className="relative">
-                <select name="budget" value={formData.budget} onChange={handleChange} className={`${inputStyle} appearance-none`}>
+                <select name="budget" value={formData.budget} onChange={handleChange} className={`${inputStyle} appearance-none`} required>
                   <option value="" disabled className="text-[#E8C96A]/60">Estimated Budget</option>
                   <option value="1 Cr to 1.5 Cr" className="bg-[#161F48]">1 Cr to 1.5 Cr</option>
                   <option value="1.5 Cr to 2.0 Cr" className="bg-[#161F48]">1.5 Cr to 2.0 Cr</option>
                   <option value="2 Cr +" className="bg-[#161F48]">2 Cr +</option>
                 </select>
                 <div className="absolute right-5 top-[50%] -translate-y-1/2 pointer-events-none text-[#E8C96A]">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
                 </div>
               </div>
 
@@ -270,7 +271,7 @@ export default function HeroSection() {
                   <input type="radio" name="intent" value="Buying" onChange={handleChange} className="hidden" />
                   <span className="text-[#E8C96A] font-medium text-sm">Buying</span>
                 </label>
-                
+
                 <label className="flex items-center gap-3 cursor-pointer group">
                   <div className="relative w-[22px] h-[22px] rounded-full border-[1.5px] border-[#E8C96A] flex items-center justify-center bg-transparent">
                     {formData.intent === "Leasing" && (
@@ -282,19 +283,20 @@ export default function HeroSection() {
                 </label>
               </div>
 
-              <textarea 
-                name="requirements" 
-                rows="4" 
-                placeholder="Fill in your requirements" 
-                value={formData.requirements} 
+              <textarea
+                name="requirements"
+                rows="4"
+                placeholder="Fill in your requirements"
+                value={formData.requirements}
                 onChange={handleChange}
                 className={`${inputStyle} resize-none mt-2`}
+                required
               />
 
               {error && <span className="text-red-400 text-sm text-center font-light">{error}</span>}
 
               <div className="flex justify-center mt-4">
-                 <SubmitButton loading={loading} />
+                <SubmitButton loading={loading} />
               </div>
 
             </form>
