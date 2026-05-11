@@ -72,11 +72,11 @@ function SubmitButton({ loading }) {
         style={{ filter: "url(#goo-footer)" }}
       >
         <motion.div
-           initial={{ scale: 0, opacity: 0 }}
-           animate={{ scale: isHovered ? 35 : 0, opacity: isHovered ? 1 : 0 }}
-           transition={{ type: "spring", stiffness: 150, damping: 20 }}
-           style={{ left: fillCoords.x, top: fillCoords.y, background: "#E8C96A", width: "30px", height: "30px" }}
-           className="absolute rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[1]"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: isHovered ? 35 : 0, opacity: isHovered ? 1 : 0 }}
+          transition={{ type: "spring", stiffness: 150, damping: 20 }}
+          style={{ left: fillCoords.x, top: fillCoords.y, background: "#E8C96A", width: "30px", height: "30px" }}
+          className="absolute rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[1]"
         />
       </div>
 
@@ -91,16 +91,16 @@ function SubmitButton({ loading }) {
 }
 
 export default function LandingFooter() {
-  const [formData, setFormData] = useState({ 
-    form_name: "", 
-    phone: "", 
-    email: "", 
-    propertyType: "", 
-    budget: "", 
+  const [formData, setFormData] = useState({
+    form_name: "",
+    phone: "",
+    email: "",
+    propertyType: "",
+    budget: "",
     intent: "Buying",
     requirements: ""
   });
-  
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
@@ -121,7 +121,7 @@ export default function LandingFooter() {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          name: formData.form_name.trim(),
+          form_name: formData.form_name.trim(),
           phone: formData.phone.trim(),
           email: formData.email.trim(),
           propertyType: formData.propertyType || "Not Provided",
@@ -146,12 +146,12 @@ export default function LandingFooter() {
 
   return (
     <section className="relative w-full bg-[#161F48] overflow-hidden pt-16 lg:pt-24 pb-8">
-      
+
       {/* 
         SKYLINE & HEADERS BLOCK
       */}
       <div className="relative w-full px-4 lg:px-16 overflow-hidden">
-        <div 
+        <div
           className="absolute inset-x-0 bottom-0 h-[100%] md:h-[130%] w-full pointer-events-none opacity-60 mix-blend-screen"
           style={{
             backgroundImage: "url('/images/master-landing-page/seventh-sec-bottom-bg.png')",
@@ -162,26 +162,26 @@ export default function LandingFooter() {
         ></div>
 
         <div className="relative z-10 max-w-6xl mx-auto flex flex-col gap-20">
-          
+
           {/* UPPER SECTION: Bordered Notification Box */}
           <div className="w-full relative border border-[#E8C96A] rounded-[3rem] py-12 px-6 md:px-16 flex flex-col-reverse md:flex-row items-center bg-[#161F48]/30 backdrop-blur-md shadow-2xl min-h-[240px] md:min-h-[280px]">
             {/* Star Image */}
             <div className="relative md:absolute bottom-0 md:left-12 w-48 h-56 md:w-56 md:h-[280px] flex-shrink-0 flex items-end justify-center pointer-events-none mt-8 md:mt-0 self-center md:self-auto -mb-12 md:mb-0">
-               <img 
-                 src="/images/master-landing-page/star-balloon.png" 
-                 alt="Star Balloon" 
-                 className="object-contain h-full drop-shadow-xl"
-                 onError={(e) => { e.target.style.display = 'none'; }}
-               />
+              <img
+                src="/images/master-landing-page/star-balloon.png"
+                alt="Star Balloon"
+                className="object-contain h-full drop-shadow-xl"
+                onError={(e) => { e.target.style.display = 'none'; }}
+              />
             </div>
-            
+
             {/* Centered Text */}
             <div className="flex-1 text-center flex justify-center md:ml-[180px] relative z-10 w-full mb-0 md:mb-16">
-               <p className="text-white text-xl sm:text-2xl md:text-[34px] leading-relaxed font-light italic tracking-wide">
-                 Because the right property is not about where <br className="hidden lg:block" />
-                 everyone is buying.<br />
-                 <span className="opacity-100 font-normal not-italic text-2xl md:text-[36px] block mt-4">It is about where it makes sense for you</span>
-               </p>
+              <p className="text-white text-xl sm:text-2xl md:text-[34px] leading-relaxed font-light italic tracking-wide">
+                Because the right property is not about where <br className="hidden lg:block" />
+                everyone is buying.<br />
+                <span className="opacity-100 font-normal not-italic text-2xl md:text-[36px] block mt-4">It is about where it makes sense for you</span>
+              </p>
             </div>
           </div>
 
@@ -189,10 +189,10 @@ export default function LandingFooter() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full gap-8 relative pb-20">
             {/* Left Column: Heading */}
             <div className="md:w-1/2">
-              <h2 
+              <h2
                 className="font-bold tracking-wide bg-gradient-to-b from-[#E8C96A] to-[#B8913A] text-transparent bg-clip-text inline-block pb-2"
-                style={{ 
-                  fontFamily: "'Poppins', sans-serif", 
+                style={{
+                  fontFamily: "'Poppins', sans-serif",
                   fontSize: "clamp(28px, 5vw, 44px)",
                   lineHeight: "1.3",
                   WebkitBackgroundClip: "text",
@@ -217,7 +217,7 @@ export default function LandingFooter() {
                 <a href="#property-grid" className="w-full sm:w-auto min-w-[200px] py-3.5 px-6 rounded-full border border-[#E8C96A] text-[#D9D9D9] hover:bg-[#E8C96A] hover:text-[#161F48] transition-colors text-sm font-light tracking-wide text-center">
                   Explore Opportunities &rarr;
                 </a>
-                
+
                 <a href="tel:9999991036" className="w-full sm:w-auto min-w-[200px] py-3.5 px-6 rounded-full border border-[#E8C96A] bg-transparent text-[#D9D9D9] hover:bg-[#E8C96A] hover:text-[#161F48] transition-colors text-sm font-light tracking-wide flex items-center justify-center gap-3">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                   Speak to an Advisor
@@ -234,118 +234,118 @@ export default function LandingFooter() {
         DEDICATED FORM BLOCK
       */}
       <div className="relative w-full bg-[#161F48] z-20 px-4 lg:px-16 overflow-hidden">
-         {/* Proper vertical spacing for the section */}
-         <form onSubmit={handleSubmit} className="w-full relative flex flex-col py-20 md:py-32 max-w-5xl mx-auto">
-            <h2 
-              className="text-4xl md:text-[50px] font-semibold text-center bg-gradient-to-b from-[#E8C96A] to-[#B8913A] text-transparent bg-clip-text mb-12 md:mb-20 tracking-wide self-center"
-              style={{ 
-                fontFamily: "'Poppins', sans-serif",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent"
-              }}
-            >
-              Connect with us
-            </h2>
-            <div className="flex flex-col md:flex-row gap-6 lg:gap-10 w-full mb-6 relative">
-              
-              {/* Form Left Column */}
-              <div className="flex-1 flex flex-col gap-6">
-                <input 
-                  type="text" name="form_name" placeholder="Name" value={formData.form_name} onChange={handleChange}
-                  className={inputStyle} required
-                />
-                <input 
-                  type="tel" name="phone" placeholder="Phone No." value={formData.phone} onChange={handleChange}
-                  className={inputStyle} required
-                />
-                <div className="relative">
-                  {/* Select strictly bound to dynamic inline property coloring */}
-                  <select 
-                    name="budget" 
-                    value={formData.budget} 
-                    onChange={handleChange} 
-                    className={`${inputStyle} appearance-none`}
-                    style={{ color: !formData.budget ? 'rgba(232, 201, 106, 0.7)' : '#D9D9D9' }}
-                    required
-                  >
-                    <option value="" disabled>Budget</option>
-                    <option value="1 Cr to 1.5 Cr" style={{color: '#D9D9D9', background: '#161F48'}}>1 Cr to 1.5 Cr</option>
-                    <option value="1.5 Cr to 2.0 Cr" style={{color: '#D9D9D9', background: '#161F48'}}>1.5 Cr to 2.0 Cr</option>
-                    <option value="2 Cr +" style={{color: '#D9D9D9', background: '#161F48'}}>2 Cr +</option>
-                  </select>
-                  <div className="absolute right-5 top-[50%] -translate-y-1/2 pointer-events-none text-[#E8C96A]">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                  </div>
-                </div>
-                
-                {/* Radio Buttons (Buying / Leasing) */}
-                <div className="flex items-center gap-12 py-3 pl-4">
-                  <label className="flex items-center gap-3 cursor-pointer group">
-                    <div className="relative w-5 h-5 rounded-full border-[1.5px] border-[#E8C96A]/80 flex items-center justify-center bg-transparent group-hover:border-[#E8C96A] transition-colors">
-                      {formData.intent === "Buying" && (
-                        <div className="w-[10px] h-[10px] bg-[#D9D9D9] rounded-full transition-transform" />
-                      )}
-                    </div>
-                    <input type="radio" name="intent" value="Buying" onChange={handleChange} className="hidden" />
-                    <span className="text-[#E8C96A] text-[15px] font-medium tracking-wide">Buying</span>
-                  </label>
+        {/* Proper vertical spacing for the section */}
+        <form onSubmit={handleSubmit} className="w-full relative flex flex-col py-20 md:py-32 max-w-5xl mx-auto">
+          <h2
+            className="text-4xl md:text-[50px] font-semibold text-center bg-gradient-to-b from-[#E8C96A] to-[#B8913A] text-transparent bg-clip-text mb-12 md:mb-20 tracking-wide self-center"
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent"
+            }}
+          >
+            Connect with us
+          </h2>
+          <div className="flex flex-col md:flex-row gap-6 lg:gap-10 w-full mb-6 relative">
 
-                  <label className="flex items-center gap-3 cursor-pointer group">
-                    <div className="relative w-5 h-5 rounded-full border-[1.5px] border-[#E8C96A]/80 flex items-center justify-center bg-transparent group-hover:border-[#E8C96A] transition-colors">
-                      {formData.intent === "Leasing" && (
-                        <div className="w-[10px] h-[10px] bg-[#D9D9D9] rounded-full transition-transform" />
-                      )}
-                    </div>
-                    <input type="radio" name="intent" value="Leasing" onChange={handleChange} className="hidden" />
-                    <span className="text-[#E8C96A] text-[15px] font-medium tracking-wide">Leasing</span>
-                  </label>
-                </div>
-              </div>
-
-              {/* Form Right Column */}
-              <div className="flex-1 flex flex-col gap-6">
-                <input 
-                  type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange}
-                  className={inputStyle} required
-                />
-                <div className="relative">
-                  {/* Select strictly bound to dynamic inline property coloring */}
-                  <select 
-                    name="propertyType" 
-                    value={formData.propertyType} 
-                    onChange={handleChange} 
-                    className={`${inputStyle} appearance-none`}
-                    style={{ color: !formData.propertyType ? 'rgba(232, 201, 106, 0.7)' : '#D9D9D9' }}
-                    required
-                  >
-                    <option value="" disabled>Property type</option>
-                    <option value="Residential" style={{color: '#D9D9D9', background: '#161F48'}}>Residential</option>
-                    <option value="Commercial" style={{color: '#D9D9D9', background: '#161F48'}}>Commercial</option>
-                    <option value="Retail" style={{color: '#D9D9D9', background: '#161F48'}}>Retail</option>
-                  </select>
-                  <div className="absolute right-5 top-[50%] -translate-y-1/2 pointer-events-none text-[#E8C96A]">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                  </div>
-                </div>
-                <textarea 
-                  name="requirements" 
-                  placeholder="Fill in your requirements" 
-                  value={formData.requirements} 
+            {/* Form Left Column */}
+            <div className="flex-1 flex flex-col gap-6">
+              <input
+                type="text" name="form_name" placeholder="Name" value={formData.form_name} onChange={handleChange}
+                className={inputStyle} required
+              />
+              <input
+                type="tel" name="phone" placeholder="Phone No." value={formData.phone} onChange={handleChange}
+                className={inputStyle} required
+              />
+              <div className="relative">
+                {/* Select strictly bound to dynamic inline property coloring */}
+                <select
+                  name="budget"
+                  value={formData.budget}
                   onChange={handleChange}
-                  className={`${inputStyle} flex-1 resize-none h-full min-h-[140px]`}
+                  className={`${inputStyle} appearance-none`}
+                  style={{ color: !formData.budget ? 'rgba(232, 201, 106, 0.7)' : '#D9D9D9' }}
                   required
-                />
+                >
+                  <option value="" disabled>Budget</option>
+                  <option value="1 Cr to 1.5 Cr" style={{ color: '#D9D9D9', background: '#161F48' }}>1 Cr to 1.5 Cr</option>
+                  <option value="1.5 Cr to 2.0 Cr" style={{ color: '#D9D9D9', background: '#161F48' }}>1.5 Cr to 2.0 Cr</option>
+                  <option value="2 Cr +" style={{ color: '#D9D9D9', background: '#161F48' }}>2 Cr +</option>
+                </select>
+                <div className="absolute right-5 top-[50%] -translate-y-1/2 pointer-events-none text-[#E8C96A]">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
+                </div>
+              </div>
+
+              {/* Radio Buttons (Buying / Leasing) */}
+              <div className="flex items-center gap-12 py-3 pl-4">
+                <label className="flex items-center gap-3 cursor-pointer group">
+                  <div className="relative w-5 h-5 rounded-full border-[1.5px] border-[#E8C96A]/80 flex items-center justify-center bg-transparent group-hover:border-[#E8C96A] transition-colors">
+                    {formData.intent === "Buying" && (
+                      <div className="w-[10px] h-[10px] bg-[#D9D9D9] rounded-full transition-transform" />
+                    )}
+                  </div>
+                  <input type="radio" name="intent" value="Buying" onChange={handleChange} className="hidden" />
+                  <span className="text-[#E8C96A] text-[15px] font-medium tracking-wide">Buying</span>
+                </label>
+
+                <label className="flex items-center gap-3 cursor-pointer group">
+                  <div className="relative w-5 h-5 rounded-full border-[1.5px] border-[#E8C96A]/80 flex items-center justify-center bg-transparent group-hover:border-[#E8C96A] transition-colors">
+                    {formData.intent === "Leasing" && (
+                      <div className="w-[10px] h-[10px] bg-[#D9D9D9] rounded-full transition-transform" />
+                    )}
+                  </div>
+                  <input type="radio" name="intent" value="Leasing" onChange={handleChange} className="hidden" />
+                  <span className="text-[#E8C96A] text-[15px] font-medium tracking-wide">Leasing</span>
+                </label>
               </div>
             </div>
-            
-            {error && <span className="text-red-400 text-sm font-light mt-2 mb-4 block text-center">{error}</span>}
 
-            {/* Extra Submit Button generated matching identical animations to Hero form */}
-            <div className="flex justify-center w-full relative z-[100] mt-4 md:mt-8">
-               <SubmitButton loading={loading} />
+            {/* Form Right Column */}
+            <div className="flex-1 flex flex-col gap-6">
+              <input
+                type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange}
+                className={inputStyle} required
+              />
+              <div className="relative">
+                {/* Select strictly bound to dynamic inline property coloring */}
+                <select
+                  name="propertyType"
+                  value={formData.propertyType}
+                  onChange={handleChange}
+                  className={`${inputStyle} appearance-none`}
+                  style={{ color: !formData.propertyType ? 'rgba(232, 201, 106, 0.7)' : '#D9D9D9' }}
+                  required
+                >
+                  <option value="" disabled>Property type</option>
+                  <option value="Residential" style={{ color: '#D9D9D9', background: '#161F48' }}>Residential</option>
+                  <option value="Commercial" style={{ color: '#D9D9D9', background: '#161F48' }}>Commercial</option>
+                  <option value="Retail" style={{ color: '#D9D9D9', background: '#161F48' }}>Retail</option>
+                </select>
+                <div className="absolute right-5 top-[50%] -translate-y-1/2 pointer-events-none text-[#E8C96A]">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
+                </div>
+              </div>
+              <textarea
+                name="requirements"
+                placeholder="Fill in your requirements"
+                value={formData.requirements}
+                onChange={handleChange}
+                className={`${inputStyle} flex-1 resize-none h-full min-h-[140px]`}
+                required
+              />
             </div>
-              
-          </form>
+          </div>
+
+          {error && <span className="text-red-400 text-sm font-light mt-2 mb-4 block text-center">{error}</span>}
+
+          {/* Extra Submit Button generated matching identical animations to Hero form */}
+          <div className="flex justify-center w-full relative z-[100] mt-4 md:mt-8">
+            <SubmitButton loading={loading} />
+          </div>
+
+        </form>
       </div>
 
     </section>
