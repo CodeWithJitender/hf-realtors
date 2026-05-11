@@ -118,18 +118,25 @@ export default function HeroSection() {
     setLoading(true);
     setError("");
 
-    if (!formData.form_name.trim() || !formData.phone.trim() || !formData.email.trim() || !formData.propertyType || !formData.budget || !formData.requirements.trim()) {
-      setError("Please fill out all required fields.");
-      setLoading(false);
-      return;
-    }
-
     try {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
+        // {
+        //   name: formData.form_name.trim(),
+        //   phone: formData.phone.trim(),
+        //   email: formData.email.trim(),
+        //   propertyType: formData.propertyType || "Not Provided",
+        //   budget: formData.budget || "Not Provided",
+        //   intent: formData.intent || "Buying",
+        //   requirements: formData.requirements.trim() || "Not Provided",
+        //   time: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
+        // },
         {
-          name: formData.form_name.trim(),
+          // CHANGE THIS LINE:
+          // Old: name: formData.form_name.trim(),
+          // New:
+          form_name: formData.form_name.trim(),
           phone: formData.phone.trim(),
           email: formData.email.trim(),
           propertyType: formData.propertyType || "Not Provided",

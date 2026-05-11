@@ -116,12 +116,6 @@ export default function LandingFooter() {
     setLoading(true);
     setError("");
 
-    if (!formData.form_name.trim() || !formData.phone.trim() || !formData.email.trim() || !formData.propertyType || !formData.budget || !formData.requirements.trim()) {
-      setError("Please fill out all required fields.");
-      setLoading(false);
-      return;
-    }
-
     try {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
